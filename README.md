@@ -1,10 +1,7 @@
 # +/∞
 
-plus over infinity will be back with you soon.
+plus over infinity will be back with you soon
 
-thank you all for your feedback.
-
-kelas <me@kel.as>
-
+thank you all for your [feedback](mailto:me@kel.as)
 
 `nyi ∎
