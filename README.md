@@ -15,7 +15,7 @@
 **[numbers](#numbers)**
 
 * vector math → [v≠a](#vectors-vs-atoms) | [v+v](#v-plus-v) | [v+a](#v-plus-a) | [v x](#v-indexing)  | [shp](#v-shp)
-* [type system](#two-types-of-types) → [\`i\`f](#typ-num) | [Øø](#typ-nul) | [\`c\`n](#typ-char) | [\`d\`t](#typ-time) | [\`1\`2](#typ-lambda) | [mix](#typ-mix) | [cst](#typ-cast)
+* [type system](#two-types-of-types) → [\`i\`f](#typ-num) | [Ø ø ∞](#typ-nul) | [\`c\`n](#typ-char) | [\`d\`t](#typ-time) | [\`1\`2](#typ-lambda) | [mix](#typ-mix) | [cst](#typ-cast)
 * order of eval → [rtl](#right-to-left-and-back-again) | [(1)2](#rtl-precedence)
 * verb+adverb → [nsl](#no-stinking-loops)
 
@@ -704,8 +704,9 @@ by `monadic`, it is a good time to start over.
 
 <a name="typ-nul"></a>
 **Null** value in k is typed, integer null is `Ø` and float null is
-`ø`. Working with nulls can be very tricky, and it is important to know 
-the distinction. **Infinity** is `∞` and `-∞`, and is always a float atom:
+`ø`. **Infinity** is a scalar float `∞`. Working with nulls and infinities
+can be very tricky sometimes, and it is important to pay attention to their
+types:
 
 ```q
  n:ø          /float null is type float
