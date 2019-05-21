@@ -735,7 +735,7 @@ Names come handy in many situations, for now lets just see how they quack:
  @b                  /vector of string pointers
 `N
 
- @`"ken iverson"     /spaces in names, why not.
+ @`"ken iverson"     /spaces in names, why not?
 `n
 ```
 
