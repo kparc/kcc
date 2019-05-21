@@ -698,14 +698,14 @@ lets just see how they quack:
 
 ```q
  a:`kei              /"kei" is now internalized
- @a                  /name atom
+ @a                  /name atom is its hash key
 `n
 
- b:`kei`kei`kei      /vector of three references to a single instance of "kei" string
- @b                  /vector of names
+ b:`kei`kei`kei      /three references to "kei"
+ @b                  /vector of string pointers
 `N
 
- @`"ken iverson"     /spaces in names, no problem
+ @`"ken iverson"     /spaces in names, why not.
 `n
 ```
 
