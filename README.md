@@ -1323,9 +1323,11 @@ x:f'pts           /adverb each: apply f to each partition, recurse down
 
 Now that we know what every specific part does, we can zoom out and see the 
 big picture. Feel free to use the interpreter to play around and test your 
-ideas. And of course, `f` is nothing else but:
+ideas.
 
 -------------------
+
+And of course, `f` is nothing else but:
 
 ```q
  qs:{$[2>#?x;x;,/qs'x@=x>rand x]}        /quicksort by random pivot
