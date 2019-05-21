@@ -996,7 +996,7 @@ unnecessary. The idea that displaces them is a simple and strong
 abstraction called *adverbs*, and before we see them in action, it helps to 
 understand why they are called that way:
 
-An **adverb** if a **modifier** that takes some **verb** (which is a short 
+An **adverb** is a **modifier** that takes some **verb** (which is a short 
 way of saying "a user-defined function or native operator"), and makes that 
 verb's action applicable to an **input vector** in some desirable way to 
 produce an **output**, which can be a scalar value or another vector, 
