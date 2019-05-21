@@ -818,10 +818,11 @@ the end of next chapter.
  `c$1+"HAL9000"        /add 1 to ascii, cast back to `c, surprise:
  "IBM:111"
 
- "012"+"345"           /add ascii codes of chars, result stays `C
+ "012"+"345"           /sum ascii codes of chars, result stays `C
 "ceg"
 
- 1+`kei                /name is immutable, no implicit cast to `C
+ 1+`kei                /`n is immutable, no math for names, sorry
+ 
   ^
 type error
 
