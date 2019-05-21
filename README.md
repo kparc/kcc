@@ -1414,7 +1414,7 @@ will agree that reading k programs is easy and fun.
 
 ### apples and oranges
 
-Many things can only be understood in comparison. For a quick intermission, 
+Quick intermission. Many things can only be understood in comparison, so
 compare the functionality of these two programs:
 
 ```java
@@ -1447,7 +1447,7 @@ And now the size of their runtimes:
    109K May 17 13:54 k.tgz
 ```
 
-There is nothing to be said, and there will be no practice in this chapter.
+There will be no practice in this short chapter.
 
 -------------------
 
