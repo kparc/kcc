@@ -1428,8 +1428,7 @@ qs:{$[2>#?x;x;,/qs'x@=x>rand x]}
 
 -------------------
 
-And now compare the source code of these two, and then the size of their 
-runtimes:
+And now compare the source code of these two:
 
 ```java
 import java.util.Arrays;  
@@ -1442,13 +1441,15 @@ System.out.printf("%s",Arrays.toString(x));}}
  ^5 4 3 2 1
 ```
 
+And now the size of their runtimes:
+
 ```sh
    252M May 17 13:59 jdk-8u211-macosx-x64.dmg
     79M May 17 13:50 jre-8u211-macosx-x64.dmg
    109K May 17 13:54 k.tgz
 ```
 
-There is little to be said, and there is no practice in this chapter.
+There is little to be said, and there will be no practice in this chapter.
 
 -------------------
 
