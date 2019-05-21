@@ -1414,11 +1414,12 @@ will agree that reading k programs is easy and fun.
 
 ### apples and oranges
 
-Many things can only be understood in comparison.
+There is no new material in this chapter, so we can proceed to practice.
 
 **Practice:**
 
-Compare the functionality of these two programs:
+Many things in life can only be understood in comparison. Compare the 
+functionality of these two programs:
 
 ```java
 package com.less.with.more.doing.sort;
@@ -1429,7 +1430,7 @@ public final class qs{public void s(int[] x){}}
 qs:{$[2>#?x;x;,/qs'x@=x>rand x]}
 ```
 
-Now compare the source code of these two:
+Now, compare the source code of these two:
 
 ```java
 import java.util.Arrays;  
