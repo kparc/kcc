@@ -1012,10 +1012,10 @@ although there is a `while` construct in k, it is almost never used in
 practice. And this is not just to avoid untold damages from trivial errors 
 people keep making in their loop definitions.
 
-The main reason explicit loops are banned from k is because they are usually 
-unnecessary. The idea that displaces them is a simple and strong 
-abstraction called *adverbs*, and before we see them in action, it helps to 
-understand why they are called that way:
+The main reason explicit loops are banned from k is because k offers something
+better. The idea that displaces them is a simple and strong abstraction called 
+*adverbs*, and before we see them in action, it helps to understand why they 
+are called that way:
 
 An **adverb** is a **modifier** that takes some **verb** (which is a short 
 way of saying "a user-defined function or native operator"), and makes that 
@@ -1025,7 +1025,7 @@ depending on which adverb is used.
 
 A good example of how adverbs replace loops is `sum`. Say, we have an 
 input `in:1 2 3 4 5`, and what we want is a sum of its elements. Thinking 
-in implicit loops suggests something like that:
+in implicit loops suggests something like:
 
 ```c
 int sum(int[]in){
@@ -1036,7 +1036,7 @@ int sum(int[]in){
 }
 ```
 
-But imagine you could state the problem to a computer like this:
+But imagine if you could state the problem to a computer like this:
 
 **"put a `+` between all adjacent items and give me the grand total"**
 
@@ -1051,8 +1051,9 @@ will happily modify *any* dyadic operator or function. Described more formally,
 4. return `acc`
 
 The above is nothing else but a general case of the explicit loop found in 
-`sum()`, as well as of **all other** explicit loops of this particiular family,
-which is known as `fold` or `reduce` among functional folks.
+`sum()`, as well as of *all other* explicit loops of this particiular family.
+In functional speak, one would say adverb `over` *folds* a vector of values and 
+*reduces* them into one.
 
 And since `over` is just `v/x`, this is how `sum` function looks like in k:
 
