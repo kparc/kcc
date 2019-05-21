@@ -470,10 +470,12 @@ and from here things will start to get real.
 The word `atom` is a synonym for `scalar value`, or simply `scalar`. Every 
 language has them, and in k they are as useful as elsewhere. But k belongs to a
 family of *vector languages*, which means its fundamental type is an ordered 
-set of atoms or other ordered sets. In k parlance, terms "array", "list"
-and "vector" are often used interchageably and refer to the same thing, but we
-will stick with `vector` to avoid confusing you, because vectors are much more 
-general than classic *arrays* and have nothing to do with *linked lists*. 
+set of atoms or other ordered sets.
+
+In k parlance, terms "array", "list" and "vector" are often used interchageably 
+and refer to the same thing, but we will stick with `vector` to avoid confusing 
+you, because vectors are much more general than classic *arrays* and have 
+nothing to do with *linked lists*. 
 
 ```q
  a:42             /a scalar variable, an atom with a name
