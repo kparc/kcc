@@ -784,22 +784,23 @@ or contain something more complex than atoms, e.g. other vectors.
  @c                     /a composite type symbol is just a backtick
 `
 
- a:(1 2 3;4 5 6;7 8 9)  /a vector of vectors is a composite vector
- a
+ x:(1 2 3;4 5 6;7 8 9)  /a vector of vectors is a composite vector
+ x
 1 2 3
 4 5 6
 7 8 9
- @a
+ @x
+` 
 ```
 
 <a name="typ-cast"></a>
 **Type casts**, both explicit and implicit, are demonstrated by the following
 examples which also give a general feel of how type coersion behaves. The `cast`
-operator in k is a dyadic `t$x`, where `t` is the type name and `x` is a cast 
-subject. If you look closer at the argument `t`, you could say there is some 
-wordplay going on here, "type name of a type name is name". It could be a 
-valid observation, but the proof of this conjecture will have to wait until 
-the end of next chapter.
+operator in k is a dyadic `t$x`, where `t` is a type name and `x` is a cast 
+subject.
+
+The argument `t` looks like wordplay: "type name of a type name is `name`", 
+and we will revisit this in the next chapter.
 
 ```q
  1+.5                  /int plus float is float, no surprises here
@@ -828,20 +829,21 @@ the end of next chapter.
 type error
 
 
-
- a:1 2 3               /define a int vector
- a[0]:1f               /replace its first element with a float
- @a                    /ouch, int vector got demoted to composite
+ a:1 2 3               /lets start with a nice uniform int vector
+ a[0]:1f               /now, replace its 1st element with a float
+ @a                    /whoops, our int vector got demoted to mix
 `
- a:`f$a                /explicitly cast composite to float
- @a                    /voila, a float vector
+ a:`f$a;@a             /explicit cast to float solves the problem
 `F
 
- `i$1981-02-01         /integer representation of dates is puzzling at first
+ `i$1981-02-01         /dates represented as ints look like this:
 -15674
 
- 15674+1981-02-01      /adding 15674 days solves the mystery: all dates in k are simply offsets from:
+ 15674+1981-02-01      /and they are simply offsets in days from: 
 2024-01-01
+
+ `i$2024-01-01         /so the epoch date itself must be exactly: 
+0 
 
  @10                   /a type name of 10
 `i 
