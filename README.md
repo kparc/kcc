@@ -382,8 +382,8 @@ designed to be fast.
 **Implicit arguments** is an uncommon feature, most languages require you to 
 explicitly declare function arguments. Of course you can also do that in k
 if you want to, but if you don't, a function can have up to three implicit 
-arguments called `x`, `y` and `z`, which basically means you declare them by 
-simply referencing them in the function body. It is an extremely convinient 
+arguments called `x`, `y` and `z`, which means you declare them by simply 
+referencing them in the function body. It is an extremely convinient 
 feature, not nearly as scary as it sounds:
 
 ```q
