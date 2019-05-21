@@ -362,10 +362,10 @@ subjective opinion, which is up for you to consider:
 <a name="style-bad"></a>
 -------------------
 
-**Code bloat** is bad form. Avoid writing extra code as much as you can — there
-is too much of it written already. Look to remove any inessential code, yours or
-not. But if you have to write more, make sure it is useful, secure, compact, 
-maintainable and scalable.
+**Bad form** in k is code bloat. Avoid writing extra code as much as you 
+can — there is too much of it written already. Look to remove any inessential 
+code, yours or not. But if you have to write more, make sure it is useful, 
+secure, compact, maintainable and scalable.
 
 ### remarks on parlance
 
