@@ -1204,6 +1204,8 @@ adverbs. And you have everything you need:
 * there is no precedence
 * no explicit loops either
 
+----------------
+
 Bonus question:
 
 ```q
