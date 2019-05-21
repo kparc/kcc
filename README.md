@@ -938,7 +938,7 @@ Lets revisit the code from the first snippet in this document:
 ```q
  x:(1 2 3;4 5 6;7 8 9)
 
-x=x+1    /how can a universal truth be false?
+x=x+1    /how can a universal truth be so false?
 ```
 
 Too easy, but we'll make up for it.
@@ -993,9 +993,10 @@ used to modify dyadic `+`. Only `over`, as all other adverbs, is *general* and
 will happily modify *any* dyadic operator or function. Described more formally,
 `over` looks like this pseudocode:
 
-1. set `acc` to 0 (a.k.a. accumulator)
-2. while `next x`, set `acc` to the result of `v[acc;next x]`
-3. return `acc`
+1. if `x` is an atom, return `x`
+2. set `acc` to 0 (a.k.a. accumulator)
+3. while `next x`, set `acc` to the result of `v[acc;next x]`
+4. return `acc`
 
 The above is nothing else but a general case of the explicit loop found in 
 `sum()`, as well as of **all other** explicit loops of this particiular family,
@@ -1145,6 +1146,14 @@ adverbs. And you have everything you need:
 
 Take your time, make sure you got it before advancing to the next chapter, 
 where things will get a lot less innocent, and fast.
+
+Bonus question:
+
+```q
+ kcc:+/∞    /how come k sums up infinity this fast?
+ kcc
+∞
+```
 
 -------------------
 
