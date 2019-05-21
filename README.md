@@ -803,16 +803,16 @@ the end of next chapter.
  1+.5                  /int plus float is float, no surprises here
 1.5
 
- 1f*2                  /1f is the same as 1.0, saves one keystroke
+ 1f*2                  /any float operand promotes result to float
 2f 
 
- `i$42.99              /explicit cast `f to `i just drops mantissa
+ `i$42.99              /explicit cast from `f to `i drops mantissa
 42
 
- `i$42.0 42.99         /same is true for float vectors
+ `i$42.0 42.99         /`F to `i will round down the entire vector
 42 42
 
- 0+"abc"               /adding an int atom to a char vector yields an int vector of its ascii codes
+ 0+"abc"               /numeric operands demote `c and `C to ascii
 97 98 99
 
  `c$1+"HAL9000"        /increment ascii codes by one, cast back to char, surprise:
