@@ -891,16 +891,16 @@ operators, e.g. `*` has no precedence over `+`. Here are some basic math
 expressions, annotated with their order of evaluation:
 
 ```q
- 3+2+1        /"take 1, add 2, add 3"
+ 3+2+1     /"take 1, add 2, add 3"
 6
 
- 3*2+1        /"take 1, add 2, multiply by 3"
+ 3*2+1     /"take 1, add 2, multiply by 3"
 9
 
- (3*2)-1      /"take 2, multiply by 3, sub 1"
+ (3*2)-1   /"take 2, multiply by 3, sub 1"
 5
 
- -1+3*2       /same as above, without parens
+ -1+3*2    /same as above, without parens
 5
 ```
 
@@ -920,8 +920,8 @@ write code, think of the reader and minimize the use of round brackets.
 Finally, we can revisit the question raised in the type system discussion:
 
 ```q
- @@10             /"type name of a type name of 10" is actually, right to left...
-`n                /..."get 10, apply monadic @, get `i, apply monadic @, get `n"
+ @@10     /"type name of a type name of 10" is actually, right to left...
+`n        /..."get 10, apply monadic @, get `i, apply monadic @, get `n"
 ```
 
 This is a convincing proof of our earlier conjecture that `type name` of 
@@ -936,7 +936,7 @@ Lets revisit the code from the first snippet in this document:
 ```q
  x:(1 2 3;4 5 6;7 8 9)
 
-x=x+1                 /how can a universal truth be false?
+x=x+1    /how can a universal truth be false?
 ```
 
 Too easy, but we'll make up for it.
@@ -1052,10 +1052,10 @@ where `f` is a `dyadic` verb and `x` is an input vector
 ```q
  a:0 1 2 3 4    /some data
 
- +/a            /puts a plus between items 0+1+2+3+4 and returns a total
-10              /sum of a
+ +/a            /puts a + between items: 0+1+2+3+4
+10              /and returns the total: a sum of a
 
- +\a            /scan is same as over just with all intermediate results
+ +\a            /scan returns intermediate results
 0 1 3 6 10      /running sum of a
 ```
 ----------------
