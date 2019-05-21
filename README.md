@@ -1009,18 +1009,18 @@ And since `over` is just `v/x`, this is how `sum` function looks like in k:
 It is a good moment to look back at the C version, one last time. Be surprised
 to hear that its `for` loop declaration contains an ancient, but ever so 
 popular [bug](https://stackoverflow.com/questions/37538/how-do-i-determine-the-size-of-my-array-in-c),
-which k version does not because fixing bugs in `+/x` is much easier. Besides, 
+which k version does not because spotting bugs in `+/x` is much easier. Besides, 
 even if the C code wasn't broken, it would only work for integers.
 
 You could be tempted to see of what other use `over` could be. Let's introduce 
 a new k operator, `!x til`, and implement another obvious candidate for `over`:
 
 ```q
- x:!9                          /! is til, get first n integers
- x                             /tada, we have all ints up to 8
+ x:!9               /! is til, get first n integers
+ x                  /tada, we have all ints up to 8
 0 1 2 3 4 5 6 7 8
 
- fact:{*/1+!x}                 /fact x 'mul over 1 plus til x'
+ fact:{*/1+!x}      /fact x 'mul over 1 plus til x'
  fact 10 
 3628800 
 ```
@@ -1036,9 +1036,9 @@ where `f` is a `monadic` verb and `x` is an input vector
 
 ```q
  a:0 1 2 3 4    /some data
- sq:{x*x}       /a function that takes one argument
+ sq:{x*x}       /some monadic function
 
- sq'a           /each applies f to each element of x and returns a vector of results
+ sq'a           /apply f to each element of x
 0 1 4 9 16      /each of a, squared
 ```
 ----------------
@@ -1051,10 +1051,10 @@ where `f` is a `dyadic` verb and `x` is an input vector
 ```q
  a:0 1 2 3 4    /some data
 
- +/a            /over inserts a plus between adjacent elements (i.e. 0+1+2+3+4) and returns the final result
+ +/a            /puts a plus between items 0+1+2+3+4 and returns a total
 10              /sum of a
 
- +\a            /scan is exactly the same as over, but returns all intermediate results as well
+ +\a            /scan is same as over just with all intermediate results
 0 1 3 6 10      /running sum of a
 ```
 ----------------
@@ -1067,11 +1067,11 @@ where `f` is a `dyadic` verb and `x` and `y` are left and right inputs,
 either vectors or atoms
 
 ```q
- 10 20 30-\:5   /eachleft gives (10-5),(20-5),(30-5)
+ 10 20 30-\:5   /eachleft does (10-5),(20-5),(30-5)
 5 15 25         /each of left, substracted by right
 
- 5-/:10 20 30   /eachright gives (5-10),(5-20),(5-30)
--5 -15 -25      /left, substracted by each of right
+ 5-/:0 20 30    /eachright does (5-0),(5-20),(5-30)
+5 -15 -25       /left, substracted by each of right
 ```
 ----------------
 
@@ -1085,10 +1085,10 @@ an input vector
 
 
 ```q
- 2+':4 8 16          /seeded eachprior        gives (2+4),(4+8),(8+16)
+ 2+':4 8 16          /seeded eachprior gives (2+4),(4+8),(8+16)
 6 12 24              /sum of first item and seed, then sum of each item and the item prior to it
 
- (+':)4 8 16         /seedless eachprior      gives (4),(4+8),(8+16)
+ (+':)4 8 16         /seedless eachprior gives (4),(4+8),(8+16)
 4 12 24              /first item stays as is, then sum of each item and the item prior to it
 ```
 ----------------
