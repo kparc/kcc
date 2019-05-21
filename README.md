@@ -429,7 +429,7 @@ A function or an operator that takes...
 * one argument is **monadic**
 * two arguments is **dyadic**
 
-A function in k can of rank 1 to 9. That is:
+A function in k can be of rank 1 to 9, which means:
 
 * it is not really possible to define a function with no arguments. Rank zero,
   or **niladic** functions do not exist in k.
