@@ -22,7 +22,7 @@ plus over infinity, a crash course in k language
 **[proverbs](#proverbs)**
 
 * reading code → [how to solve it](#how-to-solve-it)
-* relativity → [apples and oranges](#apples-and-oranges)
+* code metrics → [apples and oranges](#apples-and-oranges)
 
 ---------------------
 
