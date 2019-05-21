@@ -17,7 +17,7 @@ plus over infinity, a crash course in k language
 * vector math → [v≠a](#vectors-vs-atoms) | [v+v](#v-plus-v) | [v+a](#v-plus-a) | [v x](#v-indexing)  | [shp](#v-shp)
 * [type system](#two-types-of-types) → [\`i\`f](#typ-num) | [ø,∞](#typ-nul) | [\`c\`n](#typ-char) | [\`d\`t](#typ-time) | [\`1\`2](#typ-lambda) | [mix](#typ-mix) | [cst](#typ-cast)
 * order of eval → [rtl](#right-to-left-and-back-again) | [(1)2](#rtl-precedence)
-* verb+adverb → [nsl](#no-stinking-loops) | [ovr](#nsl-overscan) | [scn](#nsl-overscan) | [e↷](#nsl-each) | [e⇆](#nsl-eachlr) | [e↶](#nsl-eachprior)
+* verb+adverb → [nsl](#no-stinking-loops) | [ov/r](#nsl-overscan) | [sc\n](#nsl-overscan) | [e↳](#nsl-each) | [e⇆](#nsl-eachlr) | [e↶](#nsl-eachprior)
 
 **[proverbs](#proverbs)**
 
