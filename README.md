@@ -21,7 +21,7 @@ plus over infinity, a crash course in k language
 
 **[proverbs](#proverbs)**
 
-* reading code → [how](#how-to-solve-it)
+* reading code → [how to solve it](#how-to-solve-it)
 
 ---------------------
 
