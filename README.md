@@ -535,7 +535,7 @@ Mixing atomic and vector operands makes total sense and is very useful:
  x=1             /compare each of x to 1
 0 1 0 0 0
 
- x%0             /divide each of x by 0 
+ x%0             /divide each by 0, ouch
 ø ∞ ∞ ∞ ∞        /∀x∈ℚ (x%0) ∈ {-∞,∞,ø}, beware (0%0) = ø, enjoy responsibly
 
  3%x             /divide 3 by each of x
