@@ -1085,9 +1085,9 @@ a new k operator, `!x til`, and implement another obvious candidate for `over`:
 3628800 
 ```
 
-Now that you parted ways with loops, you are ready to discover there are 
-**6 adverbs** in k that modify verbs in very different ways. Please welcome 
-the magnificent six, and note that only most trivial use cases are shown:
+Now that you parted ways with loops, and discussed `over` in details, 
+it is time to meet the rest of **six k adverbs**. Please welcome the 
+magnificent six, and note that only most trivial use cases are shown:
 
 ----------------
 adverb **each** is `f'x`
@@ -1156,8 +1156,8 @@ an input vector
 ```
 ----------------
 
-Okay, this doesn't seem like much, adverbs seem to be doing pretty basic stuff.
-But hold that thought for a minute.
+This doesn't seem like much, adverbs seem to be doing pretty basic stuff. But hold 
+that thought for a minute.
 
 ----------------
 
@@ -1196,7 +1196,7 @@ adverbs working together:
 9 18 27 36 45 54 63 72 81 
 ```
 
-And your goal here is to make sure you understand the logic and the order of 
+Your goal is to make sure you understand the logic and the order of 
 evaluation of this expression, which only consists of one operator and two 
 adverbs. And you have everything you need:
 
@@ -1219,7 +1219,7 @@ Bonus question:
 
 k interpreter is your friend. Take your time, make sure you got all of it 
 before advancing to the next chapter, where things will get a lot less 
-innocent, and fast.
+innocent, and very fast.
 
 ## proverbs
 
