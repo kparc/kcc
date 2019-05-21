@@ -635,9 +635,9 @@ introduce the `monadic +x`:
 
 **Practice:**
 
-As you would expect, `+x flip` easily transposes rectangular matrices, too.
-But try to pass something less obvious to it, and see if you can follow 
-its logic:
+First, lets make sure `+x flip` operator transposes rectangular matrices
+instead of only squares, which is of little surprise, and then try to flip 
+something less obvious. See if you can follow its logic:
 
 ```q
  mat:(1 2 3 4;6 7 8 9)     /a rectangular matrix
@@ -647,13 +647,21 @@ its logic:
 3 8
 4 9
 
- t:(1;1 1;1 2 1;1 3 3 1)   /t is triangle vector
+ t:(1;1 1;1 2 1;1 3 3 1)   /t is triangle vector 
+ t
+1
+1 1
+1 2 1
+1 3 3 1 
+ 
  +t                        /flip it, what gives?
 1 1 1 1
 1 1 2 3
 1 Ø 1 3
 1 Ø Ø 1
 ```
+
+-----------------------
 
 ### two types of types
 
