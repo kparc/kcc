@@ -1,6 +1,6 @@
-# +/∞
+# kcc:+/∞
 
-plus over infinity, a crash course in k
+plus over infinity, k crash course
 
 **[genesis](#genesis)**
 
