@@ -818,10 +818,7 @@ or contain something more complex than atoms, e.g. other vectors.
 **Type casting**, both explicit and implicit, is demonstrated by the following
 examples which also give a general feel of how type coersion behaves. The `cast`
 operator in k is a dyadic `t$x`, where `t` is a type name and `x` is a cast 
-subject.
-
-The argument `t` looks like wordplay: "type name of a type name is `name`", 
-and we will revisit this in the next chapter.
+subject:
 
 ```q
  1+.5                  /int plus float is float, no surprises here
@@ -874,8 +871,9 @@ type error
 ```
 
 There is a lot more to be said about the type system, but the expression 
-`@@10` above urges us to proceed to the next section, which is all about 
-giving a rational explantation to how it actually works.
+`@@10` above (which reads like wordplay: "type name of a type name is 
+`name`") urges us to to the next section which is all about how to
+make sense of this expression.
 
 ### right to left and back again
 
