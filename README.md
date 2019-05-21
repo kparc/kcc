@@ -17,7 +17,7 @@ plus over infinity, a crash course in k language
 * vector math → [v≠a](#vectors-vs-atoms) | [v+v](#v-plus-v) | [v+a](#v-plus-a) | [v x](#v-indexing)  | [shp](#v-shp)
 * [type system](#two-types-of-types) → [\`i\`f](#typ-num) | [ø,∞](#typ-nul) | [\`c\`n](#typ-char) | [\`d\`t](#typ-time) | [\`1\`2](#typ-lambda) | [mix](#typ-mix) | [cst](#typ-cast)
 * order of eval → [rtl](#right-to-left-and-back-again) | [(1)2](#rtl-precedence)
-* verb+adverb → [nsl](#no-stinking-loops)
+* verb+adverb → [nsl](#no-stinking-loops) | [over/scan](#nsl-overscan) | [each](#nsl-each) | [each↔](#nsl-eachlr) | [each↶](#nsl-eachprior)
 
 **[proverbs](#proverbs)**
 
@@ -1085,21 +1085,7 @@ Now that you parted ways with loops, and discussed `over` in details,
 it is time to meet the rest of **six k adverbs**. Please welcome the 
 magnificent six, and note that only most trivial use cases are shown:
 
-----------------
-adverb **each** is `f'x`
-
-where `f` is a `monadic` verb and `x` is an input vector
-
-```q
- d:42,"a",`kei   /some composite vector
- fn:{@x}         /some monadic function
- fn'd            /apply fn to each of d
-`i`c`n           /the type of each item
-
- f:{1%x},{x*x}   /reciprocal and square 
- {x 25}'f        /call each of f for 25 
-0.04 625
-```
+<a name="nsl-overscan"></a>
 ----------------
 adverb **over** is `f/x`
 
@@ -1116,6 +1102,25 @@ where `f` is a `dyadic` verb and `x` is an input vector
  +\a            /scan returns intermediate results
 0 1 3 6 10      /running sum, aka debugger of over
 ```
+
+<a name="nsl-each"></a>
+----------------
+adverb **each** is `f'x`
+
+where `f` is a `monadic` verb and `x` is an input vector
+
+```q
+ d:42,"a",`kei   /some composite vector
+ fn:{@x}         /some monadic function
+ fn'd            /apply fn to each of d
+`i`c`n           /the type of each item
+
+ f:{1%x},{x*x}   /reciprocal and square 
+ {x 25}'f        /call each of f for 25 
+0.04 625
+```
+
+<a name="nsl-eachlr"></a>
 ----------------
 
 adverb **eachleft** is `x f\:y`
@@ -1134,6 +1139,7 @@ either vectors or atoms
 ```
 ----------------
 
+<a name="nsl-eachprior"></a>
 adverb **eachprior** is `x f':y` and `(f':)x`
 
 first form is `seeded eachprior` where `f` is a `dyadic` verb, and `x` is a 
