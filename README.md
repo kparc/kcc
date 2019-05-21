@@ -815,7 +815,7 @@ the end of next chapter.
  0+"abc"               /numeric operands demote `c and `C to ascii
 97 98 99
 
- `c$1+"HAL9000"        /increment ascii codes by one, cast back to char, surprise:
+ `c$1+"HAL9000"        /add 1 to ascii, cast back to `c, surprise:
  "IBM:111"
 
  "012"+"345"           /sum of char vectors adds their ascii codes pairwise, result is still a char vector
