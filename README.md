@@ -247,7 +247,7 @@ Type in your first k expressions, and enjoy your first answers:
  x=x+1    /= is equal, and of course it isn't
 0
 
- kcc:+/∞  /of course you had to try that now,
+ kcc:+/∞  /we knew you'd want to try that one
  kcc      /and what it happens to be is just:
 ∞
 ```
