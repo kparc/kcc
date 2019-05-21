@@ -295,8 +295,8 @@ of a separator you will encounter in the wild is to separate expressions
 within one line:
 
 ```q
-x:1; y:2; z:3       /one line, three expressions
-z:1;y:2;x:3         /denser version of the above
+x:1; y:2; z:3   /one line, three expressions
+z:1;y:2;x:3     /denser version of the above
 ```
 
 <a name="style-ident"></a>
