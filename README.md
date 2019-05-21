@@ -15,7 +15,7 @@
 **[numbers](#numbers)**
 
 * vector math → [v≠a](#vectors-vs-atoms) | [v+v](#v-plus-v) | [v+a](#v-plus-a) | [v x](#v-indexing)  | [shp](#v-shp)
-* [type system](#two-types-of-types) → [\`i\`f](#typ-num) | [\`c\`n](#typ-char) | [\`d\`t](#typ-time) | [\`1\`2](#typ-lambda) | [Ø](#typ-nul) | [mix](#typ-mix) | [cst](#typ-cast)
+* [type system](#two-types-of-types) → [\`i\`f](#typ-num) | [Øø](#typ-nul) | [\`c\`n](#typ-char) | [\`d\`t](#typ-time) | [\`1\`2](#typ-lambda) | [mix](#typ-mix) | [cst](#typ-cast)
 * order of eval → [rtl](#right-to-left-and-back-again) | [(1)2](#rtl-precedence)
 * verb+adverb → [nsl](#no-stinking-loops)
 
@@ -702,6 +702,27 @@ by `monadic`, it is a good time to start over.
 1f
 ```
 
+<a name="typ-nul"></a>
+**Null** value in k is typed, integer null is `Ø` and float null is
+`ø`. Working with nulls can be very tricky, and it is important to know 
+the distinction. **Infinity** is `∞` and `-∞`, and is always a float atom:
+
+```q
+ n:ø          /float null is type float
+ @n
+`f
+
+ N:Ø          /int null is type integer
+ @N
+`i
+
+ n=N          /equal, but not the same!
+1
+
+ @∞           /infinity is a float atom
+`f
+```
+
 <a name="typ-char"></a>
 Like in C, there is no dedicated type for strings in k. Strings are just 
 **char vectors**:
@@ -772,27 +793,6 @@ its own type, which is does, and more than one:
  a:{x},{x+x},{x*x}      /a vector of lambdas, sure, why not
  a[2]16                 /calls 3rd lambda, same as a[2][16]
 256
-```
-
-<a name="typ-nul"></a>
-**Null** value in k is typed, integer null is `Ø` and float null is
-`ø`. Working with nulls can be very tricky, so it is important to know 
-the distinction. **Infinity** is `∞` and `-∞`, and is always a float atom:
-
-```q
- n:ø          /float null is type float
- @n
-`f
-
- N:Ø          /int null is type integer
- @N
-`i
-
- n=N          /equal, but not the same!
-1
-
- @∞           /infinity is a float atom
-`f
 ```
 
 <a name="typ-mix"></a>
