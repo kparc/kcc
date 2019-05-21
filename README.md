@@ -1446,7 +1446,7 @@ System.out.printf("%s",Arrays.toString(x));}}
    109K May 17 13:54 k.tgz
 ```
 
-There is nothing to be said, and there is no practice in this chapter.
+There is little to be said, and there is no practice in this chapter.
 
 -------------------
 
