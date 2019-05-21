@@ -1,6 +1,6 @@
 # kcc:+/∞
 
-**plus over infinity**: a crash course in k language
+**plus over infinity**, a crash course in k language
 
 **[genesis](#genesis)**
 
