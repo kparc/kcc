@@ -15,7 +15,7 @@
 **[numbers](#numbers)**
 
 * vector math → [v≠a](#vectors-vs-atoms) | [v+v](#v-plus-v) | [v+a](#v-plus-a) | [v x](#v-indexing)  | [shp](#v-shp)
-* [type system](#two-types-of-types) → [\`i\`f](#typ-num) | [\`c\`n](#typ-char) | [\`d\`t](#typ-time) | [\`1\`2](#typ-lambda) | [mix](#typ-mix) | [cst](#typ-cast) | [nul](#typ-nul)
+* [type system](#two-types-of-types) → [\`i\`f](#typ-num) | [\`c\`n](#typ-char) | [\`d\`t](#typ-time) | [\`1\`2](#typ-lambda) | [Øø∞](#typ-nul) | [mix](#typ-mix) | [cst](#typ-cast)
 * order of eval → [rtl](#right-to-left-and-back-again) | [(1)2](#rtl-precedence)
 * verb+adverb → [nsl](#no-stinking-loops)
 
@@ -774,6 +774,27 @@ its own type, which is does, and more than one:
 256
 ```
 
+<a name="typ-nul"></a>
+**Null** value in k is typed, integer null is `Ø` and float null is
+`ø`. Working with nulls can be very tricky, so it is important to know 
+the distinction. **Infinity** is `∞` and `-∞`, and is always a float atom:
+
+```q
+ n:ø          /float null is type float
+ @n
+`f
+
+ N:Ø          /int null is type integer
+ @N
+`i
+
+ n=N          /equal, but not the same!
+1
+
+ @∞           /infinity is a float atom
+`f
+```
+
 <a name="typ-mix"></a>
 Of special mention is the **composite vector** type, or you could also say 
 **mix vector**. Such vectors are either a mixture of atoms of disparate types, 
@@ -792,6 +813,7 @@ or contain something more complex than atoms, e.g. other vectors.
  @x
 ` 
 ```
+
 
 <a name="typ-cast"></a>
 **Type casting**, both explicit and implicit, is demonstrated by the following
@@ -850,28 +872,6 @@ type error
 
  @@10                  /type name of a type name of 10
 `n
-```
-
-<a name="typ-nul"></a>
-**Null** value in k is typed, `Ø` is integer null and `ø` is float null. 
-Working with nulls can get very tricky, so it is important to know the 
-distinction:
-
-```q
- n:0%0        /float null, the easy way
- n
-ø
- @n
-`f
-
- N:`i$0%0     /int null from float null
- N
-Ø
- @N
-`i
-
- n=N          /equal, but not the same!
-1
 ```
 
 There is a lot more to be said about the type system, but the expression 
