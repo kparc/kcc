@@ -247,14 +247,15 @@ commands, especially the latter.
  x=x+1          /= is equal, and of course it isn't
 0
 
- +/∞            /we knew you would want to try that
+ kcc:+/∞        /we knew you would want to try that
+ kcc
 ∞               /and guess what, it happens to be ∞
 ```
 
 ---------------------
 
 Unfortunately, we are not equipped to discuss much of that yet, but the lesson 
-wasn't fruitless, and `+/∞` actually makes a lot of sense, the meaning is very 
+wasn't fruitless, and `+/∞` actually makes a lot of sense, its meaning is very 
 simple and only few pages away.
 
 ### remarks on style
@@ -324,7 +325,7 @@ entire program fits in your visual buffer, "cryptic" identifiers are no longer
 a problem because their annotated declarations are always right in front of you:
 
 ```q
-kei:42         /kenneth eugene iverson
+kei:42   /kenneth eugene iverson
 ```
 
 <a name="style-space"></a>
@@ -664,10 +665,10 @@ by `monadic`, it is a good time to start over.
 `I
 
  v:0 1 .5 2
- @v          /presence of 0.5 promotes vector to float
+ @v          /0.5 promotes vector to float
 `F
 
- v 1         /2nd element, trailing f is short for 1.0
+ v 1         /2nd item, f is short for 1.0
 1f
 ```
 
@@ -854,7 +855,7 @@ will see how it works in practice, and once you put it to practice yourself,
 you will see that this way of functional composition is beautiful, elegant 
 and intuituve.
 
-**k expressions are read, written and evaluated right to left**
+**k expressions are read, written and evaluated right to left.**
 
 Just to be clear, when we say "expressions" we don't mean "programs", and this 
 is a very important distinction. Below is a diagram of a small **k program** 
@@ -870,11 +871,11 @@ clarity. Further down is the order of evaluation of the entire program:
 /   <       <       <
 ```
 
- **k programs are read, written and evaluated left to right**
+ **k programs are read, written and evaluated left to right.**
 
 <a name="rtl-precedence"></a>
-Now that we know which way the rivers flow in k land, we are ready to discuss 
-a related, no less important subject of precedence.
+**Precedence** is another important subject which has to do with the way 
+rivers flow in k land.
 
 We all take it for granted that multiplication and division bind stronger than 
 addition and substraction and should be calculated first, and it feels almost 
@@ -882,7 +883,7 @@ natural that a computer language must have complex operator precedence hierarchy
 to do anything useful, and k disagrees with that:
 
 **There is no operator precedence in k expressions unless explicitly 
-overridden by round brackets**
+overridden by round brackets.**
 
 That is, by default **all operators** in a k expression are treated equally and 
 evaluated strictly from **right to left**, and that includes **arithmetic** 
@@ -1084,11 +1085,11 @@ an input vector
 
 
 ```q
- 2+':4 8 16          /seeded eachprior gives (2+4),(4+8),(8+16)
-6 12 24              /sum of first item and seed, then sum of each item and the item prior to it
+ 2+':4 8 16    /seeded eachprior gives (2+4),(4+8),(8+16)
+6 12 24        /sum of first item and seed, then sum of each item and the item prior to it
 
- (+':)4 8 16         /seedless eachprior gives (4),(4+8),(8+16)
-4 12 24              /first item stays as is, then sum of each item and the item prior to it
+ (+':)4 8 16   /seedless eachprior gives (4),(4+8),(8+16)
+4 12 24        /first item stays as is, then sum of each item and the item prior to it
 ```
 ----------------
 
@@ -1109,16 +1110,16 @@ We have seen:
 
 **Practice:**
 
-Okay, we are back to your doubts about adverbs. Consider this example of two 
+Back to your doubts about adverbs. Consider an example of two 
 adverbs working together:
 
 ```q
- x:!9                          /til 9
- x+:1                          /add 1 to each of x, also x:x+1
+ x:!9                       /til 9
+ x+:1                       /add 1 to each of x, also x:x+1
  x
 1 2 3 4 5 6 7 8 9
 
- x*\:/:x                       /"x times eachleft eachright x"
+ x*\:/:x                    /"x times eachleft eachright x"
 1 2  3  4  5  6  7  8  9    
 2 4  6  8  10 12 14 16 18
 3 6  9  12 15 18 21 24 27
@@ -1144,8 +1145,7 @@ where things will get a lot less innocent, and fast.
 
 -------------------
 
-Well done. There is a bonus waiting for you, you finally get to know the 
-meaning of monadic `+`:
+To give you a sense of achievement, here's the meaning of monadic `+`:
 
 ```q
  mat:(1 2 3;4 5 6;7 8 9)       /shall there be mat
@@ -1377,7 +1377,7 @@ arithmetic, and then take everything to the power of 6 adverbs.
 
 -------------------
 
-**Checkpoint exercise:**
+**Practice:**
 
 1. take another good look at the code of `qs` function
 2. retrace the steps of the analysis we did together
