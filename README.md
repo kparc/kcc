@@ -907,19 +907,22 @@ possible, so lets do exactly that:
 4 32
 ```
 
-And here comes an astonishing truth. Once we drop the brackets, it suddenly 
-becomes absolutely natural to read this expression *from right to left*. Take 
-your time to contemplate and process this statement. In very little time you 
-will see how it works in practice, and once you put it to practice yourself, 
-you will see that this way of functional composition is beautiful, elegant 
-and intuituve.
+And here is comes: once we drop the brackets, it suddenly becomes absolutely 
+natural to read this expression *from right to left*. Take your time to 
+contemplate and absorb this fact. In very little time you will see how it 
+works in practice, and once you put it to practice yourself, you will agree 
+that this way of functional composition is beautiful, elegant and intuituve.
 
 **k expressions are read, written and evaluated right to left.**
 
 Just to be clear, when we say "expressions" we don't mean "programs", and this 
-is a very important distinction. Below is a diagram of a small **k program** 
-that consists of three identical expressions `f d i` with parens added for 
-clarity. Further down is the order of evaluation of the entire program:
+is a very important distinction:
+
+ **k programs are read, written and evaluated left to right.**
+
+Below is a diagram of a small **k program** that consists of three identical 
+expressions `f d i` with parens added for clarity. Further down is the order 
+of evaluation of the entire program:
 
 ```q
 /   L       T       R
@@ -929,8 +932,6 @@ clarity. Further down is the order of evaluation of the entire program:
 /(3 2 1);(6 5 4);(9 8 7)
 /   <       <       <
 ```
-
- **k programs are read, written and evaluated left to right.**
 
 <a name="rtl-precedence"></a>
 -------------------------
