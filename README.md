@@ -1426,8 +1426,6 @@ public final class qs{public void s(int[] x){}}
 qs:{$[2>#?x;x;,/qs'x@=x>rand x]}
 ```
 
--------------------
-
 And now compare the source code of these two:
 
 ```java
@@ -1449,7 +1447,7 @@ And now the size of their runtimes:
    109K May 17 13:54 k.tgz
 ```
 
-There is little to be said, and there will be no practice in this chapter.
+There is nothing to be said, and there will be no practice in this chapter.
 
 -------------------
 
