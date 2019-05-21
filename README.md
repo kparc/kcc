@@ -933,13 +933,15 @@ clarity. Further down is the order of evaluation of the entire program:
  **k programs are read, written and evaluated left to right.**
 
 <a name="rtl-precedence"></a>
+-------------------------
+
 **Precedence** is another important subject which has to do with the way 
 rivers flow in k land.
 
 We all take it for granted that multiplication and division bind stronger than 
 addition and substraction and should be calculated first, and it feels almost 
-natural that a computer language must have complex operator precedence hierarchy
-to do anything useful, and k disagrees with that:
+natural that a computer language must have complex precedence hierarchy to do 
+anything useful, and k disagrees with that:
 
 **There is no operator precedence in k expressions unless explicitly 
 overridden by round brackets.**
@@ -985,7 +987,7 @@ Finally, we can revisit the question raised in the type system discussion:
 `n        /..."get 10, apply monadic @, get `i, apply monadic @, get `n"
 ```
 
-This is a convincing proof of our earlier conjecture that `type name` of 
+This is a convincing proof of our earlier assumption that `type name` of 
 a `type name` in k is `name`.∎
 
 ----------------
