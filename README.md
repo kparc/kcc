@@ -976,25 +976,21 @@ Too easy, but we'll make up for it.
 ### no stinking loops
 
 This part might be easier to digest than the previous, especially if you are 
-familiar with functional programming. The title, burrowed without permission 
-from (a legendary resource on k)[http://nsl.com], says it all - no matter how 
-you try, you will not find a k construct that resembles an explicit `for` loop. 
-It is simply absent, and not just because it is verbose and causes untold 
-damages from the same trivial errors people keep on making coding `for` loops. 
-Technically speaking, `while` construct does exist in k, but this fact is 
-better be ignored just to avoid temptation.
+familiar with functional programming. The title, which we borrowed without 
+permission from [a legendary k resource](http://nsl.com), says it all - no 
+matter how you try, you will not find a k construct that resembles an 
+explicit `for` loop. It is simply absent, and not just to avoid untold 
+damages from trivial errors people keep making in their `for` loops. 
+Although there is a `while` construct in k, it is almost never used in 
+practice.
 
-The main reason explicit loops are missing from k is because they are 
-*unnecessary*. Of course k has loops, but they are *implicit* and hardly ever
-referred to by that name. Also, it comes without saying that k supports 
-**recursion**, which is a no less elegant way to avoid loops in many situations.
-
-An idea that displaces thinking in explicit loops is a simple and strong 
+The main reason explicit loops are deprecated in k is because they are 
+usually unnecessary. The idea that displaces them is a simple and strong 
 abstraction known as *adverbs*. Before we see them in action, it helps to 
 understand why they are called that way:
 
 An **adverb** if a **modifier** that takes some **verb** (which is a short 
-way of saying "a user-defined function or a native operator"), and makes that 
+way of saying "a user-defined function or native operator"), and makes that 
 verb's action applicable to an **input vector** in some desirable way to 
 produce an **output**, which can be a scalar value or another vector, 
 depending on which adverb is used.
