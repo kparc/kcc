@@ -1036,7 +1036,7 @@ which is known as `fold` or `reduce` among functional folks.
 And since `over` is just `v/x`, this is how `sum` function looks like in k:
 
 ```q
- s:{+/x}      /s is 'sum over x'
+ s:{+/x}      /s is 'plus over x'
  s 1 2 3 4 5
 15 
 ```
@@ -1070,11 +1070,14 @@ adverb **each** is `f'x`
 where `f` is a `monadic` verb and `x` is an input vector
 
 ```q
- a:0 1 2 3 4    /some data
- sq:{x*x}       /some monadic function
+ d:42,"a",`kei   /some composite vector
+ fn:{@x}         /some monadic function
+ fn'd            /apply fn to each of d
+`i`c`n           /the type of each item
 
- sq'a           /apply f to each element of x
-0 1 4 9 16      /each of a, squared
+ f:{1%x},{x*x}   /reciprocal and square 
+ {x 25}'f        /call each of f for 25 
+0.04 5
 ```
 ----------------
 adverb **over** is `f/x`
@@ -1089,7 +1092,7 @@ where `f` is a `dyadic` verb and `x` is an input vector
  +/a            /puts a + between items: 0+1+2+3+4
 10              /and returns the total: a sum of a
 
- +\a            /scan returns intermediate results
+ +\a            /scan includes intermediate results
 0 1 3 6 10      /running sum of a
 ```
 ----------------
