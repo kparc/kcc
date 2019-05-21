@@ -821,10 +821,11 @@ the end of next chapter.
  "012"+"345"           /sum ascii codes of chars, result stays `C
 "ceg"
 
- 1+`kei                /`n is immutable, no math for names, sorry
- 
+ 1+`kei                /no math for names, this type is immutable 
   ^
 type error
+
+
 
  a:1 2 3               /define a int vector
  a[0]:1f               /replace its first element with a float
@@ -935,16 +936,18 @@ expressions, annotated with their order of evaluation:
 5
 ```
 
-It is much easier to get used to lack of precedence than you may think, 
-and once you do, you will generally want to avoid using parens unless you 
-absolutely have to. The last example from above shows the basic strategy of 
-ditching them: it is usually possible to rearrange the expressions so that 
-the order of evaluation becomes linear. Although precedence override is often 
-inevitable and can be beneficial, it can also have an adverse effect on 
-readability, because it breaks the natural flow of code comprehension. That 
-is, once you learn to read k expressions right to left, you want to go fast 
-and uninterrupted, but precedence override gets in your way, so when you 
-write code, think of the reader and minimize the use of round brackets.
+It is much easier to get used to lack of precedence than you appears at
+first, and once you do, you will generally want to avoid using parens 
+unless you absolutely have to. The last example from above shows the basic 
+strategy of ditching them: it is usually possible to rearrange the 
+expressions so that the order of evaluation becomes linear.
+
+Although precedence override is often inevitable and can be beneficial, 
+it can have an adverse effect on readability. That is, when you read a 
+k expression right to left, you want to go fast and uninterrupted, but 
+precedence override gets in your way. So when you are writing an 
+expression yourself, think of the reader and try to minimize the 
+use of round brackets.
 
 ----------------
 
