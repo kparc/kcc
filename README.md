@@ -1028,7 +1028,7 @@ which is known as `fold` or `reduce` among functional folks.
 And since `over` is just `v/x`, this is how `sum` function looks like in k:
 
 ```q
- s:{+/x} 
+ s:{+/x}      /s is 'sum over x'
  s 1 2 3 4 5
 15 
 ```
