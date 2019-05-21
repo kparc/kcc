@@ -594,34 +594,61 @@ have **arbitrary shape**:
 1 3 3 1 
 ```
 
-Vector arithmetic is **penetrating**, which means that vector operators 
-*apply at depth* for as long as operands have compatible shape:
+Vector arithmetic is **penetrating**, which means that vector 
+operators *apply at depth* for as long as operands have 
+compatible shape. To give you some sense of achievement, we 
+introduce the meaning of monadic `+`:
 
 ```q
- x:(1 2 3;4 5 6;7 8 9);x     /square matrix 3*3
+ mat:(1 2 3;4 5 6;7 8 9)    /shall there be mat:
+ mat                        /a square matrix 3*3
 1 2 3
 4 5 6
-7 8 9
+7 8 9 
 
- y:(1 4 7;2 5 8;3 6 9);y     /y is transposed x 
+ tam:+mat                   /monadic + is 'flip'
+ tam                        /y is a transposed x
 1 4 7
 2 5 8
 3 6 9
 
- x=y
+ mat=tam
 1 0 0
 0 1 0
 0 0 1
 
- x>y
+ mat>tam
 0 0 0
 1 0 0
 1 1 0 
 
- x+42
+ mat+42
 43 44 45
 46 47 48
 49 50 51
+```
+
+-----------------------
+
+**Practice:**
+
+As you would expect, `+x flip` easily transposes rectangular matrices, too.
+Lets pass something less obvious to it and try to follow the  logic:
+
+```q
+ mat:(1 2 3 4;6 7 8 9)     /a rectangular matrix
+ +mat                      /flip it, no big deal
+1 6
+2 7
+3 8
+4 9
+
+ t:(1;1 1;1 2 1;1 3 3 1)   /t is triangle vector
+ +t                        /flip it, what gives?
+1 1 1 1
+1 1 2 3
+1 Ø 1 3
+1 Ø Ø 1
 ```
 
 ### two types of types
@@ -1157,24 +1184,6 @@ Bonus question:
 k interpreter is your friend. Take your time, make sure you got all of it 
 before advancing to the next chapter, where things will get a lot less 
 innocent, and fast.
-
--------------------
-
-To give you some sense of achievement, here's the meaning of monadic `+`:
-
-```q
- mat:(1 2 3;4 5 6;7 8 9)       /shall there be mat
-
- mat                           /print matrix as is
-1 2 3
-4 5 6
-7 8 9 
-
- +mat                          /flip aka transpose
-1 4 7
-2 5 8
-3 6 9
-```
 
 ## proverbs
 
