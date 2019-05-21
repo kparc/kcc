@@ -869,7 +869,7 @@ type error
 
 There is a lot more to be said about the type system, but the expression 
 `@@42` above (which evaluates to some wordplay: "type name of a type name
-is `name`") urges us to to the next section which is all about how to
+is `name`") urges us to the next section which is all about how to
 make sense of this expression.
 
 ### right to left and back again
