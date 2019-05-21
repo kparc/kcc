@@ -977,16 +977,15 @@ Too easy, but we'll make up for it.
 
 This part might be easier to digest than the previous, especially if you are 
 familiar with functional programming. The title, which we borrowed without 
-permission from [a legendary k resource](http://nsl.com), says it all - no 
-matter how you try, you will not find a k construct that resembles an 
-explicit `for` loop. It is simply absent, and not just to avoid untold 
-damages from trivial errors people keep making in their `for` loops. 
-Although there is a `while` construct in k, it is almost never used in 
-practice.
+permission from [the legendary k resource](http://nsl.com), says it all - you 
+will not find a k construct that resembles an explicit `for` loop, and 
+although there is a `while` construct in k, it is almost never used in 
+practice. And this is not just to avoid untold damages from trivial errors 
+people keep making in their loop definitions.
 
-The main reason explicit loops are deprecated in k is because they are 
-usually unnecessary. The idea that displaces them is a simple and strong 
-abstraction known as *adverbs*. Before we see them in action, it helps to 
+The main reason explicit loops are banned from k is because they are usually 
+unnecessary. The idea that displaces them is a simple and strong 
+abstraction called *adverbs*, and before we see them in action, it helps to 
 understand why they are called that way:
 
 An **adverb** if a **modifier** that takes some **verb** (which is a short 
