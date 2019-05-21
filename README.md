@@ -977,15 +977,14 @@ use of round brackets.
 
 ----------------
 
-Finally, we can revisit the question raised in the type system discussion:
+Now we can revisit the last expression from the previous chapter:
 
 ```q
- @@10     /"type name of a type name of 10" is actually, right to left...
-`n        /..."get 10, apply monadic @, get `i, apply monadic @, get `n"
+ @@10     /"type name of a type name of 10" actually reads backwards:
+`n        /"get 10, apply monadic @, get `i, apply monadic @, get `n"
 ```
 
-This is a convincing proof of our earlier assumption that `type name` of 
-a `type name` in k is `name`.∎
+A convincing proof that type name of a type name is indeed `name`.∎
 
 ----------------
 
