@@ -22,7 +22,7 @@ plus over infinity, a crash course in k language
 **[proverbs](#proverbs)**
 
 * reading code → [how to solve it](#how-to-solve-it)
-* comparisons → [apples and oranges](#apples-and-oranges)
+* relativity → [apples and oranges](#apples-and-oranges)
 
 ---------------------
 
@@ -1410,10 +1410,10 @@ will agree that reading k programs is easy and fun.
 
 -------------------
 
-## apples and oranges
+### apples and oranges
 
-Everything can be represented and understood in comparison. For a quick 
-intermission, compare the functionality of these two programs:
+Many things can only be understood in comparison. For a quick intermission, 
+compare the functionality of these two programs:
 
 ```java
 package com.less.with.more.doing.sort;
@@ -1426,8 +1426,8 @@ qs:{$[2>#?x;x;,/qs'x@=x>rand x]}
 
 -------------------
 
-And now compare the source code of these two, and then the size 
-of their runtimes:
+And now compare the source code of these two, and then the size of their 
+runtimes:
 
 ```java
 import java.util.Arrays;  
