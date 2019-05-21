@@ -36,7 +36,7 @@ be writing code in a language called k, but it helps to talk about it first.
 respond by questioning things that you consider common sense, but soon it will 
 become a constructive conversation, and here is how. The first thing newcomers 
 frown upon is why the assignment operator is `:` instead of `=`. But before you 
-close the tab, try a simple thought experiment. Consider the following code:
+close the tab, try a simple thought experiment:
 
 ```java
 x = x + 1
