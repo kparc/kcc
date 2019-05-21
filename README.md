@@ -240,16 +240,16 @@ commands, especially the latter.
 * Type in your first k expressions, and enjoy your first answers:
 
 ```q
- 2+2            /simplest face of k is a calculator
+ 2+2      /simplest face of k is a calculator
 4
 
- x:42           /: is assign so x is now the answer
- x=x+1          /= is equal, and of course it isn't
+ x:42     /: is assign so x is now the answer
+ x=x+1    /= is equal, and of course it isn't
 0
 
- kcc:+/∞        /we knew you would want to try that
+ kcc:+/∞  /we knew you would want to try that
  kcc
-∞               /and guess what, it happens to be ∞
+∞         /and guess what, it happens to be ∞
 ```
 
 ---------------------
