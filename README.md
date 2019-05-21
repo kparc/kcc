@@ -15,7 +15,7 @@
 **[numbers](#numbers)**
 
 * vector math → [v≠a](#vectors-vs-atoms) | [v+v](#v-plus-v) | [v+a](#v-plus-a) | [v x](#v-indexing)  | [shp](#v-shp)
-* [type system](#two-types-of-types) → [\`i\`f](#typ-num) | [\`c\`n](#typ-char) | [\`d\`t](#typ-time) | [\`1\`2](#typ-lambda) | [mix](#typ-mix) | [cst](#typ-cast)
+* [type system](#two-types-of-types) → [\`i\`f](#typ-num) | [\`c\`n](#typ-char) | [\`d\`t](#typ-time) | [\`1\`2](#typ-lambda) | [mix](#typ-mix) | [cst](#typ-cast) | [nul](#typ-nul)
 * order of eval → [rtl](#right-to-left-and-back-again) | [(1)2](#rtl-precedence)
 * verb+adverb → [nsl](#no-stinking-loops)
 
@@ -794,7 +794,7 @@ or contain something more complex than atoms, e.g. other vectors.
 ```
 
 <a name="typ-cast"></a>
-**Type casts**, both explicit and implicit, are demonstrated by the following
+**Type casting**, both explicit and implicit, is demonstrated by the following
 examples which also give a general feel of how type coersion behaves. The `cast`
 operator in k is a dyadic `t$x`, where `t` is a type name and `x` is a cast 
 subject.
@@ -852,9 +852,31 @@ type error
 `n
 ```
 
-There is a lot more to be said about the type system, but this last expression 
-above urges us to proceed to the next section, which is all about giving a 
-rational explantation how `@@10` actually works.
+<a name="typ-nul"></a>
+**Null** value in k is typed, `Ø` is integer null and `ø` is float null. 
+Working with nulls can get very tricky, so it is important to know the 
+distinction:
+
+```q
+ n:0%0        /float null, the easy way
+ n
+ø
+ @n
+`f
+
+ N:`i$0%0     /int null from float null
+ N
+Ø
+ @N
+`i
+
+ n=N          /equal, but not the same!
+1
+```
+
+There is a lot more to be said about the type system, but the expression 
+`@@10` above urges us to proceed to the next section, which is all about 
+giving a rational explantation how it actually works.
 
 ### right to left and back again
 
