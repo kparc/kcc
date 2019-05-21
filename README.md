@@ -1102,7 +1102,7 @@ where `f` is a `monadic` verb and `x` is an input vector
 
  f:{1%x},{x*x}   /reciprocal and square 
  {x 25}'f        /call each of f for 25 
-0.04 5
+0.04 625
 ```
 ----------------
 adverb **over** is `f/x`
