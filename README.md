@@ -66,9 +66,9 @@ it will be fast and violent.
   of readability.
 * The course is driven entirely by densely annotated code, comments contain 
   essential material.
-* New syntax is often introduced inline, some is assumed self-explanatory, 
-  some relies on your intuition.
-* The narrative is linear, each chapter builds on all previous.
+* New syntax is often introduced inline, some is self-explanatory, some 
+  relies on your intuition.
+* The narrative is linear, all chapters build previous.
 * Skipping exercise will halt your progress.
 
 This might feel a bit intense, but we hope the course is still lightweight enough
@@ -90,22 +90,22 @@ of data into large amounts of money.
 That is, k enjoys much success in the world of finance, where this kind of 
 problems existed long before the term **big data** was coined. Many people 
 embraced the k way and made successful careers by building solutions using k, 
-and they appreciate their tool as much as they appreciate the man, and we 
-believe they have their reasons.
+and they appreciate their tool as much as they appreciate the man behind it,
+and we believe they have their reasons.
 
 ### why
 
 There is a good chance that you have heard or read about k language. A lot of 
 people know the story. What is much less likely is that you have ever met a 
 professional k programmer. This happens not just because k programmers are 
-rare — there are separate reasons for that, mostly because k is never fishing 
-for cheap publicity. This is how we all heard about a language called k, but 
-what we hear more often is how much it sucks to be a Java programmer.
+rare, but also because k is not fishing for cheap publicity. This is how we 
+all heard about a language called k, but what we hear more often is how much 
+it sucks to be a Java programmer.
 
-Jokes aside, implementations of similar systems in languages like C++ or Java 
-usually involve thousands of lines of code written by large teams, built on top 
-of complex library stacks and even more complex infrastructure. Such projects
-are expensive and inflexible, often go over budget and miss deadlines.
+All jokes aside, implementations of similar systems in languages like C++ or 
+Java usually involve thousands of lines of code written by large teams, built 
+on top of complex library stacks and even more complex infrastructure. Such 
+projects are often expensive and inflexible, go over budget and miss deadlines.
 
 In comparison, k solutions are typically a few factors of magnitude less code,
 implemented by small and agile teams, rarely require external dependencies, and 
