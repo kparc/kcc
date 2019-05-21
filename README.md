@@ -633,7 +633,8 @@ introduce the meaning of monadic `+`:
 **Practice:**
 
 As you would expect, `+x flip` easily transposes rectangular matrices, too.
-Lets pass something less obvious to it and try to follow the  logic:
+Try to pass something less obvious to it, and see if you can follow 
+its logic:
 
 ```q
  mat:(1 2 3 4;6 7 8 9)     /a rectangular matrix
