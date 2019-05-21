@@ -598,8 +598,8 @@ have **arbitrary shape**:
 
 Vector arithmetic is **penetrating**, which means that vector 
 operators *apply at depth* for as long as operands have 
-compatible shape. To give you some sense of achievement, we 
-introduce the meaning of monadic `+`:
+compatible shape. To better see how this works, we finally
+introduce the `monadic +x`:
 
 ```q
  mat:(1 2 3;4 5 6;7 8 9)    /shall there be mat:
