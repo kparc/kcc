@@ -1157,6 +1157,8 @@ an input vector
 Okay, this doesn't seem like much, adverbs seem to be doing pretty basic stuff.
 But hold that thought for a minute.
 
+----------------
+
 **Recap:**
 
 We have seen:
@@ -1171,7 +1173,7 @@ We have seen:
 
 **Practice:**
 
-Back to your doubts about adverbs. Consider an example of two 
+We are back to your doubts about adverbs. Consider an example of two 
 adverbs working together:
 
 ```q
