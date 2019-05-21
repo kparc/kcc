@@ -500,8 +500,8 @@ k is strictly "pass by value", there are no references or pointers:
 ```
 
 <a name="v-plus-v"></a>
-The most enlightening fact about vectors is that most operations you expect 
-to work for atoms work equally well for vectors, too:
+The first thing you need to know about vectors is that most operations
+you expect to work for atoms work equally well for vectors, too:
 
 ```q
 x:y:0 1 2 3 4    /x and y are twin copies
