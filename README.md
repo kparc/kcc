@@ -1192,10 +1192,10 @@ tackle problems and arrive to solutions. It is a very inspiring read.
 Lets tackle a little problem. We will look at a k function that actually does 
 something very useful and implements a familiar algorithm. The subject of 
 the game is to figure out how it is implementented in k and to identify the 
-algorithm.
+algorithm. It is very useful to dissect all of it on paper, so put your 
+interpreter aside for now.
 
-It is more useful to dissect it on paper. Once we are done, you will be very 
-tempted to try a lot of new things on your own. So here is the code:
+So here is the code:
 
 ```q
 /what is f[] and how it works?
@@ -1203,7 +1203,7 @@ f:{$[2>#?x;x;,/f'x@=x>rand x]}
 ```
 
 Almost nothing looks familiar here, and the whole little monster is just 
-creepy.But once we take it apart, you will find it is actually very simple 
+creepy, but once we take it apart, you will find it is actually very simple 
 and readable:
 
 ```q
