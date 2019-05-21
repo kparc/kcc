@@ -22,6 +22,7 @@ plus over infinity, a crash course in k language
 **[proverbs](#proverbs)**
 
 * reading code → [how to solve it](#how-to-solve-it)
+* comparisons → [apples and oranges](#apples and oranges)
 
 ---------------------
 
@@ -1348,50 +1349,7 @@ monadic `^x`:
 But what our DIY sort function demonstrates very well is the principle of 
 **doing more with less**, and that is what k is all about.
 
-The annotated breakdown of `qs` code gives a good impression of what is 
-typically going on inside of k programmer's head, but tells you nothing about 
-how fast it usually happens. A proficient k programmer would read and 
-understand `qs` in well under two minutes. With a bit more practice, you 
-will agree that reading k programs is easy and fun.
-
--------------------
-
-Speaking of fun, compare the functionality of these two programs:
-
-```java
-package com.less.with.more.doing.sort;
-public final class qs{public void s(int[] x){}}
-```
-
-```q
-qs:{$[2>#?x;x;,/qs'x@=x>rand x]}
-```
-
--------------------
-
-And now compare the source code of these two programs, and then the size 
-of their runtimes:
-
-```java
-import java.util.Arrays;  
-public class S{public static void main(String[] a){ 
-int[] x={5,4,3,2,1};Arrays.sort(x);
-System.out.printf("%s",Arrays.toString(x));}} 
-```
-
-```q
- ^5 4 3 2 1
-```
-
-```sh
-   252M May 17 13:59 jdk-8u211-macosx-x64.dmg
-    79M May 17 13:50 jre-8u211-macosx-x64.dmg
-   109K May 17 13:54 k.tgz
-```
-
--------------------
-
-Check out more `quicksort` in the wild in 
+Check out examples of `quicksort` in the wild in 
 [C++](https://gist.github.com/christophewang/ad056af4b3ab0ceebacf), 
 [Python](https://gist.github.com/anirudhjayaraman/897ca0d97a249180a48b50d62c87f239),
 [JavaScript](https://gist.github.com/claudiahdz/39a86084edaaabe7fc17c321c0bb6896) 
@@ -1443,5 +1401,55 @@ but you will be amazed how fast you will get there. However, before
 advancing to the next chapter, make sure that you do.
 
 -------------------
+
+The annotated breakdown of `qs` code gives a good impression of what is 
+typically going on inside of k programmer's head, but tells you nothing about 
+how fast it usually happens. A proficient k programmer would read and 
+understand `qs` in well under two minutes. With a bit more practice, you 
+will agree that reading k programs is easy and fun.
+
+-------------------
+
+## apples and oranges
+
+Everything can be represented and understood in comparison. For a quick 
+intermission, compare the functionality of these two programs:
+
+```java
+package com.less.with.more.doing.sort;
+public final class qs{public void s(int[] x){}}
+```
+
+```q
+qs:{$[2>#?x;x;,/qs'x@=x>rand x]}
+```
+
+-------------------
+
+And now compare the source code of these two, and then the size 
+of their runtimes:
+
+```java
+import java.util.Arrays;  
+public class S{public static void main(String[] a){ 
+int[] x={5,4,3,2,1};Arrays.sort(x);
+System.out.printf("%s",Arrays.toString(x));}} 
+```
+
+```q
+ ^5 4 3 2 1
+```
+
+```sh
+   252M May 17 13:59 jdk-8u211-macosx-x64.dmg
+    79M May 17 13:50 jre-8u211-macosx-x64.dmg
+   109K May 17 13:54 k.tgz
+```
+
+There is nothing to be said, and there is no practice in this chapter.
+
+-------------------
+
+
 
 *\`nyi* ∎
