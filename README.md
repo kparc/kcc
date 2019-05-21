@@ -635,7 +635,7 @@ introduce the `monadic +x`:
 **Practice:**
 
 As you would expect, `+x flip` easily transposes rectangular matrices, too.
-Try to pass something less obvious to it, and see if you can follow 
+But try to pass something less obvious to it, and see if you can follow 
 its logic:
 
 ```q
