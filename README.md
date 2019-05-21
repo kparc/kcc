@@ -1414,7 +1414,7 @@ will agree that reading k programs is easy and fun.
 
 ### apples and oranges
 
-There is no new material in this chapter, so we can proceed to practice.
+There is no new material in this chapter, so we go straight to practice.
 
 **Practice:**
 
