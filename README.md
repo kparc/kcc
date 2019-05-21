@@ -478,9 +478,7 @@ and refer to the same thing, but we will stick with `vector` to avoid confusing
 you, because vectors are much more general than classic *arrays* and have 
 nothing to do with *linked lists*. 
 
-```q
- a:42             /a scalar variable, an atom with a name
- 
+```q 
  x:(0,1,2,3,4)    /one way of declaring an integer vector
  y:0 1 2 3 4      /same effect using more informal syntax
 
@@ -489,6 +487,9 @@ nothing to do with *linked lists*.
 
  y
 0 1 2 3 4
+
+ a:42             /a scalar variable, an atom with a name
+ v:,42            /a vector of length 1, one integer item
 ```
 
 k is strictly "pass by value", there are no references or pointers:
@@ -589,9 +590,9 @@ practical limit on the depth of nesting. In other words, vectors can
 have **arbitrary shape**:
 
 ```q
- y:(1;1 1;1 2 1;1 3 3 1)     /pascal's triangle
+ y:(,1;1 1;1 2 1;1 3 3 1)    /pascal's triangle
  y
-1
+,1
 1 1
 1 2 1
 1 3 3 1 
@@ -636,8 +637,8 @@ introduce the `monadic +x`:
 **Practice:**
 
 First, lets make sure `+x flip` operator transposes rectangular matrices
-instead of only squares, which is of little surprise, and then try to flip 
-something less obvious. See if you can follow its logic:
+instead of only squares, which is of no surprise. Then try to flip 
+something less obvious, apply transformations and inspect each result:
 
 ```q
  mat:(1 2 3 4;6 7 8 9)     /a rectangular matrix
@@ -647,18 +648,10 @@ something less obvious. See if you can follow its logic:
 3 8
 4 9
 
- t:(1;1 1;1 2 1;1 3 3 1)   /t is triangle vector 
- t
-1
-1 1
-1 2 1
-1 3 3 1 
- 
- +t                        /flip it, what gives?
-1 1 1 1
-1 1 2 3
-1 Ø 1 3
-1 Ø Ø 1
+ t:(,1;1 1;1 2 1;1 3 3 1)  /t is triangle vector
+ t:+t                      /flip it, what gives?
+ t:t>0                     /t greater than zero
+ t:(+t)+t                  /t plus t transposed
 ```
 
 -----------------------
