@@ -1414,8 +1414,11 @@ will agree that reading k programs is easy and fun.
 
 ### apples and oranges
 
-Quick intermission. Many things can only be understood in comparison, so
-compare the functionality of these two programs:
+Many things can only be understood in comparison.
+
+**Practice:**
+
+Compare the functionality of these two programs:
 
 ```java
 package com.less.with.more.doing.sort;
@@ -1426,7 +1429,7 @@ public final class qs{public void s(int[] x){}}
 qs:{$[2>#?x;x;,/qs'x@=x>rand x]}
 ```
 
-And now compare the source code of these two:
+Now compare the source code of these two:
 
 ```java
 import java.util.Arrays;  
@@ -1439,7 +1442,7 @@ System.out.printf("%s",Arrays.toString(x));}}
  ^5 4 3 2 1
 ```
 
-And now the size of their runtimes:
+Finally, compare the size of their runtimes:
 
 ```sh
    252M May 17 13:59 jdk-8u211-macosx-x64.dmg
@@ -1447,10 +1450,7 @@ And now the size of their runtimes:
    109K May 17 13:54 k.tgz
 ```
 
-There will be no practice in this short chapter.
-
 -------------------
-
 
 
 *\`nyi* ∎
