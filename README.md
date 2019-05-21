@@ -818,10 +818,10 @@ the end of next chapter.
  `c$1+"HAL9000"        /add 1 to ascii, cast back to `c, surprise:
  "IBM:111"
 
- "012"+"345"           /sum of char vectors adds their ascii codes pairwise, result is still a char vector
+ "012"+"345"           /add ascii codes of chars, result stays `C
 "ceg"
 
- 1+`kei                /no math for names
+ 1+`kei                /name is immutable, no implicit cast to `C
   ^
 type error
 
