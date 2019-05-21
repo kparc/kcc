@@ -75,7 +75,7 @@ This might feel a bit intense, but we hope the course is still lightweight enoug
 to be completed in one session.
 
 This document is **not a k reference**. The majority of subjects are explored at
-depth sufficient to give a general overview, but by no means exhaustive.
+depth sufficient to give a general impression, but by no means exhaustive.
 
 ### who
 
@@ -1142,22 +1142,25 @@ adverbs. And you have everything you need:
 * read right to left
 * there is no precedence
 * no explicit loops either
-* k interpreter is your friend
-
-Take your time, make sure you got it before advancing to the next chapter, 
-where things will get a lot less innocent, and fast.
 
 Bonus question:
 
 ```q
- kcc:+/∞    /how come k sums up infinity this fast?
+ kcc:+/∞     /how come k sums up infinity this fast?
  kcc
 ∞
+
+ +\(1+!3)%0  /the tale of precedence divided by zero
+∞ ∞ ∞
 ```
+
+k interpreter is your friend. Take your time, make sure you got all of it 
+before advancing to the next chapter, where things will get a lot less 
+innocent, and fast.
 
 -------------------
 
-To give you a sense of achievement, here's the meaning of monadic `+`:
+To give you some sense of achievement, here's the meaning of monadic `+`:
 
 ```q
  mat:(1 2 3;4 5 6;7 8 9)       /shall there be mat
