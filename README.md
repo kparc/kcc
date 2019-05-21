@@ -66,17 +66,16 @@ it will be fast and violent.
   of readability.
 * The course is driven entirely by densely annotated code, comments contain 
   essential material.
-* New syntax is often introduced inline, some assumed self-explanatory, some 
-  relies on your intuition.
+* New syntax is often introduced inline, some is assumed self-explanatory, 
+  some relies on your intuition.
 * The narrative is linear, each chapter builds on all previous.
-* Skipping exercises will halt your progress.
+* Skipping exercise will halt your progress.
 
 This might feel a bit intense, but we hope the course is still lightweight enough
 to be completed in one session.
 
-This document is **not a k reference**. The majority of subjects are covered at
-depth sufficient to give a general overview and encourage further research but 
-by no means exhaustive.
+This document is **not a k reference**. The majority of subjects are explored at
+depth sufficient to give a general overview, but by no means exhaustive.
 
 ### who
 
@@ -91,8 +90,8 @@ of data into large amounts of money.
 That is, k enjoys much success in the world of finance, where this kind of 
 problems existed long before the term **big data** was coined. Many people 
 embraced the k way and made successful careers by building solutions using k, 
-and they appreciate their tool as much as they appreciate the man behind it, 
-and we believe they have their reasons.
+and they appreciate their tool as much as they appreciate the man, and we 
+believe they have their reasons.
 
 ### why
 
@@ -106,21 +105,21 @@ what we hear more often is how much it sucks to be a Java programmer.
 Jokes aside, implementations of similar systems in languages like C++ or Java 
 usually involve thousands of lines of code written by large teams, built on top 
 of complex library stacks and even more complex infrastructure. Such projects
-are expensive and inflexible, often go out of budget and miss deadlines.
+are expensive and inflexible, often go over budget and miss deadlines.
 
 In comparison, k solutions are typically a few factors of magnitude less code,
 implemented by small and agile teams, rarely require external dependencies, and 
 ship on time. 
 
-At first it could be hard to understand how this can even be true, but compare 
-the effort of keeping 100 lines of code in sync with rapidly changing 
-requirements and free of bugs, compared to 10,000 lines of code that do the 
-same thing. Against all intuition, it is not 100 times easier, but 10,000 times
-easier, and that is the effect of cyclomatic complexity.
+At first it could be hard to understand how this can be true, imagine the 
+effort of keeping 100 lines of code in sync with rapidly changing requirements 
+and free of bugs, compared to 10,000 lines of code that do the same thing. 
+Against all intuition, it is not 100 times easier, but 10,000 times
+easier, because the effect of cyclomatic complexity is devastating.
 
 ### wha
 
-k is an expressive, simple and powerful computer language.
+k is an simple, expressive and powerful computer language.
 
 The power stems from the fact that k is designed as a *tool of thought*. The 
 vocabulary, syntax and the choice of abstractions offered by the language drive 
