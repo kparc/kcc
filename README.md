@@ -134,8 +134,8 @@ the problem rather than writing and refactoring code or browsing source.
 
 ### how
 
-k interpreter is incredibly compact and efficient runtime environment. The 
-entire system is:
+k runtime environment is an incredibly compact and efficient piece of 
+software. The entire system is:
 
 * a single binary executable
 * without any external dependencies
@@ -143,12 +143,11 @@ entire system is:
 
 And that gives a selection of fundamental algorithms, data structures, 
 techniques and primitives that withstood the test of decades of production use 
-in some of the world's most demanding data processing environments, where 
-inefficiency directly translates into loss of revenue. The inner components 
-of the system are polished to fit together and complement each other to deliver 
-top performance. It is also not uncommon for k newcomers to experience shock 
-when they first see how much can be done with a few precise keystrokes, and
-how fast.
+in some of the world's most demanding data processing environments. The inner 
+components of the system are polished to fit together and complement each 
+other to deliver top performance. It is also not uncommon for k newcomers 
+to experience shock when they first see how much can be done with a few 
+precise keystrokes, and how fast.
 
 All of k programming takes place in **REPL**, an idea that is actually much 
 older than many seem to think. It has been around for at least half a century, 
@@ -157,19 +156,17 @@ machine as a flow of questions and answers. And in k, this conversation is much
 more fluent than in any other modern REPL-driven system you may be familiar 
 with, because the questions are short and the answers are fast. This is the 
 essence of the way of k, an experience that all k programmers consider 
-immensely satisfying. This is why people who write software in k love 
-their jobs.
+immensely satisfying. People who write k for living love their jobs.
 
 ## exodus
 
-Since the only known way to learn how to program is to write programs, you will
-need a live k environment. Fortunately, as all things k, it takes very little 
-effort.
+The only known way to learn how to program is to write programs, so you will
+need a live k environment. As all things k, it takes very little effort.
 
 ### get
 
 We will use a trial version of k, which comes with a reasonable limit of 1 
-gigabyte of workspace per k process. This limit is for your own protection, so 
+gigabyte of workspace per k process. This is for your own protection, so 
 that you don’t accidentally convert too much data into too much money too early, 
 because, as any k programmer will tell you, with great power comes great 
 responsibility.
@@ -177,17 +174,17 @@ responsibility.
 The k interpreter is currently available for `Linux` and `macOS` on `x86_64` 
 architecture.
 
-Without further ado, go to https://anaconda.org and follow the instructions. 
-Anaconda shell integration option is recommended. Once you install Anaconda, 
-install the package called `shakti`, which is nothing else but `k` in disguise:
+Without further ado, install [conda](https://anaconda.org). Shell integration 
+is optional but recommended. Once you have it, install the package called 
+`shakti`, which is nothing else but `k` in disguise:
 
 ```sh
 conda install -c shaktidb shakti
 ```
 
-As all things k, the development of k language itself is happening at 
-terrifying pace. New builds are published up to several times a week, so 
-make sure you always use the latest version:
+As all things k, the development of k itself is happening at terrifying pace. 
+New builds are published up to several times a week, so make sure you always 
+use the latest version:
 
 ```sh
 alias kup="conda update -c shaktidb shakti"
@@ -196,7 +193,8 @@ kup
 
 ### run
 
-Assuming conda's `bin` is in your PATH, Start your very first k session like so:
+Assuming conda's `bin` is in your PATH, Start your very first k session 
+like so:
 
 ```sh
 $ k
@@ -219,7 +217,7 @@ banner. It packs a lot of useful information:
 | 2.0                 | because it is better than 1.0 |
 | prod                | your build is `test` for now  |
 
-If it ever comes to that, always include your banner in your bug reports.
+When it comes to that, always include the banner in your bug reports.
 
 At any time during k session, you can:
 
@@ -229,7 +227,7 @@ At any time during k session, you can:
 
 `\\` quit k session
 
-However, at this point we highly recommend to avoid issuing any of the above 
+At this point we highly recommend to avoid issuing any of the above 
 commands, especially the latter.
 
 ---------------------
@@ -1386,9 +1384,9 @@ arithmetic, and then take everything to the power of 6 adverbs.
 2. retrace the steps of the analysis we did together
 3. in a new k session, try to reproduce `qs` from scratch
 
-It sounds much harder than it really is. It might take more than one attempt, 
-but you will be amazed how fast you will get there. However, before advancing 
-to the next chapter, make sure that you do.
+It sounds harder than it really is. It might take more than one attempt, 
+but you will be amazed how fast you will get there. However, before 
+advancing to the next chapter, make sure that you do.
 
 -------------------
 
