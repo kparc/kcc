@@ -814,7 +814,6 @@ or contain something more complex than atoms, e.g. other vectors.
 ` 
 ```
 
-
 <a name="typ-cast"></a>
 **Type casting**, both explicit and implicit, is demonstrated by the following
 examples which also give a general feel of how type coersion behaves. The `cast`
@@ -876,7 +875,7 @@ type error
 
 There is a lot more to be said about the type system, but the expression 
 `@@10` above urges us to proceed to the next section, which is all about 
-giving a rational explantation how it actually works.
+giving a rational explantation to how it actually works.
 
 ### right to left and back again
 
