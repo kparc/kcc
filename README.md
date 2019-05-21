@@ -1089,11 +1089,11 @@ where `f` is a `dyadic` verb and `x` is an input vector
 ```q
  a:0 1 2 3 4    /some data
 
- +/a            /puts a + between items: 0+1+2+3+4
-10              /and returns the total: a sum of a
+ +/a            /puts a + between items, 0+1+2+3+4
+10              /and returns the final result only 
 
- +\a            /scan includes intermediate results
-0 1 3 6 10      /running sum of a
+ +\a            /scan returns intermediate results
+0 1 3 6 10      /running sum, aka debugger of over
 ```
 ----------------
 
