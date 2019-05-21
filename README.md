@@ -946,12 +946,13 @@ Too easy, but we'll make up for it.
 ### no stinking loops
 
 This part might be easier to digest than the previous, especially if you are 
-familiar with functional programming. The heading says it all - no matter how 
+familiar with functional programming. The title, burrowed without permission 
+from (a legendary resource on k)[http://nsl.com], says it all - no matter how 
 you try, you will not find a k construct that resembles an explicit `for` loop. 
 It is simply absent, and not just because it is verbose and causes untold 
-damages from the same trivial errors people keep on making coding `for` loops.
-Technically speaking, `while` construct does exist in k, but this fact is better
-be ignored just to avoid temptation.
+damages from the same trivial errors people keep on making coding `for` loops. 
+Technically speaking, `while` construct does exist in k, but this fact is 
+better be ignored just to avoid temptation.
 
 The main reason explicit loops are missing from k is because they are 
 *unnecessary*. Of course k has loops, but they are *implicit* and hardly ever
