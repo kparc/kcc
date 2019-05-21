@@ -965,8 +965,8 @@ expressions, annotated with their order of evaluation:
 It is much easier to get used to lack of precedence than you appears at
 first, and once you do, you will generally want to avoid using parens 
 unless you absolutely have to. The last example from above shows the basic 
-strategy of ditching them: it is usually possible to rearrange the 
-expressions so that the order of evaluation becomes linear.
+strategy of ditching them: it is usually possible to rearrange 
+expressions so that the order of evaluation becomes **linear**.
 
 Although precedence override is often inevitable and can be beneficial, 
 it can have an adverse effect on readability. That is, when you read a 
@@ -1064,7 +1064,7 @@ And since `over` is just `v/x`, this is how `sum` function looks like in k:
 ```
 
 It is a good moment to look back at the C version, one last time. Be surprised
-to hear that its `for` loop declaration contains an ancient, but ever so 
+to hear that its `for` loop declaration contains an ancient but ever so 
 popular [bug](https://stackoverflow.com/questions/37538/how-do-i-determine-the-size-of-my-array-in-c),
 which k version does not because spotting bugs in `+/x` is much easier. Besides, 
 even if the C code wasn't broken, it would only work for integers.
