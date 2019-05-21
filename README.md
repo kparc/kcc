@@ -984,7 +984,7 @@ Too easy, but we'll make up for it.
 ### no stinking loops
 
 This part might be easier to digest than the previous, especially if you are 
-familiar with functional programming. The title, which we borrowed without 
+familiar with functional programming. The title, borrowed without 
 permission from [the legendary k resource](http://nsl.com), says it all - you 
 will not find a k construct that resembles an explicit `for` loop, and 
 although there is a `while` construct in k, it is almost never used in 
