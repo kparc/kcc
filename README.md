@@ -233,11 +233,11 @@ commands, especially the latter.
 
 **Practice:**
 
-* Make sure you have `rlwrap` utility installed, and put an alias 
-  `alias k="rlwrap k"` into your rc file. This makes your minimalistic k 
-  development environment a lot more pleasant to use.
+Make sure you have `rlwrap` utility installed, and put an alias 
+`alias k="rlwrap k"` into your rc file. This makes your minimalistic k 
+development environment a lot more pleasant to use.
 
-* Type in your first k expressions, and enjoy your first answers:
+Type in your first k expressions, and enjoy your first answers:
 
 ```q
  2+2      /simplest face of k is a calculator
@@ -247,16 +247,16 @@ commands, especially the latter.
  x=x+1    /= is equal, and of course it isn't
 0
 
- kcc:+/∞  /we knew you would want to try that
- kcc
-∞         /and guess what, it happens to be ∞
+ kcc:+/∞  /of course you had to try that now,
+ kcc      /and what it happens to be is just:
+∞
 ```
 
 ---------------------
 
-Unfortunately, we are not equipped to discuss much of that yet, but the lesson 
-wasn't fruitless, and `+/∞` actually makes a lot of sense, its meaning is very 
-simple and only few pages away.
+Indeed, the title of this document seems to make sense to k intepreter and 
+evaluates to infinity, and very soon you will easily infer its meaning as 
+well.
 
 ### remarks on style
 
