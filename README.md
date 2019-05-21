@@ -863,16 +863,13 @@ type error
  `i$2024-01-01         /so the epoch date itself must be exactly: 
 0 
 
- @10                   /a type name of 10
-`i 
-
- @@10                  /type name of a type name of 10
+ @@42                  /what is type name of a type name of 42?
 `n
 ```
 
 There is a lot more to be said about the type system, but the expression 
-`@@10` above (which reads like wordplay: "type name of a type name is 
-`name`") urges us to to the next section which is all about how to
+`@@42` above (which evaluates to some wordplay: "type name of a type name
+is `name`") urges us to to the next section which is all about how to
 make sense of this expression.
 
 ### right to left and back again
@@ -980,8 +977,8 @@ use of round brackets.
 Now we can revisit the last expression from the previous chapter:
 
 ```q
- @@10     /"type name of a type name of 10" actually reads backwards:
-`n        /"get 10, apply monadic @, get `i, apply monadic @, get `n"
+ @@42     /"type name of a type name of 10" actually reads backwards:
+`n        /"get 42, apply monadic @, get `i, apply monadic @, get `n"
 ```
 
 A convincing proof that type name of a type name is indeed `name`.∎
