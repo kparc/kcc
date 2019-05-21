@@ -1439,8 +1439,9 @@ int[] x={5,4,3,2,1};Arrays.sort(x);
 System.out.printf("%s",Arrays.toString(x));}} 
 ```
 
-```q
- ^5 4 3 2 1
+```bash
+$ echo "^5 4 3 2 1" | k
+1 2 3 4 5
 ```
 
 Finally, compare the size of their runtimes:
