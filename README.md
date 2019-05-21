@@ -181,8 +181,8 @@ is optional but recommended. Once you have it, install the package called
 conda install -c shaktidb shakti
 ```
 
-As all things k, the development of k itself is happening at terrifying pace. 
-New builds are published up to several times a week, so make sure you always 
+As all things k, the development of k itself is happening very fast. New builds 
+are published up to several times a week, so make sure you always 
 use the latest version:
 
 ```sh
