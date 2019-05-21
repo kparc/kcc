@@ -637,8 +637,9 @@ introduce the `monadic +x`:
 **Practice:**
 
 First, lets make sure `+x flip` operator transposes rectangular matrices
-instead of only squares, which is of no surprise. Then try to flip 
-something less obvious, apply transformations and inspect each result:
+instead of just squares, which is of no surprise. Then try to flip 
+something less obvious, apply transformations, inspect each result and
+follow its logic:
 
 ```q
  mat:(1 2 3 4;6 7 8 9)     /a rectangular matrix
