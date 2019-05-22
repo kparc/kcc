@@ -343,9 +343,11 @@ subjective opinion, which is up for you to consider:
 
 * The right balance between two extremes is `asap`, or "adequately spaced and 
   annotated program". While k syntax encourages you to produce very dense code,
-  think of others and don't sacrifice too much readability. Waste of space is a
-  waste of time, but so is unreadable code. Comments are part of the code and 
-  also take space, so boil them down to some reasonable size.
+  think of others and don't sacrifice too much of readability. A waste of space
+  is a waste of time — but so is unreadable code.
+  
+* Comments are part of the code and also take space, so boil them down to some 
+  reasonable size as well.
 
 * With k, it is possible to minimize code scrolling or even avoid it completely.
   When the entire program or component fits in your view, you lose no time on 
@@ -357,8 +359,9 @@ subjective opinion, which is up for you to consider:
   is often the one you wrote yourself, and k syntax is extremely regular and 
   simple.
 
-* Medium is the message, so refer to k code in this document. Please send pull 
-  requests to help us improve, and if you like the style, it is yours to have. 
+* Medium is the message, so we refer to k code in this document. Please send 
+  pull requests to help us improve it, and if you like the style, it is yours 
+  to have. 
 
 <a name="style-bad"></a>
 -------------------
