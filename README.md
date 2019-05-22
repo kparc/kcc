@@ -534,13 +534,13 @@ nothing to do with *linked lists*.
  v:,42            /a vector of length 1, one integer item
 ```
 
-It is safe for us to assume that k is strictly "**pass by value**", i.e. there are no references or pointers passed around, although it is somewhat of an illusion created by the underlying implementation. In reality, k avoids unnecessary copies:
+k is strictly "**pass by value**", i.e. there are no references or pointers are passed around, although it is an illusion created by the underlying implementation. In reality, k avoids unnecessary copies:
 
 ```q
  x:0 1 2 3 4     /everything is passed by value
  y:x             /so this will make a copy of x
  y               /y is a clone, not a reference
-0 1 2 3 4     
+0 1 2 3 4        /(in reality it only pretends)
 
  y:x:0 1 2 3 4   /same effect in one expression
 ```
