@@ -1731,7 +1731,7 @@ We conclude with a list of subjects that you are now ready to explore on your ow
 |vector aggregates                |benchmarking, testing and tracing   |
 |entropy sources, math primitives |disk I/O, persistence and streaming |
 |advanced use of adverbs, threads |IPC and distributed workloads       |
-|native csv, tsv, json and utf    |native TCP and HTTP servers         |
+|native csv, tsv, json and utf    |fault tolerance and monitoring      |
 |integrated cryptography core     |scripting, deployment, OS tuning    |
 |nanosecond time, datetime math   |interop with Python, Julia and C    |
 |k-expressions, `0                |tech support and user community     |
