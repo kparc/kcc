@@ -146,10 +146,10 @@ software. The entire system is:
 And that gives a selection of fundamental algorithms, data structures, 
 techniques and primitives that withstood the test of decades of production use 
 in some of the world's most demanding data processing environments. The inner 
-components of the system are polished to fit together and complement each 
-other to deliver top performance. It is also not uncommon for k newcomers 
-to experience shock when they first see how much can be done with a few 
-precise keystrokes, and how fast.
+components of the system are fit together, complement each other, and 
+deliver performance. It is not uncommon for k newcomers to experience shock 
+when they first see how much can be done with a few precise keystrokes, and 
+how fast.
 
 All of k programming takes place in **REPL**, an idea that is actually much 
 older than many seem to think. It has been around for at least half a century, 
