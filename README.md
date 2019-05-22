@@ -1722,7 +1722,7 @@ We conclude with a list of subjects that you are now ready to explore on your ow
 |math primitives and vector aggrs |advanced disk I/O and persistence|
 |advanced use cases for adverbs   |interprocess communication       |
 |tables and k-sql language        |native TCP and HTTP servers      |
-|k cryptographic primitives       |scripting and OS interaction     |
+|integrated cryptography          |scripting and OS interaction     |
 |advanced datetime arithmetic     |Python, Julia and C interop      |
 
 ---------------------
