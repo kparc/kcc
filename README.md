@@ -642,9 +642,10 @@ introduce the `monadic +x`:
 **Practice:**
 
 First, lets make sure `+x flip` operator transposes rectangular matrices
-instead of just squares, which is of no surprise. Thentry to flip 
-something less obvious, and after that you have three extra transformations.
-Inspect all intermediate results and make sure you can follow their logic:
+just as well as squares, which would be of little surprise. Then try to flip 
+something less obvious, and after that you have three more transformations to
+apply. Inspect all intermediate results and make sure you can follow their 
+logic:
 
 ```q
  mat:(1 2 3 4;6 7 8 9)     /a rectangular matrix
@@ -662,6 +663,8 @@ Inspect all intermediate results and make sure you can follow their logic:
 ```
 
 -----------------------
+
+Yes, no rocket science, it is all pretty basic — so, push on.
 
 ### two types of types
 
