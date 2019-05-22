@@ -768,6 +768,9 @@ We could say that in case of names k actually passes *references* instead of *va
 
  @`"ken iverson"     /spaces in names, why not?
 `n
+
+ $a                  /$ converts names to chars
+"kei" 
 ```
 
 <a name="typ-time"></a>
@@ -1450,6 +1453,7 @@ Previously we have seen:
 
 * monadic `!x til (first x integers)`
 * monadic `+x flip (transpose)`
+* monadic `$x string`
 * monadic `@x type`
 * monadic `^x sort`
 * dyadic `t@x cast`
@@ -1465,7 +1469,6 @@ And `qs` code brought a few more:
 * monadic `=x group`
 * monadic `,/x raze`
 * dyadic `x@y index`
-
 
 Although this is still a small part of k operator arsenal, if you can do 
 `quicksort` with this much, you can do a lot more. And then add vector 
@@ -1608,6 +1611,7 @@ We didn't tell you do this, but the complete program can also be written as a si
 
 We have seen some new stuff:
 
+* shell `\cmd`
 * dyadic `x|y max`
 * dyadic `x_y drop`
 * monadic `|x reverse`
@@ -1638,7 +1642,7 @@ There is no new material in this small chapter, so we can go straight to practic
 
 **Practice:**
 
-Many things in life can only be understood in comparison. Compare the 
+Many things in life can only be understood in comparison. Compare 
 functionality of these two programs:
 
 ```java
@@ -1676,11 +1680,50 @@ Finally, compare the size of their runtimes:
 
 ### gladly beyound
 
-It looks like there is no other chapter after the previous, 
-at least not as of yet.
+We have covered a lot of ground, and it is a good time to look back. Below is a complete map of k operators, and those marked with bullets you have already seen and used at least once:
 
-Thank you for making this far, and may your future endeavors 
-meet all of your current expectations.
+```
+   x+y         +x
+-------------------------   
+:  ● assign
++  ● add        ● flip
+-  ● subtract   ● negate
+*  ● multiply   ● first
+%  ● divideby   ◦ inverse
+&  ◦ min|and    ◦ where
+|  ● max|or     ● reverse
+<  ● less       ◦ up
+>  ● more       ◦ down
+=  ● equal      ● group
+~  ◦ match      ◦ not
+!  ● key        ● enum
+,  ● catenate   ● list
+^  ◦ except     ● sort
+#  ◦ take       ● count
+_  ● drop       ◦ floor
+?  ◦ find       ● distinct
+@  ● index      ● type
+.  ◦ apply      ● value
+$  ● pad|cast   ● string
+```
+
+It seems you have explored more than you didn't, and that is huge progress. But a lot remains to be learned, because operators is only one aspect of k, and this short introduction didn't hope to cover everything.
+
+We conclude with a list of subjects that you are now ready to explore on your own:
+
+|k lang                           |k platform                       |
+|:--------------------------------|:--------------------------------|
+|advanced k operators             |using interactive debugger       |
+|native csv, tsv, JSON and UTF8   |building clients and servers     |
+|k-exprs and implicit monadics    |benchmarking, testing and tracing|
+|math primitives and vector aggrs |advanced disk I/O and persistence|
+|advanced use cases for adverbs   |interprocess communication       |
+|tables and k-sql language        |native TCP and HTTP servers      |
+|k cryptographic primitives       |scripting and OS interaction     |
+|advanced datetime arithmetic     |Python, Julia and C interop      |
+
+---------------------
+It looks like there is no other chapter after the previous, at least not as of yet. Thank you for making this far, and may your future endeavors meet all of your expectations.
 
 
 *\`nyi* ∎
