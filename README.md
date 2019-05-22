@@ -730,10 +730,12 @@ A type called **name** is the same idea as **internalized string** found in
 some other languages. This means that a single instance of an arbitrarily 
 long string can be placed into a global hash table that persists for a lifetime 
 of a k process and can later be referenced by its hash key as many times as 
-necessary without creating additional copies of the string. In narrow case 
-of names, we can say that k actually passes a reference instead of value.
+necessary without creating additional copies of the string.
 
-Names come handy in many situations, for now lets just see how they quack:
+In the narrow case of names, we could say that k actually passes references 
+instead of values, although they are not pointers in the strict sense. Names 
+come handy in many situations, for now lets just see how they 
+quack:
 
 ```q
  a:`kei              /"kei" is now internalized
@@ -752,15 +754,15 @@ Names come handy in many situations, for now lets just see how they quack:
 **Temporal types** in k are `date` and `time`:
 
 ```q
- d:1981-02-01        /yyyy-mm-dd
- @d                  /atomic date type is special, it is a capital D, same as date vector
+ d:1981-02-01        /yyyy-mm-dd, ok to expect iso 8601 compliance
+ @d                  /NOTE: date atom is `D same as date vector `D
 `D
 
- t:12:34:56.789      /hh:mm:ss.sss
+ t:12:34:56.789      /hh:mm:ss.sss, max resolution is milliseconds
  @t
 `t
 
- dt:d+t;dt           /operations on temporal types is a story for another day
+ dt:d+t;dt           /advanced date ops is a story for another day
 1981-02-01T12:34:56.789 
 ```
 
