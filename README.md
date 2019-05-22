@@ -534,7 +534,7 @@ nothing to do with *linked lists*.
  v:,42            /a vector of length 1, one integer item
 ```
 
-k is strictly "**pass by value**", i.e. there are no references or pointers are passed around, although it is an illusion created by the underlying implementation. In reality, k avoids unnecessary copies:
+k is strictly "**pass by value**", i.e. there are no references or pointers being passed around, although it is an illusion created by the underlying implementation. In reality, k avoids making copies of stuff unless it becomes absolutely necessary:
 
 ```q
  x:0 1 2 3 4     /everything is passed by value
@@ -543,6 +543,8 @@ k is strictly "**pass by value**", i.e. there are no references or pointers are 
 0 1 2 3 4        /(in reality it only pretends)
 
  y:x:0 1 2 3 4   /same effect in one expression
+                 /y and x are actually the same
+                 /until one of them is modified
 ```
 
 <a name="v-plus-v"></a>
@@ -1320,41 +1322,41 @@ interpreter aside for now.
 So here is the code:
 
 ```q
-/what is f[] and how it works?
-f:{$[2>#?x;x;,/f'x@=x>rand x]} 
+/what is f[], and can we read it?
+f:{$[2>#?x;x;,/f'x@&:'~:\x<*1?x]}
 ```
 
 Almost nothing looks familiar here, and the whole little monster is just 
-creepy, but once we take it apart, you will find it is actually very simple 
+creepy. But once we take it apart, you will find it is actually very simple 
 and readable:
 
 ```q
 
-f:{$[2>#?x;x;,/f'x@=x>rand x]} 
+f:{$[2>#?x;x;,/f'x@&:'~:\x<*1?x]}
 
-f:{...}           /f is a function, that is a good start
-f:{.x.}           /f takes only one implicit argument, x
-f:{.f.}           /f clearly calls f, so it is recursive
+f:{...}             /f is a function, that is a good start
+f:{.x.}             /f takes only one implicit argument, x
+f:{.f.}             /f clearly calls f, so it is recursive
 
-$[?;?;?]          /the entire body of f is nothing else but
-$[c;t;f]          /a ctf cond, aka if-then-else aka ternary
+$[?;?;?]            /the entire body of f is nothing else but
+$[c;t;f]            /a ctf cond, aka if-then-else aka ternary
 
-2>#?x             /c:      boolean condition
-x                 /t:      do this if c is 1
-,/f'x@=x>rand x   /f:      do that if c is 0
+2>#?x               /c:      boolean condition
+x                   /t:      do this if c is 1
+,/f'x@&:'~:\x<*1?x  /f:      do that if c is 0
 
-2>#?x             /we don't how to read this, but it is clear that f[]
-                  /halts recursion when it evaluates to 1, returning x
-                  /so lets find out what it means, going right to left
+2>#?x               /we don't how to read this, but it is clear that f[]
+                    /halts recursion when it evaluates to 1, returning x
+                    /so lets find out what it means, going right to left
 
-                  /we have two new operators, both in monadic context:
-                  /monadic ?x is 'distinct'       unique elements of x
-                  /monadic #x is 'count'       count the elements of x
+                    /we have two new operators, both in monadic context:
+                    /monadic ?x is 'distinct'       unique elements of x
+                    /monadic #x is 'count'       count the elements of x
 
-#?x               /'count distinct'         count unique elements of x
-2>#?x             /'greater'   true if count distinct x is less than 2
+#?x                 /'count distinct'         count unique elements of x
+2>#?x               /'greater'   true if count distinct x is less than 2
 
-$[2>#?x;x;...]    /"if x has <2 unique items, return x, otherwise ..."
+$[2>#?x;x;...]      /"if x has <2 unique items, return x, otherwise ..."
 ```
 
 Coffee break, here is what we know so far:
@@ -1367,40 +1369,47 @@ This gives us confidence to wrestle down the last part, the recursion step:
 
 ```q
 
-,/f'x@=x>rand x   /this must be the recursion step, read right to left:
+,/f'x@&:'~:\x<*1?x   /this must be the recursion step, read right to left:
 
- x:4 0 1 2        /an tiny dataset to help us see what is going on here
- 
- rnd:rand x       /pick a random element from x (rnd added for clarity)
- rnd
-2 
+ x:4 0 1 2           /an tiny dataset to help us see what is going on here
 
- cmp:x>rnd        /bool vector of 0s where x[n]>rnd, 1s where otherwise
+ rnd:1?x             /x?y is 'find': picks x random elements from vector y
+ rnd                 /list with one random item from x
+,2 
+
+ rnd:*rnd;rnd        /*x is 'first': return the head element of a vector x
+2
+
+ cmp:x<rnd           /bool vector of 0s where x[n]<rnd, 1s where otherwise
  cmp
 0 1 1 0
 
- idx:=cmp         /= is 'group', ie dict of indices of 0s and 1s in cmp
- idx
-0|0 3             /"cmp has 0 at indices 0 and 3"
-1|1 2             /"cmp has 1 at indices 1 and 2"
+                     /~x is 'not': negate x (non-0 turns 0, all 0s turn 1)
 
- pts:x@idx        /dyadic @ is 'index': elements of x at indices in idx
+ mask:~:\cmp         /explicit 'not' scan: returns cmp and negation of cmp
+ mask
+0 1 1 0
+1 0 0 1
+
+                     /&x is 'where': return indices of x where x are not 0
+
+ idx:&:'mask         /explicit 'where' each: apply 'where' to each of mask
+ idx 
+1 2                  /mask[0] has 1s at indices 1 and 2
+0 3                  /mask[1] has 1s at indices 0 and 3
+
+ pts:x@idx           /dyadic @ is 'index': elements of x at indices in idx
  pts
-0|4 2             /list of items in x less than random pivot
-1|0 1             /list of items in x greater or equal than pivot
-
-pts:x@=x>rand x   /"partition x by pivot: items < rnd and items >= rnd"
-
-x:f'pts           /adverb each: apply f to each partition, recurse down 
+0 1                  /list of items in x greater or equal to pivot rnd
+4 2                  /list of items in x less than pivot rnd
 
 
-,/x               /,/ is 'raze': unwind aka flatten a vector of vectors
+ pts:x@&:'~:\x<*1?x  /"partition x by pivot: items < rnd and items >= rnd"
 
- v:(1 2 3;4 5 6)
- v
-1 2 3
-4 5 6
- ,/v
+ x:f'pts             /adverb each: apply f to each partition, recurse down 
+
+ ,/x                 /,/ is 'raze': unwind aka flatten a vector of vectors
+ v:,/(1 2 3;4 5 6)   /in other words, raze flattens first level of nesting
 1 2 3 4 5 6
 ```
 
@@ -1413,7 +1422,7 @@ ideas.
 And of course, `f` is nothing else but:
 
 ```q
- qs:{$[2>#?x;x;,/qs'x@=x>rand x]}        /quicksort by random pivot
+ qs:{$[2>#?x;x;,/qs'x@&:'~:\x<*1?x]}     /quicksort by random pivot
 
  i:9 2 5 5 1 8 1 3 6 1                   /an integer shuffle
  f:2.6 -∞ 8.6 π 1.7 ∞ 3.5 5.6            /a float soup, hello π
@@ -1456,8 +1465,9 @@ And `qs` code brought a few more:
 * ctf cond `$[c;t;f]`
 * monadic `?x distinct`
 * monadic `#x count`
-* monadic `rand x`
-* monadic `=x group`
+* monadic `*x first
+* monadic `~x not`
+* monadic `&x where`
 * monadic `,/x raze`
 * dyadic `x@y index`
 
@@ -1606,7 +1616,6 @@ We have seen some new stuff:
 * dyadic `x|y max`
 * dyadic `x_y drop`
 * monadic `|x reverse`
-* monadic `*x first`
 * monadic `0:x load text`
 
 ----------------------
@@ -1642,7 +1651,7 @@ public final class qs{public void s(int[] x){}}
 ```
 
 ```q
-qs:{$[2>#?x;x;,/qs'x@=x>rand x]}
+qs:{$[2>#?x;x;,/qs'x@&:'~:\x<*1?x]}
 ```
 
 Now, compare the source code of these two:
@@ -1681,18 +1690,18 @@ We have covered a lot of ground, good time to put things into perspective. Below
 -  ● subtract   ● negate
 *  ● multiply   ● first
 %  ● divideby   ◦ inverse
-&  ◦ min|and    ◦ where
+&  ◦ min|and    ● where
 |  ● max|or     ● reverse
 <  ● less       ◦ up
 >  ● more       ◦ down
-=  ● equal      ● group
-~  ◦ match      ◦ not
+=  ● equal      ◦ group
+~  ◦ match      ● not
 !  ● key        ● enum
 ,  ● catenate   ● list
 ^  ◦ except     ● sort
 #  ◦ take       ● count
 _  ● drop       ◦ floor
-?  ◦ find       ● distinct
+?  ● find       ● distinct
 @  ● index      ● type
 .  ◦ apply      ● value
 $  ● pad|cast   ● string
@@ -1701,7 +1710,7 @@ $  ● pad|cast   ● string
 <a name="gravestone">
 ---------------------
 
-It really feels we have explored more than we didn't, and that is huge progress. But many things remain to be discovered, because operators is only one aspect of k, and this short introduction could not possibly cover everything.
+It really feels like we have explored more than we didn't, and that is huge progress. But many things remain to be discovered, because operators is only one aspect of k — and this short introduction could not possibly cover everything.
 
 We conclude with a list of subjects that you are now ready to explore on your own:
 
@@ -1709,13 +1718,13 @@ We conclude with a list of subjects that you are now ready to explore on your ow
 |:--------------------------------|:-----------------------------------|
 |additional k operators           |debugging and securing k systems    |
 |tables and k-sql language        |building clients and servers in k   |
-|k-exprs, explicit monadics       |benchmarking, testing and tracing   |
-|rand, math prims, vector aggrs   |disk I/O, persistence and streaming |
+|vector aggregates                |benchmarking, testing and tracing   |
+|entropy sources, math primitives |disk I/O, persistence and streaming |
 |advanced use of adverbs, threads |IPC and distributed workloads       |
 |native csv, tsv, json and utf    |native TCP and HTTP servers         |
-|integrated cryptography          |scripting, deployment, OS tuning  |
-|nanosecond time, date math       |interop with Python, Julia and C    |
-|projections and index elision    |tech support and user community     |
+|integrated cryptography core     |scripting, deployment, OS tuning    |
+|nanosecond time, datetime math   |interop with Python, Julia and C    |
+|k-expressions, `0                |tech support and user community     |
 |design of internal components    |k resources, tools and packages     |
 
 <a name="gravestone">
