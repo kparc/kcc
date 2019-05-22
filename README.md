@@ -15,7 +15,7 @@ plus over infinity, aka k crash course
 **[numbers](#numbers)**
 
 * vector math → [v≠a](#vectors-vs-atoms) | [v+v](#v-plus-v) | [v+a](#v-plus-a) | [v x](#v-indexing)  | [shp](#v-shp)
-* [type system](#two-types-of-types) → [\`i\`f](#typ-num) | [\`c\`n](#typ-char) | [\`d\`t](#typ-time) | [\`1\`2](#typ-lambda) | [mix](#typ-mix) | [cst](#typ-cast) | [ø,∞](#typ-nul) 
+* [type system](#types-of-types) → [\`i\`f](#typ-num) | [\`c\`n](#typ-char) | [\`d\`t](#typ-time) | [\`1\`2](#typ-lambda) | [mix](#typ-mix) | [cst](#typ-cast) | [ø,∞](#typ-nul) 
 * order of eval → [rtl](#right-to-left-and-back-again) | [(1)2](#rtl-precedence)
 * [no stinking loops](#no-stinking-loops) → [ovr](#nsl-overscan) | [scn](#nsl-overscan) | [e↣](#nsl-each) | [e↔](#nsl-eachlr) | [e↤](#nsl-eachprior)
 
@@ -623,10 +623,8 @@ have **arbitrary shape**:
 1 3 3 1 
 ```
 
-Vector arithmetic is **penetrating**, which means that vector 
-operators *apply at depth* for as long as operands have 
-compatible shape. To better see how this works, we finally
-introduce the `monadic +x`:
+Vector arithmetic is **penetrating**, which means that vector operators *apply at depth* for as long as operands have compatible shape. It is a good time to introduce the `monadic +x` to better see how this works:
+:
 
 ```q
  mat:(1 2 3;4 5 6;7 8 9)    /shall there be mat:
@@ -684,9 +682,9 @@ logic:
 
 -----------------------
 
-No rocket science, it is all pretty basic. So push on, greatness awaits.
+No rocket science, it is all pretty basic. But push on, greatness awaits.
 
-### two types of types
+### types of types
 
 Type system in k gets strict when it has to, but also agrees that implicit 
 casts and type coersion have their strengths — especially when done right, 
@@ -1005,7 +1003,7 @@ it can have an adverse effect on readability. That is, when you read a
 k expression right to left, you want to go fast and uninterrupted, but 
 precedence override gets in your way.
 
->So while writing an expression, think of the reader and try to minimize the 
+>While writing an expression, think of your reader and try to minimize the 
 use of round brackets.
 
 ----------------
@@ -1495,10 +1493,10 @@ also known as [problem 67](https://projecteuler.net/problem=67):
 By starting at the top of the triangle below and moving to adjacent 
 numbers on the row below, the maximum total from top to bottom is 23:
 
-     *3
-   *7   4
-  2  *4   6
-8   5  *9   3
+     →3
+   ↑7   4
+  2  ↑4   6
+8   5  ↑9   3
 
 9 + 4 + 7 + 3 = 23
 ```
@@ -1592,11 +1590,11 @@ from the problem 67, parse it and fold it:
  █
 ```
 
-All done. Although we do not recommend you this, you could also write 
+All done. Although we do not recommend you do this, you could also write 
 the solution as a single k expression:
 
 ```q
- *{y+1_|':x}/|`k?'0:"p67.txt"
+ *{y+1_|':x}/|`k?'0:"p67.txt"   /load, parse and fold maxpath
  █
 ```
 
@@ -1624,6 +1622,10 @@ We have seen some new stuff:
 
 3. Verify solutions for 18 and 67 on [Project Euler](https://projecteuler.net).
 
+4. Once you provide a correct answer to an Euler problem, you can browse
+   its discussion forum. You might want to check out some other solutions 
+   to 18 and 67 in other computer languages.
+
 ----------------------
 
 ### gladly beyound
@@ -1631,7 +1633,7 @@ We have seen some new stuff:
 It looks like there is no other chapter after the previous, 
 at least not as of yet.
 
-So thank you for making this far, and may your future endeavors 
+Thank you for making this far, and may your future endeavors 
 meet all of your current expectations.
 
 
