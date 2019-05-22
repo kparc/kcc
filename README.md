@@ -245,22 +245,22 @@ Type in your first k expressions, and enjoy your first answers:
 
 ```q
  2+2      /simplest face of k is a calculator
-4
+ █
 
  x:42     /: is assign so x is now the answer
  x=x+1    /= is equal, and of course it isn't
-0
+ █
 
  kcc:+/∞  /we knew you'd want to try this one
  kcc      /and what it happens to be is just:
-∞
+ █
 ```
 
 ---------------------
 
 Indeed, the title of this document seems to make sense to k intepreter and 
-evaluates to infinity, and very soon you will easily infer what it actually
-means.
+evaluates to exactly that, and very soon you will easily infer what it 
+actually means.
 
 ### remarks on style
 
@@ -373,6 +373,23 @@ subjective opinion, which is up for you to consider:
 is too much of it written already. Look to remove any inessential code, yours
 or not. But if you have to write more, make it is useful, secure, compact, 
 maintainable and scalable.
+
+--------------------
+
+**Practice:**
+
+We don't know much k to practice style yet, so this one will be read-only,
+Here is a trivial C program formatted in a slightly unusual way. If you 
+don't know much C either, see if you can still follow what it does. And 
+if you do know much C, please let us know if you can spot any bugs:
+
+```c
+include <stdio.h>
+typedef int I;
+#define O printf
+#define DO(n,x)	{I i=0,_i=(n);for(;i<_i;++i){x;}}
+I main(){DO(42,O("kcc %d\n",i);)}
+```
 
 ### remarks on parlance
 
