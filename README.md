@@ -1602,18 +1602,29 @@ the solution as a single expression:
 
 ----------------------
 
-**Practice:**
+**Recap:**
 
-Reproduce `mxpath` from scratch in a new k session, same as you did 
-with `qs`.
- 
+We have seen some new stuff:
+
+* dyadic `x|y max`
+* dyadic `x_y drop`
+* monadic `|x reverse`
+* monadic `*x first`
+* monadic `0:x load text`
+
 ----------------------
 
+**Practice:**
+
+Reproduce `mxpath` from scratch in a new k session, same way 
+you did with `qs`.
+
+----------------------
 
 ### gladly beyound
 
-It looks like there is no other chapter after the previous, at least not
-as of yet.
+It looks like there is no other chapter after the previous, 
+at least not as of yet.
 
 So thank you for making this far, and may your future endeavors 
 meet all of your current expectations.
