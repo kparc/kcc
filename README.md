@@ -23,7 +23,7 @@ plus over infinity, aka k crash course
 
 * reading code → [how to solve it](#how-to-solve-it)
 * code metrics → [apples and oranges](#apples-and-oranges)
-* composing code → [euler triangles](#euler-triangles)
+* writing code → [euler's triangles](#euler-triangles)
 
 ---------------------
 
