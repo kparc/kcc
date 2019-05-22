@@ -70,7 +70,7 @@ it will be fast and violent.
   essential material.
 * New syntax is often introduced inline, some is self-explanatory, some 
   relies on your intuition.
-* The narrative is linear, all chapters build previous.
+* The narrative is linear, all chapters build on previous.
 * Skipping exercise will halt your progress.
 
 This might feel a bit intense, but we hope the course is still lightweight enough
