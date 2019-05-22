@@ -1491,7 +1491,7 @@ it is time to write our first k program. Lets solve the classic
 Project Euler [problem 18](https://projecteuler.net/problem=18), 
 also known as [problem 67](https://projecteuler.net/problem=67):
 
-```
+```q
 By starting at the top of the triangle below and moving to adjacent 
 numbers on the row below, the maximum total from top to bottom is 23:
 
@@ -1502,12 +1502,12 @@ numbers on the row below, the maximum total from top to bottom is 23:
 
 9 + 4 + 7 + 3 = 23
 ```
-The problems 18 and 67 give bigger triangles and challenge us to
+Problems 18 and 67 give bigger triangles and challenge us to
 find maximum paths in them. The efficient algorighm is trivial, and
 is given away in the example itself: we simply need to fold rows
 going from bottom up, like this:
 
-```
+```q
 8   5   9   3
   8   9   9
   +   +   +
