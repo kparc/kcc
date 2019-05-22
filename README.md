@@ -102,7 +102,7 @@ There is a good chance that you have heard or read about k language. A lot of
 people know the story. What is much less likely is that you have ever met a 
 professional k programmer. This happens not just because k programmers are 
 rare, but also because k is not fishing for cheap publicity. This is how we 
-all heard about a language called k, but what we hear more often is how much 
+all heard about a language called k, but what we mostly hear is how much 
 it sucks to be a Java programmer.
 
 All jokes aside, implementations of similar systems in languages like C++ or 
@@ -146,9 +146,9 @@ software. The entire system is:
 
 And that gives a selection of fundamental algorithms, data structures, 
 techniques and primitives that withstood the test of decades of production use 
-in some of the world's most demanding data processing environments. The inner 
-components of the system are fit together, complement each other, and 
-deliver performance. It is not uncommon for k newcomers to experience shock 
+in some of the world's most demanding data processing environments. Inner 
+components of the system fit together and complement each other to
+deliver *performance*. It is not uncommon for k newcomers to experience shock 
 when they first see how much can be done with a few precise keystrokes, and 
 how fast.
 
@@ -1183,10 +1183,10 @@ an input vector
 
 ```q
  2+':4 8 16    /seeded eachprior gives (2+4),(4+8),(8+16)
-6 12 24        /sum of first item and seed, then sum of each item and the item prior to it
+6 12 24        /sum 1st item and seed, then sum each item and its prior
 
  (+':)4 8 16   /seedless eachprior gives (4),(4+8),(8+16)
-4 12 24        /first item stays as is, then sum of each item and the item prior to it
+4 12 24        /first item stays as is, then sum each item and its prior
 ```
 ----------------
 
