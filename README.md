@@ -753,9 +753,7 @@ long string can be placed into a global hash table that persists for a lifetime
 of a k process and can later be referenced by its hash key as many times as 
 necessary without creating additional copies of the string.
 
-In the narrow case of names, we could say that k actually passes references 
-instead of values, although they are not pointers in the strict sense. Names 
-come handy in many situations, for now lets just see how they quack:
+We could say that in case of names k actually passes *references* instead of *values*, but they are not pointers and there is no arithmetic defined for them. Names come handy in many situations, for now lets just see how they quack:
 
 ```q
  a:`kei              /"kei" is now internalized
@@ -787,9 +785,7 @@ come handy in many situations, for now lets just see how they quack:
 ```
 
 <a name="typ-dictab"></a>
-**Dictionary** is a map of keys to values, another way of saying **associative array**, and they are as useful in k as anywhere. Keys and values can be of any type, both vector and scalar.
-
-There are two ways to define a dictionary in k:
+**Dictionaries** are maps of keys to values, another way of saying *hashmaps* or *associative arrays*, and they are as useful in k as elsewhere. Keys and values can be of any type, both vector and scalar. Dictionary type name is **\`a**, and there are two different notations for defining them:
 
 ```q
  d:`a`b!(1 2 3;4 5 6)      /keys!values
@@ -816,9 +812,38 @@ b|4 5 6
 4 5 6 
 ```
 
+**Tables** in k are *flipped dictionaries*, and they are a subject for a separate discussion. We will only describe their syntax for the sake of completeness and return to them later on. Table type is **\`A** and the syntax is the same as dict, only with `+x flip` operator prepended, but dictionary values are required to be of same length.
+
+We will not comment on any of this for now, but isn't hard to follow:
+
+```q
+ x:`goo`apl`amz
+ y:1 2 3 4 5 6
+ 
+ t:+`s`d`p!(x,x;`D$y;1.5*y)  /table is a transposed dict
+ @t
+`A 
+ 
+ t                           /trades: stock, date, price
+s   d          p
+--- ---------- ---
+goo 2024-01-02 1.5
+apl 2024-01-03 3
+amz 2024-01-04 4.5
+goo 2024-01-05 6
+apl 2024-01-06 7.5
+amz 2024-01-07 9
+
+ select avg p by s from t   /pretend you didn't see this
+s  |p
+---|----
+amz|6.75
+apl|5.25
+goo|3.75
+```
+
 <a name="typ-lambda"></a>
-**Lambdas** are assignable values, so they must to have their own type, 
-which they do, and more than one:
+**Lambdas** are assignable values and have their own type, and more than one:
 
 ```q
  @{x+y}                 /type of lambda gives away its rank
@@ -908,7 +933,7 @@ type error
 There is a lot more to be said about the type system, but the expression 
 `@@42` above (which evaluates to some wordplay: "type name of a type name
 is `name`") urges us to the next section which is all about how to
-make sense of this expression. There is just one more topic we must cover:
+make sense of this expression. But there is one more topic we must cover:
 
 <a name="typ-nul"></a>
 **Null** values in k are typed, integer null is `Ø` and float null is
