@@ -437,7 +437,7 @@ is good to know, but we won't see it in this text again.
 <a name="parl-proj"></a>
 -------------------
 
-**Projection**, also known as function view, is a simply a reference to a function with some arguments preset to a value, and at least one **free**, or elided argument. For example, if a function of rank 3, `f[x;y;z]`, only receives first two arguments, it will return its projection of rank 1:
+**Projection**, also known as function view, is a simply a reference to a function with some arguments preset to a value, and at least one **free**, or elided argument. For example, if a function of rank 3, `f[x;y;z]`, only receives first and third arguments, it will return its projection of rank 1:
 
 ```q
  f:{x+y+z}      /a function of rank three
