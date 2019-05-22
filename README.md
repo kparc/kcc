@@ -15,7 +15,7 @@ plus over infinity, aka k crash course
 **[numbers](#numbers)**
 
 * vector math → [v≠a](#vectors-vs-atoms) | [v+v](#v-plus-v) | [v+a](#v-plus-a) | [v x](#v-indexing)  | [shp](#v-shp)
-* [type system](#two-types-of-types) → [\`i\`f](#typ-num)| [\`c\`n](#typ-char) | [\`d\`t](#typ-time) | [\`1\`2](#typ-lambda) | [mix](#typ-mix) | [cst](#typ-cast) | [ø,∞](#typ-nul) 
+* [type system](#two-types-of-types) → [\`i\`f](#typ-num) | [\`c\`n](#typ-char) | [\`d\`t](#typ-time) | [\`1\`2](#typ-lambda) | [mix](#typ-mix) | [cst](#typ-cast) | [ø,∞](#typ-nul) 
 * order of eval → [rtl](#right-to-left-and-back-again) | [(1)2](#rtl-precedence)
 * [no stinking loops](#no-stinking-loops) → [ovr](#nsl-overscan) | [scn](#nsl-overscan) | [e↣](#nsl-each) | [e↔](#nsl-eachlr) | [e↤](#nsl-eachprior)
 
