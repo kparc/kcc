@@ -1380,7 +1380,7 @@ This gives us confidence to wrestle down the last part, the recursion step:
  rnd:*rnd;rnd        /*x is 'first': return the head element of a vector x
 2
 
- cmp:x<rnd           /bool vector of 0s where x[n]<rnd, 1s where otherwise
+ cmp:x<rnd           /bool vector of 1s where x[n]<rnd, 0s where otherwise
  cmp
 0 1 1 0
 
@@ -1400,8 +1400,8 @@ This gives us confidence to wrestle down the last part, the recursion step:
 
  pts:x@idx           /dyadic @ is 'index': elements of x at indices in idx
  pts
-0 1                  /list of items in x greater or equal to pivot rnd
-4 2                  /list of items in x less than pivot rnd
+0 1                  /list of items in x less than pivot rnd
+4 2                  /list of items in x greater or equal to pivot rnd
 
 
  pts:x@&:'~:\x<*1?x  /"partition x by pivot: items < rnd and items >= rnd"
@@ -1422,23 +1422,32 @@ ideas.
 And of course, `f` is nothing else but:
 
 ```q
- qs:{$[2>#?x;x;,/qs'x@&:'~:\x<*1?x]}     /quicksort by random pivot
+ qs:{$[2>#?x;x;,/qs'x@&:'~:\x<*1?x]}     /qsort on rand pivot
 
- i:9 2 5 5 1 8 1 3 6 1                   /a messy int shuffle
+ i:9 2 5 5 1 8 1 3 6 1                   /a hairy int shuffle
  f:2.6 -∞ 8.6 π 1.7 ∞ 3.5 5.6            /a π in a float soup
- c:"edrofgtnljgrpliifp"                  /a char entropy pool
+ c:"edrofgtnljgrpliifp"                  /a char entropy pool 
+ mess:(i;f;c)
 
- qs'(i;f;c)                              /apply qs to each of i;f;c
+ qs'mess                                 /restore order quick 
  █
 ```
 
-This is not the fastest `quicksort` ever written, but in real life 
-you would simply use the built-in operator which is a lot more efficient. It 
-is just monadic `^x`:
+And of course this is not the quickest `quicksort` ever written, but this is just a toy. In real life you would simply use the built-in operator which is a lot more efficient:
 
 ```q
- ^2.6 -∞ 8.6 π 1.7 ∞ 3.5 5.6             /monadic ^x is sort
+ ^3 2 1                                  /monadic ^x is 'sort'
+1 2 3
+
+ sort:^:'                                /explicit 'sort each'
+
+ (qs'mess)~(sort mess)                   /x~y 'match' operands
+1 
+
+ \t:10000  qs'mess                       /apply qs 10000 times
  █
+ \t:10000  sort mess                     /fix 10000x more mess
+ █ 
 ```
 
 But what our DIY sort function is very good for is to demonstrate the principle of **doing more with less**, and that is what k is all about.
@@ -1695,7 +1704,7 @@ We have covered a lot of ground, good time to put things into perspective. Below
 <  ● less       ◦ up
 >  ● more       ◦ down
 =  ● equal      ◦ group
-~  ◦ match      ● not
+~  ● match      ● not
 !  ● key        ● enum
 ,  ● catenate   ● list
 ^  ◦ except     ● sort
