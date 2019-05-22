@@ -1592,8 +1592,8 @@ from the problem 67, parse it and fold it:
  █
 ```
 
-All done. Although we do not recommend this, you could also write 
-the solution as a single expression:
+All done. Although we do not recommend you this, you could also write 
+the solution as a single k expression:
 
 ```q
  *{y+1_|':x}/|`k?'0:"p67.txt"
