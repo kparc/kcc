@@ -1679,7 +1679,7 @@ Finally, compare the size of their runtimes:
 
 ### gladly beyound
 
-We have covered a lot of ground, and it is a good time to look back. Below is a complete map of k operators, and those marked with bullets you have already seen and used at least once:
+We have covered a lot of ground, and it is a good time to put things into perspective. Below is a complete map of k operators, and those marked with bullets you have already seen and used at least once:
 
 ```
    x+y         +x
