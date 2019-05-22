@@ -383,21 +383,17 @@ don't know much C, see if you can still follow what it does. And
 if you do know C, please let us know if you can spot any bugs:
 
 ```c
-include <stdio.h>
+#include <stdio.h>
 typedef int I;
 #define O printf
-#define DO(n,x)	{I i=0,_i=(n);for(;i<_i;++i){x;}}
+#define DO(n,x) {I i=0,_i=(n);for(;i<_i;++i){x;}}
 I main(){DO(42,O("kei %d\n",i);)}
 ```
 
 ### remarks on parlance
 
 The most important terminology in k revolves around functions. Functions in k 
-are first-class citizens. k has lambdas, eval, apply, recursion, and then some.
-It takes a leap of faith to believe it, but k is probably more lispy than 
-certain Lisps, only you don't need to get past any parens. However, since 
-there are no linked lists under the hood, k is not lisp, because it was 
-designed to be fast.
+are first-class citizens. k has anonymous functions, eval, apply, recursion, and then some. It takes a leap of faith to believe it, but k is probably more lispy than certain Lisps, only you don't need to get past any parens. However, since there are no linked lists under the hood, k is not lisp, because it was designed to be fast.
 
 <a name="parl-xyz"></a>
 -------------------
@@ -443,7 +439,7 @@ is good to know, but we won't see it in this text again.
 
 **Rank** is another way of saying *valence*, a fancy word that describes a 
 simple idea that is extremely important to be understood well. Rank of an 
-operator or a function is basically the count of arguments they take. Two 
+operator or a function is basically the maximum count of arguments they take. Two 
 functions shown above have ranks of 3 and 1, respectively. 
 
 Two specific ranks are so important that they have their own names. 
@@ -504,7 +500,7 @@ you, because vectors are much more general than classic *arrays* and have
 nothing to do with *linked lists*. 
 
 ```q 
- x:(0,1,2,3,4)    /one way of declaring an integer vector
+ x:(0;1;2;3;4)    /one way of declaring an integer vector
  y:0 1 2 3 4      /same effect using more informal syntax
 
  x
@@ -623,7 +619,6 @@ have **arbitrary shape**:
 ```
 
 Vector arithmetic is **penetrating**, which means that vector operators *apply at depth* for as long as operands have compatible shape. It is a good time to introduce the `monadic +x` to better see how this works:
-:
 
 ```q
  mat:(1 2 3;4 5 6;7 8 9)    /shall there be mat:
@@ -1418,8 +1413,8 @@ And of course, `f` is nothing else but:
  qs:{$[2>#?x;x;,/qs'x@=x>rand x]}        /quicksort by random pivot
 
  i:9 2 5 5 1 8 1 3 6 1                   /an integer shuffle
- f:2.6 -∞ 8.6 π 1.7 ∞ 3.5 5.6            /a float soup (hello π)
- c:"edrofgtnljgrpliifp"                  /a random char vector
+ f:2.6 -∞ 8.6 π 1.7 ∞ 3.5 5.6            /a float soup, hello π
+ c:"edrofgtnljgrpliifp"                  /a char entropy pool
 
  qs'(i;f;c)
  █
@@ -1510,25 +1505,25 @@ numbers on the row below, the maximum total from top to bottom is 23:
 9 + 4 + 7 + 3 = 23
 ```
 Problems 18 and 67 are simply two bigger triangles, and the challenge is to
-find the **sum** of maximum paths in them. While 18 can be solved by bruteforce, 67 can not. The efficient algorighm is absolutely trivial, and is given away in the example above: we simply need to fold rows going from bottom up like this:
+find the **sum** of maximum paths in them. While 18 can be solved by bruteforce, 67 can not, but efficient algorighm is absolutely trivial. Is given away in the example above, we simply need to fold rows going bottom up, like so:
 
 ```q
 8   5   9   3
   8   9   9         /max
   +   +   +         /sum
   2   4   6
- 10  13  15
+ 10  13  15         /out
    13  15           /max
     +   +           /sum
     7   4
-   20  19
+   20  19           /out
      20             /max
       +             /sum     
       3
-     23             /done
+     23             /out
 ```
 
-It is easy to see that the core of the solution is a function that reduces a row and merges it into the next. The function must accept two rows so lets implement it:
+It is easy to see that the core of the solution is a function that reduces the current row (`max`) and merges it into the next (`sum`). It expects two arguments, i.e. both rows to work with, and returns the  So lets implement it:
 
 ```q
  r4:8 5 9 3      /take two bottom rows to assist thinking
