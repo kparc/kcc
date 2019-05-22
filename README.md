@@ -812,7 +812,7 @@ b|4 5 6
 4 5 6 
 ```
 
-**Tables** in k are *flipped dictionaries*, and they deserve a separate discussion, but it is worth to describe their syntax for the sake of completeness. Table type is **\`A** and the syntax is the same as dict, only with `+x flip` operator prepended, but dictionary values are required to be of same length.
+**Tables** are *flipped dictionaries*, and they deserve a separate discussion, but we will describe their syntax here for the sake of completeness. Table type is **\`A** and the notation is the same as dict, only with `+x flip` operator prepended. Dictionary will not flip unless all values are the same length.
 
 No comments on any of this for now:
 
