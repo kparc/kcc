@@ -23,7 +23,7 @@ plus over infinity, aka k crash course
 
 * reading code → [how to solve it](#how-to-solve-it)
 * code metrics → [apples and oranges](#apples-and-oranges)
-* writing code → [euler's triangles](#euler-triangles)
+* writing code → [three triangles](#three-triangles)
 
 ---------------------
 
@@ -1484,7 +1484,7 @@ Finally, compare the size of their runtimes:
 
 -------------------
 
-### euler triangles
+### three triangles
 
 This chapter is not going to be much longer than the previous, because
 it is time to write our first k program. Lets solve the classic 
