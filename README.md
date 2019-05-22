@@ -15,7 +15,7 @@ plus over infinity, aka k crash course
 **[numbers](#numbers)**
 
 * vector math → [v≠a](#vectors-vs-atoms) | [v+v](#v-plus-v) | [v+a](#v-plus-a) | [v x](#v-indexing)  | [shp](#v-shp)
-* [type system](#two-types-of-types) → [\`i\`f](#typ-num) | [ø,∞](#typ-nul) | [\`c\`n](#typ-char) | [\`d\`t](#typ-time) | [\`1\`2](#typ-lambda) | [mix](#typ-mix) | [cst](#typ-cast)
+* [type system](#two-types-of-types) → [\`i\`f](#typ-num)| [\`c\`n](#typ-char) | [\`d\`t](#typ-time) | [\`1\`2](#typ-lambda) | [mix](#typ-mix) | [cst](#typ-cast) | [ø,∞](#typ-nul) 
 * order of eval → [rtl](#right-to-left-and-back-again) | [(1)2](#rtl-precedence)
 * [no stinking loops](#no-stinking-loops) → [ovr](#nsl-overscan) | [scn](#nsl-overscan) | [e↣](#nsl-each) | [e↔](#nsl-eachlr) | [e↤](#nsl-eachprior)
 
@@ -710,28 +710,6 @@ by `monadic`, it is a good time to start over.
 1f
 ```
 
-<a name="typ-nul"></a>
-**Null** value in k is typed, integer null is `Ø` and float null is
-`ø`. **Infinity** is a scalar float `∞`. Working with nulls and infinities
-can be very tricky sometimes, and it is important to pay attention to their
-types:
-
-```q
- n:ø          /float null is type float
- @n
-`f
-
- N:Ø          /int null is type integer
- @N
-`i
-
- n=N          /equal, but not the same!
-1
-
- @∞           /infinity is a float atom
-`f
-```
-
 <a name="typ-char"></a>
 Like in C, there is no dedicated type for strings in k. Strings are just 
 **char vectors**:
@@ -878,7 +856,31 @@ type error
 There is a lot more to be said about the type system, but the expression 
 `@@42` above (which evaluates to some wordplay: "type name of a type name
 is `name`") urges us to the next section which is all about how to
-make sense of this expression.
+make sense of this expression. But before we proceed, there is one more
+topic we must cover:
+
+<a name="typ-nul"></a>
+**Null** values in k are typed, integer null is `Ø` and float null is
+`ø`. **Infinity** is a scalar float `∞`. Working with nulls and infinities
+can be very tricky sometimes, and it is important to pay attention to their
+types:
+
+```q
+ n:ø          /float null is type float
+ @n
+`f
+
+ N:Ø          /int null is type integer
+ @N
+`i
+
+ n=N          /equal, but not the same!
+1
+
+ @∞           /infinity is a float atom
+`f
+```
+
 
 ### right to left and back again
 
