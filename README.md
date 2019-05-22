@@ -1509,16 +1509,16 @@ going from bottom up, like this:
 
 ```q
 8   5   9   3
-  8   9   9
-  +   +   +
+  8   9   9         /max
+  +   +   +         /fold
   2   4   6
  10  13  15
-   13  15
-    +   +
+   13  15           /max
+    +   +           /fold
     7   4
    20  19
-     20
-      +
+     20             /max
+      +             /done
       3 = 23
 ```
 
