@@ -502,6 +502,7 @@ So far you know how to:
 * declare and call basic functions
 * be friends with `x`, `y` and `z`
 * tell monadic and dyadic apart
+* explicitly declare monadic ops
 * annotate your code
 
 This is a good start, but tells you absolutely nothing about what k really is,
