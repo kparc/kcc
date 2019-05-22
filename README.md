@@ -26,7 +26,7 @@ plus over infinity, aka k crash course
 * reading code → [how to solve it](#how-to-solve-it)
 * writing code → [three triangles](#three-triangles)
 * metrics → [apples and oranges](#apples-and-oranges)
-* next steps → [gladly beyond](#gladly-beyond)
+* learning plan → [gladly beyond](#gladly-beyond)
 
 ---------------------
 
