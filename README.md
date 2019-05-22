@@ -9,15 +9,17 @@ plus over infinity, aka k crash course
 **[exodus](#exodus)**
 
 * [get](#get) | [run](#run)
-* style → [cmt](#style-annot) | [sep](#style-sep) | [tab](#style-ident) | [ids](#style-name) | [time](#style-space) | [bad](#style-bad)
+* style → [cmt](#style-annot) | [sep](#style-sep) | [tab](#style-ident) | [ids](#style-name) | [space](#style-space) | [bad](#style-bad)
 * parlance → [xyz](#parl-xyz) | [rank](#parl-rank)
 
 **[numbers](#numbers)**
 
 * vector math → [v≠a](#vectors-vs-atoms) | [v+v](#v-plus-v) | [v+a](#v-plus-a) | [v x](#v-indexing)  | [shp](#v-shp)
-* [type system](#types-of-types) → [\`i\`f](#typ-num) | [\`c\`n](#typ-char) | [\`d\`t](#typ-time) | [\`a\`A](#typ-dictab) | [\`1\`2](#typ-lambda) | [ø,∞](#typ-nul) | [mix](#typ-mix) | [cst](#typ-cast) 
+* [type system](#types-of-types) → [num](#typ-num) | [char](#typ-char) | [name](#typ-name) | [date](#typ-time) | [dict](#typ-dict) | [tab](#typ-tab) | [λ](#typ-lambda) | [ø,∞](#typ-nul) | [mix](#typ-mix) | [cast](#typ-cast) 
+
+
 * order of eval → [rtl](#right-to-left-and-back-again) | [(1)2](#rtl-precedence)
-* [no stinking loops](#no-stinking-loops) → [ovr](#nsl-overscan) | [scn](#nsl-overscan) | [e↣](#nsl-each) | [e↔](#nsl-eachlr) | [e↤](#nsl-eachprior)
+* [no stinking loops](#no-stinking-loops) → [over](#nsl-overscan) | [scan](#nsl-overscan) | [e↣](#nsl-each) | [e↔](#nsl-eachlr) | [e↤](#nsl-eachprior)
 
 **[proverbs](#proverbs)**
 
@@ -784,7 +786,7 @@ We could say that in case of names k actually passes *references* instead of *va
 1981-02-01T12:34:56.789 
 ```
 
-<a name="typ-dictab"></a>
+<a name="typ-dict"></a>
 **Dictionaries** are maps of keys to values, another way of saying *hashmaps* or *associative arrays*, and they are as useful in k as elsewhere. Keys and values can be of any type, both vector and scalar. Dictionary type name is **\`a**, and there are two different notations for defining them:
 
 ```q
@@ -812,6 +814,7 @@ b|4 5 6
 4 5 6 
 ```
 
+<a name="typ-tab"></a>
 **Tables** are *flipped dictionaries*, and they deserve a separate large discussion. We will only describe their syntax here for the sake of completeness. Table type is **\`A** and notation is the same as dict, only with `+x flip` operator prepended. Dictionary will not flip unless all values are the same length.
 
 No comments on any of this for now:
