@@ -378,7 +378,7 @@ maintainable and scalable.
 
 **Practice:**
 
-We don't know much k to practice style yet, so this one will be read-only,
+We don't know much k to practice style yet, so this one will be read-only.
 Here is a trivial C program formatted in a slightly unusual way. If you 
 don't know much C either, see if you can still follow what it does. And 
 if you do know much C, please let us know if you can spot any bugs:
