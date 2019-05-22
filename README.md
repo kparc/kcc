@@ -509,7 +509,6 @@ nothing to do with *linked lists*.
 
  x
 0 1 2 3 4
-
  y
 0 1 2 3 4
 
@@ -785,6 +784,36 @@ come handy in many situations, for now lets just see how they quack:
 
  dt:d+t;dt           /advanced date ops is a story for another day
 1981-02-01T12:34:56.789 
+```
+
+<a name="typ-dictab"></a>
+**Dictionary** is a map of keys to values, another way of saying **associative array**, and they are as useful in k as anywhere. Keys and values can be of any type, both vector and scalar.
+
+There are two ways to define a dictionary in k:
+
+```q
+ d:`a`b!(1 2 3;4 5 6)      /keys!values
+ d
+a|1 2 3
+b|4 5 6 
+
+ d1:{a:1 2 3;b:4 5 6}      /{k:val;...}
+ d1
+a|1 2 3
+b|4 5 6 
+
+ (@d;@d1)                  /type is `a
+`a`a
+
+ d`a                       /key lookup (aka d[`a] or d `a)
+1 2 3
+
+ !d                        /dict keys
+`a`b 
+
+ . d                       /dict vals (note the space!)
+1 2 3
+4 5 6 
 ```
 
 <a name="typ-lambda"></a>
@@ -1537,7 +1566,7 @@ Looks like the `mxpath` is doing pretty well. Lets fetch the input file for the 
  █
 ```
 
-Although we do not recommend you do this, the complete program can also be written as a single k expression:
+We didn't tell you do this, but the complete program can also be written as a single k expression:
 
 ```q
  *{y+1_|':x}/|`k?'0:"p67.txt"   /load, parse and fold maxpath
