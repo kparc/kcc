@@ -642,9 +642,9 @@ introduce the `monadic +x`:
 **Practice:**
 
 First, lets make sure `+x flip` operator transposes rectangular matrices
-instead of just squares, which is of no surprise. Then try to flip 
-something less obvious, apply transformations, inspect each result and
-follow its logic:
+instead of just squares, which is of no surprise. Thentry to flip 
+something less obvious, and after that you have three extra transformations.
+Inspect all intermediate results and make sure you can follow their logic:
 
 ```q
  mat:(1 2 3 4;6 7 8 9)     /a rectangular matrix
@@ -658,6 +658,7 @@ follow its logic:
  t:+t                      /flip it, what gives?
  t:t>0                     /t greater than zero?
  t:(+t)+t                  /t transposed plus t?
+ █
 ```
 
 -----------------------
@@ -1004,7 +1005,8 @@ Lets revisit the code from the first snippet in this document:
 ```q
  x:(1 2 3;4 5 6;7 8 9)
 
-x=x+1    /how can a universal truth be so false?
+ x=x+1    /how can a universal truth be so false?
+ █
 ```
 
 Too easy, but we'll make up for it.
@@ -1197,15 +1199,7 @@ adverbs working together:
 1 2 3 4 5 6 7 8 9
 
  x*\:/:x                    /"x times eachleft eachright x"
-1 2  3  4  5  6  7  8  9    
-2 4  6  8  10 12 14 16 18
-3 6  9  12 15 18 21 24 27
-4 8  12 16 20 24 28 32 36
-5 10 15 20 25 30 35 40 45
-6 12 18 24 30 36 42 48 54
-7 14 21 28 35 42 49 56 63
-8 16 24 32 40 48 56 64 72
-9 18 27 36 45 54 63 72 81 
+ █
 ```
 
 Your goal is to make sure you understand the logic and the order of 
@@ -1223,15 +1217,15 @@ Bonus question:
 ```q
  kcc:+/∞     /how come k sums up infinity this fast?
  kcc
-∞
+ █
 
- +\(1+!3)%0  /the tale of precedence divided by zero
-∞ ∞ ∞
+ +\(1+!3)%0  /a tale of parens and division by zero
+ █
 ```
 
-k interpreter is your friend. Take your time, make sure you got all of it 
-before advancing to the next chapter, where things will get a lot less 
-innocent, and very fast.
+k interpreter is your friend. Take your time, don't rush it, make sure you 
+got all of it before advancing to the next chapter, where things will get a 
+lot less innocent, and very fast.
 
 ## proverbs
 
