@@ -1486,10 +1486,10 @@ Finally, compare the size of their runtimes:
 
 ### euler triangle
 
-Time to write our first k program, so this chapter is not going to be
-much longer than the previous. Lets solve the classic Project Euler 
-[problem 18](https://projecteuler.net/problem=18), also known as
-[problem 67](https://projecteuler.net/problem=67):
+This chapter is not going to be much longer than the previous, because
+it is time to write our first k program. Lets solve the classic 
+Project Euler [problem 18](https://projecteuler.net/problem=18), 
+also known as [problem 67](https://projecteuler.net/problem=67):
 
 ```
 By starting at the top of the triangle below and moving to adjacent 
