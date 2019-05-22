@@ -204,7 +204,7 @@ $ k
  █
 ```
 
-There isn't much to write home about, but the startup banner packs a lot 
+There isn't much to write home about, but startup banner actually packs a lot 
 of useful information:
 
 
@@ -681,7 +681,7 @@ logic:
 
 -----------------------
 
-No rocket science, it is all pretty basic. But push on, greatness awaits.
+No rocket science, it is all pretty basic. But carry on.
 
 ### types of types
 
@@ -812,7 +812,7 @@ b|4 5 6
 4 5 6 
 ```
 
-**Tables** are *flipped dictionaries*, and they deserve a separate discussion, but we will describe their syntax here for the sake of completeness. Table type is **\`A** and the notation is the same as dict, only with `+x flip` operator prepended. Dictionary will not flip unless all values are the same length.
+**Tables** are *flipped dictionaries*, and they deserve a separate large discussion. We will only describe their syntax here for the sake of completeness. Table type is **\`A** and notation is the same as dict, only with `+x flip` operator prepended. Dictionary will not flip unless all values are the same length.
 
 No comments on any of this for now:
 
@@ -1498,11 +1498,11 @@ It is time to write our first k program, and this time around there will be a lo
 By starting at the top of the triangle below and moving to adjacent 
 numbers on the row below, the maximum total from top to bottom is 23:
 
-     →3
-   ↑7   4
-  2  ↑4   6
-8   5  ↑9   3
-
+       →3
+     ↑7   4
+    2  ↑4   6
+  8   5  ↑9   3
+------------------
 9 + 4 + 7 + 3 = 23
 ```
 Problems 18 and 67 are simply two bigger triangles, and the challenge is to
