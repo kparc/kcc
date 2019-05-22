@@ -244,11 +244,11 @@ Type in your first k expressions, and enjoy your first answers:
 
 ```q
  2+2      /simplest face of k is a calculator
- █
+4
 
  x:42     /: is assign so x is now the answer
  x=x+1    /= is equal, and of course it isn't
- █
+0
 
  kcc:+/∞  /we knew you'd want to try this one
  kcc      /and what it happens to be is just:
