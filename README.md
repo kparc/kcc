@@ -10,7 +10,7 @@ plus over infinity, aka k crash course
 
 * [get](#get) | [run](#run)
 * style → [cmt](#style-annot) | [sep](#style-sep) | [tab](#style-ident) | [ids](#style-name) | [space](#style-space) | [bad](#style-bad)
-* parlance → [xyz](#parl-xyz) | [rank](#parl-rank)
+* parlance → [xyz](#parl-xyz) | [proj](#parl-proj) | [rank](#parl-rank) | [+:](#parl-explmonad)
 
 **[numbers](#numbers)**
 
@@ -402,8 +402,8 @@ are first-class citizens. k has anonymous functions, eval, apply, recursion, and
 explicitly declare function arguments. Of course you can also do that in k
 if you want to, but if you don't, a function can have up to three implicit 
 arguments called `x`, `y` and `z`, which means you declare them by simply 
-referencing them in the function body. It is an extremely convenient 
-feature, not nearly as scary as it sounds:
+referencing them in the function body. It is a very convenient feature, not 
+nearly as scary as it sounds:
 
 ```q
  f:{x+y+z}    /f[] takes three arguments
@@ -428,11 +428,23 @@ also say `f[2]`.
 
 This illustrates the core principle of k syntax — almost everything that you 
 intuitively feel you should be able to omit, can and should be omitted. Top 
-candidates for omission are square `[]` and round brackets `()`. The lesser 
-you type, the better your code will get.
+candidates for omission are square `[]`, round brackets `()` and space `0x20`.
+The lesser you type, the better your code will get.
 
 Syntax for explicit argument declaration `{[a;b]}` is just a side remark. It
 is good to know, but we won't see it in this text again.
+
+<a name="parl-proj"></a>
+-------------------
+
+**Projection**, also known as function view, is a simply a reference to a function with some arguments preset to a value, and at least one **free**, or elided argument. For example, if a function of rank 3, `f[x;y;z]`, only receives first two arguments, it will return its projection of rank 1:
+
+```q
+ f:{x+y+z}      /a function of rank three
+ p:f[1;;3]      /a projection of f[1;?;3]
+ p 2            /is same as call f[1;2;3]
+6
+```
 
 <a name="parl-rank"></a>
 -------------------
@@ -454,12 +466,22 @@ is in turn defined by the number of arguments offered to the operator.
 
 For example, when you used your first ever k operator in the expression `2+2`, 
 you have used the `+` operator in a dyadic context since it received *two* 
-operands to work on, left and right. The `monadic +` will be introduced later,
-but has entirely different semantics.
+operands to work on, left and right, so it was inferred to be `dyadic + plus`. The `monadic + flip` will be introduced later, and has entirely different semantics.
+
+<a name="parl-explmonad"></a>
+**Explicit monadics** is a language construct that allows to explicitly declare
+an operator to be monadic regardless of its context. This is commonplace and very 
+often necessary. Will introduce the monadic override syntax using the `+` operator as example, and you will see how this works in practice later on.
+
+An operator is declared to be explicitly monadic if is followed by `:`:
+
+```q
++          /context-aware, either monadic flip or dyadic plus
++:         /always stays a monadic flip, disregarding context
+```
 
 > You will not get far in this course without a strong grip on the idea that 
-some things in k land are **monadic**, while others are **dyadic**. Make sure
-you have it.
+some things in k land are **monadic** or even **explicitly monadic**, while others are **dyadic**. Make sure you have it.
 
 On a more general note, functions in k can be of rank 1 to 9:
 
@@ -670,7 +692,7 @@ logic:
 
 -----------------------
 
-No rocket science, it is all pretty basic. But carry on.
+No rocket science, all pretty basic, but carry on.
 
 ### types of types
 
@@ -1570,7 +1592,7 @@ Looks like the `mxpath` is doing pretty well. Lets fetch the input file for the 
 We didn't tell you do this, but the complete program can also be written as a single k expression:
 
 ```q
- *{y+1_|':x}/|`k?'0:"p67.txt"   /load, parse and fold maxpath
+ *{y+1_|':x}/|`k?'0:"p67.txt"   /load, parse and fold
  █
 ```
 
@@ -1649,7 +1671,7 @@ Finally, compare the size of their runtimes:
 
 ### gladly beyond
 
-We have covered a lot of ground, and it is a good time to put things into perspective. Below is a complete map of k operators, and those marked with bullets you have already seen and used at least once:
+We have covered a lot of ground, good time to put things into perspective. Below is a complete map of k operators, and those marked with bullets you have already seen and used at least once:
 
 ```
    x+y         +x
@@ -1683,16 +1705,18 @@ It really feels we have explored more than we didn't, and that is huge progress.
 
 We conclude with a list of subjects that you are now ready to explore on your own:
 
-|k language                       |k platform                         |
-|:--------------------------------|:----------------------------------|
-|additional k operators           |interactive debugger and logging   |
-|tables and k-sql language        |building clients and servers in k  |
-|k-exprs and implicit monadics    |benchmarking, testing and tracing  |
-|math prims and vector aggregates |disk I/O, streaming and persistence|
-|advanced use cases of adverbs    |IPC and distributed workloads      |
-|native csv, tsv, json and utf    |native TCP and HTTP servers        |
-|integrated cryptography          |scripting, deployment and OS       |
-|advanced datetime arithmetic     |Python, Julia and C interops       |
+|k language                       |k platform                          |
+|:--------------------------------|:-----------------------------------|
+|additional k operators           |debugging and securing k systems    |
+|tables and k-sql language        |building clients and servers in k   |
+|k-exprs, explicit monadics       |benchmarking, testing and tracing   |
+|rand, math prims, vector aggrs   |disk I/O, persistence and streaming |
+|advanced use of adverbs, threads |IPC and distributed workloads       |
+|native csv, tsv, json and utf    |native TCP and HTTP servers         |
+|integrated cryptography          |scripting, deployment, OS tuning  |
+|nanosecond time, date math       |interop with Python, Julia and C    |
+|projections and index elision    |tech support and user community     |
+|design of internal components    |k resources, tools and packages     |
 
 <a name="gravestone">
 ---------------------
