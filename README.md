@@ -77,8 +77,8 @@ it will be fast and violent.
 This might feel a bit intense, but we hope the course is still lightweight enough
 to be completed in one session.
 
-This document is **not a k reference**. The majority of subjects are explored at
-depth sufficient to give a general impression, but by no means exhaustive.
+This document is **not a k reference**. The majority of subjects are discussed at
+depth sufficient to give a solid general overview, but by no means exhaustive.
 
 ### who
 
@@ -427,7 +427,7 @@ feature, not nearly as scary as it sounds:
 Note that when calling a function with three arguments `f[1;2;3]` we had to use
 square brackets and use an expression separator, because each argument passed 
 to a function is an expression in its own right. However, second function only 
-takes one argument, and we were allowed to omit brackets, although we could 
+takes one argument, and we were allowed to omit brackets — although we could 
 also say `f[2]`.
 
 This illustrates the core principle of k syntax — almost everything that you 
@@ -435,8 +435,8 @@ intuitively feel you should be able to omit, can and should be omitted. Top
 candidates for omission are square `[]` and round brackets `()`. The lesser 
 you type, the better your code will get.
 
-Syntax for explicit argument declaration `{[a;b]}` is just a side remark, it 
-will not be used in this text again.
+Syntax for explicit argument declaration `{[a;b]}` is just a side remark. It
+is good to know, but we won't see it in this text again.
 
 <a name="parl-rank"></a>
 -------------------
@@ -452,23 +452,26 @@ A function or an operator that takes...
 * one argument is **monadic**
 * two arguments is **dyadic**
 
-A function in k can be of rank 1 to 9, which means:
+As you will see, the vast majority of native operators in `k` have exactly two 
+completely different meanings based on the context where they are used, which 
+is in turn defined by the number of arguments offered to the operator.
+
+For example, when you used your first ever k operator in the expression `2+2`, 
+you have used the `+` operator in a dyadic context since it received *two* 
+operands to work on, left and right. The `monadic +` will be introduced later,
+but has entirely different semantics.
+
+> You will not get far in this course without a strong grip on the idea that 
+some things in k land are **monadic**, while others are **dyadic**. Make sure
+you have it.
+
+On a more general note, functions in k can be of rank 1 to 9:
 
 * it is not really possible to define a function with no arguments. Rank zero,
   or **niladic** functions do not exist in k.
 * a function cannot take more than nine explicit arguments, and some say this 
   is an overly generous limit.
 
-As you will see, the vast majority of native operators in `k` have exactly two 
-completely different meanings based on the context where they are used, which 
-is in turn defined by the number of arguments offered to the operator. To 
-overlook this fact is a grave mistake, so you better get a very strong grip on 
-the idea that some things in life are **monadic**, while others are **dyadic**.
-
-For example, when you used your first ever k operator in the expression `2+2`, 
-you have used the `+` operator in a dyadic context since it received *two* 
-operands to work on, left and right. We will introduce monadic `+` operator 
-later.
 
 -------------------
 
@@ -661,7 +664,7 @@ introduce the `monadic +x`:
 First, lets make sure `+x flip` operator transposes rectangular matrices
 just as well as squares, which would be of little surprise. Then try to flip 
 something less obvious, and after that you have two more transformations to
-apply. Inspect all intermediate results and make sure you can follow their 
+apply. Inspect all intermediate results and make sure you follow their 
 logic:
 
 ```q
@@ -681,7 +684,7 @@ logic:
 
 -----------------------
 
-No rocket science, it's all pretty basic. So push on, greatness awaits.
+No rocket science, it is all pretty basic. So push on, greatness awaits.
 
 ### two types of types
 
@@ -755,8 +758,7 @@ necessary without creating additional copies of the string.
 
 In the narrow case of names, we could say that k actually passes references 
 instead of values, although they are not pointers in the strict sense. Names 
-come handy in many situations, for now lets just see how they 
-quack:
+come handy in many situations, for now lets just see how they quack:
 
 ```q
  a:`kei              /"kei" is now internalized
@@ -805,9 +807,10 @@ its own type, which is does, and more than one:
 ```
 
 <a name="typ-mix"></a>
-Of special mention is the **composite vector** type, or you could also say 
-**mix vector**. Such vectors are either a mixture of atoms of disparate types, 
-or contain something more complex than atoms, e.g. other vectors.
+**Composite vector** type, or you could also say **mix vector**, is
+of special mention. Such vectors are either a mixture of atoms of 
+disparate types, or contain something more complex than atoms, e.g. 
+other vectors:
 
 ```q
  c:0,1,"a",2,3          /a char impostor among ints, c is composite
@@ -826,8 +829,8 @@ or contain something more complex than atoms, e.g. other vectors.
 <a name="typ-cast"></a>
 **Type casting**, both explicit and implicit, is demonstrated by the following
 examples which also give a general feel of how type coersion behaves. The `cast`
-operator in k is a dyadic `t$x`, where `t` is a type name and `x` is a cast 
-subject:
+operator in k is a dyadic `t$x`, where `t` is a type name and `x` is a subject
+of cast:
 
 ```q
  1+.5                  /int plus float is float, no surprises here
@@ -1000,8 +1003,9 @@ expressions so that the order of evaluation becomes **linear**.
 Although precedence override is often inevitable and can be beneficial, 
 it can have an adverse effect on readability. That is, when you read a 
 k expression right to left, you want to go fast and uninterrupted, but 
-precedence override gets in your way. So when you are writing an 
-expression yourself, think of the reader and try to minimize the 
+precedence override gets in your way.
+
+>So while writing an expression, think of the reader and try to minimize the 
 use of round brackets.
 
 ----------------
@@ -1013,7 +1017,7 @@ Now we can revisit the last expression from the previous chapter:
 `n        /"get 42, apply monadic @, get `i, apply monadic @, get `n"
 ```
 
-A convincing proof that type name of a type name is indeed a `name`.∎
+Now we have a convincing proof that type name of a type name is indeed a `name`.∎
 
 ----------------
 
@@ -1088,7 +1092,7 @@ In functional speak, one would say adverb `over` *folds* a vector of values and
 And since `over` is just `v/x`, this is how `sum` function looks like in k:
 
 ```q
- s:{+/x}      /s is 'plus over x'
+ s:{+/x}            /s is 'plus over x'
  s 1 2 3 4 5
 15 
 ```
@@ -1358,26 +1362,24 @@ And of course, `f` is nothing else but:
 ```q
  qs:{$[2>#?x;x;,/qs'x@=x>rand x]}        /quicksort by random pivot
 
- qs 9 2 5 5 1 8 1 3 6 1                  /sort an int vector
-1 1 1 2 3 5 5 6 8 9
+ i:9 2 5 5 1 8 1 3 6 1                   /an integer shuffle
+ f:2.6 -∞ 8.6 π 1.7 ∞ 3.5 5.6            /a float soup (hello π)
+ c:"edrofgtnljgrpliifp"                  /a random char vector
 
- qs 2.6 -∞ 8.6 π 1.7 ∞ 3.5 5.6           /sort a float vector (hello π)
--∞ 1.7 2.6 π 3.5 5.6 8.6 ∞
-
- qs "edrofgtnljgrpliifp"                 /sort a char vector
-"deffggiijllnopprrt" 
+ qs'(i;f;c)
+ █
 ```
 
-This is not the fastest `quicksort` ever written, but in real life you would 
-simply use the built-in operator which is a lot more efficient. It is just 
-monadic `^x`:
+Of course this is not the fastest `quicksort` ever written, but in real life 
+you would simply use the built-in operator which is a lot more efficient. It 
+is just monadic `^x`:
 
 ```q
  ^2.6 -∞ 8.6 π 1.7 ∞ 3.5 5.6             /^x is 'sort'
--∞ 1.7 2.6 π 3.5 5.6 8.6 ∞
+ █
 ```
 
-But what our DIY sort function demonstrates very well is the principle of 
+But what t DIY sort function demonstrates very well is the principle of 
 **doing more with less**, and that is what k is all about.
 
 Check out examples of `quicksort` in the wild in 
@@ -1400,12 +1402,12 @@ While analysing `qs` code, you have learned:
 * monadic `,/x raze`
 * dyadic `x@y index`
 
-Also, in the previous chapter you have seen:
+Also, previously we have seen:
 
 * monadic `!x til (first x integers)`
 * monadic `+x flip (transpose)`
 
-Finally, for completeness sake:
+And finally, for completeness sake:
 
 * dyadic `t@x cast`
 * monadic `@x type`
@@ -1413,7 +1415,6 @@ Finally, for completeness sake:
 
 * dyadic `x:y assign`
 * dyadic `x=y equal`
-
 
 Although this is still a small part of k operator arsenal, if you can do 
 `quicksort` with this much, you can do a lot more. And then add vector 
@@ -1427,7 +1428,7 @@ arithmetic, and then take everything to the power of 6 adverbs.
 2. retrace the steps of the analysis we did together
 3. in a new k session, try to reproduce `qs` from scratch
 
-It sounds harder than it really is. It might take more than one attempt, 
+It sounds much harder than it really is. It might take more than one attempt, 
 but you will be amazed how fast you will get there. However, before 
 advancing to the next chapter, make sure that you do.
 
@@ -1443,7 +1444,7 @@ will agree that reading k programs is easy and fun.
 
 ### apples and oranges
 
-There is no new material in this chapter, so we can go straight to practice.
+There is no new material in this small chapter, so we can go straight to practice.
 
 **Practice:**
 
