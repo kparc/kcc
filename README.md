@@ -24,8 +24,7 @@ plus over infinity, aka k crash course
 * reading code → [how to solve it](#how-to-solve-it)
 * code metrics → [apples and oranges](#apples-and-oranges)
 * writing code → [euler triangle](#euler-triangle)
-* gladly beyond → [\`nyi](#gladly-beyound)]
-
+* [gladly beyond](#gladly-beyound)]
 
 
 ---------------------
