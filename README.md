@@ -1366,7 +1366,7 @@ And of course, `f` is nothing else but:
  █
 ```
 
-Of course this is not the fastest `quicksort` ever written, but in real life 
+This is not the fastest `quicksort` ever written, but in real life 
 you would simply use the built-in operator which is a lot more efficient. It 
 is just monadic `^x`:
 
@@ -1375,7 +1375,7 @@ is just monadic `^x`:
  █
 ```
 
-But what t DIY sort function demonstrates very well is the principle of 
+But what our DIY sort function is very good for is to demonstrate the principle of 
 **doing more with less**, and that is what k is all about.
 
 Check out examples of `quicksort` in the wild in 
@@ -1437,10 +1437,7 @@ will agree that reading k programs is easy and fun.
 
 ### three triangles
 
-This chapter is not going to be much longer than the previous, because
-it is time to write our first k program. Lets solve the classic 
-Project Euler [problem 18](https://projecteuler.net/problem=18), 
-also known as [problem 67](https://projecteuler.net/problem=67):
+It is time to write our first k program, and this time around there will be a lot less hand-holding. We will solve the classic Project Euler [problem 18](https://projecteuler.net/problem=18), also known as [problem 67](https://projecteuler.net/problem=67):
 
 ```q
 By starting at the top of the triangle below and moving to adjacent 
@@ -1453,10 +1450,8 @@ numbers on the row below, the maximum total from top to bottom is 23:
 
 9 + 4 + 7 + 3 = 23
 ```
-Problems 18 and 67 give bigger triangles and challenge us to
-find maximum paths in them. The efficient algorighm is trivial, and
-is given away in the example itself: we simply need to fold rows
-going from bottom up, like this:
+Problems 18 and 67 are simply two bigger triangles, and the challenge is to
+find the **sum** of maximum paths in them. While 18 can be solved by bruteforce, 67 can not. The efficient algorighm is absolutely trivial, and is given away in the example above: we simply need to fold rows going from bottom up like this:
 
 ```q
 8   5   9   3
@@ -1469,13 +1464,12 @@ going from bottom up, like this:
     7   4
    20  19
      20             /max
-      +             /done
-      3 = 23
+      +             /fold     
+      3
+     23             /done
 ```
 
-It is easy to see that the core of the solution is  a 
-function that reduces a row and merges it into 
-the next, so lets implement it:
+It is easy to see that the core of the solution is a function that reduces a row and merges it into the next. The function must accept two rows so lets implement it:
 
 ```q
  r4:8 5 9 3      /take two bottom rows to assist thinking
@@ -1500,9 +1494,7 @@ the next, so lets implement it:
 10 13 15
 ```
 
-Great, we have the reduction function, now lets apply it 
-over the test triangle to make sure it folds it into
-what we expect:
+Great, we have the reduction function, now lets apply it *over* the test triangle to make sure it folds it into what we expect. Since we are reducing a vector into a an atom, it is very clear which adverb to use:
 
 ```q
  t:(,3;7 4;2 4 6;8 5 9 3)
@@ -1524,11 +1516,10 @@ what we expect:
 23 
 ```
 
-Looks like we're getting somewhere. Lets fetch the triangle 
-from the problem 67, parse it and fold it:
+Looks like the `mxpath` is doing pretty well. Lets fetch the input file for the problem 67, load it, parse it and solve it:
 
 ```q
- /backslash cmd executes an os command:
+ /backslash cmd executes an os command from k:
  \curl https://projecteuler.net/project/resources/p067_triangle.txt > p67.txt
 
  lines:0:"p67.txt"  /0:x reads a text file as vector of lines
@@ -1539,12 +1530,14 @@ from the problem 67, parse it and fold it:
  t 2
 52 40 9
 
- mxpath t           /calculated max path is the answer to p67
+ #t                 /a bigger triangle, but not a bigger deal
+100
+
+ mxpath t           /returns max path sum, the solution to 67
  █
 ```
 
-All done. Although we do not recommend you do this, you could also write 
-the solution as a single k expression:
+Although we do not recommend you do this, the complete program can also be written as a single k expression:
 
 ```q
  *{y+1_|':x}/|`k?'0:"p67.txt"   /load, parse and fold maxpath
