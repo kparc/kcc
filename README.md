@@ -512,7 +512,7 @@ nothing to do with *linked lists*.
  v:,42            /a vector of length 1, one integer item
 ```
 
-k is strictly "**pass by value**", there are no references or pointers:
+It is safe for us to assume that k is strictly "**pass by value**", i.e. there are no references or pointers passed around, although it is somewhat of an illusion created by the underlying implementation. In reality, k avoids unnecessary copies:
 
 ```q
  x:0 1 2 3 4     /everything is passed by value
@@ -524,8 +524,7 @@ k is strictly "**pass by value**", there are no references or pointers:
 ```
 
 <a name="v-plus-v"></a>
-The first thing you need to know about vectors is that most operations
-you expect to work for atoms work equally well for vectors, too:
+The first thing you need to know about vectors is that most operations you expect to work for atoms work equally well for vectors, too:
 
 ```q
 x:y:0 1 2 3 4    /x and y are twin copies
@@ -567,8 +566,7 @@ Mixing atomic and vector operands makes total sense and is very useful:
 ```
 
 <a name="v-indexing"></a>
-**Indexing** is zero-based as you would expect, and if you pass a vector of 
-indices, you get back vector of items:
+**Indexing** is zero-based as you would expect, and if you pass a vector of indices, you get back vector of items:
 
 ```q
  x:2 4 8 16 32
@@ -591,8 +589,7 @@ indices, you get back vector of items:
 ```
 
 <a name="v-shp"></a>
-Pairwise operations on vectors of incompatible **shape** make much less sense 
-to k than division by zero, and will throw an error:
+Pairwise operations on vectors of incompatible **shape** make much less sense to k than division by zero, and will throw an error:
 
 ```q
  x:0 1 2 3 4
@@ -604,10 +601,7 @@ x+y
 length error
 ```
 
-Note the difference between shape and length. This reminds us that a vector can
-be composed not just from atoms but from other vectors as well, and there is no
-practical limit on the depth of nesting. In other words, vectors can 
-have **arbitrary shape**:
+Note the difference between shape and length. This reminds us that a vector can be composed not just from atoms but from other vectors as well, and there is no practical limit on the depth of nesting. In other words, vectors can have **arbitrary shape**:
 
 ```q
  y:(,1;1 1;1 2 1;1 3 3 1)    /pascal's triangle
@@ -811,7 +805,7 @@ b|4 5 6
 ```
 
 <a name="typ-tab"></a>
-**Tables** are *flipped dictionaries*, and they deserve a separate large discussion. We will only describe their syntax here for the sake of completeness. Table type is **\`A** and notation is the same as dict, only with `+x flip` operator prepended. Dictionary will not flip unless all values are the same length.
+**Tables** are *flipped dictionaries*, and they require a separate large discussion. We will only describe their syntax here for the sake of completeness. Table type is **\`A** and notation is the same as dict, only with `+x flip` operator prepended. Dictionary will not flip unless all values are the same length.
 
 No comments on any of this for now:
 
@@ -858,10 +852,7 @@ goo|3.75
 ```
 
 <a name="typ-nul"></a>
-**Null** values in k are typed, integer null is `Ø` and float null is
-`ø`. **Infinity** is a scalar float `∞`. Working with nulls and infinities
-can be very tricky, and it is very important to pay attention to their
-types:
+**Null** values in k are typed, integer null is `Ø` and float null is `ø`. **Infinity** is a scalar float `∞`. Working with nulls and infinities can be very tricky, and it is very important to pay attention to their types:
 
 ```q
  n:ø          /float null is type float
@@ -880,10 +871,7 @@ types:
 ```
 
 <a name="typ-mix"></a>
-**Composite vector** type, or you could also say **mix vector**, is
-of special mention. Such vectors are either a mixture of atoms of 
-disparate types, or contain something more complex than atoms, e.g. 
-other vectors:
+**Composite vector** type, or you could also say **mix vector**, is of special mention. Such vectors are either a mixture of atoms of disparate types, or contain something more complex than atoms, e.g. other vectors:
 
 ```q
  c:0,1,"a",2,3          /a char impostor among ints, c is mix
@@ -951,10 +939,7 @@ type error
  █
 ```
 
-There is a lot more to be said about the type system, but the expression 
-`@@42` above (which evaluates to some wordplay: "type name of a type name
-is `name`") urges us to the next section which is all about how to
-make sense of this expression.
+There are things left to be said about the type system, but the expression `@@42` above (which evaluates to some kind wordplay, "type name of a type name is `name`") urges us to the next section which is all about how to make sense of this expression.
 
 ------------------
 
@@ -1148,9 +1133,7 @@ And since `over` is just `v/x`, this is how `sum` function looks like in k:
 
 It is a good moment to look back at the C version, one last time. Be surprised
 to hear that its `for` loop declaration contains an ancient but ever so 
-popular [bug](https://stackoverflow.com/questions/37538/how-do-i-determine-the-size-of-my-array-in-c),
-which k version does not because spotting bugs in `+/x` is much easier. Besides, 
-even if the C code wasn't broken, it would only work for integers.
+popular [bug](https://stackoverflow.com/questions/37538/how-do-i-determine-the-size-of-my-array-in-c), which k version does not because spotting bugs in `+/x` is much easier. Besides, even if the C code wasn't broken, it would only work for integers.
 
 You could be tempted to see of what other use `over` could be. Let's introduce 
 a new k operator, `!x til`, and implement another obvious candidate for `over`:
@@ -1246,8 +1229,6 @@ an input vector
 This doesn't seem like much, adverbs seem to be doing pretty basic stuff. But hold 
 that thought for a minute.
 
-----------------
-
 **Recap:**
 
 We have seen:
@@ -1304,7 +1285,7 @@ lot less innocent, and very fast.
 
 ### how to solve it
 
-The title of this chapter is borrowed from a legendary book published back 
+The title of this chapter is borrowed from a legendary book published 
 in 1945, a small volume by mathematician George Pólya where he shows how to 
 tackle problems and arrive to solutions. It is a very inspiring read.
 
@@ -1523,7 +1504,7 @@ find the **sum** of maximum paths in them. While 18 can be solved by bruteforce,
      23             /out
 ```
 
-It is easy to see that the core of the solution is a function that reduces the current row (`max`) and merges it into the next (`sum`). It expects two arguments, i.e. both rows to work with, and returns the  So lets implement it:
+It is easy to see that the core of the solution is a function that reduces the current row (`max`) and merges it into the next (`sum`). It expects two arguments, i.e. both rows to work with, and returns `out`. So, lets implement it:
 
 ```q
  r4:8 5 9 3      /take two bottom rows to assist thinking
@@ -1703,7 +1684,7 @@ $  ● pad|cast   ● string
 <a name="gravestone">
 ---------------------
 
-It seems you have explored more than you didn't, and that is huge progress. But a lot remains to be learned, because operators is only one aspect of k, and this short introduction didn't hope to cover everything.
+It really feels we have explored more than we didn't, and that is huge progress. But many things remain to be discovered, because operators is only one aspect of k, and this short introduction could not possibly cover everything.
 
 We conclude with a list of subjects that you are now ready to explore on your own:
 
