@@ -25,7 +25,6 @@ plus over infinity, aka k crash course
 * writing code → [three triangles](#three-triangles)
 * metrics → [apples and oranges](#apples-and-oranges)
 * learning plan → [gladly beyond](#gladly-beyond)
-
 ---------------------
 
 ## genesis
@@ -1677,7 +1676,7 @@ Finally, compare the size of their runtimes:
 
 ----------------------
 
-### gladly beyound
+### gladly beyond
 
 We have covered a lot of ground, and it is a good time to put things into perspective. Below is a complete map of k operators, and those marked with bullets you have already seen and used at least once:
 
