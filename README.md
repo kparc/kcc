@@ -812,9 +812,9 @@ b|4 5 6
 4 5 6 
 ```
 
-**Tables** in k are *flipped dictionaries*, and they are a subject for a separate discussion. We will only describe their syntax for the sake of completeness and return to them later on. Table type is **\`A** and the syntax is the same as dict, only with `+x flip` operator prepended, but dictionary values are required to be of same length.
+**Tables** in k are *flipped dictionaries*, and they deserve a separate discussion, but we describe their syntax for the sake of completeness. Table type is **\`A** and the syntax is the same as dict, only with `+x flip` operator prepended, but dictionary values are required to be of same length.
 
-We will not comment on any of this for now, but isn't hard to follow:
+No comments on any of this for now:
 
 ```q
  x:`goo`apl`amz
@@ -1510,15 +1510,15 @@ find the **sum** of maximum paths in them. While 18 can be solved by bruteforce,
 ```q
 8   5   9   3
   8   9   9         /max
-  +   +   +         /fold
+  +   +   +         /sum
   2   4   6
  10  13  15
    13  15           /max
-    +   +           /fold
+    +   +           /sum
     7   4
    20  19
      20             /max
-      +             /fold     
+      +             /sum     
       3
      23             /done
 ```
