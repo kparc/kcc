@@ -237,7 +237,7 @@ commands, especially the latter.
 **Practice:**
 
 Make sure you have `rlwrap` utility installed, and put an alias 
-`alias k="rlwrap k"` into your rc file. This makes your minimalistic k 
+`alias k="rlwrap k"` into your rc file. This makes your spartan k 
 development environment a lot more pleasant to use.
 
 Type in your first k expressions, and enjoy your first answers:
@@ -255,7 +255,7 @@ Type in your first k expressions, and enjoy your first answers:
  █
 ```
 
-Indeed, the title of this document seems to make sense to k intepreter and 
+Indeed, the title of this document seems to make sense to k interpreter and 
 evaluates to exactly that, and very soon you will easily infer what it 
 actually means.
 
@@ -402,7 +402,7 @@ are first-class citizens. k has anonymous functions, eval, apply, recursion, and
 explicitly declare function arguments. Of course you can also do that in k
 if you want to, but if you don't, a function can have up to three implicit 
 arguments called `x`, `y` and `z`, which means you declare them by simply 
-referencing them in the function body. It is an extremely convinient 
+referencing them in the function body. It is an extremely convenient 
 feature, not nearly as scary as it sounds:
 
 ```q
@@ -494,7 +494,7 @@ language has them, and in k they are as useful as elsewhere. But k belongs to a
 family of *vector languages*, which means its fundamental type is an ordered 
 set of atoms or other ordered sets.
 
-In k parlance, terms "array", "list" and "vector" are often used interchageably 
+In k parlance, terms "array", "list" and "vector" are often used interchangeably 
 and refer to the same thing, but we will stick with `vector` to avoid confusing 
 you, because vectors are much more general than classic *arrays* and have 
 nothing to do with *linked lists*. 
@@ -675,7 +675,7 @@ No rocket science, it is all pretty basic. But carry on.
 ### types of types
 
 Type system in k gets strict when it has to, but also agrees that implicit 
-casts and type coersion have their strengths — especially when done right, 
+casts and type coercion have their strengths — especially when done right, 
 which in k they are.
 
 Before we see the examples, the first thing you need to know about types in k 
@@ -889,7 +889,7 @@ goo|3.75
 
 <a name="typ-cast"></a>
 **Type casting**, both explicit and implicit, is demonstrated by the following
-examples which also give a general feel of how type coersion behaves. The `cast`
+examples which also give a general feel of how type coercion behaves. The `cast`
 operator in k is a dyadic `t$x`, where `t` is a type name and `x` is a subject
 of cast:
 
@@ -975,7 +975,7 @@ And here is comes: once we drop the brackets, it suddenly becomes absolutely
 natural to read this expression *right to left*. Take your time to contemplate 
 and absorb this fact. In very little time you will see how it works in practice, 
 and once you put it to practice yourself, you will agree that this way of 
-functional composition is simple, elegant and intuituve:
+functional composition is simple, elegant and intuitive:
 
 **k expressions are read, written and evaluated right to left.**
 
@@ -1002,7 +1002,7 @@ that consists of three identical expressions `l t r`, with parens added for clar
 rivers flow in k land.
 
 We all take it for granted that multiplication and division bind stronger than 
-addition and substraction and should be calculated first, and it feels almost 
+addition and subtraction and should be calculated first, and it feels almost 
 natural that a computer language must have complex precedence hierarchy to do 
 anything useful, and k disagrees with that:
 
@@ -1119,7 +1119,7 @@ will happily modify *any* dyadic operator or function. Described more formally,
 4. return `acc`
 
 The above is nothing else but a general case of the explicit loop found in 
-`sum()`, as well as of *all other* explicit loops of this particiular family.
+`sum()`, as well as of *all other* explicit loops of this particular family.
 In functional speak, one would say adverb `over` *folds* a vector of values and 
 *reduces* them into one.
 
@@ -1291,7 +1291,7 @@ tackle problems and arrive to solutions. It is a very inspiring read.
 
 Lets tackle a little problem. We will look at a k function that actually does 
 something very useful and implements a familiar algorithm. The subject of 
-the game is to figure out how it is implementented in k and to identify the 
+the game is to figure out how it is implemented in k and to identify the 
 algorithm. It is very useful to dissect all of it on paper, so put your 
 interpreter aside for now.
 
@@ -1353,19 +1353,19 @@ This gives us confidence to wrestle down the last part, the recursion step:
  rnd
 2 
 
- cmp:x<rnd        /bool vector of 0s where x[n]<rnd, 1s where otherwise
+ cmp:x>rnd        /bool vector of 0s where x[n]>rnd, 1s where otherwise
  cmp
 0 1 1 0
 
- idx:=cmp         /= is 'group': 2 vectors, indices of 0s and 1s in cmp
+ idx:=cmp         /= is 'group', ie dict of indices of 0s and 1s in cmp
  idx
-0|0 3
-1|1 2
+0|0 3             /"cmp has 0 at indices 0 and 3"
+1|1 2             /"cmp has 1 at indices 1 and 2"
 
  pts:x@idx        /dyadic @ is 'index': elements of x at indices in idx
  pts
-0|4 2
-1|0 1
+0|4 2             /list of items in x less than random pivot
+1|0 1             /list of items in x greater or equal than pivot
 
 pts:x@=x>rand x   /"partition x by pivot: items < rnd and items >= rnd"
 
@@ -1410,14 +1410,9 @@ is just monadic `^x`:
  █
 ```
 
-But what our DIY sort function is very good for is to demonstrate the principle of 
-**doing more with less**, and that is what k is all about.
+But what our DIY sort function is very good for is to demonstrate the principle of **doing more with less**, and that is what k is all about.
 
-Check out examples of `quicksort` in the wild in 
-[C++](https://gist.github.com/christophewang/ad056af4b3ab0ceebacf), 
-[Python](https://gist.github.com/anirudhjayaraman/897ca0d97a249180a48b50d62c87f239),
-[JavaScript](https://gist.github.com/claudiahdz/39a86084edaaabe7fc17c321c0bb6896) 
-and [Java](https://github.com/Code2Bits/Algorithms-in-Java/blob/master/sort/src/main/java/com/code2bits/algorithm/sort/QuickSort.java).
+Check out examples of `quicksort` in the wild in [C++](https://gist.github.com/christophewang/ad056af4b3ab0ceebacf), [Python](https://gist.github.com/anirudhjayaraman/897ca0d97a249180a48b50d62c87f239), [JavaScript](https://gist.github.com/claudiahdz/39a86084edaaabe7fc17c321c0bb6896) and [Java](https://github.com/Code2Bits/Algorithms-in-Java/blob/master/sort/src/main/java/com/code2bits/algorithm/sort/QuickSort.java).
 
 -------------------
 
@@ -1486,7 +1481,7 @@ numbers on the row below, the maximum total from top to bottom is 23:
 9 + 4 + 7 + 3 = 23
 ```
 Problems 18 and 67 are simply two bigger triangles, and the challenge is to
-find the **sum** of maximum paths in them. While 18 can be solved by bruteforce, 67 can not, but efficient algorighm is absolutely trivial. Is given away in the example above, we simply need to fold rows going bottom up, like so:
+find the **sum** of maximum paths in them. While 18 can be solved by bruteforce, 67 can not, but efficient algorithm is absolutely trivial. Is given away in the example above, we simply need to fold rows going bottom up, like so:
 
 ```q
 8   5   9   3
@@ -1688,16 +1683,16 @@ It really feels we have explored more than we didn't, and that is huge progress.
 
 We conclude with a list of subjects that you are now ready to explore on your own:
 
-|k language                       |k platform                       |
-|:--------------------------------|:--------------------------------|
-|additional k operators           |interactive debugger and logging |
-|tables and k-sql language        |building clients and servers in k|
-|k-exprs and implicit monadics    |benchmarking, testing and tracing|
-|math prims and vector aggregates |advanced I/O and persistence     |
-|advanced use cases of adverbs    |IPC and distributed workloads    |
-|native csv, tsv, json and unicode|native TCP and HTTP servers      |
-|integrated cryptography          |scripting, deployment and OS     |
-|advanced datetime arithmetic     |Python, Julia and C interop      |
+|k language                       |k platform                         |
+|:--------------------------------|:----------------------------------|
+|additional k operators           |interactive debugger and logging   |
+|tables and k-sql language        |building clients and servers in k  |
+|k-exprs and implicit monadics    |benchmarking, testing and tracing  |
+|math prims and vector aggregates |disk I/O, streaming and persistence|
+|advanced use cases of adverbs    |IPC and distributed workloads      |
+|native csv, tsv, json and utf    |native TCP and HTTP servers        |
+|integrated cryptography          |scripting, deployment and OS       |
+|advanced datetime arithmetic     |Python, Julia and C interops       |
 
 <a name="gravestone">
 ---------------------
