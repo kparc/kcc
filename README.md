@@ -665,7 +665,7 @@ logic:
 
 -----------------------
 
-Yes, no rocket science, it is all pretty basic — so, push on.
+Yes, no rocket science, it is all pretty basic. So, push on, greatness awaits.
 
 ### two types of types
 
@@ -1428,7 +1428,7 @@ will agree that reading k programs is easy and fun.
 
 ### apples and oranges
 
-There is no new material in this chapter, so we go straight to practice.
+There is no new material in this chapter, so we can go straight to practice.
 
 **Practice:**
 
@@ -1471,7 +1471,9 @@ Finally, compare the size of their runtimes:
 ### gladly beyound
 
 It looks like there is no other chapter after the previous, at least not
-as of yet. So thank you for making this far, and may your future endeavors 
+as of yet.
+
+So thank you for making this far, and may your future endeavors 
 meet all of your current expectations.
 
 
