@@ -23,7 +23,7 @@ plus over infinity, aka k crash course
 
 * reading code → [how to solve it](#how-to-solve-it)
 * code metrics → [apples and oranges](#apples-and-oranges)
-* writing code → [euler triangle](#euler-triangle)
+* writing code → [euler triangle](#euler-triangles)
 
 ---------------------
 
@@ -1484,7 +1484,7 @@ Finally, compare the size of their runtimes:
 
 -------------------
 
-### euler triangle
+### euler triangles
 
 This chapter is not going to be much longer than the previous, because
 it is time to write our first k program. Lets solve the classic 
@@ -1616,8 +1616,12 @@ We have seen some new stuff:
 
 **Practice:**
 
-Reproduce `mxpath` from scratch in a new k session, same way 
-you did with `qs`.
+1. Reproduce `mxpath` from scratch in a new k session, same way 
+   you did with `qs`.
+   
+2. Using your code, solve problem 18.
+
+3. Verify solutions for 18 and 67 on [Project Euler](https://projecteuler.net).
 
 ----------------------
 
