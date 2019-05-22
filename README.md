@@ -1,4 +1,4 @@
-# kcc:+/∞
+# +/∞
 
 plus over infinity, a crash course in k language
 
@@ -23,6 +23,7 @@ plus over infinity, a crash course in k language
 
 * reading code → [how to solve it](#how-to-solve-it)
 * code metrics → [apples and oranges](#apples-and-oranges)
+* writing code → [gladly beyound](#gladly-beyound)
 
 ---------------------
 
@@ -1464,6 +1465,11 @@ Finally, compare the size of their runtimes:
 ```
 
 -------------------
+
+### gladly beyound
+
+It seems like there is no other chapter after the previous. So 
+may the force be with you, and thank you very much.
 
 
 *\`nyi* ∎
