@@ -682,7 +682,7 @@ logic:
 
 -----------------------
 
-Yes, no rocket science, it is all pretty basic. So push on, greatness awaits.
+No rocket science, it's all pretty basic. So push on, greatness awaits.
 
 ### two types of types
 
