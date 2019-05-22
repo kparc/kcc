@@ -1565,7 +1565,7 @@ It is easy to see that the core of the solution is a function that reduces the c
 10 13 15
 ```
 
-Great, we have the reduction function, now lets apply it *over* the test triangle to make sure it folds it into what we expect. Since we are reducing a vector into a an atom, it is very clear which adverb to use:
+Great, we have the reduction function, now lets apply it *over* the test triangle to make sure it folds it into what we expect. Since we are reducing a vector into a an atom, it is very clear which adverb we want to use:
 
 ```q
  t:(,3;7 4;2 4 6;8 5 9 3)
