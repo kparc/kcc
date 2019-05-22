@@ -661,7 +661,7 @@ introduce the `monadic +x`:
 
 First, lets make sure `+x flip` operator transposes rectangular matrices
 just as well as squares, which would be of little surprise. Then try to flip 
-something less obvious, and after that you have three more transformations to
+something less obvious, and after that you have two more transformations to
 apply. Inspect all intermediate results and make sure you can follow their 
 logic:
 
