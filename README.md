@@ -1708,14 +1708,16 @@ _  ● drop       ◦ floor
 $  ● pad|cast   ● string
 ```
 
+---------------------
+
 It seems you have explored more than you didn't, and that is huge progress. But a lot remains to be learned, because operators is only one aspect of k, and this short introduction didn't hope to cover everything.
 
 We conclude with a list of subjects that you are now ready to explore on your own:
 
-|k lang                           |k platform                       |
+|k language                       |k platform                       |
 |:--------------------------------|:--------------------------------|
 |advanced k operators             |using interactive debugger       |
-|native csv, tsv, JSON and UTF8   |building clients and servers     |
+|native csv, tsv, json and unicode|building clients and servers     |
 |k-exprs and implicit monadics    |benchmarking, testing and tracing|
 |math primitives and vector aggrs |advanced disk I/O and persistence|
 |advanced use cases for adverbs   |interprocess communication       |
