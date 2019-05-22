@@ -23,7 +23,10 @@ plus over infinity, aka k crash course
 
 * reading code → [how to solve it](#how-to-solve-it)
 * code metrics → [apples and oranges](#apples-and-oranges)
-* writing code → [gladly beyound](#gladly-beyound)
+* writing code → [euler triangle](#euler-triangle)
+* gladly beyond → [\`nyi](#gladly-beyound)]
+
+
 
 ---------------------
 
@@ -536,7 +539,7 @@ x:y:0 1 2 3 4    /x and y are twin copies
  x+y             /pairwise sum of vectors
 0 2 4 6 8 
 
-x*y              /product is pairwise too
+ x*y             /product is pairwise too
 0 2 4 9 16
 
  x%y             /division is %, get used 
@@ -647,7 +650,7 @@ introduce the `monadic +x`:
  mat>tam
 0 0 0
 1 0 0
-1 1 0 
+1 1 0
 
  mat+42
 43 44 45
@@ -1483,6 +1486,132 @@ Finally, compare the size of their runtimes:
 ```
 
 -------------------
+
+### euler triangle
+
+Time to write our first k program, so this chapter is not going to be
+much longer than the previous. Lets solve the classic Project Euler 
+[problem 18](https://projecteuler.net/problem=18), also known as
+[problem 67](https://projecteuler.net/problem=67):
+
+```
+By starting at the top of the triangle below and moving to adjacent 
+numbers on the row below, the maximum total from top to bottom is 23:
+
+     *3
+   *7   4
+  2  *4   6
+8   5  *9   3
+
+9 + 4 + 7 + 3 = 23
+```
+The problems 18 and 67 give bigger triangles and challenge us to
+find maximum paths in them. The efficient algorighm is trivial, and
+is given away in the example itself: we simply need to fold rows
+going from bottom up, like this:
+
+```
+8   5   9   3
+  8   9   9
+  +   +   +
+  2   4   6
+ 10  13  15
+   13  15
+    +   +
+    7   4
+   20  19
+     20
+      +
+      3 = 23
+```
+
+It is easy to see that the core of the solution is  a 
+function that reduces a row and merges it into 
+the next, so lets implement it:
+
+```q
+ r4:8 5 9 3      /take two bottom rows to assist thinking
+ r3:2 4 6
+  
+ 0|42            /x|y is max: returns largest of operands
+42 
+ 1_1 2 3         /x_y is drop: discards x items of a list
+2 3 
+
+ |':r4           /max eachprior: get max element pairwise
+8 8 9 9
+
+ 1_|':r4         /drop first result of seedless eachprior
+
+ r3+1_|':r4      /pairwise sum: merge bottom row into top
+10 13 15
+
+ row:{y+1_|':x}  /row reduction operation, x bottom, y up
+
+ row[r4;r3]      /r4 and r3 are fine, so should be others
+10 13 15
+```
+
+Great, we have the reduction function, now lets apply it 
+over the test triangle to make sure it folds it into
+what we expect:
+
+```q
+ t:(,3;7 4;2 4 6;8 5 9 3)
+
+ |t            /monadic |x is reverse the order of vector
+8 5 9 3
+2 4 6
+7 4
+,3
+
+ row/|t        /apply row reductor over reversed triangle
+,23
+
+ *row/|t       /*x is first: simply return the first item
+23
+
+ mxpath:{*{y+1_|':x}/|x} /maximum path in triangle vector
+ mxpath t
+23 
+```
+
+Looks like we're getting somewhere. Lets fetch the triangle 
+from the problem 67, parse it and fold it:
+
+```q
+ /backslash cmd executes an os command:
+ \curl https://projecteuler.net/project/resources/p067_triangle.txt > p67.txt
+
+ lines:0:"p67.txt"  /0:x reads a text file as vector of lines
+ lines 2            /just to make sure we have something real
+"52 40 09"
+
+ t:`k?'lines        /parse each line of input as k expression
+ t 2
+52 40 9
+
+ mxpath t           /calculated max path is the answer to p67
+ █
+```
+
+All done. Although we do not recommend this, you could also write 
+the solution as a single expression:
+
+```q
+ *{y+1_|':x}/|`k?'0:"p67.txt"
+ █
+```
+
+----------------------
+
+**Practice:**
+
+Reproduce `mxpath` from scratch in a new k session, same as you did 
+with `qs`.
+ 
+----------------------
+
 
 ### gladly beyound
 
