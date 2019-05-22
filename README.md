@@ -23,7 +23,7 @@ plus over infinity, aka k crash course
 
 * reading code → [how to solve it](#how-to-solve-it)
 * writing code → [three triangles](#three-triangles)
-* code metrics → [apples and oranges](#apples-and-oranges)
+* metrics → [apples and oranges](#apples-and-oranges)
 
 ---------------------
 
