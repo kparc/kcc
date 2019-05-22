@@ -471,7 +471,7 @@ operands to work on, left and right, so it was inferred to be `dyadic + plus`. T
 <a name="parl-explmonad"></a>
 **Explicit monadics** is a language construct that allows to explicitly declare
 an operator to be monadic regardless of its context. This is commonplace and very 
-often necessary. Will introduce the monadic override syntax using the `+` operator as example, and you will see how this works in practice later on.
+often necessary. Will introduce the monadic override syntax using the `+` operator as an example, and later on you will see how this works in practice.
 
 An operator is declared to be explicitly monadic if is followed by `:`:
 
@@ -959,7 +959,7 @@ of cast:
   ^
 type error
 
- @@42                  /what is type name of a type name of 42?
+ @@42                  /what is type name of a type name of int?
  █
 ```
 
@@ -1424,11 +1424,11 @@ And of course, `f` is nothing else but:
 ```q
  qs:{$[2>#?x;x;,/qs'x@&:'~:\x<*1?x]}     /quicksort by random pivot
 
- i:9 2 5 5 1 8 1 3 6 1                   /an integer shuffle
- f:2.6 -∞ 8.6 π 1.7 ∞ 3.5 5.6            /a float soup, hello π
+ i:9 2 5 5 1 8 1 3 6 1                   /a messy int shuffle
+ f:2.6 -∞ 8.6 π 1.7 ∞ 3.5 5.6            /a π in a float soup
  c:"edrofgtnljgrpliifp"                  /a char entropy pool
 
- qs'(i;f;c)
+ qs'(i;f;c)                              /apply qs to each of i;f;c
  █
 ```
 
