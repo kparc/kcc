@@ -22,8 +22,8 @@ plus over infinity, aka k crash course
 **[proverbs](#proverbs)**
 
 * reading code → [how to solve it](#how-to-solve-it)
-* code metrics → [apples and oranges](#apples-and-oranges)
 * writing code → [three triangles](#three-triangles)
+* code metrics → [apples and oranges](#apples-and-oranges)
 
 ---------------------
 
@@ -1371,7 +1371,7 @@ you would simply use the built-in operator which is a lot more efficient. It
 is just monadic `^x`:
 
 ```q
- ^2.6 -∞ 8.6 π 1.7 ∞ 3.5 5.6             /^x is 'sort'
+ ^2.6 -∞ 8.6 π 1.7 ∞ 3.5 5.6             /monadic ^x is sort
  █
 ```
 
@@ -1388,7 +1388,17 @@ and [Java](https://github.com/Code2Bits/Algorithms-in-Java/blob/master/sort/src/
 
 **Recap:**
 
-While analysing `qs` code, you have learned:
+Previously we have seen:
+
+* monadic `!x til (first x integers)`
+* monadic `+x flip (transpose)`
+* monadic `@x type`
+* monadic `^x sort`
+* dyadic `t@x cast`
+* dyadic `x:y assign`
+* dyadic `x=y equal`
+
+And `qs` code brought a few more:
 
 * ctf cond `$[c;t;f]`
 * monadic `?x distinct`
@@ -1398,19 +1408,6 @@ While analysing `qs` code, you have learned:
 * monadic `,/x raze`
 * dyadic `x@y index`
 
-Also, previously we have seen:
-
-* monadic `!x til (first x integers)`
-* monadic `+x flip (transpose)`
-
-And finally, for completeness sake:
-
-* dyadic `t@x cast`
-* monadic `@x type`
-* monadic `^x sort`
-
-* dyadic `x:y assign`
-* dyadic `x=y equal`
 
 Although this is still a small part of k operator arsenal, if you can do 
 `quicksort` with this much, you can do a lot more. And then add vector 
@@ -1421,8 +1418,8 @@ arithmetic, and then take everything to the power of 6 adverbs.
 **Practice:**
 
 1. take another good look at the code of `qs` function
-2. retrace the steps of the analysis we did together
-3. in a new k session, try to reproduce `qs` from scratch
+2. retrace the steps of the code analysis
+3. in a new k session, reproduce `qs` from scratch
 
 It sounds much harder than it really is. It might take more than one attempt, 
 but you will be amazed how fast you will get there. However, before 
@@ -1435,48 +1432,6 @@ typically going on inside of k programmer's head, but tells you nothing about
 how fast it usually happens. A proficient k programmer would read and 
 understand `qs` in well under two minutes. With a bit more practice, you 
 will agree that reading k programs is easy and fun.
-
--------------------
-
-### apples and oranges
-
-There is no new material in this small chapter, so we can go straight to practice.
-
-**Practice:**
-
-Many things in life can only be understood in comparison. Compare the 
-functionality of these two programs:
-
-```java
-package com.less.with.more.doing.sort;
-public final class qs{public void s(int[] x){}}
-```
-
-```q
-qs:{$[2>#?x;x;,/qs'x@=x>rand x]}
-```
-
-Now, compare the source code of these two:
-
-```java
-import java.util.Arrays;  
-public class S{public static void main(String[] a){ 
-int[] x={5,4,3,2,1};Arrays.sort(x);
-System.out.printf("%s",Arrays.toString(x));}} 
-```
-
-```bash
-$ echo "^5 4 3 2 1" | k
-1 2 3 4 5
-```
-
-Finally, compare the size of their runtimes:
-
-```sh
-   252M May 17 13:59 jdk-8u211-macosx-x64.dmg
-    79M May 17 13:50 jre-8u211-macosx-x64.dmg
-   109K May 17 13:54 k.tgz
-```
 
 -------------------
 
@@ -1623,6 +1578,48 @@ We have seen some new stuff:
 4. Once you provide a correct answer to an Euler problem, you can browse
    its discussion forum. You might want to check out some other solutions 
    to 18 and 67 in other computer languages.
+
+-------------------
+
+### apples and oranges
+
+There is no new material in this small chapter, so we can go straight to practice.
+
+**Practice:**
+
+Many things in life can only be understood in comparison. Compare the 
+functionality of these two programs:
+
+```java
+package com.less.with.more.doing.sort;
+public final class qs{public void s(int[] x){}}
+```
+
+```q
+qs:{$[2>#?x;x;,/qs'x@=x>rand x]}
+```
+
+Now, compare the source code of these two:
+
+```java
+import java.util.Arrays;  
+public class S{public static void main(String[] a){ 
+int[] x={5,4,3,2,1};Arrays.sort(x);
+System.out.printf("%s",Arrays.toString(x));}} 
+```
+
+```bash
+$ echo "^5 4 3 2 1" | k
+1 2 3 4 5
+```
+
+Finally, compare the size of their runtimes:
+
+```sh
+   252M May 17 13:59 jdk-8u211-macosx-x64.dmg
+    79M May 17 13:50 jre-8u211-macosx-x64.dmg
+   109K May 17 13:54 k.tgz
+```
 
 ----------------------
 
