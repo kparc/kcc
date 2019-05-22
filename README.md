@@ -657,7 +657,7 @@ follow its logic:
  t:(,1;1 1;1 2 1;1 3 3 1)  /t is triangle vector
  t:+t                      /flip it, what gives?
  t:t>0                     /t greater than zero?
- t:(+t)+t                  /t plus t transposed?
+ t:(+t)+t                  /t transposed plus t?
 ```
 
 -----------------------
