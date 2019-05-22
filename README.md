@@ -379,15 +379,15 @@ maintainable and scalable.
 
 We don't know much k to practice style yet, so this one will be read-only.
 Here is a trivial C program formatted in a slightly unusual way. If you 
-don't know much C either, see if you can still follow what it does. And 
-if you do know much C, please let us know if you can spot any bugs:
+don't know much C, see if you can still follow what it does. And 
+if you do know C, please let us know if you can spot any bugs:
 
 ```c
 include <stdio.h>
 typedef int I;
 #define O printf
 #define DO(n,x)	{I i=0,_i=(n);for(;i<_i;++i){x;}}
-I main(){DO(42,O("kcc %d\n",i);)}
+I main(){DO(42,O("kei %d\n",i);)}
 ```
 
 ### remarks on parlance
@@ -1704,6 +1704,8 @@ _  ● drop       ◦ floor
 .  ◦ apply      ● value
 $  ● pad|cast   ● string
 ```
+
+<a name="gravestone">
 ---------------------
 
 It seems you have explored more than you didn't, and that is huge progress. But a lot remains to be learned, because operators is only one aspect of k, and this short introduction didn't hope to cover everything.
@@ -1721,8 +1723,9 @@ We conclude with a list of subjects that you are now ready to explore on your ow
 |integrated cryptography          |scripting, deployment and OS     |
 |advanced datetime arithmetic     |Python, Julia and C interop      |
 
+<a name="gravestone">
 ---------------------
-It looks like there is no other chapter after the previous, at least not as of yet. Thank you for making this far, and may your future endeavors meet all of your expectations.
+Thank you for making this far, and may your future endeavors meet all of your expectations.
 
 
 `/:~` ∎
