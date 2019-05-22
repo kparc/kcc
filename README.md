@@ -61,8 +61,8 @@ we hope they might also feel obvious and natural to you, like `x≠x+1` just did
 ---------------------
 
 This crash course is not looking to make you an expert k programmer, because 
-that takes a lot of time and effort. It aims to give enough confidence and 
-motivation for you to continue on your own. We value your time, so we promise 
+that takes a lot of time and effort. Instead, it aims to give enough confidence 
+and motivation for you to continue on your own. We value your time, so we promise 
 it will be fast and violent.
 
 * The text cuts a lot of corners on general programming and CS at some expense 
@@ -136,8 +136,8 @@ the problem rather than writing and refactoring code or browsing source.
 
 ### how
 
-k runtime environment is an incredibly compact and efficient piece of 
-software. The entire system is:
+k runtime environment is an incredibly compact and efficient piece of software. 
+The entire system is:
 
 * a single binary executable
 * without any external dependencies
@@ -204,8 +204,8 @@ $ k
  █
 ```
 
-There isn't much to write home about, so lets take a look at the startup 
-banner. It packs a lot of useful information:
+There isn't much to write home about, but the startup banner packs a lot 
+of useful information:
 
 
 | it says             | it means                      |
@@ -255,11 +255,11 @@ Type in your first k expressions, and enjoy your first answers:
  █
 ```
 
----------------------
-
 Indeed, the title of this document seems to make sense to k intepreter and 
 evaluates to exactly that, and very soon you will easily infer what it 
 actually means.
+
+---------------------
 
 ### remarks on style
 
@@ -268,9 +268,9 @@ conventions on coding style and terminology in order to understand the
 code written by the others and let their own code be understood. While some 
 rules of the house of k are universal, some are not.
 
+<a name="style-annot"></a>
 -------------------
 
-<a name="style-annot"></a>
 **Annotations** in your k code is the best way not to end up coding Java for 
 food, unless you are Arthur Whitney. We dare to assume you are not, so comments
 start with `/`. When used inline, prepend at least one space. Here 
@@ -468,7 +468,7 @@ you have it.
 On a more general note, functions in k can be of rank 1 to 9:
 
 * it is not really possible to define a function with no arguments. Rank zero,
-  or **niladic** functions do not exist in k.
+  or *niladic* functions do not exist in k.
 * a function cannot take more than nine explicit arguments, and some say this 
   is an overly generous limit.
 
@@ -517,7 +517,7 @@ nothing to do with *linked lists*.
  v:,42            /a vector of length 1, one integer item
 ```
 
-k is strictly "pass by value", there are no references or pointers:
+k is strictly "**pass by value**", there are no references or pointers:
 
 ```q
  x:0 1 2 3 4     /everything is passed by value
@@ -788,8 +788,8 @@ come handy in many situations, for now lets just see how they quack:
 ```
 
 <a name="typ-lambda"></a>
-As you already know, k lambda is an assignable value, so it must to have 
-its own type, which is does, and more than one:
+**Lambdas** are assignable values, so they must to have their own type, 
+which they do, and more than one:
 
 ```q
  @{x+y}                 /type of lambda gives away its rank
@@ -811,11 +811,11 @@ disparate types, or contain something more complex than atoms, e.g.
 other vectors:
 
 ```q
- c:0,1,"a",2,3          /a char impostor among ints, c is composite
- @c                     /a composite type symbol is just a backtick
+ c:0,1,"a",2,3          /a char impostor among ints, c is mix
+ @c                     /a mix type symbol is just a backtick
 `
 
- x:(1 2 3;4 5 6;7 8 9)  /a vector of vectors is a composite vector
+ x:(1 2 3;4 5 6;7 8 9)  /a vector of vectors is composite too
  x
 1 2 3
 4 5 6
@@ -852,11 +852,6 @@ of cast:
  "012"+"345"           /sum ascii codes of chars, result stays `C
 "ceg"
 
- 1+`kei                /no math for names, this type is immutable 
-  ^
-type error
-
-
  a:1 2 3               /lets start with a nice uniform int vector
  a[0]:1f               /now, replace its 1st element with a float
  @a                    /whoops, our int vector got demoted to mix
@@ -871,22 +866,25 @@ type error
 2024-01-01
 
  `i$2024-01-01         /so the epoch date itself must be exactly: 
-0 
+0
+
+ 1+`kei                /no math for names, this type is immutable 
+  ^
+type error
 
  @@42                  /what is type name of a type name of 42?
-`n
+ █
 ```
 
 There is a lot more to be said about the type system, but the expression 
 `@@42` above (which evaluates to some wordplay: "type name of a type name
 is `name`") urges us to the next section which is all about how to
-make sense of this expression. But before we proceed, there is one more
-topic we must cover:
+make sense of this expression. There is just one more topic we must cover:
 
 <a name="typ-nul"></a>
 **Null** values in k are typed, integer null is `Ø` and float null is
 `ø`. **Infinity** is a scalar float `∞`. Working with nulls and infinities
-can be very tricky sometimes, and it is important to pay attention to their
+can be very tricky, and it is very important to pay attention to their
 types:
 
 ```q
@@ -908,8 +906,8 @@ types:
 
 ### right to left and back again
 
-It did not escape your attention that the syntax for indexing vectors and 
-calling functions is identical:
+As you must have noticed, the syntax for indexing vectors and calling functions 
+is identical:
 
 ```q
  l:{x+x}      /some monadic function l[x]
@@ -926,7 +924,7 @@ calling functions is identical:
 4 32 
 ```
 
-What you also know that k actively encourages you to omit brackets whenever 
+What we also know that k actively encourages us to omit brackets whenever 
 possible, so lets do exactly that:
 
 ```q
@@ -938,18 +936,17 @@ And here is comes: once we drop the brackets, it suddenly becomes absolutely
 natural to read this expression *right to left*. Take your time to contemplate 
 and absorb this fact. In very little time you will see how it works in practice, 
 and once you put it to practice yourself, you will agree that this way of 
-functional composition is simple, elegant and intuituve.
+functional composition is simple, elegant and intuituve:
 
 **k expressions are read, written and evaluated right to left.**
 
-Just to be clear, when we say "expressions" we don't mean "programs", and this 
+But when we say "expressions" we don't mean "programs", and this 
 is a very important distinction:
 
  **k programs are read, written and evaluated left to right.**
 
-Below is a diagram of a small k **program** that consists of three identical 
-expressions `l t r` with parens added for clarity. Further down is the order 
-of evaluation of the entire program:
+This might sound confusing, but look at the diagram of a small k **program** 
+that consists of three identical expressions `l t r`, with parens added for clarity. Further down is the order of evaluation of the entire program, which leaves no room for confusion:
 
 ```q
 /   L       T       R
@@ -1170,9 +1167,10 @@ either vectors or atoms
  5-/:0 20 30    /eachright does (5-0),(5-20),(5-30)
 5 -15 -25       /left, substracted by each of right
 ```
-----------------
 
 <a name="nsl-eachprior"></a>
+----------------
+
 adverb **eachprior** is `x f':y` and `(f':)x`
 
 first form is `seeded eachprior` where `f` is a `dyadic` verb, and `x` is a 
