@@ -1468,9 +1468,9 @@ Finally, compare the size of their runtimes:
 
 ### gladly beyound
 
-It looks like there is no other chapter after the previous, at least as of
-yet. Thank you for making this far, and may your future endeavors meet 
-your current expectations.
+It looks like there is no other chapter after the previous, at least not
+as of yet. Thank you for making this far, and may your future endeavors 
+meet your current expectations.
 
 
 *\`nyi* ∎
