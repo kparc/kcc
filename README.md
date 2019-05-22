@@ -251,7 +251,7 @@ Type in your first k expressions, and enjoy your first answers:
  x=x+1    /= is equal, and of course it isn't
 0
 
- kcc:+/∞  /we knew you'd want to try that one
+ kcc:+/∞  /we knew you'd want to try this one
  kcc      /and what it happens to be is just:
 ∞
 ```
@@ -259,8 +259,8 @@ Type in your first k expressions, and enjoy your first answers:
 ---------------------
 
 Indeed, the title of this document seems to make sense to k intepreter and 
-evaluates to infinity, and very soon you will easily infer its meaning as 
-well.
+evaluates to infinity, and very soon you will easily infer what it actually
+means.
 
 ### remarks on style
 
