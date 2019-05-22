@@ -1619,7 +1619,7 @@ We have seen some new stuff:
 1. Reproduce `mxpath` from scratch in a new k session, same way 
    you did with `qs`.
    
-2. Using your code, solve problem 18.
+2. Using your own code, solve problem 18.
 
 3. Verify solutions for 18 and 67 on [Project Euler](https://projecteuler.net).
 
