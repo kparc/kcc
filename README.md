@@ -1714,13 +1714,13 @@ We conclude with a list of subjects that you are now ready to explore on your ow
 
 |k language                       |k platform                       |
 |:--------------------------------|:--------------------------------|
-|advanced k operators             |using interactive debugger       |
-|native csv, tsv, json and unicode|building clients and servers     |
+|additional k operators           |interactive debugger and logging |
+|tables and k-sql language        |building clients and servers in k|
 |k-exprs and implicit monadics    |benchmarking, testing and tracing|
-|math primitives and vector aggrs |advanced disk I/O and persistence|
-|advanced use cases for adverbs   |interprocess communication       |
-|tables and k-sql language        |native TCP and HTTP servers      |
-|integrated cryptography          |scripting and OS interaction     |
+|math prims and vector aggregates |advanced I/O and persistence     |
+|advanced use cases of adverbs    |IPC and distributed workloads    |
+|native csv, tsv, json and unicode|native TCP and HTTP servers      |
+|integrated cryptography          |scripting, deployment and OS     |
 |advanced datetime arithmetic     |Python, Julia and C interop      |
 
 ---------------------
