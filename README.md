@@ -1,6 +1,6 @@
 # +/∞
 
-plus over infinity, a crash course in k language
+plus over infinity, aka k crash course
 
 **[genesis](#genesis)**
 
