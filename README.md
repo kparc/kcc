@@ -1619,7 +1619,8 @@ We have seen some new stuff:
 1. Reproduce `mxpath` from scratch in a new k session, same way 
    you did with `qs`.
    
-2. Using your own code, solve problem 18.
+2. Find a way to load and parse the triangle from problem 18, and solve it
+   using your own code.
 
 3. Verify solutions for 18 and 67 on [Project Euler](https://projecteuler.net).
 
