@@ -142,7 +142,6 @@ software. The entire system is:
 * a single binary executable
 * without any external dependencies
 * that fits in the cache of your CPU
-* (a few times, actually)
 
 And that gives a selection of fundamental algorithms, data structures, 
 techniques and primitives that withstood the test of decades of production use 
