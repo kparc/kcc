@@ -909,20 +909,20 @@ types:
 ### right to left and back again
 
 It did not escape your attention that the syntax for indexing vectors and 
-calling functions is the same:
+calling functions is identical:
 
 ```q
- f:{x+x}      /some function
- d:2 4 8 16   /some data items
- i:0 3        /some indices
+ l:{x+x}      /some monadic function l[x]
+ t:2 4 8 16   /some random integer vector
+ r:0 3        /index vector: indices of r
 
- f[d]         /call a function
+ l[t]         /apply function l to each t
 4 8 16 32
 
- d[i]         /index a vector
+ t[r]         /items of t at indexes in r
 2 16
 
- f[d[i]]      /compose the two
+ l[t[r]]      /compose: apply l to t at r
 4 32 
 ```
 
@@ -930,15 +930,15 @@ What you also know that k actively encourages you to omit brackets whenever
 possible, so lets do exactly that:
 
 ```q
- f d i        /same as f[d[i]]
+ l t r       /exactly the same as l[t[r]]
 4 32
 ```
 
 And here is comes: once we drop the brackets, it suddenly becomes absolutely 
-natural to read this expression *from right to left*. Take your time to 
-contemplate and absorb this fact. In very little time you will see how it 
-works in practice, and once you put it to practice yourself, you will agree 
-that this way of functional composition is beautiful, elegant and intuituve.
+natural to read this expression *right to left*. Take your time to contemplate 
+and absorb this fact. In very little time you will see how it works in practice, 
+and once you put it to practice yourself, you will agree that this way of 
+functional composition is simple, elegant and intuituve.
 
 **k expressions are read, written and evaluated right to left.**
 
@@ -947,17 +947,16 @@ is a very important distinction:
 
  **k programs are read, written and evaluated left to right.**
 
-Below is a diagram of a small **k program** that consists of three identical 
-expressions `f d i` with parens added for clarity. Further down is the order 
+Below is a diagram of a small k **program** that consists of three identical 
+expressions `l t r` with parens added for clarity. Further down is the order 
 of evaluation of the entire program:
 
 ```q
 /   L       T       R
-/(f d i);(f d i);(f d i)
+/(l t r);(l t r);(l t r)
 
 /   I   >   II  >  III
 /(3 2 1);(6 5 4);(9 8 7)
-/   <       <       <
 ```
 
 <a name="rtl-precedence"></a>
