@@ -1384,7 +1384,7 @@ This gives us confidence to wrestle down the last part, the recursion step:
  cmp
 0 1 1 0
 
-                     /~x is 'not': negate x (non-0 turns 0, all 0s turn 1)
+                     /~x is 'not': boolean ¬x, non-0 turns 0, all 0 turn 1
 
  mask:~:\cmp         /explicit 'not' scan: returns cmp and negation of cmp
  mask
