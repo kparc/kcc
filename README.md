@@ -984,11 +984,11 @@ use of round brackets.
 Now we can revisit the last expression from the previous chapter:
 
 ```q
- @@42     /"type name of a type name of 10" actually reads backwards:
+ @@42     /"type name of a type name of 42" actually reads backwards:
 `n        /"get 42, apply monadic @, get `i, apply monadic @, get `n"
 ```
 
-A convincing proof that type name of a type name is indeed `name`.∎
+A convincing proof that type name of a type name is indeed a `name`.∎
 
 ----------------
 
