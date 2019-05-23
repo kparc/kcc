@@ -9,8 +9,8 @@ plus over infinity, aka k crash course
 **[exodus](#exodus)**
 
 * [get](#get) | [run](#run)
-* style → [cmt](#style-annot) | [sep](#style-sep) | [tab](#style-ident) | [ids](#style-name) | [space](#style-space) | [bad](#style-bad)
-* parlance → [xyz](#parl-xyz) | [proj](#parl-proj) | [rank](#parl-rank) | [+:](#parl-explmonad)
+* style → [a](#annotations) | [sep](#separator) | [tab](#itentation) | [ids](#identifiers) | [space](#space) | [bad](#bad-form)
+* parlance → [xyz](#implicit-arguments) | [proj](#projection) | [rank](#rank) | [+:](#explicit-monadics)
 
 **[numbers](#numbers)**
 
@@ -185,10 +185,9 @@ Indeed, the title of this document seems to make sense to k interpreter and eval
 
 As any other language, k expects a programmer to observe and follow certain conventions on coding style and terminology in order to understand the code written by the others and let their own code be understood. While some rules of the house of k are universal, some are not.
 
-<a name="style-annot"></a>
--------------------
+#### annotations
 
-**Annotations** in your k code is the best way not to end up coding Java for food, unless you are Arthur Whitney. We dare to assume you are not, so comments start with `/`. When used inline, prepend at least one space. Here is an annotated declaration of two variables:
+Commenting your k code is the best way not to end up coding Java for food, unless you are Arthur Whitney. We dare to assume you are not, so comments start with `/`. When used inline, prepend at least one space. Here is an annotated declaration of two variables:
 
 ```q
 /annotations are your friends
@@ -197,34 +196,30 @@ x:42
 y:42 /now, always and forever
 ```
 
-<a name="style-sep"></a>
--------------------
+#### separator
 
-**Separator** character in k is `;` and it is used for one thing and one thing only, to separate **k expressions**. As you can see above, k doesn't require you to terminate the line explicitly with `;` because **`\n` is also an expression separator**. Separator is used the same way and means the same thing everywhere in any context (except comments), e.g. to separate expressions inside a function body, vector declaration, function arguments, etc. Later we will see that separator is also a part of certain language constructs, but it has the same meaning there as well. But by far the most frequent implicit use of a separator you will encounter in the wild is to separate expressions within one line:
+character in k is `;` and it is used for one thing and one thing only, to separate k expressions. As you can see above, k doesn't require you to terminate the line explicitly with `;` because **`\n` is also an expression separator**. Separator is used the same way and means the same thing everywhere in any context (except comments), e.g. to separate expressions inside a function body, vector declaration, function arguments, etc. Later we will see that separator is also a part of certain language constructs, but it has the same meaning there as well. But by far the most frequent implicit use of a separator you will encounter in the wild is to separate expressions within one line:
 
 ```q
 x:1; y:2; z:3   /one line, three expressions
 z:1;y:2;x:3     /denser version of the above
 ```
 
-<a name="style-ident"></a>
--------------------
+#### indentation
 
-**Indentation** in k is a tricky subject. Basically, what you generally want is **no indentation**. This means if your k expression is getting so large that you are tempted to split it into separate lines, you likely need to refactor or return to the blackboard. Sometimes, however, indentation is fine and even necessary, and it is always *one space*. Not two, not four, one. Tabs will be frowned upon because they take a lot of **space**, see below.
+This is a tricky subject in k. Basically, what you generally want is **no indentation**. This means if your k expression is getting so large that you are tempted to split it into separate lines, you likely need to refactor or return to the blackboard. Sometimes, however, indentation is fine and even necessary, and it is always *one space*. Not two, not four, one. Tabs will be frowned upon because they take a lot of **space**, see below.
 
-<a name="style-name"></a>
--------------------
+#### identifiers
 
-**Identifiers** in k follow an unusual convention. Capitals are used by k programmers very sparingly, which applies both to code and comments. Identifiers in `camelCase` can sometimes be tolerated, while `c_style` identifiers are not permitted at all since `_` is an operator. Identifiers of functions and variables are very often boiled down to an absolute minimum, names 1-3 characters long are commonplace, which does not impact readability given that their definitions are annotated. Short identifiers might sound like a bad idea to Java programmers who are used to see identifiers longer than 100 bytes, but unlike Java, k source requires very little or no scrolling. When the entire program fits in your visual buffer, "cryptic" identifiers are no longer a problem because their annotated declarations are always right in front of you:
+Variable names in k follow an unusual convention. Capitals are used by k programmers very sparingly, which applies both to code and comments. Identifiers in `camelCase` can sometimes be tolerated, while `c_style` identifiers are not permitted at all since `_` is an operator. Identifiers of functions and variables are very often boiled down to an absolute minimum, names 1-3 characters long are commonplace, which does not impact readability given that their definitions are annotated. Short identifiers might sound like a bad idea to Java programmers who are used to see identifiers longer than 100 bytes, but unlike Java, k source requires very little or no scrolling. When the entire program fits in your visual buffer, "cryptic" identifiers are no longer a problem because their annotated declarations are always right in front of you:
 
 ```q
 kei:42   /kenneth eugene iverson
 ```
 
-<a name="style-space"></a>
--------------------
+#### space
 
-**Space** is a major point of contention in software development. There are several approaches to k code organization, and our take on the subject is a subjective opinion, which is up for you to consider:
+This is a major point of contention in software development. There are several approaches to k code organization, and our take on the subject is a subjective opinion, which is up for you to consider:
 
 * Screen space is about three keystrokes: **`\n`**, **`\t`** and 0x20, less surprisingly. If we define two extremes as "tall, lean, sparse and readable" and "robust, wide, dense and cryptic", then C and Java are good examples of `tlsr`, and k is all the way down `rwdc` road.
 
@@ -238,10 +233,9 @@ kei:42   /kenneth eugene iverson
 
 * Medium is the message, so we refer to k code in this document. Please send pull requests to help us improve it, and if you like the style, it is yours to have. 
 
-<a name="style-bad"></a>
--------------------
+#### bad form
 
-**Bad form** in k is code bloat. Avoid writing extra code if you can — there is too much of it written already. Look to remove any inessential code, yours or not. But if you have to write more, make it is useful, secure, compact, maintainable and scalable.
+Bad form in k is code bloat. Avoid writing extra code if you can — there is too much of it written already. Look to remove any inessential code, yours or not. But if you have to write more, make it is useful, secure, compact, maintainable and scalable.
 
 --------------------
 
@@ -261,10 +255,9 @@ I main(){DO(42,O("kei %d\n",i);)}
 
 The most important terminology in k revolves around functions. Functions in k are first-class citizens. k has anonymous functions, eval, apply, recursion, and then some. It takes a leap of faith to believe it, but k is probably more lispy than certain Lisps, only you don't need to get past any parens. However, since there are no linked lists under the hood, k is not lisp, because it was designed to be fast.
 
-<a name="parl-xyz"></a>
--------------------
+#### implicit arguments
 
-**Implicit arguments** is an uncommon feature, most languages require you to explicitly declare function arguments. Of course you can also do that in k if you want to, but if you don't, a function can have up to three implicit arguments called `x`, `y` and `z`, which means you declare them by simply referencing them in the function body. It is a very convenient feature, not nearly as scary as it sounds:
+This is an an uncommon feature, most languages require you to explicitly declare function arguments. Of course you can also do that in k if you want to, but if you don't, a function can have up to three implicit arguments called `x`, `y` and `z`, which means you declare them by simply referencing them in the function body. It is a very convenient feature, not nearly as scary as it sounds:
 
 ```q
  f:{x+y+z}    /f[] takes three arguments
@@ -287,10 +280,9 @@ This illustrates the core principle of k syntax — almost everything that you i
 
 Syntax for explicit argument declaration `{[a;b]}` is just a side remark. It is good to know, but we won't see it in this text again.
 
-<a name="parl-proj"></a>
--------------------
+#### projection
 
-**Projection**, also known as function view, is a simply a reference to a function with some arguments preset to a value, and at least one **free**, or elided argument. For example, if a function of rank 3, `f[x;y;z]`, only receives first and third arguments, it will return its projection of rank 1:
+Also known as *function view*, is a simply a reference to a function with some arguments preset to a value, and at least one **free**, or elided argument. For example, if a function of rank 3, `f[x;y;z]`, only receives first and third arguments, it will return its projection of rank 1:
 
 ```q
  f:{x+y+z}      /a function of rank three
@@ -299,10 +291,9 @@ Syntax for explicit argument declaration `{[a;b]}` is just a side remark. It is 
 6
 ```
 
-<a name="parl-rank"></a>
--------------------
+#### rank
 
-**Rank** is another way of saying *valence*, a fancy word that describes a simple idea that is extremely important to be understood well. Rank of an operator or a function is basically the maximum count of arguments they take. Two functions shown above have ranks of 3 and 1, respectively. 
+Function rank is another way of saying *valence*, a fancy word that describes a simple idea that is extremely important to be understood well. Rank of an operator or a function is basically the maximum count of arguments they take. Two functions shown above have ranks of 3 and 1, respectively. 
 
 Two specific ranks are so important that they have their own names. A function or an operator that takes...
 
@@ -316,7 +307,9 @@ For example, when you used your first ever k operator in the expression `2+2`, y
 <a name="parl-explmonad"></a>
 -------------------
 
-**Explicit monadics** is a language construct that allows to explicitly declare an operator to be monadic regardless of its context. This is commonplace and very often necessary. Will introduce the monadic override syntax using the `+` operator as an example, and later on you will see how this works in practice.
+#### explicit monadics
+
+This language construct that allows to explicitly declare an operator to be monadic regardless of its context. This is commonplace and very often necessary. Will introduce the monadic override syntax using the `+` operator as an example, and later on you will see how this works in practice.
 
 An operator is declared to be explicitly monadic if followed by `:`:
 
