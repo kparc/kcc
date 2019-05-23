@@ -239,7 +239,7 @@ Bad form in k is code bloat. Avoid writing extra code if you can — there is to
 
 --------------------
 
-**Practice:**
+**practice**
 
 We don't know much k to practice style yet, so this one will be read-only. Here is a trivial C program formatted in a slightly unusual way. If you don't know much C, see if you can still follow what it does. And if you do know C, please let us know if you can spot any bugs:
 
@@ -304,9 +304,6 @@ As you will see, the vast majority of native operators in `k` have exactly two c
 
 For example, when you used your first ever k operator in the expression `2+2`, you have used the `+` operator in a dyadic context since it received *two* operands to work on, left and right, so it was inferred to be `dyadic + plus`. The `monadic + flip` will be introduced later, and has entirely different semantics.
 
-<a name="parl-explmonad"></a>
--------------------
-
 #### explicit monadics
 
 This language construct that allows to explicitly declare an operator to be monadic regardless of its context. This is commonplace and very often necessary. Will introduce the monadic override syntax using the `+` operator as an example, and later on you will see how this works in practice.
@@ -328,7 +325,7 @@ On a more general note, functions in k can be of rank 1 to 9:
 
 -------------------
 
-**Recap:**
+**recap**
 
 So far you know how to:
 
@@ -498,7 +495,7 @@ Vector arithmetic is **penetrating**, which means that vector operators *apply a
 
 -----------------------
 
-**Practice:**
+**practice**
 
 First, lets make sure `+x flip` operator transposes rectangular matrices just as well as squares, which would be of little surprise. Then try to flip something less obvious, and after that you have two more transformations to apply. Inspect all intermediate results and make sure you follow their logic:
 
@@ -863,7 +860,7 @@ Now we have a convincing proof that type name of a type name is indeed a `name`.
 
 ----------------
 
-**Practice:**
+**practice**
 
 Lets revisit the code from the first snippet in this document:
 
@@ -1010,7 +1007,7 @@ an input vector
 
 This doesn't seem like much, adverbs seem to be doing pretty basic stuff. But hold that thought for a minute.
 
-**Recap:**
+**recap**
 
 We have seen:
 
@@ -1022,7 +1019,7 @@ We have seen:
 
 ----------------
 
-**Practice:**
+**practice**
 
 We are back to your doubts about adverbs. Consider an example of two adverbs working together:
 
@@ -1198,7 +1195,7 @@ Check out examples of `quicksort` in the wild in [C++](https://gist.github.com/c
 
 -------------------
 
-**Recap:**
+**recap**
 
 Previously we have seen:
 
@@ -1226,7 +1223,7 @@ Although this is still a small part of k operator arsenal, if you can do `quicks
 
 -------------------
 
-**Practice:**
+**practice**
 
 1. take another good look at the code of `qs` function
 2. retrace the steps of the code analysis
@@ -1242,7 +1239,7 @@ The annotated breakdown of `qs` code gives a good impression of what is typicall
 
 ### three triangles
 
-It is time to write our first k program, and this time around there will be a lot less hand-holding. We will solve the classic Project Euler [problem 18](https://projecteuler.net/problem=18), also known as [problem 67](https://projecteuler.net/problem=67):
+It is time to write our first k program, and this time around there will be a lot less hand-holding. We will solve the classic Project Euler [p18](https://projecteuler.net/problem=18), also known as [p67](https://projecteuler.net/problem=67):
 
 ```q
 By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23:
@@ -1349,7 +1346,7 @@ We didn't tell you do this, but the complete program can also be written as a si
 
 ----------------------
 
-**Recap:**
+**recap**
 
 We have seen some new stuff:
 
@@ -1361,7 +1358,7 @@ We have seen some new stuff:
 
 ----------------------
 
-**Practice:**
+**practice**
 
 1. Reproduce `mxpath` from scratch in a new k session, same way you did with `qs`.
    
@@ -1377,7 +1374,7 @@ We have seen some new stuff:
 
 There is no new material in this small chapter, so we can go straight to practice.
 
-**Practice:**
+**practice**
 
 Many things in life can only be understood in comparison. Compare functionality of these two programs:
 
@@ -1469,4 +1466,4 @@ We conclude with a list of subjects that you are now ready to explore on your ow
 Thank you for making this far, and may your future endeavors meet all of your expectations.
 
 
-`/:~` ∎
+∎
