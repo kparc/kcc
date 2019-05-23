@@ -1458,7 +1458,6 @@ We conclude with a list of subjects that you are now ready to explore on your ow
 |k-expressions, \`0               |tech support and user community     |
 |design of internal components    |k resources, tools and packages     |
 
-<a name="gravestone">
----------------------
+-----------------
 
 [∎](mailto:me@kel.as)
