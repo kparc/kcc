@@ -1471,7 +1471,7 @@ _  ● drop       ◦ floor
 $  ● pad|cast   ● string
 ```
 
-It really feels like we have explored more than we didn't, and that is a huge progress indeed. But many things remain to be discovered, because operators is only one aspect of k — and this short introduction could not possibly cover everything.
+It really feels like we have explored more than we didn't, and it is huge progress indeed. But many things remain to be discovered, because operators is only one aspect of k — and this short introduction could not possibly cover everything.
 
 We conclude with a list of subjects that you are now ready to explore on your own:
 
