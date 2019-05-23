@@ -59,7 +59,7 @@ This crash course is not looking to make you an expert k programmer, because tha
 
 This might feel a bit intense, but we hope the course is still lightweight enough to be completed in one session.
 
-This document is **not a k reference**. The majority of subjects are discussed at depth sufficient to give a solid general overview, but by no means exhaustive.
+This document is **not a k reference**. The majority of subjects are discussed at depth sufficient to give a good general overview, but by no means exhaustive.
 
 ### who
 
@@ -1271,7 +1271,9 @@ The annotated breakdown of `qs` code gives a good impression of what is typicall
 It is time to write our first k program, and this time around there will be a lot less hand-holding. We will solve the classic Project Euler [p18](https://projecteuler.net/problem=18), also known as [p67](https://projecteuler.net/problem=67):
 
 ```q
-By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23:
+By starting at the top of the triangle below and 
+moving to adjacent numbers on the row below, the 
+maximum total from top to bottom is 23:
 
        →3
      ↑7   4
@@ -1280,7 +1282,7 @@ By starting at the top of the triangle below and moving to adjacent numbers on t
 ------------------
 9 + 4 + 7 + 3 = 23
 ```
-Problems 18 and 67 are simply two bigger triangles, and the challenge is to find the **sum** of maximum paths in them. While 18 can be solved by bruteforce, 67 can not, but efficient algorithm is absolutely trivial. Is given away in the example above, we simply need to fold rows going bottom up, like so:
+Problems 18 and 67 are simply two bigger triangles, and the challenge is to find the **sum** of maximum paths in them. While 18 can be solved by bruteforce, 67 can not, but efficient algorithm is absolutely trivial. It is given away in the example above, we simply need to fold rows going bottom up, like so:
 
 ```q
 8   5   9   3
@@ -1442,6 +1444,8 @@ Finally, compare the size of their runtimes:
 
 ### gladly beyond
 
+Although ee cummings opened his famous poem with words *somewhere i have never travelled*, it seems that some k programmers prefer to read poetry backwards. That explains a lot about the title of our final chapter.
+
 We have covered a lot of ground, good time to put things into perspective. Below is a complete map of k operators, and those marked with bullets you have already seen and used at least once:
 
 ```
@@ -1478,11 +1482,11 @@ We conclude with a list of subjects that you are now ready to explore on your ow
 |additional k operators           |debugging and securing k systems    |
 |tables and k-sql language        |building clients and servers in k   |
 |vector aggregates                |benchmarking, testing and tracing   |
-|entropy sources, math primitives |disk I/O, persistence and streaming |
-|advanced use of adverbs, threads |IPC and distributed workloads       |
+|entropy sources, math primitives |disk i/o, persistence and streaming |
+|advanced use of adverbs, threads |ipc and distributed workloads       |
 |native csv, tsv, json and utf    |fault tolerance and monitoring      |
-|integrated cryptography core     |scripting, deployment, OS tuning    |
-|nanosecond time, datetime math   |interop with Python, Julia and C    |
+|integrated cryptography core     |scripting, deployment, os tuning    |
+|nanosecond time, datetime math   |interop with python, julia and c    |
 |k-expressions, \`0               |tech support and user community     |
 |design of internal components    |k resources, tools and packages     |
 
