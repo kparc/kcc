@@ -9,7 +9,7 @@ plus over infinity, aka k crash course
 **[exodus](#exodus)**
 
 * [get](#get) | [run](#run)
-* style → [cmt](#annotations) | [sep](#separator) | [tab](#itentation) | [ids](#identifiers) | [space](#space) | [bad](#bad-form)
+* style → [cmt](#annotations) | [sep](#separator) | [tab](#indentation) | [ids](#identifiers) | [space](#space) | [bad](#bad-form)
 * parlance → [xyz](#implicit-arguments) | [proj](#projection) | [rank](#rank) | [+:](#explicit-monadics)
 
 **[numbers](#numbers)**
@@ -1443,7 +1443,7 @@ $  ● pad|cast   ● string
 <a name="gravestone">
 ---------------------
 
-It really feels like we have explored more than we didn't, and that is huge progress. But many things remain to be discovered, because operators is only one aspect of k — and this short introduction could not possibly cover everything.
+It really feels like we have explored more than we didn't, and that is a huge progress indeed. But many things remain to be discovered, because operators is only one aspect of k — and this short introduction could not possibly cover everything.
 
 We conclude with a list of subjects that you are now ready to explore on your own:
 
