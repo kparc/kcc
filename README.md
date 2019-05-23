@@ -16,7 +16,7 @@ plus over infinity, aka k crash course
 
 * vector math → [v≠a](#vectors-vs-atoms) | [v+v](#v-plus-v) | [v+a](#v-plus-a) | [v x](#v-indexing)  | [shp](#v-shp)
 * [type system](#types-of-types) → [num](#typ-num) | [char](#typ-char) | [name](#typ-name) | [date](#typ-time) | [dict](#typ-dict) | [tab](#typ-tab) | [λ](#typ-lambda) | [ø,∞](#typ-nul) | [mix](#typ-mix) | [cast](#typ-cast) 
-* order of eval → [rtl](#right-to-left-and-back-again) | [(1)2](#rtl-precedence)
+* order of eval → [rtl](#right-to-left) | [(1)2](#precedence)
 * [no stinking loops](#no-stinking-loops) → [over](#nsl-overscan) | [scan](#nsl-overscan) | [e↣](#nsl-each) | [e↔](#nsl-eachlr) | [e↤](#nsl-eachprior)
 
 **[proverbs](#proverbs)**
@@ -772,7 +772,7 @@ There are things left to be said about the type system, but the expression `@@42
 
 ------------------
 
-### right to left and back again
+### right to left
 
 As you must have noticed, the syntax for indexing vectors and calling functions is identical:
 
@@ -816,10 +816,10 @@ This might sound confusing, but look at the diagram of a small k **program** tha
 /(3 2 1);(6 5 4);(9 8 7)
 ```
 
-<a name="rtl-precedence"></a>
--------------------------
 
-**Precedence** is another important subject which has to do with the way rivers flow in k land.
+#### precedence
+
+This is another important subject which has to do with the way rivers flow in k land.
 
 We all take it for granted that multiplication and division bind stronger than addition and subtraction and should be calculated first, and it feels almost natural that a computer language must have complex precedence hierarchy to do anything useful, and k disagrees with that:
 
@@ -1440,9 +1440,6 @@ _  ● drop       ◦ floor
 $  ● pad|cast   ● string
 ```
 
-<a name="gravestone">
----------------------
-
 It really feels like we have explored more than we didn't, and that is a huge progress indeed. But many things remain to be discovered, because operators is only one aspect of k — and this short introduction could not possibly cover everything.
 
 We conclude with a list of subjects that you are now ready to explore on your own:
@@ -1457,13 +1454,10 @@ We conclude with a list of subjects that you are now ready to explore on your ow
 |native csv, tsv, json and utf    |fault tolerance and monitoring      |
 |integrated cryptography core     |scripting, deployment, OS tuning    |
 |nanosecond time, datetime math   |interop with Python, Julia and C    |
-|k-expressions, `0                |tech support and user community     |
+|k-expressions, \`0                |tech support and user community     |
 |design of internal components    |k resources, tools and packages     |
 
 <a name="gravestone">
 ---------------------
 
-Thank you for making this far, and may your future endeavors meet all of your expectations.
-
-
-∎
+[∎](mailto:me@kel.as)
