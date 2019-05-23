@@ -55,7 +55,7 @@ This crash course is not looking to make you an expert k programmer, because tha
 * The course is driven entirely by densely annotated code, comments contain essential material.
 * New syntax is often introduced inline, some is self-explanatory, some relies on your intuition.
 * The narrative is linear, all chapters build on previous.
-* Skipping exercise will halt your progress.
+* Skipping exercises will halt your progress.
 
 This might feel a bit intense, but we hope the course is still lightweight enough to be completed in one session.
 
@@ -79,9 +79,9 @@ At first it could be hard to understand how this can be true, imagine the effort
 
 ### wha
 
-k is an simple, expressive and powerful computer language.
+k is a simple, expressive and powerful computer language.
 
-The power stems from the fact that k is designed as a *tool of thought*. The vocabulary, syntax and the choice of abstractions offered by the language drive you to think about problems in a focused and clear way that quickly takes you to efficient and elegant solutions. And the reason why thinking in terms of k is so effective is nothing supernatural: brevity is a soul of wit.
+The power stems from the fact that k is designed as a *tool of thought*. The vocabulary, syntax and the choice of abstractions offered by the language drive you to think about problems in a focused and clear way that quickly takes you to efficient and elegant solutions. And the reason why thinking in terms of k is so effective is nothing supernatural: brevity is the soul of wit.
 
 k programs are concise, the syntax of the language is terse, and there is no boilerplate code to write. In k, most of the time is spent on thinking about the problem rather than writing and refactoring code or browsing source.
 
@@ -96,7 +96,7 @@ The entire system is:
 
 And that gives a selection of fundamental algorithms, data structures, techniques and primitives that withstood the test of decades of production use in some of the world's most demanding data processing environments. Inner components of the system fit together and complement each other to deliver *performance*. It is not uncommon for k newcomers to experience shock when they first see how much can be done with a few precise keystrokes, and how fast.
 
-All of k programming takes place in **REPL**, an idea that is actually much older than many seem to think. It has been around for at least half a century, and is known as *dialogue approach*, a live conversation between a human and machine as a flow of questions and answers. And in k, this conversation is much more fluent than in any other modern REPL-driven system you may be familiar with, because the questions are short and the answers are fast. This is the essence of the way of k, an experience that all k programmers consider immensely satisfying. People who write k for living love their jobs.
+All of k programming takes place in the **REPL**, an idea that is actually much older than many seem to think. It has been around for at least half a century, and is known as *dialogue approach*, a live conversation between a human and machine as a flow of questions and answers. And in k, this conversation is much more fluent than in any other modern REPL-driven system you may be familiar with, because the questions are short and the answers are fast. This is the essence of the way of k, an experience that all k programmers consider immensely satisfying. People who write k for living love their jobs.
 
 ## exodus
 
@@ -131,7 +131,7 @@ $ k
  █
 ```
 
-There isn't much to write home about, but startup banner actually packs a lot of useful information:
+The startup banner packs a lot of useful information:
 
 
 | it says             | it means                      |
@@ -147,7 +147,7 @@ There isn't much to write home about, but startup banner actually packs a lot of
 
 When it comes to that, always include the banner in your bug reports.
 
-At any time during k session, you can:
+At any time during a k session, you can:
 
 `\h` view k reference card
 
@@ -178,7 +178,7 @@ Type in your first k expressions, and enjoy your first answers:
  █
 ```
 
-Indeed, the title of this document seems to make sense to k interpreter and evaluates to exactly that, and very soon you will easily infer what it actually means.
+Indeed, the title of this document seems to make sense to the k interpreter and evaluates to exactly that, and very soon you will easily infer what it actually means.
 
 ---------------------
 
@@ -224,7 +224,7 @@ This is a major point of contention in software development. There are several a
 
 * Screen space is about three keystrokes: **`\n`**, **`\t`** and 0x20, less surprisingly. If we define two extremes as "tall, lean, sparse and readable" and "robust, wide, dense and cryptic", then C and Java are good examples of `tlsr`, and k is all the way down `rwdc` road.
 
-* The right balance between two extremes is `asap`, or "adequately spaced and annotated program". While k syntax encourages you to produce very dense code, think of others and don't sacrifice too much of readability. A waste of space is a waste of time — but so is unreadable code.
+* The right balance between two extremes is `asap`, or "adequately spaced and annotated program". While k syntax encourages you to produce very dense code, think of others and don't sacrifice too much readability. A waste of space is a waste of time — but so is unreadable code.
   
 * Comments are part of the code and also take space, so boil them down to some reasonable size as well.
 
@@ -236,7 +236,7 @@ This is a major point of contention in software development. There are several a
 
 #### bad form
 
-Bad form in k is code bloat. Avoid writing extra code if you can — there is too much of it written already. Look to remove any inessential code, yours or not. But if you have to write more, make it is useful, secure, compact, maintainable, portable and scalable.
+Bad form in k is code bloat. Avoid writing extra code if you can — there is too much of it written already. Look to remove any inessential code, yours or not. But if you have to write more, make it useful, secure, compact, maintainable, portable and scalable.
 
 --------------------
 
@@ -888,7 +888,7 @@ Now we have a convincing proof that type name of a type name is indeed a `name`.
 
 **practice**
 
-Lets revisit the code from the first snippet in this document:
+Let's revisit the code from the first snippet in this document:
 
 ```q
  x:(1 2 3;4 5 6;7 8 9)
@@ -1086,7 +1086,7 @@ k interpreter is your friend. Take your time, don't rush it, make sure you got a
 
 The title of this chapter is borrowed from a legendary book published in 1945, a small volume by mathematician George Pólya where he shows how to tackle problems and arrive to solutions. It is a very inspiring read.
 
-Lets tackle a little problem. We will look at a k function that actually does something very useful and implements a familiar algorithm. The subject of the game is to figure out how it is implemented in k and to identify the algorithm. It is very useful to dissect all of it on paper, so put your interpreter aside for now.
+Let's tackle a little problem. We will look at a k function that actually does something very useful and implements a familiar algorithm. The subject of the game is to figure out how it is implemented in k and to identify the algorithm. It is very useful to dissect all of it on paper, so put your interpreter aside for now.
 
 So here is the code:
 
@@ -1295,7 +1295,7 @@ Problems 18 and 67 are simply two bigger triangles, and the challenge is to find
      23             /out
 ```
 
-It is easy to see that the key to the solution is a function that *reduces* the current row (`max`) and *merges* it into the next (`sum`). It expects two arguments, i.e. both rows to work with, and returns `out`. So, lets implement it:
+It is easy to see that the key to the solution is a function that *reduces* the current row (`max`) and *merges* it into the next (`sum`). It expects two arguments, i.e. both rows to work with, and returns `out`. So, let's implement it:
 
 ```q
  r4:8 5 9 3      /take two bottom rows to assist thinking
@@ -1320,7 +1320,7 @@ It is easy to see that the key to the solution is a function that *reduces* the 
 10 13 15
 ```
 
-Great, we have the reduction function, now lets apply it *over* the test triangle to make sure it folds it into what we expect. Since we are reducing a vector into a an atom, it is very clear which adverb we want to use:
+Great, we have the reduction function, now let's apply it *over* the test triangle to make sure it folds it into what we expect. Since we are reducing a vector into an atom, it is very clear which adverb we want to use:
 
 ```q
  t:(,3;7 4;2 4 6;8 5 9 3)
@@ -1342,7 +1342,7 @@ Great, we have the reduction function, now lets apply it *over* the test triangl
 23 
 ```
 
-Looks like the `mxpath` is doing pretty well. Lets fetch the input file for the problem 67, load it, parse it and solve it:
+Looks like the `mxpath` is doing pretty well. Let's fetch the input file for the problem 67, load it, parse it and solve it:
 
 ```q
  /backslash cmd executes an os command from k:
