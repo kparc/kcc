@@ -316,7 +316,7 @@ For example, when you used your first ever k operator in the expression `2+2`, y
 <a name="parl-explmonad"></a>
 **Explicit monadics** is a language construct that allows to explicitly declare an operator to be monadic regardless of its context. This is commonplace and very often necessary. Will introduce the monadic override syntax using the `+` operator as an example, and later on you will see how this works in practice.
 
-An operator is declared to be explicitly monadic if is followed by `:`:
+An operator is declared to be explicitly monadic if followed by `:`:
 
 ```q
 +          /context-aware, either monadic flip or dyadic plus
