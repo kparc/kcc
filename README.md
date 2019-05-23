@@ -1132,7 +1132,8 @@ Coffee break, here is what we know so far:
 1. its overall control flow
 2. the condition that stops recursion
 
-This gives us confidence to wrestle down the last part, the recursion step:
+This gives us confidence to wrestle down the last part, the recursion 
+step:
 
 ```q
 
@@ -1179,6 +1180,8 @@ This gives us confidence to wrestle down the last part, the recursion step:
  v:,/(1 2 3;4 5 6)   /in other words, raze flattens first level of nesting
 1 2 3 4 5 6
 ```
+
+Note that it is the first time we have seen [rank override](#explicit-monadics) in action. In both cases, explicit monadics are passed to an adverb — and this is a very typical use case.
 
 Now that we know what every specific part does, we can zoom out and see the big picture. Feel free to use the interpreter to play around and test your ideas.
 
