@@ -25,6 +25,7 @@ plus over infinity, aka k crash course
 * writing code → [three triangles](#three-triangles)
 * metrics → [apples and oranges](#apples-and-oranges)
 * learning plan → [gladly beyond](#gladly-beyond)
+
 ---------------------
 
 ## genesis
