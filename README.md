@@ -10,7 +10,7 @@ plus over infinity, aka k crash course
 
 * [get](#get) | [run](#run)
 * style → [cmt](#annotations) | [sep](#separator) | [tab](#indentation) | [ids](#identifiers) | [space](#space) | [bad](#bad-form)
-* parlance → [xyz](#implicit-arguments) | [proj](#projection) | [rank](#rank) | [+:](#explicit-monadics)
+* parlance → [xyz](#implicit-arguments) | [rank](#rank)| [proj](#projection) | [+:](#explicit-monadics)
 
 **[numbers](#numbers)**
 
@@ -306,17 +306,6 @@ This illustrates the core principle of k syntax — almost everything that you i
 
 Syntax for explicit argument declaration `{[a;b]}` is just a side remark. It is good to know, but we won't see it in this text again.
 
-#### projection
-
-Also known as *function view*, is a simply a reference to a function with some arguments preset to a value, and at least one **free**, or elided argument. For example, if a function of rank 3, `f[x;y;z]`, only receives first and third arguments, it will return its projection of rank 1:
-
-```q
- f:{x+y+z}      /a function of rank three
- p:f[1;;3]      /a projection of f[1;?;3]
- p 2            /is same as call f[1;2;3]
-6
-```
-
 #### rank
 
 Function rank is another way of saying *valence*, a fancy word that describes a simple idea that is extremely important to be understood well. Rank of an operator or a function is basically the maximum count of arguments they take. Two functions shown above have ranks of 3 and 1, respectively. 
@@ -329,6 +318,17 @@ Two specific ranks are so important that they have their own names. A function o
 As you will see, the vast majority of native operators in `k` have exactly two completely different meanings based on the context where they are used, which is in turn defined by the number of arguments offered to the operator.
 
 For example, when you used your first ever k operator in the expression `2+2`, you have used the `+` operator in a dyadic context since it received *two* operands to work on, left and right, so it was inferred to be `dyadic + plus`. The `monadic + flip` will be introduced later, and has entirely different semantics.
+
+#### projection
+
+Also known as *function view*, is a simply a reference to a function with some arguments preset to a value, and at least one **free**, or elided argument. For example, if a function of rank 3, `f[x;y;z]`, only receives first and third arguments, it will return its projection of rank 1:
+
+```q
+ f:{x+y+z}      /a function of rank three
+ p:f[1;;3]      /a projection of f[1;?;3]
+ p 2            /is same as call f[1;2;3]
+6
+```
 
 #### explicit monadics
 
