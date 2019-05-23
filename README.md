@@ -14,7 +14,7 @@ plus over infinity, aka k crash course
 
 **[numbers](#numbers)**
 
-* vector math → [v≠a](#vectors-vs-atoms) | [v+v](#v-plus-v) | [v+a](#v-plus-a) | [v x](#v-indexing)  | [shp](#v-shp)
+* vector math → [v≠a](#vectors-vs-atoms) | [v+v](#v-plus-v) | [v+a](#v-plus-a) | [v x](#v-indexing)  | [t≠s](#v-shp)
 * [type system](#types-of-types) → [num](#typ-num) | [char](#typ-char) | [name](#typ-name) | [date](#typ-time) | [dict](#typ-dict) | [tab](#typ-tab) | [λ](#typ-lambda) | [ø,∞](#typ-nul) | [mix](#typ-mix) | [cast](#typ-cast) 
 * order of eval → [rtl](#right-to-left) | [(1)2](#precedence)
 * [no stinking loops](#no-stinking-loops) → [over](#nsl-overscan) | [scan](#nsl-overscan) | [e↣](#nsl-each) | [e↔](#nsl-eachlr) | [e↤](#nsl-eachprior)
@@ -32,9 +32,9 @@ plus over infinity, aka k crash course
 
 ### ø
 
-Computer languages have been around, but in the beginning was the wørd. We will be writing code in a language called k, but it helps to talk about it first.
+Computer languages have been around, but in the beginning was the Word. We will be writing code in a language called k, but it helps to talk about it first.
 
-**k is different**. At first, you will be questioning its design, and it will respond by questioning things that you consider common sense, but soon it will become a constructive conversation, and here is how.
+k is different. At first, you will be questioning its design, and it will respond by questioning things that you consider common sense, but soon it will become a constructive conversation, and here is how.
 
 The first thing newcomers frown upon is why the assignment operator is `:` instead of `=`. But before you close the tab, try a simple thought experiment:
 
@@ -127,11 +127,11 @@ Assuming conda's `bin` is in your PATH, Start your very first k session like so:
 
 ```sh
 $ k
-2019-04-21 15:38:18 40core 512gb avx2 © shakti m2.0 prod
+2019-04-21 15:38:18 40core 270gb avx2 © shakti m2.0 prod
  █
 ```
 
-Isn't much to write home about, but startup banner actually packs a lot of useful information:
+There isn't much to write home about, but startup banner actually packs a lot of useful information:
 
 
 | it says             | it means                      |
@@ -208,7 +208,7 @@ z:1;y:2;x:3     /denser version of the above
 
 #### indentation
 
-This is a tricky subject in k. Basically, what you generally want is **no indentation**. This means if your k expression is getting so large that you are tempted to split it into separate lines, you likely need to refactor or return to the blackboard. Sometimes, however, indentation is fine and even necessary, and it is always *one space*. Not two, not four, one. Tabs will be frowned upon because they take a lot of **space**, see below.
+This is a tricky subject in k. Basically, what you generally want is **no indentation**. This means if your k expression is getting so large that you are tempted to split it into separate lines, you likely need to refactor or return to the blackboard. Sometimes, however, indentation is fine and even necessary, and it is always *one space*. Not two, not four, one. Tabs will be frowned upon because they take a lot of *space*, see below.
 
 #### identifiers
 
@@ -236,7 +236,7 @@ This is a major point of contention in software development. There are several a
 
 #### bad form
 
-Bad form in k is code bloat. Avoid writing extra code if you can — there is too much of it written already. Look to remove any inessential code, yours or not. But if you have to write more, make it is useful, secure, compact, maintainable and scalable.
+Bad form in k is code bloat. Avoid writing extra code if you can — there is too much of it written already. Look to remove any inessential code, yours or not. But if you have to write more, make it is useful, secure, compact, maintainable, portable and scalable.
 
 --------------------
 
@@ -316,7 +316,7 @@ An operator is declared to be explicitly monadic if followed by `:`:
 +:         /always stays a monadic flip, disregarding context
 ```
 
-> You will not get far in this course without a strong grip on the idea that some things in k land are **monadic** or even **explicitly monadic**, while others are **dyadic**. Make sure you have it.
+> You will not get far in this course without a strong grip on the idea that some things in k land are **monadic** and even **explicitly monadic**, while others are **dyadic**. Make sure you have it.
 
 On a more general note, functions in k can be of rank 1 to 9:
 
@@ -1070,7 +1070,7 @@ So here is the code:
 f:{$[2>#?x;x;,/f'x@&:'~:\x<*1?x]}
 ```
 
-Almost nothing looks familiar here, and the whole little monster is just creepy. But once we take it apart, you will find it is actually very simple and readable:
+This little monster is deliberately designed to make as little sense as possible at first glance, but once we take it apart, you we hope you'll agree is actually very simple and readable:
 
 ```q
 
@@ -1455,7 +1455,7 @@ We conclude with a list of subjects that you are now ready to explore on your ow
 |native csv, tsv, json and utf    |fault tolerance and monitoring      |
 |integrated cryptography core     |scripting, deployment, OS tuning    |
 |nanosecond time, datetime math   |interop with Python, Julia and C    |
-|k-expressions, \`0                |tech support and user community     |
+|k-expressions, \`0               |tech support and user community     |
 |design of internal components    |k resources, tools and packages     |
 
 <a name="gravestone">
