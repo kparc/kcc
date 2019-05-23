@@ -9,7 +9,7 @@ plus over infinity, aka k crash course
 **[exodus](#exodus)**
 
 * [get](#get) | [run](#run)
-* style → [a](#annotations) | [sep](#separator) | [tab](#itentation) | [ids](#identifiers) | [space](#space) | [bad](#bad-form)
+* style → [cmt](#annotations) | [sep](#separator) | [tab](#itentation) | [ids](#identifiers) | [space](#space) | [bad](#bad-form)
 * parlance → [xyz](#implicit-arguments) | [proj](#projection) | [rank](#rank) | [+:](#explicit-monadics)
 
 **[numbers](#numbers)**
