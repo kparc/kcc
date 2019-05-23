@@ -1444,8 +1444,6 @@ Finally, compare the size of their runtimes:
 
 ### gladly beyond
 
-Although ee cummings opened his famous poem with words *somewhere i have never travelled*, it seems that some k programmers prefer to read poetry backwards. That explains a lot about the title of our final chapter.
-
 We have covered a lot of ground, good time to put things into perspective. Below is a complete map of k operators, and those marked with bullets you have already seen and used at least once:
 
 ```
@@ -1491,5 +1489,7 @@ We conclude with a list of subjects that you are now ready to explore on your ow
 |design of internal components    |k resources, tools and packages     |
 
 -----------------
+Although ee cummings opened his famous poem with words *somewhere i have never travelled*, it seems that some k programmers prefer to read poetry backwards. That explains a lot about the title of our final chapter. [∎](mailto:me@kel.as)
 
-[∎](mailto:me@kel.as)
+-----------------
+
