@@ -314,6 +314,8 @@ As you will see, the vast majority of native operators in `k` have exactly two c
 For example, when you used your first ever k operator in the expression `2+2`, you have used the `+` operator in a dyadic context since it received *two* operands to work on, left and right, so it was inferred to be `dyadic + plus`. The `monadic + flip` will be introduced later, and has entirely different semantics.
 
 <a name="parl-explmonad"></a>
+-------------------
+
 **Explicit monadics** is a language construct that allows to explicitly declare an operator to be monadic regardless of its context. This is commonplace and very often necessary. Will introduce the monadic override syntax using the `+` operator as an example, and later on you will see how this works in practice.
 
 An operator is declared to be explicitly monadic if followed by `:`:
