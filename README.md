@@ -242,15 +242,40 @@ Bad form in k is code bloat. Avoid writing extra code if you can — there is to
 
 **practice**
 
-We don't know much k to practice style yet, so this one will be read-only. Here is a trivial C program formatted in a slightly unusual way. If you don't know much C, see if you can still follow what it does. And if you do know C, please let us know if you can spot any bugs:
+We don't know much k to practice style yet, so this one will be read-only. Here is a trivial C program formatted in two different ways. Compare their strengths.
+
+**tslr:**
 
 ```c
 #include <stdio.h>
-typedef int I;
-#define O printf
-#define DO(n,x) {I i=0,_i=(n);for(;i<_i;++i){x;}}
-I main(){DO(42,O("kei %d\n",i);)}
+
+int
+main(int argc, char **argv)
+{
+  int x = 'a';
+
+  for(int i=0; i<26; ++i){
+    putchar(x++);
+  }
+
+  return 0;
+}
 ```
+
+**rwdc:**
+
+```c
+#include <stdio.h> //k.h
+typedef int I;
+#define O putchar
+#define DO(n,x) {I i=0,_i=(n);for(;i<_i;++i){x;}}
+```
+
+```c
+#include "k.h"
+I main(){I x='a';DO(26,O(x++))}//nsl
+```
+
 
 ### remarks on parlance
 
