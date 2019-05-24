@@ -733,7 +733,7 @@ It is evident that nulls and infinities are *Unicode glyphs*. Although it is ver
 ```q
  0%0         /float null is zero div by zero
 ø 
- `i%0%0      /int null float null as integer
+ `i$0%0      /int null is rounded float null
 Ø
 
  1%0         /inf is just reciprocal of zero
