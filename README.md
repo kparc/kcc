@@ -710,7 +710,7 @@ goo|3.75
 ```
 
 <a name="typ-nul"></a>
-**Null** values in k are typed, integer null is `Ø` and float null is `ø`. **Infinity** is a scalar float `∞`. Working with nulls and infinities can be very tricky, and it is very important to pay attention to their types:
+**Null values** in k are typed, integer null is `Ø` and float null is `ø`. **Infinity** is a scalar float `∞`. Working with nulls and infinities can be very tricky, and it is very important to pay attention to their types:
 
 ```q
  n:ø          /float null is type float
@@ -727,6 +727,23 @@ goo|3.75
  @∞           /infinity is a float atom
 `f
 ```
+It is evident that nulls and infinities are *Unicode glyphs*. Although it is very easy to set up keyboard shortcuts for them, there are idiomatic ASCII ways to enter them (but avoid you can):
+
+```q
+ 0%0         /float null is zero div by zero
+ø 
+ `i%0%0      /int null float null as integer
+Ø
+
+ 1%0         /inf is just reciprocal of zero
+∞
+ %0          /inf via `%x 'inverse` operator
+∞ 
+ %:0         /inf using explicit `%x inverse`
+∞
+
+
+
 
 <a name="typ-mix"></a>
 **Composite vector** type, or you could also say **mix vector**, is of special mention. Such vectors are either a mixture of atoms of disparate types, or contain something more complex than atoms, e.g. other vectors:
