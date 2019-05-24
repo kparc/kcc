@@ -740,8 +740,6 @@ It is evident that nulls and infinities are *Unicode glyphs*. Although it is ver
 ∞
  %0          /inf via `%x 'inverse` operator
 ∞ 
- %:0         /inf using explicit `%x inverse`
-∞
 ```
 
 <a name="typ-mix"></a>
