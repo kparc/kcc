@@ -727,6 +727,7 @@ goo|3.75
  @∞           /infinity is a float atom
 `f
 ```
+
 It is evident that nulls and infinities are *Unicode glyphs*. Although it is very easy to set up keyboard shortcuts for them, there are idiomatic ASCII ways to enter them (but avoid you can):
 
 ```q
@@ -741,9 +742,7 @@ It is evident that nulls and infinities are *Unicode glyphs*. Although it is ver
 ∞ 
  %:0         /inf using explicit `%x inverse`
 ∞
-
-
-
+```
 
 <a name="typ-mix"></a>
 **Composite vector** type, or you could also say **mix vector**, is of special mention. Such vectors are either a mixture of atoms of disparate types, or contain something more complex than atoms, e.g. other vectors:
