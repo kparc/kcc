@@ -332,14 +332,14 @@ For example, when you used your first ever k operator in the expression `2+2`, y
 
 #### explicit monadics
 
-This language construct that allows to explicitly declare an operator to be monadic regardless of its context. This is commonplace and very often necessary. Will introduce the monadic override syntax using the `+` operator as an example, and later on you will see how this works in practice.
-
-An operator is declared to be explicitly monadic if followed by `:`:
+An operator is declared to be explicitly monadic if followed by `:`. This is commonplace and very often necessary.
 
 ```q
 +          /context-aware, either monadic flip or dyadic plus
 +:         /always stays a monadic flip, disregarding context
 ```
+
+Later on you will see how this works in practice.
 
 > You will not get far in this course without a strong grip on the idea that some things in k land are **monadic** and even **explicitly monadic**, while others are **dyadic**. Make sure you have it.
 
