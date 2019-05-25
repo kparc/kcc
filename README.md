@@ -279,7 +279,7 @@ I main(){I x='a';DO(26,O(x++))}//nsl
 
 ### remarks on parlance
 
-The most important terminology in k revolves around functions. Functions in k are first-class citizens. k has anonymous functions, eval, apply, recursion, and then some. It takes a leap of faith to believe it, but k is probably more lispy than certain Lisps, only you don't need to get past any parens. However, since there are no linked lists under the hood, k is not lisp, because it was designed to be fast.
+The most important terminology in k revolves around functions. Functions in k are first-class citizens. k has anonymous functions, eval, apply, recursion, and then some. It takes a leap of faith to believe it, but k is probably more lispy than certain Lisps, only you don't need to get past any parens. However, since there are no linked lists under the hood, k is not Lisp, because it was designed to be fast.
 
 #### implicit arguments
 
