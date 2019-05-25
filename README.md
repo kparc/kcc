@@ -1261,6 +1261,7 @@ And `qs` code brought a few more:
 * monadic `&x where`
 * monadic `,/x raze`
 * dyadic `x@y index`
+* dyadic `x~y match`
 
 Although this is still a small part of k operator arsenal, if you can do `quicksort` with this much, you can do a lot more. And then add vector arithmetic, and then take everything to the power of 6 adverbs.
 
