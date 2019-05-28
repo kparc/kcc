@@ -26,9 +26,9 @@ plus over infinity, aka k crash course
 * metrics → [apples and oranges](#apples-and-oranges)
 * learning plan → [gladly beyond](#gladly-beyond)
 
----------------------
-
 > quod tu summum putas gradus est — seneca
+
+---------------------
 
 ## genesis
 
