@@ -1192,8 +1192,8 @@ This gives us confidence to wrestle down the last part, the recursion step:
 
  x:f'pts             /adverb each: apply f to each partition, recurse down 
 
- ,/x                 /,/ is 'raze': unwind aka flatten a vector of vectors
- v:,/(1 2 3;4 5 6)   /in other words, raze flattens first level of nesting
+ ,/x                 /,/ is 'raze': unnest aka flatten a vector of vectors
+ ,/(1 2 3;4 5 6)     /in other words, raze flattens first level of nesting
 1 2 3 4 5 6
 ```
 
