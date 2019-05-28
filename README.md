@@ -28,6 +28,8 @@ plus over infinity, aka k crash course
 
 ---------------------
 
+> quod tu summum putas gradus est — seneca
+
 ## genesis
 
 ### ø
@@ -1505,6 +1507,6 @@ We conclude with a list of subjects that you are now ready to explore on your ow
 -----------------
 Although ee cummings opened his famous poem with words *somewhere i have never travelled*, it seems that some k programmers prefer to read poetry backwards. That explains a lot about the title of our final chapter.
 
------------------
+----------------- 
 
 [∎](mailto:me@kel.as)
