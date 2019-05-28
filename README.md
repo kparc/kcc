@@ -10,7 +10,7 @@ plus over infinity, aka k crash course
 
 * [get](#get) | [run](#run)
 * style → [cmt](#annotations) | [sep](#separator) | [tab](#indentation) | [ids](#identifiers) | [space](#space) | [bad](#bad-form)
-* parlance → [xyz](#implicit-arguments) | [rank](#rank)| [proj](#projection) | [+:](#explicit-monadics)
+* parlance → [xyz](#implicit-arguments) | [rank](#rank) | [proj](#projection) | [+:](#explicit-monadics)
 
 **[numbers](#numbers)**
 
