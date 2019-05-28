@@ -1303,7 +1303,7 @@ maximum total from top to bottom is 23:
 ------------------
 9 + 4 + 7 + 3 = 23
 ```
-Problems 18 and 67 are simply two bigger triangles, and the challenge is to find the **sum** of maximum paths in them. While 18 can be solved by bruteforce, 67 can not, but efficient algorithm is absolutely trivial. It is given away in the example above, we simply need to fold rows going bottom up, like so:
+Problems 18 and 67 are simply two bigger triangles, and the challenge is to find the **sum** of maximum paths in them. While 18 can be solved by bruteforce, 67 can not, but the efficient algorithm is absolutely trivial. It is given away in the example above, we simply need to fold rows going bottom up, like so:
 
 ```q
 8   5   9   3
