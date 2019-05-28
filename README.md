@@ -1234,7 +1234,7 @@ And of course this is not the quickest `quicksort` ever written, but this is jus
  █ 
 ```
 
-But what our DIY sort function is very good for is to demonstrate the principle of **doing more with less**, and that is what k is all about.
+As you see, native sort is incomparably faster. But what our DIY sort function is very good for is to demonstrate the principle of **doing more with less**, and that is what k is all about.
 
 Check out examples of `quicksort` in the wild in [C++](https://gist.github.com/christophewang/ad056af4b3ab0ceebacf), [Python](https://gist.github.com/anirudhjayaraman/897ca0d97a249180a48b50d62c87f239), [JavaScript](https://gist.github.com/claudiahdz/39a86084edaaabe7fc17c321c0bb6896) and [Java](https://github.com/Code2Bits/Algorithms-in-Java/blob/master/sort/src/main/java/com/code2bits/algorithm/sort/QuickSort.java).
 
@@ -1264,6 +1264,10 @@ And `qs` code brought a few more:
 * monadic `,/x raze`
 * dyadic `x@y index`
 * dyadic `x~y match`
+
+Finally, you are now equipped with the most ubiquitous system routine:
+
+* `\t:n expr` benchpress an expression `n` times, result in milliseconds
 
 Although this is still a small part of k operator arsenal, if you can do `quicksort` with this much, you can do a lot more. And then add vector arithmetic, and then take everything to the power of 6 adverbs.
 
@@ -1415,6 +1419,8 @@ We have seen some new stuff:
 3. Verify solutions for 18 and 67 on [Project Euler](https://projecteuler.net).
 
 4. Once you provide a correct answer to an Euler problem, you can browse its discussion forum. You might want to check out some other solutions to 18 and 67 in other computer languages.
+
+5. Use `\t:n` to assess the upper bound of the algorithm.
 
 -------------------
 
