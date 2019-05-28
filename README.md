@@ -292,17 +292,18 @@ This is an uncommon feature, most languages require you to explicitly declare fu
  f[1;2;3]     /and here is how to call f
 6
   
- f:{x*x}      /f[] has only one argument
- f 2          /and you can omit brackets
- 
  e:{[a;b;c]   /not so implicit, but why?
   a+b+c}
 
  e[1;2;3]     /f with 9 extra keystrokes
 6
+
+ f:{x*x}      /f[] has only one argument
+ f 42         /and you can omit brackets
+1764
 ```
 
-Note that when calling a function with three arguments `f[1;2;3]` we had to use square brackets and use an expression separator, because each argument passed to a function is an expression in its own right. However, second function only takes one argument, and we were allowed to omit brackets — although we could also say `f[2]`.
+Note that when calling a function with three arguments `f[1;2;3]` we had to use square brackets and use an expression separator, because each argument passed to a function is an expression in its own right. However, second function only takes one argument, and we were allowed to omit brackets — although we could also say `f[42]`.
 
 This illustrates the core principle of k syntax — almost everything that you intuitively feel you should be able to omit, can and should be omitted. Top candidates for omission are square `[]`, round brackets `()` and space `0x20`. The lesser you type, the better your code will get.
 
