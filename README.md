@@ -1265,6 +1265,7 @@ And `qs` code brought a few more:
 * monadic `,/x raze`
 * dyadic `x@y index`
 * dyadic `x~y match`
+* dyadic `x?y find`
 
 Finally, you are now equipped with the most ubiquitous system routine:
 
