@@ -1245,6 +1245,7 @@ Check out examples of `quicksort` in the wild in [C++](https://gist.github.com/c
 Previously we have seen:
 
 * monadic `!x til (first x integers)`
+* monadic `%x inverse (reciprocal)`
 * monadic `+x flip (transpose)`
 * monadic `$x string`
 * monadic `@x type`
@@ -1476,7 +1477,7 @@ We have covered a lot of ground, good time to put things into perspective. Below
 +  ● add        ● flip
 -  ● subtract   ● negate
 *  ● multiply   ● first
-%  ● divideby   ◦ inverse
+%  ● divideby   ● inverse
 &  ◦ min|and    ● where
 |  ● max|or     ● reverse
 <  ● less       ◦ up
