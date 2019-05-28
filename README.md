@@ -246,7 +246,7 @@ Bad form in k is code bloat. Avoid writing extra code if you can — there is to
 
 We don't know much k to practice style yet, so this one will be read-only. Here is a trivial C program formatted in two different ways. Compare their strengths.
 
-**tslr:**
+**tlsr:**
 
 ```c
 #include <stdio.h>
