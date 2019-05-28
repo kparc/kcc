@@ -1146,8 +1146,7 @@ Coffee break, here is what we know so far:
 1. its overall control flow
 2. the condition that stops recursion
 
-This gives us confidence to wrestle down the last part, the recursion 
-step:
+This gives us confidence to wrestle down the last part, the recursion step:
 
 ```q
 
