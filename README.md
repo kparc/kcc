@@ -77,7 +77,7 @@ All jokes aside, implementations of similar systems in languages like C++ or Jav
 
 In comparison, k solutions are typically a few factors of magnitude less code, implemented by small and agile teams, rarely require external dependencies, and ship on time. 
 
-At first it could be hard to understand how this can be true, imagine the effort of keeping 100 lines of code in sync with rapidly changing requirements and free of bugs, compared to 10,000 lines of code that do the same thing. Against all intuition, it is not 100 times easier, but 10,000 times easier, because the effect of cyclomatic complexity is devastating.
+At first it could be hard to understand how this can even be true, but imagine the effort of keeping 100 lines of code in sync with rapidly changing requirements and free of bugs, compared to 10,000 lines of code that do the same thing. Against all intuition, it is not 100 times easier, but 10,000 times easier, because the effect of cyclomatic complexity is devastating.
 
 ### wha
 
