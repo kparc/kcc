@@ -728,7 +728,7 @@ goo|3.75
 `f
 ```
 
-It is evident that nulls and infinities are *Unicode glyphs*. Although it is very easy to set up keyboard shortcuts for them, there are idiomatic ASCII ways to enter them (but avoid you can):
+It is evident that nulls and infinities are *Unicode glyphs*. Although it is very easy to set up keyboard shortcuts for them, there are idiomatic ASCII ways to enter them (but avoid if you can):
 
 ```q
  0%0         /float null is zero div by zero
