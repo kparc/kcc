@@ -1267,7 +1267,7 @@ And `qs` code brought a few more:
 
 Finally, you are now equipped with the most ubiquitous system routine:
 
-* `\t:n expr` benchpress an expression `n` times, result in milliseconds
+* `\t:n expr` benchpress an expression `n` times, result is in milliseconds
 
 Although this is still a small part of k operator arsenal, if you can do `quicksort` with this much, you can do a lot more. And then add vector arithmetic, and then take everything to the power of 6 adverbs.
 
