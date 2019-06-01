@@ -127,11 +127,7 @@ kup
 
 Assuming conda's `bin` is in your PATH, Start your very first k session like so:
 
-```sh
-$ k
-2019-04-21 15:38:18 40core 270gb avx2 © shakti m2.0 prod
- █
-```
+![alt text](https://github.com/kparc/kcc/blob/master/img/k.png "k prompt")
 
 The startup banner packs a lot of useful information:
 
@@ -1514,8 +1510,13 @@ We conclude with a list of subjects that you are now ready to explore on your ow
 |design of internal components    |k resources, tools and packages     |
 
 -----------------
+
 Although ee cummings opened his famous poem with words *somewhere i have never travelled*, it seems that some k programmers prefer to read poetry backwards. That explains a lot about the title of our final chapter.
 
+![speaking of poetry](https://github.com/kparc/kcc/blob/master/img/kei.png "speaking of poetry")
+
 ----------------- 
+
+
 
 [∎](mailto:me@kel.as)
