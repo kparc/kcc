@@ -127,11 +127,7 @@ kup
 
 Assuming conda's `bin` is in your PATH, Start your very first k session like so:
 
-```sh
-$ k
-2019-04-21 15:38:18 40core 270gb avx2 © shakti m2.0 prod
- █
-```
+![alt text](https://github.com/kparc/kcc/blob/master/img/k.png "k prompt")
 
 The startup banner packs a lot of useful information:
 
