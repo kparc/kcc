@@ -134,9 +134,9 @@ The startup banner packs a lot of useful information:
 
 | it says             | it means                      |
 | :-------------------|:------------------------------|
-| 2019-04-21 15:38:18 | timestamp of your k build     |
+| 2019-06-01 05:19:10 | timestamp of your k build     |
 | 40core              | cpu cores you can use in k    |
-| 512gb               | max workspace, expect 1gb     |
+| 270gb               | max workspace, expect 1gb     |
 | avx2                | the best your cpu can do      |
 | shakti              | the company behind k          |
 | l                   | `m` for macos, `l` for linux  |
