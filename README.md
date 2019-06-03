@@ -139,7 +139,7 @@ The startup banner packs a lot of useful information:
 | 512gb               | max workspace, expect 1gb     |
 | avx2                | the best your cpu can do      |
 | shakti              | the company behind k          |
-| m                   | `m` for macos, `l` for linux  |
+| l                   | `m` for macos, `l` for linux  |
 | 2.0                 | because it is better than 1.0 |
 | prod                | your build is `test` for now  |
 
@@ -807,7 +807,7 @@ type error
  █
 ```
 
-There are things left to be said about the type system, but the expression `@@42` above (which evaluates to some kind wordplay, "type name of a type name is `name`") urges us to the next section which is all about how to make sense of this expression.
+There are things left to be said about the type system, but the expression `@@42` above (which evaluates to some kind of wordplay, *type name of a type name is `name`*) urges us to the next section which is all about how to make sense of this expression.
 
 ------------------
 
