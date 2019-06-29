@@ -1,3 +1,10 @@
 {
-  "plugins": ["prism", "-highlight"]
+  "plugins": ["prism", "-highlight"],
+  "pluginsConfig": {
+    "prism": {
+      "lang": {
+        "flow": "typescript"
+      }
+    }
+  }  
 }
