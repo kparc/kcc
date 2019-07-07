@@ -1,34 +1,34 @@
----
-description: 'plus over infinity, aka k crash course'
----
-
 # +/∞
 
-> "quod tu summum putas gradus est." — seneca
+plus over infinity, aka k crash course
 
-[**genesis**]()
+**[genesis](#genesis)**
 
-* k → [ø]() \| [who]() \| [why]() \| [wha]() \| [how]()
+* k → [ø](#ø) | [who](#who) | [why](#why) | [wha](#wha) | [how](#how)
 
-[**exodus**]()
+**[exodus](#exodus)**
 
-* [get]() \| [run]()
-* style → [cmt]() \| [sep]() \| [tab]() \| [ids]() \| [space]() \| [bad]()
-* parlance → [xyz]() \| [rank]() \| [proj]() \| [+:]()
+* [get](#get) | [run](#run)
+* style → [cmt](#annotations) | [sep](#separator) | [tab](#indentation) | [ids](#identifiers) | [space](#space) | [bad](#bad-form)
+* parlance → [xyz](#implicit-arguments) | [rank](#rank) | [proj](#projection) | [+:](#explicit-monadics)
 
-[**numbers**]()
+**[numbers](#numbers)**
 
-* vector math → [v≠a]() \| [v+v]() \| [v+a]() \| [v x]()  \| [shp]()
-* [type system]() → [num]() \| [char]() \| [name]() \| [date]() \| [dict]() \| [tab]() \| [λ]() \| [ø,∞]() \| [mix]() \| [cast]() 
-* order of eval → [rtl]() \| [\(1\)2]()
-* [no stinking loops]() → [over]() \| [scan]() \| [e↣]() \| [e↔]() \| [e↤]()
+* vector math → [v≠a](#vectors-vs-atoms) | [v+v](#v-plus-v) | [v+a](#v-plus-a) | [v x](#v-indexing)  | [shp](#v-shp)
+* [type system](#types-of-types) → [num](#typ-num) | [char](#typ-char) | [name](#typ-name) | [date](#typ-time) | [dict](#typ-dict) | [tab](#typ-tab) | [λ](#typ-lambda) | [ø,∞](#typ-nul) | [mix](#typ-mix) | [cast](#typ-cast) 
+* order of eval → [rtl](#right-to-left) | [(1)2](#precedence)
+* [no stinking loops](#no-stinking-loops) → [over](#nsl-overscan) | [scan](#nsl-overscan) | [e↣](#nsl-each) | [e↔](#nsl-eachlr) | [e↤](#nsl-eachprior)
 
-[**proverbs**]()
+**[proverbs](#proverbs)**
 
-* reading code → [how to solve it]()
-* writing code → [three triangles]()
-* metrics → [apples and oranges]()
-* learning plan → [gladly beyond]()
+* reading code → [how to solve it](#how-to-solve-it)
+* writing code → [three triangles](#three-triangles)
+* metrics → [apples and oranges](#apples-and-oranges)
+* learning plan → [gladly beyond](#gladly-beyond)
+
+> quod tu summum putas gradus est — seneca
+
+---------------------
 
 ## genesis
 
@@ -44,9 +44,12 @@ The first thing newcomers frown upon is why the assignment operator is `:` inste
 x = x + 1
 ```
 
-Most programmers will agree that this expression makes perfect sense, but if you show it to a math guy, be ready to hear "no, it isn't". And once you see what makes him think that way, you will also see why we assign values with `:` in k. The above expression looks nonsensical to a k programmer for the same reason it is to a math guy, and k will most always evaluate it to false. It is possible to produce a k expression where `x=x+1` evaluates to true, and once you can, please submit a pull request and say "hello".
+Most programmers will agree that this expression makes perfect sense, but if you show it to a math guy, be ready to hear "no, it isn't". And once you see what makes him think that way, you will also see why we assign values with `:` 
+in k. The above expression looks nonsensical to a k programmer for the same reason it is to a math guy, and k will most always evaluate it to false. It is possible to produce a k expression where `x=x+1` evaluates to true, and once you can, please submit a pull request and say "hello".
 
 k has a different perspective on some other things as well, but it is not necessarily wrong. It can just as well be right, but in a different way, and this short introduction invites you to look at those things that other way. And we hope they might also feel obvious and natural to you, like `x≠x+1` just did.
+
+---------------------
 
 This crash course is not looking to make you an expert k programmer, because that takes a lot of time and effort. Instead, it aims to give enough confidence and motivation for you to continue on your own. We value your time, so we promise it will be fast and violent.
 
@@ -72,7 +75,7 @@ There is a good chance that you have heard or read about k language. A lot of pe
 
 All jokes aside, implementations of similar systems in languages like C++ or Java usually involve thousands of lines of code written by large teams, built on top of complex library stacks and even more complex infrastructure. Such projects are often expensive and inflexible, go over budget and miss deadlines.
 
-In comparison, k solutions are typically a few factors of magnitude less code, implemented by small and agile teams, rarely require external dependencies, and ship on time.
+In comparison, k solutions are typically a few factors of magnitude less code, implemented by small and agile teams, rarely require external dependencies, and ship on time. 
 
 At first it could be hard to understand how this can even be true, but imagine the effort of keeping 100 lines of code in sync with rapidly changing requirements and free of bugs, compared to 10,000 lines of code that do the same thing. Against all intuition, it is not 100 times easier, but 10,000 times easier, because the effect of cyclomatic complexity is devastating.
 
@@ -80,21 +83,22 @@ At first it could be hard to understand how this can even be true, but imagine t
 
 k is a simple, expressive and powerful computer language.
 
-The power stems from the fact that k is designed as a _tool of thought_. The vocabulary, syntax and the choice of abstractions offered by the language drive you to think about problems in a focused and clear way that quickly takes you to efficient and elegant solutions. And the reason why thinking in terms of k is so effective is nothing supernatural: brevity is the soul of wit.
+The power stems from the fact that k is designed as a *tool of thought*. The vocabulary, syntax and the choice of abstractions offered by the language drive you to think about problems in a focused and clear way that quickly takes you to efficient and elegant solutions. And the reason why thinking in terms of k is so effective is nothing supernatural: brevity is the soul of wit.
 
 k programs are concise, the syntax of the language is terse, and there is no boilerplate code to write. In k, most of the time is spent on thinking about the problem rather than writing and refactoring code or browsing source.
 
 ### how
 
-k runtime environment is an incredibly compact and efficient piece of software. The entire system is:
+k runtime environment is an incredibly compact and efficient piece of software. 
+The entire system is:
 
 * a single binary executable
 * without any external dependencies
 * that fits in the cache of your CPU
 
-And that gives a selection of fundamental algorithms, data structures, techniques and primitives that withstood the test of decades of production use in some of the world's most demanding data processing environments. Inner components of the system fit together and complement each other to deliver _performance_. It is not uncommon for k newcomers to experience shock when they first see how much can be done with a few precise keystrokes, and how fast.
+And that gives a selection of fundamental algorithms, data structures, techniques and primitives that withstood the test of decades of production use in some of the world's most demanding data processing environments. Inner components of the system fit together and complement each other to deliver *performance*. It is not uncommon for k newcomers to experience shock when they first see how much can be done with a few precise keystrokes, and how fast.
 
-All of k programming takes place in the **REPL**, an idea that is actually much older than many seem to think. It has been around for at least half a century, and is known as _dialogue approach_, a live conversation between a human and machine as a flow of questions and answers. And in k, this conversation is much more fluent than in any other modern REPL-driven system you may be familiar with, because the questions are short and the answers are fast. This is the essence of the way of k, an experience that all k programmers consider immensely satisfying. People who write k for living love their jobs.
+All of k programming takes place in the **REPL**, an idea that is actually much older than many seem to think. It has been around for at least half a century, and is known as *dialogue approach*, a live conversation between a human and machine as a flow of questions and answers. And in k, this conversation is much more fluent than in any other modern REPL-driven system you may be familiar with, because the questions are short and the answers are fast. This is the essence of the way of k, an experience that all k programmers consider immensely satisfying. People who write k for living love their jobs.
 
 ## exodus
 
@@ -108,13 +112,13 @@ The k interpreter is currently available for `Linux` and `macOS` on `x86_64` arc
 
 Without further ado, install [conda](https://anaconda.org). Shell integration is optional but recommended. Once you have it, install the package called `shakti`, which is nothing else but `k` in disguise:
 
-```bash
+```sh
 conda install -c shaktidb shakti
 ```
 
 As all things k, the development of k itself is happening very fast. New builds are published up to several times a week, so make sure you always use the latest version:
 
-```bash
+```sh
 alias kup="conda update -c shaktidb shakti"
 kup
 ```
@@ -123,20 +127,21 @@ kup
 
 Assuming conda's `bin` is in your PATH, Start your very first k session like so:
 
-![k prompt](https://github.com/kparc/kcc/blob/master/img/k.png?raw=true)
+![alt text](https://github.com/kparc/kcc/blob/master/img/k.png?raw=true "k prompt")
 
 The startup banner packs a lot of useful information:
 
-| it says | it means |
-| :--- | :--- |
-| 2019-06-01 05:19:10 | timestamp of your k build |
-| 40core | cpu cores you can use in k |
-| 270gb | max workspace, expect 1gb |
-| avx2 | the best your cpu can do |
-| shakti | the company behind k |
-| l | `m` for macos, `l` for linux |
-| 2.0 | because it is better than 1.0 |
-| prod | your build is `test` for now |
+
+| it says             | it means                      |
+| :-------------------|:------------------------------|
+| 2019-06-01 05:19:10 | timestamp of your k build     |
+| 40core              | cpu cores you can use in k    |
+| 270gb               | max workspace, expect 1gb     |
+| avx2                | the best your cpu can do      |
+| shakti              | the company behind k          |
+| l                   | `m` for macos, `l` for linux  |
+| 2.0                 | because it is better than 1.0 |
+| prod                | your build is `test` for now  |
 
 When it comes to that, always include the banner in your bug reports.
 
@@ -150,13 +155,15 @@ At any time during a k session, you can:
 
 At this point we highly recommend to avoid issuing any of the above commands, especially the latter.
 
+---------------------
+
 **Practice:**
 
 Make sure you have `rlwrap` utility installed, and put an alias `alias k="rlwrap k"` into your rc file. This makes your spartan k development environment a lot more pleasant to use.
 
 Type in your first k expressions, and enjoy your first answers:
 
-```text
+```q
  2+2      /simplest face of k is a calculator
 4
 
@@ -171,6 +178,8 @@ Type in your first k expressions, and enjoy your first answers:
 
 Indeed, the title of this document seems to make sense to the k interpreter and evaluates to exactly that, and very soon you will easily infer what it actually means.
 
+---------------------
+
 ### remarks on style
 
 As any other language, k expects a programmer to observe and follow certain conventions on coding style and terminology in order to understand the code written by the others and let their own code be understood. While some rules of the house of k are universal, some are not.
@@ -179,7 +188,7 @@ As any other language, k expects a programmer to observe and follow certain conv
 
 Commenting your k code is the best way not to end up coding Java for food, unless you are Arthur Whitney. We dare to assume you are not, so comments start with `/`. When used inline, prepend at least one space. Here is an annotated declaration of two variables:
 
-```text
+```q
 /annotations are your friends
 x:42
 
@@ -188,22 +197,22 @@ y:42 /now, always and forever
 
 #### separator
 
-Character `;` in k is used for one thing and one thing only, to separate k expressions. As you have seen above, k doesn't require you to terminate the line explicitly with `;` because **newline is also an expression separator**. Separator is used the same way and means the same thing everywhere in any context \(except comments\), e.g. to separate expressions inside a function body, vector declaration, function arguments, etc. Later we will see that separator is also a part of certain language constructs, but it has the same meaning there as well. But by far the most frequent explicit use of the separator you will encounter in the wild is to separate expressions within one line:
+Character `;` in k is used for one thing and one thing only, to separate k expressions. As you have seen above, k doesn't require you to terminate the line explicitly with `;` because **newline is also an expression separator**. Separator is used the same way and means the same thing everywhere in any context (except comments), e.g. to separate expressions inside a function body, vector declaration, function arguments, etc. Later we will see that separator is also a part of certain language constructs, but it has the same meaning there as well. But by far the most frequent explicit use of the separator you will encounter in the wild is to separate expressions within one line:
 
-```text
+```q
 x:1; y:2; z:3   /one line, three expressions
 z:1;y:2;x:3     /denser version of the above
 ```
 
 #### indentation
 
-This is a tricky subject in k. Basically, what you generally want is **no indentation**. This means if your k expression is getting so large that you are tempted to split it into separate lines, you likely need to refactor or return to the blackboard. Sometimes, however, indentation is fine and even necessary, and it is always _one space_. Not two, not four, one. Tabs will be frowned upon because they take a lot of _space_, see below.
+This is a tricky subject in k. Basically, what you generally want is **no indentation**. This means if your k expression is getting so large that you are tempted to split it into separate lines, you likely need to refactor or return to the blackboard. Sometimes, however, indentation is fine and even necessary, and it is always *one space*. Not two, not four, one. Tabs will be frowned upon because they take a lot of *space*, see below.
 
 #### identifiers
 
 Variable names in k follow an unusual convention. Capitals are used by k programmers very sparingly, which applies both to code and comments. Identifiers in `camelCase` can sometimes be tolerated, while `c_style` identifiers are not permitted at all since `_` is an operator. Identifiers of functions and variables are very often boiled down to an absolute minimum, names 1-3 characters long are commonplace, which does not impact readability given that their definitions are annotated. Short identifiers might sound like a bad idea to Java programmers who are used to see identifiers longer than 100 bytes, but unlike Java, k source requires very little or no scrolling. When the entire program fits in your visual buffer, "cryptic" identifiers are no longer a problem because their annotated declarations are always right in front of you:
 
-```text
+```q
 kei:42   /kenneth eugene iverson
 ```
 
@@ -212,15 +221,22 @@ kei:42   /kenneth eugene iverson
 This is a major point of contention in software development. There are several approaches to k code organization, and our take on the subject is a subjective opinion, which is up for you to consider:
 
 * Screen space is about three keystrokes: **`\n`**, **`\t`** and 0x20, less surprisingly. If we define two extremes as "tall, lean, sparse and readable" and "robust, wide, dense and cryptic", then C and Java are good examples of `tlsr`, and k is all the way down `rwdc` road.
+
 * The right balance between two extremes is `asap`, or "adequately spaced and annotated program". While k syntax encourages you to produce very dense code, think of others and don't sacrifice too much readability. A waste of space is a waste of time — but so is unreadable code.
+  
 * Comments are part of the code and also take space, so boil them down to some reasonable size as well.
+
 * With k, it is possible to minimize code scrolling or even avoid it completely. When the entire program or component fits in your view, you lose no time on navigating and switching contexts. For example, every code block in this document fits on a laptop screen and remains readable on mobiles.
+
 * Syntax highlighting is essential and bad highlighting is worse than none, so choose carefully from k syntax definitions available for your editor. The best is often the one you wrote yourself, and k syntax is extremely regular and simple.
-* Medium is the message, so we refer to k code in this document. Please send pull requests to help us improve it, and if you like the style, it is yours to have.
+
+* Medium is the message, so we refer to k code in this document. Please send pull requests to help us improve it, and if you like the style, it is yours to have. 
 
 #### bad form
 
 Bad form in k is code bloat. Avoid writing extra code if you can — there is too much of it written already. Look to remove any inessential code, yours or not. But if you have to write more, make it useful, secure, compact, maintainable, portable and scalable.
+
+--------------------
 
 **practice**
 
@@ -258,6 +274,7 @@ typedef int I;
 I main(){I x='a';DO(26,O(x++))}//nsl
 ```
 
+
 ### remarks on parlance
 
 The most important terminology in k revolves around functions. Functions in k are first-class citizens. k has anonymous functions, eval, apply, recursion, and then some. It takes a leap of faith to believe it, but k is probably more lispy than certain Lisps, only you don't need to get past any parens. However, since there are no linked lists under the hood, k is not Lisp, because it was designed to be fast.
@@ -266,11 +283,11 @@ The most important terminology in k revolves around functions. Functions in k ar
 
 This is an uncommon feature, most languages require you to explicitly declare function arguments. Of course you can also do that in k if you want to, but if you don't, a function can have up to three implicit arguments called `x`, `y` and `z`, which means you declare them by simply referencing them in the function body. It is a very convenient feature, not nearly as scary as it sounds:
 
-```text
+```q
  f:{x+y+z}    /f[] takes three arguments
  f[1;2;3]     /and here is how to call f
 6
-
+  
  e:{[a;b;c]   /not so implicit, but why?
   a+b+c}
 
@@ -290,7 +307,7 @@ Syntax for explicit argument declaration `{[a;b]}` is just a side remark. It is 
 
 #### rank
 
-Function rank is another way of saying _valence_, a fancy word that describes a simple idea that is extremely important to be understood well. Rank of an operator or a function is basically the maximum count of arguments they take. Two functions shown above have ranks of 3 and 1, respectively.
+Function rank is another way of saying *valence*, a fancy word that describes a simple idea that is extremely important to be understood well. Rank of an operator or a function is basically the maximum count of arguments they take. Two functions shown above have ranks of 3 and 1, respectively. 
 
 Two specific ranks are so important that they have their own names. A function or an operator that takes...
 
@@ -299,13 +316,13 @@ Two specific ranks are so important that they have their own names. A function o
 
 As you will see, the vast majority of native operators in `k` have exactly two completely different meanings based on the context where they are used, which is in turn defined by the number of arguments offered to the operator.
 
-For example, when you used your first ever k operator in the expression `2+2`, you have used the `+` operator in a dyadic context since it received _two_ operands to work on, left and right, so it was inferred to be `dyadic + plus`. The `monadic + flip` will be introduced later, and has entirely different semantics.
+For example, when you used your first ever k operator in the expression `2+2`, you have used the `+` operator in a dyadic context since it received *two* operands to work on, left and right, so it was inferred to be `dyadic + plus`. The `monadic + flip` will be introduced later, and has entirely different semantics.
 
 #### projection
 
-Also known as _function view_, is a simply a reference to a function with some arguments preset to a value, and at least one **free**, or elided argument. For example, if a function of rank 3, `f[x;y;z]`, only receives first and third arguments, it will return its projection of rank 1:
+Also known as *function view*, is a simply a reference to a function with some arguments preset to a value, and at least one **free**, or elided argument. For example, if a function of rank 3, `f[x;y;z]`, only receives first and third arguments, it will return its projection of rank 1:
 
-```text
+```q
  f:{x+y+z}      /a function of rank three
  p:f[1;;3]      /a projection of f[1;?;3]
  p 2            /is same as call f[1;2;3]
@@ -316,7 +333,7 @@ Also known as _function view_, is a simply a reference to a function with some a
 
 An operator is declared to be explicitly monadic if followed by `:`. This is commonplace and very often necessary.
 
-```text
+```q
 +          /context-aware, either monadic flip or dyadic plus
 +:         /always stays a monadic flip, disregarding context
 ```
@@ -327,8 +344,11 @@ Later on you will see how this works in practice.
 
 On a more general note, functions in k can be of rank 1 to 9:
 
-* it is not really possible to define a function with no arguments. Rank zero, or _niladic_ functions do not exist in k.
+* it is not really possible to define a function with no arguments. Rank zero, or *niladic* functions do not exist in k.
 * a function cannot take more than nine explicit arguments, and some say this is an overly generous limit.
+
+
+-------------------
 
 **recap**
 
@@ -348,11 +368,11 @@ This is a good start, but tells you absolutely nothing about what k really is, a
 
 ### vectors vs atoms
 
-The word `atom` is a synonym for `scalar value`, or simply `scalar`. Every language has them, and in k they are as useful as elsewhere. But k belongs to a family of _vector languages_, which means its fundamental type is an ordered set of atoms or other ordered sets.
+The word `atom` is a synonym for `scalar value`, or simply `scalar`. Every language has them, and in k they are as useful as elsewhere. But k belongs to a family of *vector languages*, which means its fundamental type is an ordered set of atoms or other ordered sets.
 
-In k parlance, terms `array`, `list` and `vector` are often used interchangeably and refer to the same thing, but we will stick with `vector` to avoid confusing you, because vectors are much more general than classic _arrays_ and have nothing to do with _linked lists_.
+In k parlance, terms `array`, `list` and `vector` are often used interchangeably and refer to the same thing, but we will stick with `vector` to avoid confusing you, because vectors are much more general than classic *arrays* and have nothing to do with *linked lists*. 
 
-```text
+```q 
  x:(0;1;2;3;4)    /one way of declaring an integer vector
  y:0 1 2 3 4      /same effect using more informal syntax
 
@@ -367,7 +387,7 @@ In k parlance, terms `array`, `list` and `vector` are often used interchangeably
 
 k is strictly "**pass by value**", i.e. there are no references or pointers being passed around, although it is an illusion created by the underlying implementation. In reality, k avoids making copies of stuff unless it becomes absolutely necessary:
 
-```text
+```q
  x:0 1 2 3 4     /everything is passed by value
  y:x             /so this will make a copy of x
  y               /y is a clone, not a reference
@@ -378,9 +398,10 @@ k is strictly "**pass by value**", i.e. there are no references or pointers bein
                  /until one of them is modified
 ```
 
- The first thing you need to know about vectors is that most operations you expect to work for atoms work equally well for vectors, too:
+<a name="v-plus-v"></a>
+The first thing you need to know about vectors is that most operations you expect to work for atoms work equally well for vectors, too:
 
-```text
+```q
 x:y:0 1 2 3 4    /x and y are twin copies
 
  x+y             /pairwise sum of vectors
@@ -399,9 +420,11 @@ x:y:0 1 2 3 4    /x and y are twin copies
 1 1 1 1 1        /1 is truthy, 0 is false
 ```
 
- Mixing atomic and vector operands makes total sense and is very useful:
 
-```text
+<a name="v-plus-a"></a>
+Mixing atomic and vector operands makes total sense and is very useful:
+
+```q
  x:0 1 2 3 4
 
  x+1             /increment all elements
@@ -417,11 +440,12 @@ x:y:0 1 2 3 4    /x and y are twin copies
 ∞ 3 1.5 1 0.75
 ```
 
- **Indexing** is zero-based as you would expect, and if you pass a vector of indices, you get back vector of items:
+<a name="v-indexing"></a>
+**Indexing** is zero-based as you would expect, and if you pass a vector of indices, you get back vector of items:
 
-```text
+```q
  x:2 4 8 16 32
-
+ 
  x[2]          /get 3rd element of x
 8
 
@@ -436,16 +460,17 @@ x:y:0 1 2 3 4    /x and y are twin copies
 
  y:1 4         /y is an index vector
  x y           /same as x[y] less []
-4 32
+4 32           
 ```
 
- Pairwise operations on vectors of incompatible **shape** make much less sense to k than division by zero, and will throw an error:
+<a name="v-shp"></a>
+Pairwise operations on vectors of incompatible **shape** make much less sense to k than division by zero, and will throw an error:
 
-```text
+```q
  x:0 1 2 3 4
  y:0 1 2
  x+y
-
+ 
 x+y
  ^
 length error
@@ -453,18 +478,18 @@ length error
 
 Note the difference between shape and length. This reminds us that a vector can be composed not just from atoms but from other vectors as well, and there is no practical limit on the depth of nesting. In other words, vectors can have **arbitrary shape**:
 
-```text
+```q
  y:(,1;1 1;1 2 1;1 3 3 1)    /pascal's triangle
  y
 ,1
 1 1
 1 2 1
-1 3 3 1
+1 3 3 1 
 ```
 
-Vector arithmetic is **penetrating**, which means that vector operators _apply at depth_ for as long as operands have compatible shape. It is a good time to introduce the `monadic +x` to better see how this works:
+Vector arithmetic is **penetrating**, which means that vector operators *apply at depth* for as long as operands have compatible shape. It is a good time to introduce the `monadic +x` to better see how this works:
 
-```text
+```q
  mat:(1 2 3;4 5 6;7 8 9)    /shall there be mat:
  mat                        /a square matrix 3*3
 1 2 3
@@ -493,11 +518,13 @@ Vector arithmetic is **penetrating**, which means that vector operators _apply a
 49 50 51
 ```
 
+-----------------------
+
 **practice**
 
 First, lets make sure `+x flip` operator transposes rectangular matrices just as well as squares, which would be of little surprise. Then try to flip something less obvious, and after that you have two more transformations to apply. Inspect all intermediate results and make sure you follow their logic:
 
-```text
+```q
  mat:(1 2 3 4;6 7 8 9)     /a rectangular matrix
  +mat                      /flip it, no big deal
 1 6
@@ -512,6 +539,8 @@ First, lets make sure `+x flip` operator transposes rectangular matrices just as
  █
 ```
 
+-----------------------
+
 No rocket science, all pretty basic, but carry on.
 
 ### types of types
@@ -522,7 +551,7 @@ Before we see the examples, the first thing you need to know about types in k is
 
 Here is a quick overview of basic k types and their symbolic names:
 
-```text
+```q
 atom      vect        type
   `i        `I        int
   `f        `F        float
@@ -534,7 +563,8 @@ atom      vect        type
 
 This is not very revealing, so lets see them in action. The operator to query the type of anything in k is `monadic @x`, and if you are not sure what we mean by `monadic`, it is a good time to start over.
 
-```text
+<a name="typ-num"></a>
+```q
  @42         /int scalar
 `i
 
@@ -552,24 +582,26 @@ This is not very revealing, so lets see them in action. The operator to query th
 1f
 ```
 
- Like in C, there is no dedicated type for strings in k. Strings are just **char vectors**:
+<a name="typ-char"></a>
+Like in C, there is no dedicated type for strings in k. Strings are just **char vectors**:
 
-```text
+```q
  @"k"        /"k" is char atom
 `c
 
  s:"kei";@s  /s is char vector
 `C
-
+ 
  s 0         /1st element of s
 "k"
 ```
 
- A type called **name** is the same idea as **internalized string** found in some other languages. This means that a single instance of an arbitrarily long string can be placed into a global hash table that persists for a lifetime of a k process and can later be referenced by its hash key as many times as necessary without creating additional copies of the string.
+<a name="typ-name"></a>
+A type called **name** is the same idea as **internalized string** found in some other languages. This means that a single instance of an arbitrarily long string can be placed into a global hash table that persists for a lifetime of a k process and can later be referenced by its hash key as many times as necessary without creating additional copies of the string.
 
-We could say that in case of names k actually passes _references_ instead of _values_, but they are not pointers and there is no arithmetic defined for them. Names come handy in many situations, for now lets just see how they quack:
+We could say that in case of names k actually passes *references* instead of *values*, but they are not pointers and there is no arithmetic defined for them. Names come handy in many situations, for now lets just see how they quack:
 
-```text
+```q
  a:`kei              /"kei" is now internalized
  @a                  /name atom is its hash key
 `n
@@ -582,12 +614,13 @@ We could say that in case of names k actually passes _references_ instead of _va
 `n
 
  $a                  /$ converts names to chars
-"kei"
+"kei" 
 ```
 
- **Temporal types** in k are `date` and `time`:
+<a name="typ-time"></a>
+**Temporal types** in k are `date` and `time`:
 
-```text
+```q
  d:1981-02-01        /yyyy-mm-dd, ok to expect iso 8601 compliance
  @d                  /NOTE: date atom is `D same as date vector `D
 `D
@@ -597,12 +630,13 @@ We could say that in case of names k actually passes _references_ instead of _va
 `t
 
  dt:d+t;dt           /advanced date ops is a story for another day
-1981-02-01T12:34:56.789
+1981-02-01T12:34:56.789 
 ```
 
- **Dictionaries** are maps of keys to values, another way of saying _hashmaps_ or _associative arrays_, and they are as useful in k as elsewhere. Keys and values can be of any type, both vector and scalar. Dictionary type name is **\`a**, and there are two different notations for defining them:
+<a name="typ-dict"></a>
+**Dictionaries** are maps of keys to values, another way of saying *hashmaps* or *associative arrays*, and they are as useful in k as elsewhere. Keys and values can be of any type, both vector and scalar. Dictionary type name is **\`a**, and there are two different notations for defining them:
 
-```text
+```q
  d:`a`b!(1 2 3;4 5 6)      /keys!values
  d
 a|1 2 3
@@ -624,21 +658,22 @@ b|4 5 6
 
  . d                       /dict vals (note the space!)
 1 2 3
-4 5 6
+4 5 6 
 ```
 
- **Tables** are _flipped dictionaries_, and they require a separate large discussion. We will only describe their syntax here for the sake of completeness. Table type is **\`A** and notation is the same as dict, only with `+x flip` operator prepended. Dictionary will not flip unless all values are the same length.
+<a name="typ-tab"></a>
+**Tables** are *flipped dictionaries*, and they require a separate large discussion. We will only describe their syntax here for the sake of completeness. Table type is **\`A** and notation is the same as dict, only with `+x flip` operator prepended. Dictionary will not flip unless all values are the same length.
 
 No comments on any of this for now:
 
-```text
+```q
  x:`goo`apl`amz
  y:1 2 3 4 5 6
-
+ 
  t:+`s`d`p!(x,x;`D$y;1.5*y)  /table is a transposed dict
  @t
 `A 
-
+ 
  t                           /trades: stock, date, price
 s   d          p
 --- ---------- ---
@@ -657,9 +692,10 @@ apl|5.25
 goo|3.75
 ```
 
- **Lambdas** are assignable values and have their own type, and more than one:
+<a name="typ-lambda"></a>
+**Lambdas** are assignable values and have their own type, and more than one:
 
-```text
+```q
  @{x+y}                 /type of lambda gives away its rank
 `2
 
@@ -672,9 +708,10 @@ goo|3.75
 256
 ```
 
- **Null values** in k are typed, integer null is `Ø` and float null is `ø`. **Infinity** is a scalar float `∞`. Working with nulls and infinities can be very tricky, and it is very important to pay attention to their types:
+<a name="typ-nul"></a>
+**Null values** in k are typed, integer null is `Ø` and float null is `ø`. **Infinity** is a scalar float `∞`. Working with nulls and infinities can be very tricky, and it is very important to pay attention to their types:
 
-```text
+```q
  n:ø          /float null is type float
  @n
 `f
@@ -690,9 +727,9 @@ goo|3.75
 `f
 ```
 
-It is evident that nulls and infinities are _Unicode glyphs_. Although it is very easy to set up keyboard shortcuts for them, there are idiomatic ASCII ways to enter them \(but avoid if you can\):
+It is evident that nulls and infinities are *Unicode glyphs*. Although it is very easy to set up keyboard shortcuts for them, there are idiomatic ASCII ways to enter them (but avoid if you can):
 
-```text
+```q
  0%0         /float null is zero div by zero
 ø 
  `i$0%0      /int null is rounded float null
@@ -701,12 +738,13 @@ It is evident that nulls and infinities are _Unicode glyphs_. Although it is ver
  1%0         /inf is just reciprocal of zero
 ∞
  %0          /inf via `%x 'inverse` operator
-∞
+∞ 
 ```
 
- **Composite vector** type, or you could also say **mix vector**, is of special mention. Such vectors are either a mixture of atoms of disparate types, or contain something more complex than atoms, e.g. other vectors:
+<a name="typ-mix"></a>
+**Composite vector** type, or you could also say **mix vector**, is of special mention. Such vectors are either a mixture of atoms of disparate types, or contain something more complex than atoms, e.g. other vectors:
 
-```text
+```q
  c:0,1,"a",2,3          /a char impostor among ints, c is mix
  @c                     /a mix type symbol is just a backtick
 `
@@ -717,12 +755,13 @@ It is evident that nulls and infinities are _Unicode glyphs_. Although it is ver
 4 5 6
 7 8 9
  @x
-`
+` 
 ```
 
- **Type casting**, both explicit and implicit, is demonstrated by the following examples which also give a general feel of how type coercion behaves. The `cast` operator in k is a dyadic `t$x`, where `t` is a type name and `x` is a subject of cast:
+<a name="typ-cast"></a>
+**Type casting**, both explicit and implicit, is demonstrated by the following examples which also give a general feel of how type coercion behaves. The `cast` operator in k is a dyadic `t$x`, where `t` is a type name and `x` is a subject of cast:
 
-```text
+```q
  1+.5                  /int plus float is float, no surprises here
 1.5
 
@@ -768,13 +807,15 @@ type error
  █
 ```
 
-There are things left to be said about the type system, but the expression `@@42` above \(which evaluates to some kind of wordplay, _type name of a type name is `name`_\) urges us to the next section which is all about how to make sense of this expression.
+There are things left to be said about the type system, but the expression `@@42` above (which evaluates to some kind of wordplay, *type name of a type name is `name`*) urges us to the next section which is all about how to make sense of this expression.
+
+------------------
 
 ### right to left
 
 As you must have noticed, the syntax for indexing vectors and calling functions is identical:
 
-```text
+```q
  l:{x+x}      /some monadic function l[x]
  t:2 4 8 16   /some random integer vector
  r:0 3        /index vector: indices of r
@@ -786,33 +827,34 @@ As you must have noticed, the syntax for indexing vectors and calling functions 
 2 16
 
  l[t[r]]      /compose: apply l to t at r
-4 32
+4 32 
 ```
 
 What we also know that k actively encourages us to omit brackets whenever possible, so lets do exactly that:
 
-```text
+```q
  l t r       /exactly the same as l[t[r]]
 4 32
 ```
 
-And here is comes: once we drop the brackets, it suddenly becomes absolutely natural to read this expression _right to left_. Take your time to contemplate and absorb this fact. In very little time you will see how it works in practice, and once you put it to practice yourself, you will agree that this way of functional composition is simple, elegant and intuitive:
+And here is comes: once we drop the brackets, it suddenly becomes absolutely natural to read this expression *right to left*. Take your time to contemplate and absorb this fact. In very little time you will see how it works in practice, and once you put it to practice yourself, you will agree that this way of functional composition is simple, elegant and intuitive:
 
 **k expressions are read, written and evaluated right to left.**
 
 But when we say "expressions" we don't mean "programs", and this is a very important distinction:
 
-**k programs are read, written and evaluated left to right.**
+ **k programs are read, written and evaluated left to right.**
 
 This might sound confusing, but look at the diagram of a small k **program** that consists of three identical expressions `l t r`, with parens added for clarity. Further down is the order of evaluation of the entire program, which leaves no room for confusion:
 
-```text
+```q
 /   L       T       R
 /(l t r);(l t r);(l t r)
 
 /   I   >   II  >  III
 /(3 2 1);(6 5 4);(9 8 7)
 ```
+
 
 #### precedence
 
@@ -824,7 +866,7 @@ We all take it for granted that multiplication and division bind stronger than a
 
 That is, by default **all operators** in a k expression are treated equally and evaluated strictly from **right to left**, and that includes **arithmetic** operators, e.g. `*` has no precedence over `+`. Here are some basic math expressions, annotated with their order of evaluation:
 
-```text
+```q
  3+2+1     /"take 1, add 2, add 3"
 6
 
@@ -842,22 +884,26 @@ It is much easier to get used to lack of precedence than you appears at first, a
 
 Although precedence override is often inevitable and can be beneficial, it can have an adverse effect on readability. That is, when you read a k expression right to left, you want to go fast and uninterrupted, but precedence override gets in your way.
 
-> While writing an expression, think of your reader and try to minimize the use of round brackets.
+>While writing an expression, think of your reader and try to minimize the use of round brackets.
+
+----------------
 
 Now we can revisit the last expression from the previous chapter:
 
-```text
+```q
  @@42     /"type name of a type name of 42" actually reads backwards:
 `n        /"get 42, apply monadic @, get `i, apply monadic @, get `n"
 ```
 
 Now we have a convincing proof that type name of a type name is indeed a `name`.∎
 
+----------------
+
 **practice**
 
 Let's revisit the code from the first snippet in this document:
 
-```text
+```q
  x:(1 2 3;4 5 6;7 8 9)
 
  x=x+1    /how can a universal truth be so false?
@@ -866,13 +912,15 @@ Let's revisit the code from the first snippet in this document:
 
 Too easy, but we'll make up for it.
 
+----------------
+
 ### no stinking loops
 
 This part might be easier to digest than the previous, especially if you are familiar with functional programming. The title, borrowed without permission from [the legendary k resource](http://nsl.com), says it all - you will not find a k construct that resembles an explicit `for` loop, and although there is a `while` construct in k, it is almost never used in practice.
 
-And this is not just to avoid untold damages from trivial errors people keep making in their loop definitions. The main reason explicit loops are banned from k is because k offers something better. The idea that displaces them is a simple and strong abstraction called _adverbs_, and before we see them in action, it helps to understand why they are called that way:
+And this is not just to avoid untold damages from trivial errors people keep making in their loop definitions. The main reason explicit loops are banned from k is because k offers something better. The idea that displaces them is a simple and strong abstraction called *adverbs*, and before we see them in action, it helps to understand why they are called that way:
 
-An **adverb** is a **modifier** that takes some **verb** \(which is a short way of saying "a user-defined function or native operator"\), and makes that verb's action applicable to an **input vector** in some desirable way to produce an **output**, which can be a scalar value or another vector, depending on which adverb is used.
+An **adverb** is a **modifier** that takes some **verb** (which is a short way of saying "a user-defined function or native operator"), and makes that verb's action applicable to an **input vector** in some desirable way to produce an **output**, which can be a scalar value or another vector, depending on which adverb is used.
 
 A good example of how adverbs replace loops is `sum`. Say, we have an input `in:1 2 3 4 5`, and what we want is a sum of its elements. Thinking in implicit loops suggests something like:
 
@@ -889,46 +937,48 @@ But imagine if you could state the problem to a computer like this:
 
 **"put a `+` between all adjacent items and give me the grand total"**
 
-And that is the simplest way to describe what k adverb `over` does when it is used to modify dyadic `+`. Only `over`, as all other adverbs, is _general_ and will happily modify _any_ dyadic operator or function. Described more formally, `over` looks like this pseudocode:
+And that is the simplest way to describe what k adverb `over` does when it is used to modify dyadic `+`. Only `over`, as all other adverbs, is *general* and will happily modify *any* dyadic operator or function. Described more formally, `over` looks like this pseudocode:
 
 1. if `x` is an atom, return `x`
-2. set `acc` to 0 \(a.k.a. accumulator\)
+2. set `acc` to 0 (a.k.a. accumulator)
 3. while `next x`, set `acc` to the result of `v[acc;next x]`
 4. return `acc`
 
-The above is nothing else but a general case of the explicit loop found in `sum()`, as well as of _all other_ explicit loops of this particular family. In functional speak, one would say adverb `over` _folds_ a vector of values and _reduces_ them into one.
+The above is nothing else but a general case of the explicit loop found in `sum()`, as well as of *all other* explicit loops of this particular family. In functional speak, one would say adverb `over` *folds* a vector of values and *reduces* them into one.
 
 And since `over` is just `v/x`, this is how `sum` function looks like in k:
 
-```text
+```q
  s:{+/x}            /s is 'plus over x'
  s 1 2 3 4 5
-15
+15 
 ```
 
 It is a good moment to look back at the C version, one last time. Be surprised to hear that its `for` loop declaration contains an ancient but ever so popular [bug](https://stackoverflow.com/questions/37538/how-do-i-determine-the-size-of-my-array-in-c), which k version does not because spotting bugs in `+/x` is much easier. Besides, even if the C code wasn't broken, it would only work for integers.
 
 You could be tempted to see of what other use `over` could be. Let's introduce a new k operator, `!x til`, and implement another obvious candidate for `over`:
 
-```text
+```q
  x:!9               /! is til, get first n integers
  x                  /tada, we have all ints up to 8
 0 1 2 3 4 5 6 7 8
 
  fact:{*/1+!x}      /fact x 'mul over 1 plus til x'
  fact 10 
-3628800
+3628800 
 ```
 
 Now that you parted ways with loops, and discussed `over` in details, it is time to meet the rest of **six k adverbs**. Please welcome the magnificent six, and note that only most trivial use cases are shown:
 
+<a name="nsl-overscan"></a>
+----------------
 adverb **over** is `f/x`
 
 adverb **scan** is `f\x`
 
 where `f` is a `dyadic` verb and `x` is an input vector
 
-```text
+```q
  a:0 1 2 3 4    /some data
 
  +/a            /puts a + between items, 0+1+2+3+4
@@ -938,11 +988,13 @@ where `f` is a `dyadic` verb and `x` is an input vector
 0 1 3 6 10      /running sum, aka debugger of over
 ```
 
+<a name="nsl-each"></a>
+----------------
 adverb **each** is `f'x`
 
 where `f` is a `monadic` verb and `x` is an input vector
 
-```text
+```q
  d:42,"a",`kei   /some composite vector
  fn:{@x}         /some monadic function
  fn'd            /apply fn to each of d
@@ -953,13 +1005,17 @@ where `f` is a `monadic` verb and `x` is an input vector
 0.04 625
 ```
 
+<a name="nsl-eachlr"></a>
+----------------
+
 adverb **eachleft** is `x f\:y`
 
 adverb **eachright** is `x f/:y`
 
-where `f` is a `dyadic` verb and `x` and `y` are left and right inputs, either vectors or atoms
+where `f` is a `dyadic` verb and `x` and `y` are left and right inputs, 
+either vectors or atoms
 
-```text
+```q
  10 20 30-\:5   /eachleft does (10-5),(20-5),(30-5)
 5 15 25         /each of left, substracted by right
 
@@ -967,19 +1023,26 @@ where `f` is a `dyadic` verb and `x` and `y` are left and right inputs, either v
 5 -15 -25       /left, substracted by each of right
 ```
 
+<a name="nsl-eachprior"></a>
+----------------
+
 adverb **eachprior** is `x f':y` and `(f':)x`
 
-first form is `seeded eachprior` where `f` is a `dyadic` verb, and `x` is a seed value and `y` is an input vector
+first form is `seeded eachprior` where `f` is a `dyadic` verb, and `x` is a 
+seed value and `y` is an input vector
 
-second form is `seedless eachprior` where `f` is a `dyadic` verb, and `x` is an input vector
+second form is `seedless eachprior` where `f` is a `dyadic` verb, and `x` is 
+an input vector
 
-```text
+
+```q
  2+':4 8 16    /seeded eachprior gives (2+4),(4+8),(8+16)
 6 12 24        /sum 1st item and seed, then sum each item and its prior
 
  (+':)4 8 16   /seedless eachprior gives (4),(4+8),(8+16)
 4 12 24        /first item stays as is, then sum each item and its prior
 ```
+----------------
 
 This doesn't seem like much, adverbs seem to be doing pretty basic stuff. But hold that thought for a minute.
 
@@ -993,11 +1056,13 @@ We have seen:
 * what is the only existing precedence rule
 * why there is no `for` and why there are `adverbs`
 
+----------------
+
 **practice**
 
 We are back to your doubts about adverbs. Consider an example of two adverbs working together:
 
-```text
+```q
  x:!9                       /til 9
  x+:1                       /add 1 to each of x, also x:x+1
  x
@@ -1013,9 +1078,11 @@ Your goal is to make sure you understand the logic and the order of evaluation o
 * there is no precedence
 * no explicit loops either
 
+----------------
+
 Bonus question:
 
-```text
+```q
  kcc:+/∞     /how come k sums up infinity this fast?
  kcc
  █
@@ -1036,14 +1103,15 @@ Let's tackle a little problem. We will look at a k function that actually does s
 
 So here is the code:
 
-```text
+```q
 /what is f[], and can we read it?
 f:{$[2>#?x;x;,/f'x@&:'~:\x<*1?x]}
 ```
 
 This little monster is deliberately designed to make as little sense as possible at first glance, but once we take it apart, you we hope you'll agree is actually very simple and readable:
 
-```text
+```q
+
 f:{$[2>#?x;x;,/f'x@&:'~:\x<*1?x]}
 
 f:{...}             /f is a function, that is a good start
@@ -1074,12 +1142,13 @@ $[2>#?x;x;...]      /"if x has <2 unique items, return x, otherwise ..."
 Coffee break, here is what we know so far:
 
 1. the function is recursive
-2. its overall control flow
-3. the condition that stops recursion
+1. its overall control flow
+2. the condition that stops recursion
 
 This gives us confidence to wrestle down the last part, the recursion step:
 
-```text
+```q
+
 ,/f'x@&:'~:\x<*1?x   /this must be the recursion step, read right to left:
 
  x:4 0 1 2           /an tiny dataset to help us see what is going on here
@@ -1124,13 +1193,15 @@ This gives us confidence to wrestle down the last part, the recursion step:
 1 2 3 4 5 6
 ```
 
-Note that it is the first time we have seen [rank override]() in action. In both cases, explicit monadics are passed to an adverb — and this is a very typical use case.
+Note that it is the first time we have seen [rank override](#explicit-monadics) in action. In both cases, explicit monadics are passed to an adverb — and this is a very typical use case.
 
 Now that we know what every specific part does, we can zoom out and see the big picture. Feel free to use the interpreter to play around and test your ideas.
 
+-------------------
+
 And of course, `f` is nothing else but:
 
-```text
+```q
  qs:{$[2>#?x;x;,/qs'x@&:'~:\x<*1?x]}     /qsort on rand pivot
 
  i:9 2 5 5 1 8 1 3 6 1                   /a hairy int shuffle
@@ -1144,7 +1215,7 @@ And of course, `f` is nothing else but:
 
 And of course this is not the quickest `quicksort` ever written, but this is just a toy. In real life you would simply use the built-in operator which is a lot more efficient:
 
-```text
+```q
  ^3 2 1                                  /monadic ^x is 'sort'
 1 2 3
 
@@ -1156,12 +1227,14 @@ And of course this is not the quickest `quicksort` ever written, but this is jus
  \t:10000  qs'mess                       /apply qs 10000 times
  █
  \t:10000  sort mess                     /fix 10000x more mess
- █
+ █ 
 ```
 
 As you see, native sort is incomparably faster. But what our DIY sort function is very good for is to demonstrate the principle of **doing more with less**, and that is what k is all about.
 
 Check out examples of `quicksort` in the wild in [C++](https://gist.github.com/christophewang/ad056af4b3ab0ceebacf), [Python](https://gist.github.com/anirudhjayaraman/897ca0d97a249180a48b50d62c87f239), [JavaScript](https://gist.github.com/claudiahdz/39a86084edaaabe7fc17c321c0bb6896) and [Java](https://github.com/Code2Bits/Algorithms-in-Java/blob/master/sort/src/main/java/com/code2bits/algorithm/sort/QuickSort.java).
+
+-------------------
 
 **recap**
 
@@ -1182,7 +1255,7 @@ And `qs` code brought a few more:
 * ctf cond `$[c;t;f]`
 * monadic `?x distinct`
 * monadic `#x count`
-* monadic \`\*x first
+* monadic `*x first
 * monadic `~x not`
 * monadic `&x where`
 * monadic `,/x raze`
@@ -1196,6 +1269,8 @@ Finally, you are now equipped with the most ubiquitous system routine:
 
 Although this is still a small part of k operator arsenal, if you can do `quicksort` with this much, you can do a lot more. And then add vector arithmetic, and then take everything to the power of 6 adverbs.
 
+-------------------
+
 **practice**
 
 1. take another good look at the code of `qs` function
@@ -1204,13 +1279,17 @@ Although this is still a small part of k operator arsenal, if you can do `quicks
 
 It sounds much harder than it really is. It might take more than one attempt, but you will be amazed how fast you will get there. However, before advancing to the next chapter, make sure that you do.
 
+-------------------
+
 The annotated breakdown of `qs` code gives a good impression of what is typically going on inside of k programmer's head, but tells you nothing about how fast it usually happens. A proficient k programmer would read and understand `qs` in well under two minutes. With a bit more practice, you will agree that reading k programs is easy and fun.
+
+-------------------
 
 ### three triangles
 
 It is time to write our first k program, and this time around there will be a lot less hand-holding. We will solve the classic Project Euler [p18](https://projecteuler.net/problem=18), also known as [p67](https://projecteuler.net/problem=67):
 
-```text
+```q
 By starting at the top of the triangle below and 
 moving to adjacent numbers on the row below, the 
 maximum total from top to bottom is 23:
@@ -1222,10 +1301,9 @@ maximum total from top to bottom is 23:
 ------------------
 9 + 4 + 7 + 3 = 23
 ```
-
 Problems 18 and 67 are simply two bigger triangles, and the challenge is to find the **sum** of maximum paths in them. While 18 can be solved by bruteforce, 67 can not, but the efficient algorithm is absolutely trivial. It is given away in the example above, we simply need to fold rows going bottom up, like so:
 
-```text
+```q
 8   5   9   3
   8   9   9         /max
   +   +   +         /sum
@@ -1241,12 +1319,12 @@ Problems 18 and 67 are simply two bigger triangles, and the challenge is to find
      23             /out
 ```
 
-It is easy to see that the key to the solution is a function that _reduces_ the current row \(`max`\) and _merges_ it into the next \(`sum`\). It expects two arguments, i.e. both rows to work with, and returns `out`. So, let's implement it:
+It is easy to see that the key to the solution is a function that *reduces* the current row (`max`) and *merges* it into the next (`sum`). It expects two arguments, i.e. both rows to work with, and returns `out`. So, let's implement it:
 
-```text
+```q
  r4:8 5 9 3      /take two bottom rows to assist thinking
  r3:2 4 6
-
+  
  0|42            /x|y is max: returns largest of operands
 42 
  1_1 2 3         /x_y is drop: discards x items of a list
@@ -1266,9 +1344,9 @@ It is easy to see that the key to the solution is a function that _reduces_ the 
 10 13 15
 ```
 
-Great, we have the reduction function, now let's apply it _over_ the test triangle to make sure it folds it into what we expect. Since we are reducing a vector into an atom, it is very clear which adverb we want to use:
+Great, we have the reduction function, now let's apply it *over* the test triangle to make sure it folds it into what we expect. Since we are reducing a vector into an atom, it is very clear which adverb we want to use:
 
-```text
+```q
  t:(,3;7 4;2 4 6;8 5 9 3)
 
  |t            /monadic |x is reverse the order of vector
@@ -1285,12 +1363,12 @@ Great, we have the reduction function, now let's apply it _over_ the test triang
 
  mxpath:{*{y+1_|':x}/|x} /maximum path in triangle vector
  mxpath t
-23
+23 
 ```
 
 Looks like the `mxpath` is doing pretty well. Let's fetch the input file for the problem 67, load it, parse it and solve it:
 
-```text
+```q
  /backslash cmd executes an os command from k:
  \curl https://projecteuler.net/project/resources/p067_triangle.txt > p67.txt
 
@@ -1311,10 +1389,12 @@ Looks like the `mxpath` is doing pretty well. Let's fetch the input file for the
 
 We didn't tell you do this, but the complete program can also be written as a single k expression:
 
-```text
+```q
  *{y+1_|':x}/|`k?'0:"p67.txt"   /load, parse and fold
  █
 ```
+
+----------------------
 
 **recap**
 
@@ -1326,13 +1406,21 @@ We have seen some new stuff:
 * monadic `|x reverse`
 * monadic `0:x load text`
 
+----------------------
+
 **practice**
 
 1. Reproduce `mxpath` from scratch in a new k session, same way you did with `qs`.
+   
 2. Find a way to load and parse the triangle from problem 18, and solve it using your own code.
+
 3. Verify solutions for 18 and 67 on [Project Euler](https://projecteuler.net).
+
 4. Once you provide a correct answer to an Euler problem, you can browse its discussion forum. You might want to check out some other solutions to 18 and 67 in other computer languages.
+
 5. Use `\t:n` to assess the upper bound of the algorithm.
+
+-------------------
 
 ### apples and oranges
 
@@ -1347,7 +1435,7 @@ package com.less.with.more.doing.sort;
 public final class qs{public void s(int[] x){}}
 ```
 
-```text
+```q
 qs:{$[2>#?x;x;,/qs'x@&:'~:\x<*1?x]}
 ```
 
@@ -1357,7 +1445,7 @@ Now, compare the source code of these two:
 import java.util.Arrays;  
 public class S{public static void main(String[] a){ 
 int[] x={5,4,3,2,1};Arrays.sort(x);
-System.out.printf("%s",Arrays.toString(x));}}
+System.out.printf("%s",Arrays.toString(x));}} 
 ```
 
 ```bash
@@ -1367,17 +1455,19 @@ $ echo "^5 4 3 2 1" | k
 
 Finally, compare the size of their runtimes:
 
-```bash
+```sh
    252M May 17 13:59 jdk-8u211-macosx-x64.dmg
     79M May 17 13:50 jre-8u211-macosx-x64.dmg
    109K May 17 13:54 k.tgz
 ```
 
+----------------------
+
 ### gladly beyond
 
 We have covered a lot of ground, good time to put things into perspective. Below is a complete map of k operators, and those marked with bullets you have already seen and used at least once:
 
-```text
+```
    x+y         +x
 -------------------------   
 :  ● assign
@@ -1406,22 +1496,27 @@ It really feels like we have explored more than we didn't, and it is huge progre
 
 We conclude with a list of subjects that you are now ready to explore on your own:
 
-| k language | k platform |
-| :--- | :--- |
-| additional k operators | debugging and securing k systems |
-| tables and k-sql language | building clients and servers in k |
-| vector aggregates | benchmarking, testing and tracing |
-| entropy sources, math primitives | disk i/o, persistence and streaming |
-| advanced use of adverbs, threads | ipc and distributed workloads |
-| native csv, tsv, json and utf | fault tolerance and monitoring |
-| integrated cryptography core | scripting, deployment, os tuning |
-| nanosecond time, datetime math | interop with python, julia and c |
-| k-expressions, \`0 | tech support and user community |
-| design of internal components | k resources, tools and packages |
+|k language                       |k platform                          |
+|:--------------------------------|:-----------------------------------|
+|additional k operators           |debugging and securing k systems    |
+|tables and k-sql language        |building clients and servers in k   |
+|vector aggregates                |benchmarking, testing and tracing   |
+|entropy sources, math primitives |disk i/o, persistence and streaming |
+|advanced use of adverbs, threads |ipc and distributed workloads       |
+|native csv, tsv, json and utf    |fault tolerance and monitoring      |
+|integrated cryptography core     |scripting, deployment, os tuning    |
+|nanosecond time, datetime math   |interop with python, julia and c    |
+|k-expressions, \`0               |tech support and user community     |
+|design of internal components    |k resources, tools and packages     |
 
-Although ee cummings opened his famous poem with words _somewhere i have never travelled_, it seems that some k programmers prefer to read poetry backwards. That explains a lot about the title of our final chapter.
+-----------------
 
-![speaking of poetry](https://github.com/kparc/kcc/blob/master/img/kei.png?raw=true)
+Although ee cummings opened his famous poem with words *somewhere i have never travelled*, it seems that some k programmers prefer to read poetry backwards. That explains a lot about the title of our final chapter.
 
-[∎](mailto:k@kparc.io)
+![speaking of poetry](https://github.com/kparc/kcc/blob/master/img/kei.png?raw=true "speaking of poetry")
 
+----------------- 
+
+
+
+[∎](mailto:me@kel.as)
