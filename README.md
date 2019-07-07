@@ -408,7 +408,7 @@ x:y:0 1 2 3 4    /x and y are twin copies
 0 2 4 6 8 
 
  x*y             /product is pairwise too
-0 2 4 9 16
+0 1 4 9 16
 
  x%y             /division is %, get used 
 ø 1 1 1 1
