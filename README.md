@@ -739,6 +739,10 @@ It is evident that nulls and infinities are *Unicode glyphs*. Although it is ver
 ∞
  %0          /inf via `%x 'inverse` operator
 ∞ 
+
+ PI:3.14159265358979323846264338327950288
+ π=PI        /here's π in ascii, but why?
+1
 ```
 
 <a name="typ-mix"></a>
