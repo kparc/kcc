@@ -304,7 +304,7 @@ This is an uncommon feature, most languages require you to explicitly declare fu
 
 Note that when calling a function with three arguments `f[1;2;3]` we had to use square brackets and use an expression separator, because each argument passed to a function is an expression in its own right. However, second function only takes one argument, and we were allowed to omit brackets — although we could also say `f[42]`.
 
-This illustrates the core principle of 𝒌 syntax — almost everything that you intuitively feel you should be able to omit, can and should be omitted. Top candidates for omission are square `[]`, round brackets `()` and space `0x20`. The lesser you type, the better your code will get.
+This illustrates the core principle of 𝒌 syntax — almost everything that you intuitively feel you should be able to omit, can and should be omitted. Top candidates for omission are square `[]`, round brackets `()` and space `0x20`. The less you type, the better your code will get.
 
 Syntax for explicit argument declaration `{[a;b]}` is just a side remark. It is good to know, but we won't see it in this text again.
 
