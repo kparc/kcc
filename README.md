@@ -975,7 +975,7 @@ You could be tempted to see of what other use `over` could be. Let's introduce a
 2432902008176640000j
 ```
 
-Now that you parted ways with loops, and discussed `over` in details, it is time to meet the rest of **six 𝒌 adverbs**. Please welcome the magnificent six, and note that only most trivial use cases are shown:
+Now that you parted ways with loops, and discussed `over` in detail, it is time to meet the rest of **six 𝒌 adverbs**. Please welcome the magnificent six, and note that only most trivial use cases are shown:
 
 <a name="nsl-overscan"></a>
 ----------------
