@@ -1526,4 +1526,4 @@ Although ee cummings opened his famous poem with words *somewhere i have never t
 
 
 
-[∎](mailto:me@kel.as) _Dream a little bigger._
+Dream a little bigger [∎](mailto:me@kel.as)
