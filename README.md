@@ -970,9 +970,9 @@ You could be tempted to see of what other use `over` could be. Let's introduce a
  x                  /tada, we have all ints up to 8
 0 1 2 3 4 5 6 7 8
 
- fact:{*/1+!x}      /fact x 'mul over 1 plus til x'
- fact 10 
-3628800 
+ fact:{*/1j+!x}     /fact x 'mul over 1 plus til x'
+ fact 20
+2432902008176640000j
 ```
 
 Now that you parted ways with loops, and discussed `over` in details, it is time to meet the rest of **six 𝒌 adverbs**. Please welcome the magnificent six, and note that only most trivial use cases are shown:
