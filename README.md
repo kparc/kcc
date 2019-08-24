@@ -266,14 +266,14 @@ main(int argc, char **argv)
 **rwdc:**
 
 ```c
-#include <stdio.h> //k.h
+#include<stdio.h> //k.h
 typedef int I;
 #define O putchar
 #define DO(n,x) {I i=0,_i=(n);for(;i<_i;++i){x;}}
 ```
 
 ```c
-#include "k.h"
+#include"k.h"
 I main(){I x='a';DO(26,O(x++))}//nsl
 ```
 
