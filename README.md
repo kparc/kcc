@@ -200,7 +200,7 @@ y:42 /now, always and forever
 
 #### separator
 
-Character `;` in 𝒌 is used for one thing and one thing only, to separate 𝒌 expressions. As you have seen above, k doesn't require you to terminate the line explicitly with `;` because **newline is also an expression separator**. Separator is used the same way and means the same thing everywhere in any context (except comments), e.g. to separate expressions inside a function body, vector declaration, function arguments, etc. Later we will see that separator is also a part of certain language constructs, but it has the same meaning there as well. But by far the most frequent explicit use of the separator you will encounter in the wild is to separate expressions within one line:
+Character `;` in 𝒌 is used for one thing and one thing only, to separate 𝒌 expressions. As you have seen above, 𝒌 doesn't force you to terminate the line explicitly with `;` because **newline is also an expression separator**. Separator is used the same way and means the same thing everywhere in any context (except comments), e.g. to separate expressions inside a function body, vector declaration, function arguments, etc. Later we will see that separator is also a part of certain language constructs, but it has the same meaning there as well. But by far the most frequent explicit use of the separator you will encounter in the wild is to separate expressions within one line:
 
 ```q
 x:1; y:2; z:3   /one line, three expressions
@@ -1526,4 +1526,4 @@ Although ee cummings opened his famous poem with words *somewhere i have never t
 
 
 
-Dream a little bigger [∎](mailto:me@kel.as)
+dream a little bigger [∎](mailto:me@kel.as)
