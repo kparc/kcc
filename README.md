@@ -117,7 +117,7 @@ So, no further ado:
 $ npm i @kparc/k -g
 ```
 
-As all things 𝒌, the development of k itself is happening very fast. New builds are published up to several times a week, so make sure you always use the latest version:
+As all things 𝒌, the development of 𝒌 itself is happening very fast. New builds are published up to several times a week, so make sure you always use the latest version:
 
 ```sh
 alias kup="npm i @kparc/k -g"
@@ -126,7 +126,7 @@ kup
 
 ### run
 
-Assuming conda's `bin` is in your PATH, Start your very first 𝒌 session like so:
+Start your very first 𝒌 session like so:
 
 ![alt text](https://github.com/kparc/kcc/blob/master/img/k.png?raw=true "k prompt")
 
