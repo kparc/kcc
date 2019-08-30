@@ -143,7 +143,7 @@ The startup banner packs a lot of useful information:
 | l                   | `m` for macos, `l` for linux  |
 | prod                | your build is `test` for now  |
 
-When it comes to that, always include the banner in your bug reports.
+> When it comes to that, please always include the banner in your bug reports.
 
 At any time during a 𝒌 session, you can:
 
@@ -636,7 +636,9 @@ We could say that in case of names 𝒌 actually passes *references* instead of 
 ```
 
 <a name="typ-dict"></a>
-**Dictionaries** are maps of keys to values, another way of saying *hashmaps* or *associative arrays*, and they are as useful in 𝒌 as elsewhere. Keys and values can be of any type, both vector and scalar. Dictionary type name is **\`a**, and the notation for defining them uses a dyadic operator `! key`:
+**Dictionaries** are maps of keys to values, also known as *hashmaps* or *associative arrays*, and they are as useful in 𝒌 as elsewhere, but unlike many languages where this data structure is built in, 𝒌 allows _both)_ keys and values can be of any type, both vector and scalar. Althoug this sounds a bit confusing at first, since nothing prevents you from, say, constructing a dictionary where the keys are themselves dictionaries, but in able hands this oddity becomes a very powerful tool.
+
+Dictionaries have the type **\`a**, and the notation for defining them uses a dyadic operator `! key`:
 
 ```q
  d:`a`b!(1 2 3;4 5 6)      /keys!values
