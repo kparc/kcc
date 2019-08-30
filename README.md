@@ -135,13 +135,12 @@ The startup banner packs a lot of useful information:
 
 | it says             | it means                      |
 | :-------------------|:------------------------------|
-| 2019-06-01 05:19:10 | timestamp of your 𝒌 build     |
+| 2019-08-23 12:18:26 | timestamp of your 𝒌 build     |
 | 40core              | cpu cores you can use in 𝒌    |
 | 270gb               | max workspace alloc size      |
-| avx2                | the best your cpu can do      |
+| avx512              | the best simd your cpu can do |
 | shakti              | the company behind 𝒌          |
 | l                   | `m` for macos, `l` for linux  |
-| 2.0                 | because it is better than 1.0 |
 | prod                | your build is `test` for now  |
 
 When it comes to that, always include the banner in your bug reports.
@@ -637,7 +636,7 @@ We could say that in case of names 𝒌 actually passes *references* instead of 
 ```
 
 <a name="typ-dict"></a>
-**Dictionaries** are maps of keys to values, another way of saying *hashmaps* or *associative arrays*, and they are as useful in 𝒌 as elsewhere. Keys and values can be of any type, both vector and scalar. Dictionary type name is **\`a**, and there are two different notations for defining them:
+**Dictionaries** are maps of keys to values, another way of saying *hashmaps* or *associative arrays*, and they are as useful in 𝒌 as elsewhere. Keys and values can be of any type, both vector and scalar. Dictionary type name is **\`a**, and the notation for defining them uses a dyadic operator `! key`:
 
 ```q
  d:`a`b!(1 2 3;4 5 6)      /keys!values
@@ -645,12 +644,7 @@ We could say that in case of names 𝒌 actually passes *references* instead of 
 a|1 2 3
 b|4 5 6 
 
- d1:{a:1 2 3;b:4 5 6}      /{k:val;...}
- d1
-a|1 2 3
-b|4 5 6 
-
- (@d;@d1)                  /type is `a
+ @d                        /type is `a
 `a`a
 
  d`a                       /key lookup (aka d[`a] or d `a)
