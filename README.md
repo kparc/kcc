@@ -646,8 +646,8 @@ Dictionaries have the type **\`a**, and the notation for defining them uses a dy
 a|1 2 3
 b|4 5 6 
 
- @d                        /type is `a
-`a`a
+ @d                        /dict type is `a
+`a
 
  d`a                       /key lookup (aka d[`a] or d `a)
 1 2 3
@@ -661,9 +661,9 @@ b|4 5 6
 ```
 
 <a name="typ-tab"></a>
-**Tables** are *flipped dictionaries*, and they require a separate large discussion. We will only describe their syntax here for the sake of completeness. Table type is **\`A** and notation is the same as dict, only with `+x flip` operator prepended. Dictionary will not flip unless all values are the same length.
+**Tables** are *flipped dictionaries*, and they require a separate large discussion. Here, we will only describe their syntax for the sake of completeness. Table type is **\`A**, and notation is the same as dict, only with `+x flip` operator prepended. As common sense implies, a dictionary won't flip unless all values are of the same length.
 
-No comments on any of this for now:
+No comments on any of this for now — but if you can follow the logic of what is going on here, you'll agree that in some rare cuircumstances a technology is indeed indistinguishable from magic. See for yourself:
 
 ```q
  x:`goo`apl`amz
