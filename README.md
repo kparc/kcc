@@ -971,7 +971,7 @@ You could be tempted to see of what other use `over` could be. Let's introduce a
 2432902008176640000j
 ```
 
-Now that you parted ways with loops, and discussed `over` in detail, it is time to meet the rest of **six 𝒌 adverbs**. Please welcome the magnificent six, and note that only most trivial use cases are shown:
+Now that we have parted ways with loops, and discussed `over` in detail, it is time to meet the rest of **six 𝒌 adverbs**. Please welcome the magnificent six, and note that only most trivial use cases are shown:
 
 <a name="nsl-overscan"></a>
 ----------------
@@ -1111,7 +1111,7 @@ So here is the code:
 f:{$[2>#?x;x;,/f'x@&:'~:\x<*1?x]}
 ```
 
-This little monster is deliberately designed to make as little sense as possible at first glance, but once we take it apart, you we hope you'll agree is actually very simple and readable:
+This little monster is deliberately designed to make as little sense as possible at first glance, but once we take it apart, we hope you'll agree is actually very simple and readable:
 
 ```q
 
