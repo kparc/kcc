@@ -1111,7 +1111,7 @@ So here is the code:
 f:{$[2>#?x;x;,/f'x@&:'~:\x<*1?x]}
 ```
 
-This little monster is deliberately designed to make as little sense as possible at first glance, but once we take it apart, we hope you'll agree is actually very simple and readable:
+This little monster is deliberately designed to make as little sense as possible at first glance, but once we take it apart, we hope you'll agree it is actually very simple and readable:
 
 ```q
 
@@ -1270,7 +1270,7 @@ Finally, you are now equipped with the most ubiquitous system routine:
 
 * `\t:n expr` benchpress an expression `n` times, result is in milliseconds
 
-Although this is still a small part of 𝒌 operator arsenal, if you can do `quicksort` with this much, you can do a lot more. And then add vector arithmetic, and then take everything to the power of 6 adverbs.
+Although this is still a small part of 𝒌 operator arsenal, if you can do `quicksort` with this much, you can do a lot more. And then add vector arithmetic, and then take everything to the power of six adverbs.
 
 -------------------
 
@@ -1322,7 +1322,7 @@ Problems 18 and 67 are simply two bigger triangles, and the challenge is to find
      23             /out
 ```
 
-It is easy to see that the key to the solution is a function that *reduces* the current row (`max`) and *merges* it into the next (`sum`). It expects two arguments, i.e. both rows to work with, and returns `out`. So, let's just implement it:
+It is easy to see that the key to the solution is a function that *reduces* the current row (`max`) and *merges* it into the next (`sum`). It expects two arguments, i.e. both rows to work with, and returns `out`. That's all we need to implement it:
 
 ```q
  r4:8 5 9 3      /take two bottom rows to assist thinking
