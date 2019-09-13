@@ -1107,7 +1107,7 @@ The title of this chapter is borrowed from a legendary book published in 1945, a
 
 Let's tackle a little problem. We will look at a 𝒌 function that actually does something very useful and implements a familiar algorithm. The subject of the game is to figure out how it is implemented in 𝒌 and to identify the algorithm. It is very useful to dissect all of it on paper, so put your interpreter aside for now.
 
-So here is the code:
+So, here is the code:
 
 ```q
 /what is f[], and can we read it?
