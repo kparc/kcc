@@ -1063,38 +1063,30 @@ We have seen:
 
 **practice**
 
-We are back to your doubts about adverbs. Consider an example of two adverbs working together:
+Consider a slightly less trivial example of `eachleft` working together with `x*y multiply` on two vector operands:
 
 ```q
- x:!9                       /til 9
- x+:1                       /add 1 to each of x, also x:x+1
- x
+ x:!9                       /a vector of integers from 0 til 8
+ x+:1;x                     /add 1 to each of x, same as x:x+1
 1 2 3 4 5 6 7 8 9
 
- x*\:x                      /"x times eachleft x"
+ x*\:x                      /what would be x times eachleft x?
  █
 ```
-
-The goal here is to follow the logic and the order of evaluation of this expression, which only consists of one verb and one adverb. And you have everything you need:
-
-* read right to left
-* there is no precedence
-* no explicit loops either
-
 ----------------
 
-Bonus question:
+Bonus questions:
 
 ```q
- kcc:+/∞     /how come k sums up infinity this fast?
+ kcc:+/∞            /how come k sums up to infinity this fast?
  kcc
  █
 
- +\(1+!3)%0  /a tale of parens and division by zero
+ +\(1+!42)%0        /how about a running sum of 42 infinities?
  █
 ```
 
-Make sure you got all of it before advancing to the next chapter, where things will get a lot less innocent, and very fast. But if you didn't find the above exercise challenging enough, here is another one for you:
+Make sure you can follow the logic before advancing to the next chapter where things will get a lot less innocent. And if you didn't find the above exercise challenging enough, here is another one for you:
 
 ----------------
 
