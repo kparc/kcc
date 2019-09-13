@@ -443,7 +443,7 @@ Mixing atomic and vector operands makes total sense and is very useful:
 ```
 
 <a name="v-indexing"></a>
-**Indexing** is zero-based as you would expect, and if you pass a vector of indices, you get back vector of items:
+**Indexing** is zero-based as you would expect, and if you pass a vector of indices, you get back a vector of items:
 
 ```q
  x:2 4 8 16 32
@@ -549,7 +549,7 @@ No rocket science, all pretty basic, but carry on.
 
 Type system in 𝒌 gets strict when it has to, but also agrees that implicit casts and type coercion have their strengths — especially when done right, which in k they are.
 
-Before we see the examples, the first thing you need to know about types in 𝒌 is that they are divided into two broad classes: **vector types** and **atomic types**. That is, a vector with a single element, say, `42`, is not the same type as an atomic integer of the same value. Finally, since functions and other things in 𝒌 are also assignable values, they have their place in type system too. Those are **special types** and we will not cover them here in much detail.
+Before we see the examples, the first thing you need to know about types in 𝒌 is that they are divided into two broad classes: **vector types** and **atomic types**. That is, a vector with a single element, say, `42`, is not the same type as an atomic integer of the same value. Finally, since functions and other things in 𝒌 are also assignable values, they also have their place in the type system. Those are **special types** and we will not cover them here in much detail.
 
 Here is a quick overview of basic 𝒌 types and their symbolic names:
 
@@ -601,7 +601,7 @@ Like in C, there is no dedicated type for strings in 𝒌. Strings are just **ch
 <a name="typ-name"></a>
 A type called **name** is the same idea as **internalized string** found in some other languages. This means that a single instance of an arbitrarily long string can be placed into a global hash table that persists for a lifetime of a 𝒌 process and can later be referenced by its hash key as many times as necessary without creating additional copies of the string.
 
-We could say that in case of names 𝒌 actually passes *references* instead of *values*, but they are not pointers and there is no arithmetic defined for them. Names come handy in many situations, for now lets just see how they quack:
+We could say that in case of names 𝒌 actually passes *references* instead of *values*, but they are not true pointers and there is no arithmetic defined for them. Names come handy in many situations, for now lets just see how they quack:
 
 ```q
  a:`kei              /"kei" is now internalized
@@ -636,7 +636,7 @@ We could say that in case of names 𝒌 actually passes *references* instead of 
 ```
 
 <a name="typ-dict"></a>
-**Dictionaries** are maps of keys to values, also known as *hashmaps* or *associative arrays*, and they are as useful in 𝒌 as elsewhere, but unlike many languages where this data structure is built in, 𝒌 allows _both)_ keys and values can be of any type, both vector and scalar. Althoug this sounds a bit confusing at first, since nothing prevents you from, say, constructing a dictionary where the keys are themselves dictionaries, but in able hands this oddity becomes a very powerful tool.
+**Dictionaries** are maps of keys to values, also known as *hashmaps* or *associative arrays*, and they are as useful in 𝒌 as elsewhere, but unlike many languages where this data structure is built in, 𝒌 allows _both_ keys and values to be of *any* type, both vector and scalar. This might sound a bit confusing at first — since nothing prevents you from, say, constructing a dictionary where keys are themselves dictionaries — but in able hands this oddity becomes a very powerful tool.
 
 Dictionaries have the type **\`a**, and the notation for defining them uses a dyadic operator `! key`:
 
