@@ -925,7 +925,7 @@ And this is not just to avoid untold damages from trivial errors people keep mak
 
 An **adverb** is a **modifier** that takes some **verb** (which is a short way of saying "a user-defined function or native operator"), and makes that verb's action applicable to an **input vector** in some desirable way to produce an **output**, which can be a scalar value or another vector, depending on which adverb is used.
 
-A good example of how adverbs replace loops is `sum`. Say, we have an input `in:1 2 3 4 5`, and what we want is a sum of its elements. Thinking in implicit loops suggests something like:
+A good example of how adverbs replace loops is `sum`. Say, we have an input `in:1 2 3 4 5`, and what we want is to obtain a sum of its elements. Thinking in implicit loops suggests something like:
 
 ```c
 int sum(int[]in){
@@ -1071,11 +1071,11 @@ We are back to your doubts about adverbs. Consider an example of two adverbs wor
  x
 1 2 3 4 5 6 7 8 9
 
- x*\:/:x                    /"x times eachleft eachright x"
+ x*\:x                      /"x times eachleft x"
  █
 ```
 
-Your goal is to make sure you understand the logic and the order of evaluation of this expression, which only consists of one operator and two adverbs. And you have everything you need:
+The goal here is to follow the logic and the order of evaluation of this expression, which only consists of one verb and one adverb. And you have everything you need:
 
 * read right to left
 * there is no precedence
@@ -1094,7 +1094,17 @@ Bonus question:
  █
 ```
 
-𝒌 interpreter is your friend. Take your time, don't rush it, make sure you got all of it before advancing to the next chapter, where things will get a lot less innocent, and very fast.
+Make sure you got all of it before advancing to the next chapter, where things will get a lot less innocent, and very fast. But if you didn't find the above exercise challenging enough, here is another one for you:
+
+----------------
+
+Extra bonus:
+
+```
+ q:9;GF:!q
+ q\GF*\:GF                 /what does GF stand for?
+ █
+```
 
 ## proverbs
 
