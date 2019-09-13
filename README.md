@@ -1101,8 +1101,7 @@ Make sure you got all of it before advancing to the next chapter, where things w
 Extra bonus:
 
 ```q
- q:7;GF:!q
- q\GF*\:GF                 /what does GF stand for?
+ q:7;GF:!q;q\GF*\:GF                 /what does GF stand for?
  █
 ```
 
