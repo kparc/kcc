@@ -1086,7 +1086,7 @@ Bonus questions:
  █
 ```
 
-Make sure you can follow the logic before advancing to the next chapter where things will get a lot less innocent. And if you didn't find the above exercise challenging enough, here is another one for you:
+Make sure you can follow the logic of these examples before advancing to the next chapter, where things will get a lot less innocent. But if you didn't find the exercise challenging enough, here is another one:
 
 ----------------
 
