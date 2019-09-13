@@ -1155,7 +1155,7 @@ This gives us confidence to wrestle down the last part, the recursion step:
 
 ,/f'x@&:'~:\x<*1?x   /this must be the recursion step, read right to left:
 
- x:4 0 1 2           /an tiny dataset to help us see what is going on here
+ x:4 0 1 2           /a small dataset to help us see what is going on here
 
  rnd:1?x             /x?y is 'find': picks x random elements from vector y
  rnd                 /list with one random item from x
