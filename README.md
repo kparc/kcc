@@ -220,19 +220,17 @@ kei:42   /kenneth eugene iverson
 
 #### space
 
-This is a major point of contention in software development. There are several approaches to 𝒌 code organization, and our take on the subject is a subjective opinion, which is up for you to consider:
+The subject of code organization will forever remain a major point of controversy in software development. Many computer languages have very different philosophies on coding style, especially when it comes to three specific keystrokes: **`\n`**, **`\t`** and, less surprisingly, **`0x20`**. If we define two extremes as "tall, lean, sparse and readable" and "robust, wide, dense and cryptic", then C is a classic example of `tlsr`, while 𝒌 is all the way down `rwdc` road.
 
-* Screen space is about three keystrokes: **`\n`**, **`\t`** and 0x20, less surprisingly. If we define two extremes as "tall, lean, sparse and readable" and "robust, wide, dense and cryptic", then C and Java are good examples of `tlsr`, and 𝒌 is all the way down `rwdc` road.
-
-* The right balance between two extremes is `asap`, or "adequately spaced and annotated program". While 𝒌 syntax encourages you to produce very dense code, think of others and don't sacrifice too much readability. A waste of space is a waste of time — but so is unreadable code.
+* The primary influence of 𝒌 syntax is the most powerful instrument of human reasoning, *a mathematical notation*. As such, the language actively encourages the programmer to produce very dense and succinct code, which leads to a common pitfall among beginners who are tempted to sacrifice readability. As any good program, a good 𝒌 program must be readable and adequately annotated.
   
-* Comments are part of the code and also take space, so boil them down to some reasonable size as well.
+* Comments are integral part of the code and also consume space, so boil them down to some reasonable size as well.
 
-* With 𝒌, it is possible to minimize code scrolling or even avoid it completely. When the entire program or component fits in your view, you lose no time on navigating and switching contexts. For example, every code block in this document fits on a laptop screen and remains readable on mobiles.
+* In 𝒌, it is possible to minimize code scrolling or even avoid it completely. When the entire program or component fits in your view, you lose no time on navigating it and switching contexts. For example, every code block in this document fits on a laptop screen and remains readable on mobiles.
 
-* Syntax highlighting is essential and bad highlighting is worse than none, so choose carefully from 𝒌 syntax definitions available for your editor. The best is often the one you wrote yourself, and 𝒌 syntax is extremely regular and simple.
+* Syntax highlighting is essential, and poor highlighting is often worse than none — so choose carefully from 𝒌 syntax packages available for your editor. The best is often the one you wrote yourself, and 𝒌 syntax is extremely regular and simple.
 
-* Medium is the message, so we refer you to 𝒌 code in this document. Please send pull requests to help us improve it, and if you like the style, it is yours to have. 
+* Medium is the message, so we refer you to 𝒌 code presented in this document. Please send pull requests to help us improve it, and if you like the style, it is yours to have. 
 
 #### bad form
 
