@@ -176,9 +176,9 @@ Type in your first 𝒌 expressions, and enjoy your first answers:
  █
 ```
 
-> Wherever you see ∎ in this document, you are cordially invited to try something on your own.
+> Wherever you see ∎ in this document, you are invited to try something on your own.
 
-Indeed, the title of this document seems to make sense to the 𝒌 interpreter and evaluates to exactly that, and very soon you will easily infer what it actually means. It is quite profound.
+Indeed, the title of this document seems to make sense to the 𝒌 interpreter and evaluates to exactly that, and very soon you will easily infer what it actually means. It is actually quite profound.
 
 ---------------------
 
@@ -212,7 +212,7 @@ This is a tricky subject in 𝒌. Basically, what you generally want is **no ind
 
 #### identifiers
 
-Variable names in 𝒌 follow an unusual convention. Capitals are used by 𝒌 programmers very sparingly, which applies both to code and comments. While identifiers in `camelCase` can sometimes be tolerated, `c_style` identifiers are not permitted at all since `_` is an operator. Identifiers of functions and variables are very often boiled down to an absolute minimum, names 1-3 characters long are commonplace, which does not impact readability given that their definitions are annotated. Short identifiers might sound like a bad idea to Java programmers who are used to see identifiers longer than 2^8 bytes, but unlike Java, 𝒌 source requires very little or no scrolling. When the entire program fits in your visual buffer, "cryptic" identifiers are no longer a problem because their annotated declarations are always right in front of you:
+Variable names in 𝒌 follow a somewhat unusual convention. Capitals are used by 𝒌 programmers very sparingly, which applies both to code and comments. While identifiers in `camelCase` can sometimes be tolerated, `c_style` identifiers are not permitted at all, since `_` is an operator. Identifiers of functions and variables are very often boiled down to an absolute minimum, names 1-3 characters long are commonplace, which does not impact readability given that their definitions are annotated. Short identifiers might sound like a bad idea to Java programmers who are used to see identifiers longer than 2^8 bytes, but, unlike Java, 𝒌 source requires very little or no scrolling. When the entire program fits in your visual buffer, "cryptic" identifiers are no longer a problem because their annotated declarations are always right in front of you:
 
 ```q
 kei:42   /kenneth eugene iverson
