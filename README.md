@@ -67,13 +67,13 @@ This document is **not a 𝒌 reference**. The majority of subjects are discusse
 
 The man behind 𝒌 is a computer scientist by the name Arthur Whitney. He is the principal designer of the language, and he is an iconic figure in a community of some of the most sophisticated programmers and scientists employed by some of the most influential institutions on the planet. Since early 90s, he delivers ever more powerful revisions of a concept he has been refining throughout his career, a system to build very efficient software that transforms large amounts of data into large amounts of money.
 
-That is, 𝒌 enjoys much success in the world of finance, where this kind of problems existed long before the term **big data** was coined. Many people embraced the 𝒌 way and made successful careers by building solutions using k, and they appreciate their tool as much as they appreciate the man behind it, and we believe they have their reasons.
+That is, 𝒌 enjoys much success in the world of finance, where this kind of problems existed long before the term **big data** was coined. Many people embraced the 𝒌 way and made successful careers by building solutions using 𝒌, and they appreciate their tool as much as they appreciate the man behind it, and we believe they have their reasons.
 
 ### why
 
-There is a good chance that you have heard or read about k language. A lot of people know the story. What is much less likely is that you have ever met a professional 𝒌 programmer. This happens not just because k programmers are rare, but also because k is not fishing for cheap publicity. This is how we all heard about a language called 𝒌, but what we mostly hear is how much it sucks to be a Java programmer.
+There is a good chance that you have heard or read about 𝒌 language — a lot of people know the story — but what is much less likely is that you have ever met a professional 𝒌 programmer. This happens not just because 𝒌 programmers are rare, but also because 𝒌 is not fishing for cheap publicity. This is how we've all heard about a language called 𝒌, but what we mostly get to hear about is how much it sucks to be a Java programmer.
 
-All jokes aside, implementations of similar systems in languages like C++ or Java usually involve thousands of lines of code written by large teams, built on top of complex library stacks and even more complex infrastructure. Such projects are often expensive and inflexible, go over budget and miss deadlines.
+But jokes aside, implementations of similar systems in languages like C++ or Java usually involve thousands of lines of code written by large teams, built on top of complex library stacks and even more complex infrastructure. Such projects are often expensive and inflexible, go over budget and miss deadlines.
 
 In comparison, 𝒌 solutions are typically a few factors of magnitude less code, implemented by small and agile teams, rarely require external dependencies, and ship on time. 
 
@@ -138,12 +138,12 @@ The startup banner packs a lot of useful information:
 | 2019-08-23 12:18:26 | timestamp of your 𝒌 build     |
 | 40core              | cpu cores you can use in 𝒌    |
 | 270gb               | max workspace alloc size      |
-| avx512              | the best simd your cpu can do |
+| avx512              | the best your cpu can pull off|
 | shakti              | the company behind 𝒌          |
 | l                   | `m` for macos, `l` for linux  |
 | prod                | your build is `test` for now  |
 
-> When it comes to that, please always include the banner in your bug reports.
+> If it ever comes to that, please always include your banner in your bug reports.
 
 At any time during a 𝒌 session, you can:
 
