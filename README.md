@@ -120,8 +120,8 @@ $ npm i @kparc/k -g
 As all things 𝒌, the development of 𝒌 itself is happening very fast. New builds are published up to several times a week, so make sure you always use the latest version:
 
 ```sh
-alias kup="npm i @kparc/k -g"
-kup
+$ alias kup="npm i @kparc/k -g"
+$ kup
 ```
 
 ### run
@@ -161,7 +161,7 @@ At this point we highly recommend to avoid issuing any of the above commands, es
 
 Make sure you have `rlwrap` utility installed, and put an alias `alias k="rlwrap k"` into your rc file. This makes your spartan 𝒌 development environment a lot more pleasant to use.
 
-Type in your first k expressions, and enjoy your first answers:
+Type in your first 𝒌 expressions, and enjoy your first answers:
 
 ```q
  2+2      /simplest face of k is a calculator
@@ -220,11 +220,11 @@ kei:42   /kenneth eugene iverson
 
 #### space
 
-The subject of code organization will forever remain a major point of controversy in software development. Many computer languages have very different philosophies on coding style, especially when it comes to three specific keystrokes: **`\n`**, **`\t`** and, less surprisingly, **`0x20`**. If we define two extremes as "tall, lean, sparse and readable" and "robust, wide, dense and cryptic", then C is a classic example of `tlsr`, while 𝒌 is all the way down `rwdc` road.
+The subject of code organization will forever remain a major point of controversy in software development. Computer languages have different philosophies on coding style, especially when it comes to three specific keystrokes: **`\n`**, **`\t`** and, less surprisingly, **`0x20`**. If we define two extremes as "tall, lean, sparse and readable" and "robust, wide, dense and cryptic", then C is a classic example of `tlsr`, and 𝒌 is all the way down `rwdc` road.
 
-* The primary influence of 𝒌 syntax is the most powerful instrument of human reasoning, *a mathematical notation*. As such, the language actively encourages the programmer to produce very dense and succinct code, which leads to a common pitfall among beginners who are tempted to sacrifice readability. As any good program, a good 𝒌 program must be readable and adequately annotated.
+* The primary influence of 𝒌 syntax is the most powerful instrument of human reasoning, *a mathematical notation*. As such, the language actively encourages the programmer to produce very dense and succinct code, which leads to a common pitfall among beginners who are tempted to sacrifice too much readability. As any good program, a good 𝒌 program must remain readable and adequately annotated.
   
-* Comments are integral part of the code and also consume space, so boil them down to some reasonable size as well.
+* Comments are integral part of the code and also consume space, so boil them down to some reasonable size as well, but don't get too cryptic,
 
 * In 𝒌, it is possible to minimize code scrolling or even avoid it completely. When the entire program or component fits in your view, you lose no time on navigating it and switching contexts. For example, every code block in this document fits on a laptop screen and remains readable on mobiles.
 
@@ -234,13 +234,13 @@ The subject of code organization will forever remain a major point of controvers
 
 #### bad form
 
-Bad form in 𝒌 is code bloat. Avoid writing extra code if you can — there is too much of it written already into the world. Look to remove any inessential code, yours or not. But if you absolutely have to write more, make it useful, secure, compact, maintainable, portable and scalable.
+Bad form in 𝒌 is code bloat. Avoid writing extra code if you can — there is too much of it written already into the world. Remove inessential code, yours or not. But if you absolutely have to write more, make it useful, secure, compact, maintainable, portable and scalable.
 
 --------------------
 
 **practice**
 
-We don't know much 𝒌 to practice style yet, so this one will be read-only. Here is a trivial C program formatted in two different ways. Compare their strengths:
+We don't know much 𝒌 to practice style yet, so this one will be read-only. Here is a trivial C program formatted in two different ways:
 
 **tlsr:**
 
@@ -273,6 +273,8 @@ typedef int I;
 #include"k.h"
 I main(){I x='a';DO(26,O(x++))}//nsl
 ```
+
+Compare their strengths.
 
 
 ### remarks on parlance
