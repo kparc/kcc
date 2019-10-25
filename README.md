@@ -603,13 +603,16 @@ Before we see the examples, the first thing you need to know about types in 𝒌
 Here is a quick overview of basic 𝒌 types and their symbolic names:
 
 ```q
-atom      vect        type
-  `i        `I        int
-  `f        `F        float
-  `c        `C        char
-  `n        `N        name
-  `D        `D        date
-  `t        `T        time
+  `i        int
+  `f        float
+  `j        long  
+  `c        char
+  `n        name
+  `D        date
+  `t        time
+  `a        dict
+  `A        table
+  `.        list
 ```
 
 This is not very revealing, so lets see them in action. The operator to query the type of anything in 𝒌 is `monadic @x`, and if you are not sure what we mean by `monadic`, perhaps it is a good time to start over.
@@ -619,15 +622,18 @@ This is not very revealing, so lets see them in action. The operator to query th
  @42         /int scalar
 `i
 
+ @424242j    /int64 atom
+`j
+
  @.5         /float atom
 `f
 
  @0 1 2      /int vector
-`I
+`i
 
  v:0 1 .5 2
  @v          /0.5 promotes vector to float
-`F
+`f
 
  v 1         /2nd item, f is short for 1.0
 1f
@@ -641,7 +647,7 @@ Like in C, there is no dedicated type for strings in 𝒌. Strings are just **ch
 `c
 
  s:"kei";@s  /s is char vector
-`C
+`c
  
  s 0         /1st element of s
 "k"
@@ -659,7 +665,7 @@ We could say that in case of names 𝒌 actually passes *references* instead of 
 
  b:`kei`kei`kei      /three references to "kei"
  @b                  /vector of string pointers
-`N
+`n
 
  @`"ken iverson"     /spaces in names, why not?
 `n
@@ -775,12 +781,19 @@ goo|3.75
 `f
 ```
 
-It is evident that nulls and infinities are *Unicode glyphs*. Although it is very easy to set up keyboard shortcuts for them, there are idiomatic ASCII ways to enter them (but avoid if you can):
+It is evident that nulls and infinities are *Unicode glyphs*. Although it is very easy to set up keyboard shortcuts for them, there are idiomatic ways to enter them using plain ASCII (but avoid if you can):
 
 ```q
  0%0         /float null is zero div by zero
 ø 
+
+ 42e         /missing exponent is float null
+ø 
+
  `i$0%0      /int null is rounded float null
+Ø
+
+ _0e         /int null via `monadic _x floor'
 Ø
 
  1%0         /inf is just reciprocal of zero
@@ -798,8 +811,8 @@ It is evident that nulls and infinities are *Unicode glyphs*. Although it is ver
 
 ```q
  c:0,1,"a",2,3          /a char impostor among ints, c is mix
- @c                     /a mix type symbol is just a backtick
-`
+ @c                     /type of a mixed list is backtick-dot
+`.
 
  x:(1 2 3;4 5 6;7 8 9)  /a vector of vectors is composite too
  x
@@ -807,7 +820,7 @@ It is evident that nulls and infinities are *Unicode glyphs*. Although it is ver
 4 5 6
 7 8 9
  @x
-` 
+`. 
 ```
 
 <a name="typ-cast"></a>
@@ -838,9 +851,9 @@ It is evident that nulls and infinities are *Unicode glyphs*. Although it is ver
  a:1 2 3               /lets start with a nice uniform int vector
  a[0]:1f               /now, replace its 1st element with a float
  @a                    /whoops, our int vector got demoted to mix
-`
+`.
  a:`f$a;@a             /explicit cast to float solves the problem
-`F
+`f
 
  `i$1981-02-01         /dates represented as ints look like this:
 -15674
@@ -1540,7 +1553,7 @@ We have covered a lot of ground, good time to put things into perspective. Below
 ,  ● catenate   ● list
 ^  ◦ except     ● sort
 #  ◦ take       ● count
-_  ● drop       ◦ floor
+_  ● drop       ● floor
 ?  ● find       ● distinct
 @  ● index      ● type
 .  ◦ apply      ● value
