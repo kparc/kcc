@@ -353,7 +353,7 @@ On a more general note, functions in 𝒌 can be of rank 1 to 9:
 
 #### on verbs and nouns
 
-Our last remark on 𝒌 terminology is of extreme importance. While 𝒌 is a computer language, its **grammar** is defined in terms we normally use to denote parts of human speech. That is, 𝒌 expressions are composed of _verbs_, _nouns_ and _adverbs_. For now, let's focus on the former two and consider the following two sentences:
+The last remark on 𝒌 terminology is of extreme importance. While 𝒌 is a computer language, its **grammar** is defined in terms we normally use to denote parts of human speech. That is, 𝒌 expressions are composed of _verbs_, _nouns_ and _adverbs_. For now, let's focus on the former two and consider the following two sentences:
 
 * "shuffle this deck of cards"
 * "take three random cards from this deck"
@@ -367,10 +367,10 @@ And this is exactly what **𝒌 verbs** are:
 
 Since verbs _operate_ on nouns, they are very often called **operators**, and nouns passed to verbs are said to be their **operands** or **arguments**.
 
-For newcomers, the biggest caveat with verbs is whether or not to consider a **user-defined function**, i.e. any expression enclosed in curly brackets, to be a verb — and the correct answer is **no**. Functions are treated as nouns in 𝒌. Among other things, this means they differ from operators in the following fundamental way:
+For newcomers, the biggest caveat with verbs is whether or not to consider a **user-defined function**, i.e. any expression enclosed in curly brackets, to be a verb — and the correct answer is **no**. Functions are treated as nouns in 𝒌, and while in certain contexts verbs and functions can be used interchangeably, functions differ from operators in the following fundamental way:
 
-* Operators can be applied using infix notation
-* Functions can only be applied using prefix notation
+* Operators can be applied using both infix and prefix notation
+* Functions can only be applied using prefix notation, also known as "functional form"
 
 This only sounds confusing until you see what this means in practice:
 
