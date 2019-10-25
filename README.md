@@ -365,7 +365,7 @@ And this is exactly what **𝒌 verbs** are:
  * A verb instructs the interpreter to do something, or answer some question.
  * A verb can be monadic or dyadic, and requires one or two nouns to form a grammatically correct phrase.
 
-Since verbs _operate_ on nouns, they are very often called **operators**, and nouns passed to verbs are said to be its **operands** or **arguments**.
+Since verbs _operate_ on nouns, they are very often called **operators**, and nouns passed to verbs are said to be their **operands** or **arguments**.
 
 For newcomers, the biggest caveat with verbs is whether or not to consider a **user-defined function**, i.e. any expression enclosed in curly brackets, to be a verb — and the correct answer is **no**. Functions are treated as nouns in 𝒌. Among other things, this means they differ from operators in the following fundamental way:
 
