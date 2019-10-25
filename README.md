@@ -79,13 +79,15 @@ In comparison, 𝒌 solutions are typically a few factors of magnitude less code
 
 At first it could be hard to understand how this can even be true, but imagine the effort of keeping 100 lines of code in sync with rapidly changing requirements and free of bugs, compared to 10,000 lines of code that do the same thing. Against all intuition, it is not 100 times easier, but 10,000 times easier, because the effect of cyclomatic complexity is devastating.
 
-### wha
+### wha _*_
 
 𝒌 is a simple, expressive and powerful computer language.
 
 The power stems from the fact that 𝒌 is designed as a *tool of thought*. The vocabulary, syntax and the choice of abstractions offered by the language drive you to think about problems in a focused and clear way that quickly takes you to efficient and elegant solutions. And the reason why thinking in terms of 𝒌 is so effective is nothing supernatural: brevity is the soul of wit.
 
 𝒌 programs are concise, the syntax of the language is terse, and there is no boilerplate code to write. In 𝒌, most of the time is spent on thinking about the problem rather than writing and refactoring code or browsing source.
+
+> \* no, this is not a typo
 
 ### how
 
@@ -349,6 +351,52 @@ On a more general note, functions in 𝒌 can be of rank 1 to 9:
 * it is not really possible to define a function with no arguments. Rank zero, or *niladic* functions, do not exist in 𝒌.
 * a function cannot take more than nine explicit arguments, and some say this is an overly generous limit.
 
+#### on verbs and nouns
+
+Our last remark on 𝒌 terminology is of extreme importance. While 𝒌 is a computer language, its **grammar** is defined in terms we normally use to denote parts of human speech. That is, 𝒌 expressions are composed of _verbs_, _nouns_ and _adverbs_. For now, let's focus on the former two and consider the following two sentences:
+
+* "shuffle this deck of cards"
+* "take three random cards from this deck"
+
+Both are imperatives, where verbs act as the **main** part of the expression - they identify the _action_ to be taken. However, there is an important difference between the two. In linguistics, the structure of the first sentence is known as _verb-only predicate_, while the second is a _verb-plus-direct-object predicate_. In 𝒌 speak, the verb in the first sentence is monadic, while the second is clearly a dyadic one.
+
+And this is exactly what **𝒌 verbs** are:
+
+ * A verb instructs the interpreter to do something, or answer some question.
+ * A verb can be monadic or dyadic, and requires one or two nouns to form a grammatically correct phrase.
+
+Since verbs _operate_ on nouns, they are very often called **operators**, and nouns passed to verbs are said to be its **operands** or **arguments**.
+
+For newcomers, the biggest caveat with verbs is whether or not to consider a **user-defined function**, i.e. any expression enclosed in curly brackets, to be a verb — and the correct answer is **no**. Functions are treated as nouns in 𝒌. Among other things, this means they differ from operators in the following fundamental way:
+
+* Operators can be applied using infix notation
+* Functions can only be applied using prefix notation
+
+This only sounds confusing until you see what this means in practice:
+
+```q
+
+ a:44;b:2      /a and b are typical nouns: variables holding an number
+
+ a-b           /a dyadic verb 'subtract', applied using infix notation
+42
+
+ -[a;b]        /the same thing in prefix notation, aka functional form
+42
+
+ sub:{x-y}     /a dyadic noun 'sub', a function assigned to a variable
+
+ sub[a;b]      /the only way to use 'sub' is to treat it as a function
+42 
+ 
+ a sub b      /putting 'sub' between its operands is not going to work
+a sub b
+^
+class error 
+
+```
+
+We shall revisit parts of 𝒌 speech again, and if this quick introduction left you puzzled, it is safe to think that verbs are simply "built-in 𝒌 operators". 
 
 -------------------
 
@@ -362,6 +410,7 @@ So far you know how to:
 * be friends with `x`, `y` and `z`
 * tell monadic and dyadic apart
 * explicitly declare monadic ops
+* 
 * annotate your code
 
 This is a good start, but tells you absolutely nothing about what 𝒌 really is, and from here things will start to get real.
