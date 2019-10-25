@@ -396,7 +396,7 @@ class error
 
 ```
 
-We shall revisit parts of 𝒌 speech again, and if this quick introduction left you puzzled, it is safe to think that verbs are simply "built-in 𝒌 operators". 
+We shall revisit parts of 𝒌 speech again, especially adverbs, and if this quick introduction left you puzzled, for now it is safe to think that verbs are simply "built-in operators". 
 
 -------------------
 
@@ -410,7 +410,7 @@ So far you know how to:
 * be friends with `x`, `y` and `z`
 * tell monadic and dyadic apart
 * explicitly declare monadic ops
-* 
+* deal with verbs and nouns
 * annotate your code
 
 This is a good start, but tells you absolutely nothing about what 𝒌 really is, and from here things will start to get real.
