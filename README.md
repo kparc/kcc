@@ -987,7 +987,7 @@ And this is not just to avoid untold damages from trivial errors people keep mak
 
 An **adverb** is a **modifier** that takes some **verb** (which is a short way of saying "a user-defined function or native operator"), and makes that verb's action applicable to an **input vector** in some desirable way to produce an **output**, which can be a scalar value or another vector, depending on which adverb is used.
 
-A good example of how adverbs replace loops is `sum`. Say, we have an input `in:1 2 3 4 5`, and what we want is to obtain a sum of its elements. Thinking in implicit loops suggests something like:
+A good example of how adverbs replace loops is `sum`. Say, we have an input `in:1 2 3 4 5`, and what we want to obtain is a sum of its elements. Thinking in implicit loops suggests something like:
 
 ```c
 int sum(int[]in){
@@ -998,11 +998,11 @@ int sum(int[]in){
 }
 ```
 
-But imagine if you could state the problem to a computer like this:
+But imagine if we could state the problem to a computer like this:
 
 **"put a `+` between all adjacent items and give me the grand total"**
 
-And that is the simplest way to describe what 𝒌 adverb `over` does when it is used to modify dyadic `+`. Only `over`, as all other adverbs, is *general* and will happily modify *any* dyadic operator or function. Described more formally, `over` looks more like this pseudocode:
+And that is the simplest way to describe what 𝒌 adverb `over` does when it is used to modify dyadic `+`. Only `over`, as all other adverbs, is *general*, and will happily modify *any* dyadic operator or function. Described more formally, `over` looks more like this pseudocode:
 
 1. if `x` is an atom, return `x`
 2. set `acc` to 0 (a.k.a. _accumulator_)
