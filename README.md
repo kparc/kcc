@@ -180,7 +180,7 @@ Type in your first 𝒌 expressions, and enjoy your first answers:
 
 > Wherever you see ∎ in this document, you are invited to try something on your own.
 
-Indeed, the title of this document seems to make sense to the 𝒌 interpreter and evaluates to exactly that, and very soon you will easily infer what it actually means. It is actually quite profound.
+Indeed, the title of this document seems to make sense to the 𝒌 interpreter and evaluates to exactly that, and very soon you will easily infer what it actually means. It is quite profound.
 
 ---------------------
 
