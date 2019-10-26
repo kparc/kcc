@@ -945,11 +945,11 @@ That is, by default **all operators** in a 𝒌 expression are treated equally a
 5
 ```
 
-It is much easier to get used to lack of precedence than you appears at first, and once you do, you will generally want to avoid using parens unless you absolutely have to. The last example from above shows the basic strategy of ditching them: it is usually possible to rearrange expressions so that the order of evaluation becomes **linear**.
+It is much easier to get over the lack of precedence than might think, and once you do, you will generally want to avoid using parens entirely unless you absolutely have to use them. The last example from above shows the basic strategy of ditching them: it is usually possible to rearrange expressions so that the order of evaluation becomes **linear**.
 
-Although precedence override is often inevitable and can be beneficial, it can have an adverse effect on readability. That is, when you read a 𝒌 expression right to left, you want to go fast and uninterrupted, but precedence overrides get in your way.
+Although precedence override is often inevitable and can be beneficial, it can have an adverse effect on readability. Simply put, once you pick up the skill of reading 𝒌 expressions, what you generally want is to go fast and uninterrupted — and precedence overrides get in your way. And this a a double-edged sword, so: 
 
-> While writing an expression, think of your reader and try to minimize the use of round brackets.
+> While writing an expression, think of the reader and do your besty to minimize the use of round brackets.
 
 ----------------
 
