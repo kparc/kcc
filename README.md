@@ -928,7 +928,7 @@ Very early on in our lives, we are taught there is a good reason for multiplicat
 
 **There is no operator precedence in 𝒌, unless it is explicitly defined by round brackets.**
 
-By default, **all operators** in a 𝒌 expression are treated equally and evaluated strictly from **right to left**. Note that this includes **arithmetic** operators, but before you ask yourself how `*` can possibly have no precedence over `+`, consder a few basic math expressions annotated with their order of evaluation:
+By default, **all operators** in a 𝒌 expression are treated equally and evaluated strictly from **right to left**. Obviously, this includes **arithmetic** operators as well, and before you ask yourself how `*` can possibly have no precedence over `+`, consder a few basic math expressions annotated with their order of evaluation:
 
 ```q
  3+2+1     /"take 1, add 2, add 3"
@@ -944,7 +944,7 @@ By default, **all operators** in a 𝒌 expression are treated equally and evalu
 5
 ```
 
-It is much easier to get used to the lack of precedence than it appears at first, because simplicity is the worst enemy of complexity. The last two examples demonstrate the basic strategy of avoiding parens entirely, and there is a good reason for ditching them — it makes the order of evaluation completely **linear**.
+As you see, it is much easier to get used to the lack of precedence than it appears at first — indeed, implicity is the worst enemy of complexity. The last two examples demonstrate the basic strategy of avoiding parens entirely, and there is a good reason for ditching them — it makes the order of evaluation completely **linear**.
 
 Although precedence overrides are sometimes inevitable and can be beneficial, they have an adverse effect on **readability**. Basically, while reading a 𝒌 expression, what you generally want is to go fast and uninterrupted — and precedence overrides interrupt the natural flow of comprehension. Good 𝒌 programmers think of others before themseves, and seek to produce code which follows the natural order of evaluation by minimizing the use of round brackets.
 
@@ -957,7 +957,7 @@ Now we can revisit the last expression from the previous chapter:
 `n        /"get 42, apply monadic @, get `i, apply monadic @, get `n"
 ```
 
-Now we have a convincing proof that type name of a type name is indeed a `name`.∎
+A convincing proof that type name of a type name in 𝒌 is indeed a `name`.∎
 
 ----------------
 
