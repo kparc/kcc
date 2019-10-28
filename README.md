@@ -920,16 +920,15 @@ This might sound confusing, but look at the diagram of a small 𝒌 **program** 
 /(3 2 1);(6 5 4);(9 8 7)
 ```
 
+And now that we know the way the rivers flow in 𝒌 land, we are equipped to discuss the next subject.
 
 #### precedence
 
-This is another important subject which has to do with the way rivers flow in 𝒌 land.
+Very early on in our lives, we are taught there is a good reason for multiplication and division to bind stronger than addition and subtraction, so they must be computed first. Later on, we are taught that most computer languages require us to learn a lot more complex systems of operator precedence to do anything useful with them to begin with, and much later on — all the deadly caveats hidden in those systems. But in 𝒌, the question of operator precedence is fully answered by their order of evaluation, so buckle up. Here is the one and only rule ever to be learned about precedence in 𝒌:
 
-We all take it for granted that multiplication and division bind stronger than addition and subtraction and should be calculated first, and it feels almost natural that a computer language must have complex precedence hierarchy to do anything useful, and 𝒌 disagrees with that:
+**There is no operator precedence in 𝒌, unless it is explicitly defined by round brackets.**
 
-**There is no operator precedence in 𝒌 expressions unless explicitly overridden by round brackets.**
-
-That is, by default **all operators** in a 𝒌 expression are treated equally and evaluated strictly from **right to left**, and that includes **arithmetic** operators, e.g. `*` has no precedence over `+`. Here are some basic math expressions, annotated with their order of evaluation:
+By default, **all operators** in a 𝒌 expression are treated equally and evaluated strictly from **right to left**. Note that this includes **arithmetic** operators, but before you ask yourself how `*` can possibly have no precedence over `+`, consder a few basic math expressions annotated with their order of evaluation:
 
 ```q
  3+2+1     /"take 1, add 2, add 3"
@@ -941,15 +940,13 @@ That is, by default **all operators** in a 𝒌 expression are treated equally a
  (3*2)-1   /"take 2, multiply by 3, sub 1"
 5
 
- -1+3*2    /same as above, without parens
+ -1+3*2    /same thing, without overrides
 5
 ```
 
-It is much easier to get over the lack of precedence than might think, and once you do, you will generally want to avoid using parens entirely unless you absolutely have to use them. The last example from above shows the basic strategy of ditching them: it is usually possible to rearrange expressions so that the order of evaluation becomes **linear**.
+It is much easier to get used to the lack of precedence than it appears at first, because simplicity is the worst enemy of complexity. The last two examples demonstrate the basic strategy of avoiding parens entirely, and there is a good reason for ditching them — it makes the order of evaluation completely **linear**.
 
-Although precedence override is often inevitable and can be beneficial, it can have an adverse effect on readability. Simply put, once you pick up the skill of reading 𝒌 expressions, what you generally want is to go fast and uninterrupted — and precedence overrides get in your way. And this a a double-edged sword, so: 
-
-> While writing an expression, think of the reader and do your besty to minimize the use of round brackets.
+Although precedence overrides are sometimes inevitable and can be beneficial, they have an adverse effect on **readability**. Basically, while reading a 𝒌 expression, what you generally want is to go fast and uninterrupted — and precedence overrides interrupt the natural flow of comprehension. Good 𝒌 programmers think of others before themseves, and seek to produce code which follows the natural order of evaluation by minimizing the use of round brackets.
 
 ----------------
 
