@@ -944,7 +944,7 @@ By default, **all operators** in a 𝒌 expression are treated equally and evalu
 5
 ```
 
-As you see, it is much easier to get used to the lack of precedence than it appears at first — indeed, implicity is the worst enemy of complexity. The last two examples demonstrate the basic strategy of avoiding parens entirely, and there is a good reason for ditching them — it makes the order of evaluation completely **linear**.
+As you see, it is much easier to get used to the lack of precedence than it appears at first — indeed, simplicity is the worst enemy of complexity. The last two examples demonstrate the basic strategy of avoiding parens entirely, and there is a good reason for ditching them — it makes the order of evaluation completely **linear**.
 
 Although precedence overrides are sometimes inevitable and can be beneficial, they have an adverse effect on **readability**. Basically, while reading a 𝒌 expression, what you generally want is to go fast and uninterrupted — and precedence overrides interrupt the natural flow of comprehension. Good 𝒌 programmers think of others before themseves, and seek to produce code which follows the natural order of evaluation by minimizing the use of round brackets.
 
