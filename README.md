@@ -4,7 +4,7 @@ plus over infinity, aka 𝒌 crash course
 
 **[genesis](#genesis)**
 
-* 𝒌 → [ø](#ø) | [who](#who) | [why](#why) | [wha](#wha) | [how](#how)
+* 𝒌 → [ø](#ø) | [who](#who) | [why](#why) | [wha](#wha-) | [how](#how)
 
 **[exodus](#exodus)**
 
