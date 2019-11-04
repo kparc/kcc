@@ -51,7 +51,7 @@ in k. The above expression looks nonsensical to a 𝒌 programmer for the same r
 
 ---------------------
 
-This crash course is not looking to make you an expert 𝒌 programmer, because that takes a lot of time and effort. Instead, it aims to give enough confidence and motivation for you to continue on your own. We value your time, so we promise it will be fast and violent.
+This crash course is not looking to make you an expert 𝒌 programmer, because that takes a lot of time and effort. Instead, it aims to give enough confidence and motivation for you to continue on your own. We value your time, so we promise it will be fast and violent:
 
 * The text cuts a lot of corners on general programming and CS at some expense of readability.
 * The course is driven entirely by densely annotated code, comments contain essential material.
@@ -79,11 +79,11 @@ In comparison, 𝒌 solutions are typically a few factors of magnitude less code
 
 At first it could be hard to understand how this can even be true, but imagine the effort of keeping 100 lines of code in sync with rapidly changing requirements and free of bugs, compared to 10,000 lines of code that do the same thing. Against all intuition, it is not 100 times easier, but 10,000 times easier, because the effect of cyclomatic complexity is devastating.
 
-### wha _*_
+### wha_*_
 
 𝒌 is a simple, expressive and powerful computer language.
 
-The power stems from the fact that 𝒌 is designed as a *tool of thought*. The vocabulary, syntax and the choice of abstractions offered by the language drive you to think about problems in a focused and clear way that quickly takes you to efficient and elegant solutions. And the reason why thinking in terms of 𝒌 is so effective is nothing supernatural: brevity is the soul of wit.
+Its power stems from the fact that 𝒌 is designed as a *tool of thought*. The vocabulary, syntax and the choice of abstractions offered by the language drive you to think about problems in a focused and clear way that quickly takes you to efficient and elegant solutions. And the reason why thinking in terms of 𝒌 is so effective is nothing supernatural: brevity is the soul of wit.
 
 𝒌 programs are concise, the syntax of the language is terse, and there is no boilerplate code to write. In 𝒌, most of the time is spent on thinking about the problem rather than writing and refactoring code or browsing source.
 
@@ -596,7 +596,7 @@ No rocket science, all pretty basic, but carry on.
 
 ### types of types
 
-Type system in 𝒌 gets strict when it has to, but also agrees that implicit casts and type coercion have their strengths — especially when done right, which in k they are.
+Type system in 𝒌 gets strict when it has to, but also agrees that implicit casts and type coercion have their strengths — especially when done right, which in 𝒌 they are.
 
 Before we see the examples, the first thing you need to know about types in 𝒌 is that they are divided into two broad classes: **vector types** and **atomic types**. That is, a vector with a single element, say, `42`, is not the same type as an atomic integer of the same value. Finally, since functions and other things in 𝒌 are also assignable values, they also have their place in the type system. Those are **special types** and we will not cover them here in much detail.
 
@@ -612,7 +612,7 @@ Here is a quick overview of basic 𝒌 types and their symbolic names:
   `t        time
   `a        dict
   `A        table
-  `.        list
+  `.        vect
 ```
 
 This is not very revealing, so lets see them in action. The operator to query the type of anything in 𝒌 is `monadic @x`, and if you are not sure what we mean by `monadic`, perhaps it is a good time to start over.
@@ -691,7 +691,7 @@ We could say that in case of names 𝒌 actually passes *references* instead of 
 ```
 
 <a name="typ-dict"></a>
-**Dictionaries** are maps of keys to values, also known as *hashmaps* or *associative arrays*, and they are as useful in 𝒌 as elsewhere, but unlike many languages where this data structure is built in, 𝒌 allows _both_ keys and values to be of *any* type, both vector and scalar. This might sound a bit confusing at first — since nothing prevents you from, say, constructing a dictionary where keys are themselves dictionaries — but in able hands this oddity becomes a very powerful tool.
+**Dictionaries** are maps of keys to values, also known as *hashmaps* or, more generally, *associative arrays*. They are as useful in 𝒌 as elsewhere, but unlike many languages where this data structure is built in, 𝒌 allows _both_ keys and values to be of *any* type, both vector and scalar. This might sound a bit confusing at first — since nothing prevents you from, say, constructing a dictionary where keys are themselves dictionaries — but in able hands this oddity becomes a very powerful tool.
 
 Dictionaries have the type **\`a**, and the notation for defining them uses a dyadic operator `! key`:
 
@@ -836,16 +836,16 @@ It is evident that nulls and infinities are *Unicode glyphs*. Although it is ver
  `i$42.99              /explicit cast from `f to `i drops mantissa
 42
 
- `i$42.0 42.99         /`F to `i will round down the entire vector
+ `i$42.0 42.99         /`f to `i will round down the entire vector
 42 42
 
- 0+"abc"               /numeric operands demote `c and `C to ascii
+ 0+"abc"               /integer operand demotes `c vector to ascii
 97 98 99
 
  `c$1+"HAL9000"        /add 1 to ascii, cast back to `c, surprise:
  "IBM:111"
 
- "012"+"345"           /sum ascii codes of chars, result stays `C
+ "012"+"345"           /sum ascii codes of chars, result stays `c
 "ceg"
 
  a:1 2 3               /lets start with a nice uniform int vector
@@ -883,7 +883,7 @@ As you must have noticed, the syntax for indexing vectors and calling functions 
 ```q
  l:{x+x}      /some monadic function l[x]
  t:2 4 8 16   /some random integer vector
- r:0 3        /index vector: indices of r
+ r:0 3        /index vector: indices of t
 
  l[t]         /apply function l to each t
 4 8 16 32
@@ -895,7 +895,7 @@ As you must have noticed, the syntax for indexing vectors and calling functions 
 4 32 
 ```
 
-What we also know that k actively encourages us to omit brackets whenever possible, so lets do exactly that:
+What we also know that 𝒌 actively encourages us to omit brackets whenever possible, so lets do exactly that:
 
 ```q
  l t r       /exactly the same as l[t[r]]
