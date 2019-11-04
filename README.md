@@ -79,7 +79,7 @@ In comparison, 𝒌 solutions are typically a few factors of magnitude less code
 
 At first it could be hard to understand how this can even be true, but imagine the effort of keeping 100 lines of code in sync with rapidly changing requirements and free of bugs, compared to 10,000 lines of code that do the same thing. Against all intuition, it is not 100 times easier, but 10,000 times easier, because the effect of cyclomatic complexity is devastating.
 
-### wha_*_
+### wha _*_
 
 𝒌 is a simple, expressive and powerful computer language.
 
@@ -226,9 +226,9 @@ The subject of code organization will forever remain a major point of controvers
 
 * The primary influence of 𝒌 syntax is the most powerful instrument of human reasoning, *a mathematical notation*. As such, the language actively encourages the programmer to produce very dense and succinct code, which leads to a common pitfall among beginners who are tempted to sacrifice too much readability. As any good program, a good 𝒌 program must remain readable and adequately annotated.
   
-* Comments are integral part of the code and also consume space, so boil them down to some reasonable size as well, but don't get too cryptic,
+* Comments are integral part of the code and also consume space, so boil them down to some reasonable size as well, but don't get too cryptic.
 
-* In 𝒌, it is possible to minimize code scrolling or even avoid it completely. When the entire program or component fits in your view, you lose no time on navigating it and switching contexts. For example, every code block in this document fits on a laptop screen and remains readable on mobiles.
+* In 𝒌, it is possible to minimize code scrolling or even avoid it completely. When the entire program or component fits in your view, you lose no time on navigating it and switching contexts. For example, every code block in this document fits on a laptop screen and remains very readable on mobiles (try that with Java).
 
 * Syntax highlighting is essential, and poor highlighting is often worse than none — so choose carefully from 𝒌 syntax packages available for your editor. The best is often the one you wrote yourself, and 𝒌 syntax is extremely regular and simple.
 
