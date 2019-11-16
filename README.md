@@ -36,7 +36,7 @@ plus over infinity, aka 𝒌 crash course
 
 Computer languages have been around, but in the beginning was the Word. We will be writing code in a language called 𝒌, but it helps to talk about it first.
 
-𝒌 is different. At first, you will be questioning its design, and it will respond by questioning things that you consider common sense, but soon it will become a constructive conversation, and here is how.
+𝒌 is different. At first, you will be questioning its design, and it will respond by questioning things that you consider common sense, but soon enough it will become a constructive conversation, and here is how.
 
 The first thing newcomers frown upon is why the assignment operator is `:` instead of `=`. But before you close the tab, try a simple thought experiment:
 
