@@ -47,7 +47,7 @@ x = x + 1
 Most programmers will agree that this expression makes perfect sense, but if you show it to a math guy, be ready to hear "no, it isn't". And once you see what makes him think that way, you will also see why we assign values with `:` 
 in k. The above expression looks nonsensical to a 𝒌 programmer for the same reason it does to a math guy, and k will most always evaluate it to false. Once you can produce a 𝒌 expression where `x=x+1` evaluates to true, please submit a pull request and say "hello".
 
-𝒌 offers some unusual perspectives compared to other programming languages, and they are not necessarily wrong. They are simply different - in the same way that Java is different from C++ and Python is different from Javascript.
+𝒌 offers some unusual perspectives compared to other programming languages, and they are not necessarily wrong. They are simply different - in the same way that C++ is different from Java, and Python is much unlike Javascript.
 
 This short introduction invites you to look at those things that other way, and we hope they'll come across as obvious and natural to you, just like `x≠x+1` did a few seconds ago.
 
