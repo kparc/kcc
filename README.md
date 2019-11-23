@@ -376,12 +376,12 @@ The last remark on 𝒌 terminology is of extreme importance. While 𝒌 is a co
 * "shuffle this deck of cards"
 * "take three random cards from this deck"
 
-Both are imperatives, where verbs act as the **main** part of the expression - they identify the _action_ to be taken. However, there is an important difference between the two. In linguistics, the structure of the first sentence is known as _verb-only predicate_, while the second is a _verb-plus-direct-object predicate_. In 𝒌 speak, the verb in the first sentence is monadic, while the second is clearly a dyadic one.
+Both are imperatives, where verbs act as the **main** part of the expression - they identify the _action_ to be taken. However, there is an important difference between the two. In linguistics, the structure of the first sentence is known as _verb-only predicate_, while the second is a _verb-plus-direct-object predicate_. In 𝒌 speak, we recognize the verb "shuffle" in the first sentence to be monadic, while the second is built around a dyadic verb "take".
 
 And this is exactly what **𝒌 verbs** are:
 
  * A verb instructs the interpreter to do something, or answer some question.
- * A verb can be monadic or dyadic, and requires one or two nouns to form a grammatically correct phrase.
+ * A verb can be monadic or dyadic, i.e. requires one or two nouns to form a grammatically correct phrase.
 
 Since verbs _operate_ on nouns, they are very often called **operators**, and nouns passed to verbs are said to be their **operands** or **arguments**.
 
