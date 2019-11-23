@@ -10,7 +10,7 @@ plus over infinity / 𝒌 crash course
 
 * [get](#get) | [run](#run)
 * style → [cmt](#annotations) | [sep](#separator) | [tab](#indentation) | [ids](#identifiers) | [space](#space) | [bad](#bad-form)
-* parlance → [xyz](#implicit-arguments) | [rank](#rank) | [proj](#projection) | [+:](#explicit-monadics) | [nouns](#on-verbs-and-nouns)
+* parlance → [xyz](#implicit-arguments) | [rank](#rank) | [proj](#projection) | [+:](#explicit-monadics) | [scope](#scope) | [nouns](#on-verbs-and-nouns)
 
 **[numbers](#numbers)**
 
@@ -188,7 +188,7 @@ Indeed, the title of this document seems to make sense to the 𝒌 interpreter a
 
 ### remarks on style
 
-As any other language, 𝒌 expects a programmer to observe and follow certain conventions on coding style and terminology in order to understand the code written by the others and let their own code be understood. While some rules of the house of 𝒌 are universal, some are not.
+As any other language, 𝒌 expects a programmer to observe certain conventions on coding style and terminology in order to understand the code written by the others and let their own code be understood. While some rules of the house of 𝒌 are universal, some are not.
 
 #### annotations
 
@@ -326,7 +326,7 @@ For example, when you used your first ever 𝒌 operator in the expression `2+2`
 
 #### projection
 
-Also known as *function views*, projections are can be understood as "incomplete" function calls with at least one free, or **elided** argument. For example, if a function of rank 3, `f[x;y;z]`, only receives first and third arguments, it will return a monadic projection of itself:
+Also known as *function views*, projections are can be understood as "incomplete" function calls with at least one free, or **elided** argument. For example, if a function of rank 3, `f[x;y;z]`, only receives first and third arguments, it will return its monadic projection, which itself behaves as a function:
 
 ```q
  f:{x+y+z}      /a function of rank three
@@ -352,6 +352,20 @@ On a more general note, functions in 𝒌 can be of rank 1 to 9:
 
 * it is not really possible to define a function with no arguments. Rank zero, or *niladic* functions, do not exist in 𝒌.
 * a function cannot take more than nine explicit arguments, and some say this is an overly generous limit.
+
+#### scope
+
+Variable scoping in 𝒌 is an important aspect of its design. Newcomers often expect to find so called **lexical scoping** in 𝒌 — that is, every inner scope has access to all variables defined in all outer scopes, which is how the majority of modern programming languages treats this subject. However, 𝒌 has a different take on this subject.
+
+In 𝒌, variable visibility is limited to exactly two scopes: **local** and **global**.
+
+Take your time to absorb this fact and appreciate its implications. While not easily digested by imperative crowd, the benefits of scope isolation are immediately obvious to functional folks:
+
+* While 𝒌 is not _purely functional_, for as long as 𝒌 function does not access or modify global state, it remain _pure_, i.e. free from side effects. Pure functions behave in a mathematically sound fashion, and can be reasoned about in terms of their *domain* and *range*, just like their math cousins.
+
+* Scope isolation relieves the program of an entire class of bugs related to shadowing and naming clashes. Pure functions are best friends with immutability and distributed designs 
+
+Indeed, the fundamental benefit of this way of thinking about functions is their **simplicity** and **composability**. Code that is easy to debug, test, refactor and reuse results in clean, secure and scalable systems.
 
 #### on verbs and nouns
 
