@@ -363,7 +363,7 @@ Take your time to absorb this fact and appreciate its implications. While not ea
 
 * While 𝒌 is not _purely_ functional, for as long as 𝒌 function does not access or modify global state, it remains _pure_, i.e. free from side effects. Pure functions may behave in a mathematically sound fashion, and can be reasoned about in terms of *domain* and *range*, much like their math cousins.
 
-* Scope isolation relieves the program of an entire class of bugs related to shadowing and naming clashes. Pure functions are best friends with immutability and distributed architectures.
+* Scope isolation relieves the program from an entire class of bugs related to shadowing and naming clashes. Pure functions are best friends with immutability and distributed architectures.
 
 The fundamental benefit of this way of thinking about functions is **simplicity** and **composability**. Code blocks that are easy to debug, test, refactor and reuse result in clean, secure and scalable systems.
 
