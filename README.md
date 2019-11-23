@@ -326,7 +326,7 @@ For example, when you used your first ever 𝒌 operator in the expression `2+2`
 
 #### projection
 
-Also known as *function view*, is a simply a reference to a function with some arguments preset to a value, and at least one **free**, or elided argument. For example, if a function of rank 3, `f[x;y;z]`, only receives first and third arguments, it will return its projection of rank 1:
+Also known as *function views*, projections are can be understood as "incomplete" function calls with at least one free, or **elided** argument. For example, if a function of rank 3, `f[x;y;z]`, only receives first and third arguments, it will return a monadic projection of itself:
 
 ```q
  f:{x+y+z}      /a function of rank three
@@ -337,7 +337,7 @@ Also known as *function view*, is a simply a reference to a function with some a
 
 #### explicit monadics
 
-An operator is declared to be explicitly monadic if followed by `:`. This is commonplace and very often necessary.
+As you already know, the action of a 𝒌 operator depends on the number of arguments passed to it. However, there are situations when an operator receives two operands (typically, left and right), but is intended to perform a monadic action using right argument only. To disambiguate the rank, the operator can be declared **explicitly monadic** by prepending `:` to it:
 
 ```q
 +          /context-aware, either monadic flip or dyadic plus
