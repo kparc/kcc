@@ -365,7 +365,7 @@ Take your time to absorb this fact and appreciate its implications. While not ea
 
 * Scope isolation relieves the program of an entire class of bugs related to shadowing and naming clashes. Pure functions are best friends with immutability and distributed architectures.
 
-* Indeed, the fundamental benefit of this way of thinking about functions is their **simplicity** and **composability**. Code that is easy to debug, test, refactor and reuse results in clean, secure and scalable systems.
+The fundamental benefit of this way of thinking about functions is **simplicity** and **composability**. Code blocks that are easy to debug, test, refactor and reuse result in clean, secure and scalable systems.
 
 #### on verbs and nouns
 
