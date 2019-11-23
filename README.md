@@ -337,7 +337,7 @@ Also known as *function views*, projections are can be understood as "incomplete
 
 #### explicit monadics
 
-As you already know, the action of a 𝒌 operator depends on the number of arguments passed to it. However, there are situations when an operator receives two operands (typically, left and right), but is intended to perform a monadic action using right argument only. To disambiguate the rank, the operator can be declared **explicitly monadic** by prepending `:` to it:
+As you already know, the action of a 𝒌 operator depends on the number of arguments passed to it. However, there are situations when an operator receives two operands (typically, left and right), but is intended to perform a monadic action using right argument only. To disambiguate the rank, the operator can be declared **explicitly monadic** by appending `:` to it:
 
 ```q
 +          /context-aware, either monadic flip or dyadic plus
@@ -361,7 +361,7 @@ In 𝒌, variable visibility is limited to exactly two scopes: **local** and **g
 
 Take your time to absorb this fact and appreciate its implications. While not easily digested by imperative crowd, the benefits of scope isolation are immediately obvious to functional folks:
 
-* While 𝒌 is not _purely_ functional, for as long as 𝒌 function does not access or modify global state, it remains _pure_, i.e. free from side effects. Pure functions behave in a mathematically sound fashion, and can be reasoned about in terms of *domain* and *range*, just like their math cousins.
+* While 𝒌 is not _purely_ functional, for as long as 𝒌 function does not access or modify global state, it remains _pure_, i.e. free from side effects. Pure functions may behave in a mathematically sound fashion, and can be reasoned about in terms of *domain* and *range*, much like their math cousins.
 
 * Scope isolation relieves the program of an entire class of bugs related to shadowing and naming clashes. Pure functions are best friends with immutability and distributed architectures.
 
@@ -998,22 +998,25 @@ This part might be easier to digest than the previous, especially if you are fam
 
 And this is not just to avoid untold damages from trivial errors people keep making in their loop definitions. The main reason explicit loops are banned from 𝒌 is because it offers something better. The idea that displaces them is a simple and strong abstraction called *adverbs*, but before we see them in action, it helps to understand why they are called that way:
 
-An **adverb** is a **modifier** that takes some **verb** (which is a short way of saying "a user-defined function or native operator"), and makes that verb's action applicable to an **input vector** in some desirable way to produce an **output**, which can be a scalar value or another vector, depending on which adverb is used.
+An **adverb** is a **modifier** that accepts a user-defined function or a native operator and returns a new monadic or dyadic **verb** which acts on one or two **input operands** in some desirable way to produce an **output**. Input and output can be scalar values or vectors, depending on the adverb and the action it modifies.
 
-A good example of how adverbs replace loops is `sum`. Say, we have an input `in:1 2 3 4 5`, and what we want to obtain is a sum of its elements. Thinking in implicit loops suggests something like:
+The formal definition sounds a bit dry, so let's consider a classic example of how adverbs replace loops:
+
+**"Compute a sum of elements of a given integer vector."**
+ 
+Thinking in implicit loops suggests something we've all done a million times:
 
 ```c
 int sum(int[]in){
   int i=0,acc=0;
   for(;i<sizeof(in);++i)
     acc+=in[i];
-  return acc;
-}
+  return acc;}
 ```
 
-But imagine if we could state the problem to a computer like this:
+. But whi if we could state the problem to a computer like this:
 
-**"put a `+` between all adjacent items and give me the grand total"**
+**"Put a `+` between all adjacent items and give me the grand total."**
 
 And that is the simplest way to describe what 𝒌 adverb `over` does when it is used to modify dyadic `+`. Only `over`, as all other adverbs, is *general*, and will happily modify *any* dyadic operator or function. Described more formally, `over` looks more like this pseudocode:
 
