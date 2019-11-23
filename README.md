@@ -355,7 +355,7 @@ On a more general note, functions in 𝒌 can be of rank 1 to 9:
 
 #### scope
 
-Variable scoping in 𝒌 is an important aspect of its design. Newcomers often expect to find so called **lexical scoping** in 𝒌 — that is, every inner scope has access to all variables defined in all outer scopes, which is how the majority of modern programming languages treats this subject. However, 𝒌 has a different take on this subject.
+Variable scoping in 𝒌 is an important aspect of its design. Newcomers often expect to find so called **lexical scoping** in 𝒌 — that is, every inner scope has access to all variables defined in all outer scopes, which is how the majority of modern programming languages treats this subject. However, 𝒌 has a different take on this.
 
 In 𝒌, variable visibility is limited to exactly two scopes: **local** and **global**.
 
