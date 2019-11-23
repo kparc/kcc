@@ -361,11 +361,11 @@ In 𝒌, variable visibility is limited to exactly two scopes: **local** and **g
 
 Take your time to absorb this fact and appreciate its implications. While not easily digested by imperative crowd, the benefits of scope isolation are immediately obvious to functional folks:
 
-* While 𝒌 is not _purely functional_, for as long as 𝒌 function does not access or modify global state, it remain _pure_, i.e. free from side effects. Pure functions behave in a mathematically sound fashion, and can be reasoned about in terms of their *domain* and *range*, just like their math cousins.
+* While 𝒌 is not _purely_ functional, for as long as 𝒌 function does not access or modify global state, it remains _pure_, i.e. free from side effects. Pure functions behave in a mathematically sound fashion, and can be reasoned about in terms of *domain* and *range*, just like their math cousins.
 
-* Scope isolation relieves the program of an entire class of bugs related to shadowing and naming clashes. Pure functions are best friends with immutability and distributed designs 
+* Scope isolation relieves the program of an entire class of bugs related to shadowing and naming clashes. Pure functions are best friends with immutability and distributed architectures.
 
-Indeed, the fundamental benefit of this way of thinking about functions is their **simplicity** and **composability**. Code that is easy to debug, test, refactor and reuse results in clean, secure and scalable systems.
+* Indeed, the fundamental benefit of this way of thinking about functions is their **simplicity** and **composability**. Code that is easy to debug, test, refactor and reuse results in clean, secure and scalable systems.
 
 #### on verbs and nouns
 
