@@ -326,7 +326,7 @@ For example, when you used your first ever 𝒌 operator in the expression `2+2`
 
 #### projection
 
-Also known as *function views*, projections are can be understood as "incomplete" function calls with at least one free, or **elided** argument. For example, if a function of rank 3, `f[x;y;z]`, only receives first and third arguments, it will return its monadic projection, which itself behaves as a function:
+Also known as *function views*, projections can be understood as "incomplete" function calls with at least one free, or **elided** argument. For example, if a function of rank 3, `f[x;y;z]`, only receives first and third arguments, it will return its monadic projection, which itself behaves as a function:
 
 ```q
  f:{x+y+z}      /a function of rank three
