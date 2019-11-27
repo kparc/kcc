@@ -1506,7 +1506,7 @@ We have seen some new stuff:
 
 4. As you know, once you provide a correct answer to an Euler problem, you can browse its discussion forum. You might want to check out some other solutions to 18 and 67 in other computer languages.
 
-5. Use `\t:n` to assess the upper bound of the algorithm.
+5. Measure `\t:n` for 100, 1000, 10000 runs and estimate the time complexity of the algorithm. Make sure disk I/O is excluded from the measurement.
 
 -------------------
 
