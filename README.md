@@ -34,7 +34,7 @@ plus over infinity / 𝒌 crash course
 
 ### ø
 
-Computer languages have been around, but in the beginning was the Word. We will be writing code in a language called 𝒌, but it helps to talk about it first.
+Computer languages have been around for a long time, but in the beginning was the Word. We will be writing code in a language called 𝒌, but it helps to talk about it first.
 
 𝒌 is different. At first, you will be questioning its design, and it will respond by questioning things that you consider common sense, but soon enough it will become a constructive conversation, and here is how.
 
