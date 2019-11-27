@@ -335,6 +335,8 @@ Also known as *function views*, projections can be understood as "incomplete" fu
 6
 ```
 
+Projections are commonplace and very useful. To give one example, projection provides a way for a lambda or a function to capture some of their *context*, i.e. bind values from the current scope to the local scope of of a lambda, wherever it travels next. In other words, if you prefer functional speak, projection creates a **closure**.
+
 #### explicit monadics
 
 As you already know, the action of a 𝒌 operator depends on the number of arguments passed to it. However, there are situations when an operator receives two operands (typically, left and right), but is intended to perform a monadic action using right argument only. To disambiguate the rank, the operator can be declared **explicitly monadic** by appending `:` to it:
