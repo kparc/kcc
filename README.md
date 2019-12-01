@@ -113,7 +113,7 @@ The only known way to learn how to program is to write programs, so you will nee
 
 We will be using a trial version of 𝒌, which comes without any RAM or useable CPU core limitations. As any 𝒌 programmer will tell you, with great power comes great responsibility, so please don’t accidentally convert too much data into too much money too early.
 
-The 𝒌 interpreter is currently available for `Linux` and `macOS` on `x86_64` architecture, but stay tuned - ARM, WASM, RISC-V are in the pipeline, and they will not make you wait.
+The 𝒌 interpreter is currently available for `Linux` and `macOS` on `x86_64` architecture, but stay tuned — ARM, WASM, RISC-V are in the pipeline, and they will not make you wait.
 
 So, no further ado:
 
@@ -216,7 +216,7 @@ This is a tricky subject in 𝒌. Basically, what you generally want is **no ind
 
 #### identifiers
 
-Variable names in 𝒌 follow a somewhat unusual convention. Capitals are used by 𝒌 programmers very sparingly, which applies both to code and comments. While identifiers in `camelCase` can sometimes be tolerated, `c_style` identifiers are not permitted at all, since `_` is an operator. Identifiers of functions and variables are very often boiled down to an absolute minimum, names 1-3 characters long are commonplace, which does not impact readability given that their definitions are annotated. Short identifiers might sound like a bad idea to Java programmers who are used to see identifiers longer than 2^8 bytes, but, unlike Java, 𝒌 source requires very little or no scrolling. When the entire program fits in your visual buffer, "cryptic" identifiers are no longer a problem because their annotated declarations are always right in front of you:
+Variable names in 𝒌 follow a somewhat unusual convention. Capitals are used by 𝒌 programmers very sparingly, which applies both to code and comments. While identifiers in `camelCase` can sometimes be tolerated, `c_style` identifiers are not permitted at all, since `_` is an operator. Identifiers of functions and variables are very often boiled down to an absolute minimum, names 1-3 characters long are commonplace, which does not impact readability given that their definitions are annotated. Short identifiers might sound like a bad idea to Java programmers who are used to see identifiers longer than 2⁸ bytes, but, unlike Java, 𝒌 source requires very little or no scrolling. When the entire program fits in your visual buffer, "cryptic" identifiers are no longer a problem because their annotated declarations are always right in front of you:
 
 ```q
 kei:42   /kenneth eugene iverson
@@ -378,7 +378,7 @@ The last remark on 𝒌 terminology is of extreme importance. While 𝒌 is a co
 * "shuffle this deck of cards"
 * "take three random cards from this deck"
 
-Both are imperatives, where verbs act as the **main** part of the expression - they identify the _action_ to be taken. However, there is an important difference between the two. In linguistics, the structure of the first sentence is known as _verb-only predicate_, while the second is a _verb-plus-direct-object predicate_. In 𝒌 speak, we recognize the verb "shuffle" in the first sentence to be monadic, while the second is built around a dyadic verb "take".
+Both are imperatives, where verbs act as the **main** part of the expression — they identify the _action_ to be taken. However, there is an important difference between the two. In linguistics, the structure of the first sentence is known as _verb-only predicate_, while the second is a _verb-plus-direct-object predicate_. In 𝒌 speak, we recognize the verb "shuffle" in the first sentence to be monadic, while the second is built around a dyadic verb "take".
 
 And this is exactly what **𝒌 verbs** are:
 
@@ -738,7 +738,7 @@ b|4 5 6
 <a name="typ-tab"></a>
 **Tables** are *flipped dictionaries*, and they require a separate large discussion. Here, we will only describe their syntax for the sake of completeness. Table type is **\`A**, and notation is the same as dict, only with `+x flip` operator prepended. As common sense implies, a dictionary won't flip unless all values are of the same length.
 
-No comments on any of this for now — but if you can follow the logic of what is going on here, you'll agree that in some rare cuircumstances a technology is indeed indistinguishable from magic. See for yourself:
+No comments on any of this for now — but if you can follow the logic of what is going on here, you'll agree that in some rare circumstances a technology is indeed indistinguishable from magic. See for yourself:
 
 ```q
  x:`goo`apl`amz
@@ -922,7 +922,7 @@ What we also know that 𝒌 actively encourages us to omit brackets whenever pos
 4 32
 ```
 
-And here is comes: once we drop the brackets, it suddenly becomes absolutely natural to read this expression *right to left*. Take your time to contemplate and absorb this fact. In very little time you will see how it works in practice, and once you put it to practice yourself, you will agree that this way of functional composition is simple, elegant and intuitive:
+And here it comes: once we drop the brackets, it suddenly becomes absolutely natural to read this expression *right to left*. Take your time to contemplate and absorb this fact. In very little time you will see how it works in practice, and once you put it to practice yourself, you will agree that this way of functional composition is simple, elegant and intuitive:
 
 **k expressions are read, written and evaluated right to left.**
 
@@ -948,7 +948,7 @@ Very early on in our lives, we are taught there is a good reason for multiplicat
 
 **There is no operator precedence in 𝒌, unless it is explicitly defined by round brackets.**
 
-By default, **all operators** in a 𝒌 expression are treated equally and evaluated strictly from **right to left**. Obviously, this includes **arithmetic** operators as well, and before you ask yourself how `*` can possibly have no precedence over `+`, consder a few basic math expressions annotated with their order of evaluation:
+By default, **all operators** in a 𝒌 expression are treated equally and evaluated strictly from **right to left**. Obviously, this includes **arithmetic** operators as well, and before you ask yourself how `*` can possibly have no precedence over `+`, consider a few basic math expressions annotated with their order of evaluation:
 
 ```q
  3+2+1     /"take 1, add 2, add 3"
@@ -966,7 +966,7 @@ By default, **all operators** in a 𝒌 expression are treated equally and evalu
 
 As you see, it is much easier to get used to the lack of precedence than it appears at first — indeed, simplicity is the worst enemy of complexity. The last two examples demonstrate the basic strategy of avoiding parens entirely, and there is a good reason for ditching them — it makes the order of evaluation completely **linear**.
 
-Although precedence overrides are sometimes inevitable and can be beneficial, they have an adverse effect on **readability**. Basically, while reading a 𝒌 expression, what you generally want is to go fast and uninterrupted — and precedence overrides interrupt the natural flow of comprehension. Good 𝒌 programmers think of others before themseves, and seek to produce code which follows the natural order of evaluation by minimizing the use of round brackets.
+Although precedence overrides are sometimes inevitable and can be beneficial, they have an adverse effect on **readability**. Basically, while reading a 𝒌 expression, what you generally want is to go fast and uninterrupted — and precedence overrides interrupt the natural flow of comprehension. Good 𝒌 programmers think of others before themselves, and seek to produce code which follows the natural order of evaluation by minimizing the use of round brackets.
 
 ----------------
 
@@ -998,7 +998,7 @@ Too easy, but we'll make up for it.
 
 ### no stinking loops
 
-This part might be easier to digest than the previous, especially if you are familiar with functional programming. The title, borrowed without permission from [the legendary k resource](http://nsl.com), says it all - you will not find a 𝒌 construct that resembles an explicit `for` loop, and although there is a `while` construct in 𝒌, it is almost never used in practice.
+This part might be easier to digest than the previous, especially if you are familiar with functional programming. The title, borrowed without permission from [the legendary k resource](http://nsl.com), says it all — you will not find a 𝒌 construct that resembles an explicit `for` loop, and although there is a `while` construct in 𝒌, it is almost never used in practice.
 
 And this is not just to avoid untold damages from trivial errors people keep making in their loop definitions. The main reason explicit loops are banned from 𝒌 is because it offers something better. The idea that displaces them is a simple and strong abstraction called *adverbs*, but before we see them in action, it helps to understand why they are called that way:
 
@@ -1011,14 +1011,14 @@ The formal definition sounds a bit dry, so let's consider a classic example of h
 Thinking in implicit loops suggests something we've all done a million times:
 
 ```c
-int sum(int[]in){
+int sum(int in[]){
   int i=0,acc=0;
   for(;i<sizeof(in);++i)
     acc+=in[i];
   return acc;}
 ```
 
-. But whi if we could state the problem to a computer like this:
+But why if we could state the problem to a computer like this:
 
 **"Put a `+` between all adjacent items and give me the grand total."**
 
@@ -1102,10 +1102,10 @@ either vectors or atoms
 
 ```q
  10 20 30-\:5   /eachleft does (10-5),(20-5),(30-5)
-5 15 25         /each of left, substracted by right
+5 15 25         /each of left,  subtracted by right
 
  5-/:0 20 30    /eachright does (5-0),(5-20),(5-30)
-5 -15 -25       /left, substracted by each of right
+5 -15 -25       /left,  subtracted by each of right
 ```
 
 <a name="nsl-eachprior"></a>
@@ -1213,7 +1213,7 @@ $[c;t;f]            /a ctf cond, aka if-then-else aka ternary
 x                   /t:      do this if c is 1
 ,/f'x@&:'~:\x<*1?x  /f:      do that if c is 0
 
-2>#?x               /we don't how to read this, but it is clear that f[]
+2>#?x               /we don't know how to read this, but it is clear f[]
                     /halts recursion when it evaluates to 1, returning x
                     /so lets find out what it means, going right to left
 
@@ -1343,7 +1343,7 @@ And `qs` code brought a few more:
 * ctf cond `$[c;t;f]`
 * monadic `?x distinct`
 * monadic `#x count`
-* monadic `*x first
+* monadic `*x first`
 * monadic `~x not`
 * monadic `&x where`
 * monadic `,/x raze`
