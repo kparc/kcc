@@ -207,7 +207,7 @@ Character `;` in 𝒌 is used for one thing and one thing only, to separate 𝒌
 
 ```q
 x:1; y:2; z:3   /one line, three expressions
-z:1;y:2;x:3     /denser version of the above
+x:1;y:2;z:3     /denser version of the above
 ```
 
 #### indentation
