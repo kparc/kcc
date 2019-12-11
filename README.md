@@ -10,7 +10,7 @@ plus over infinity / 𝒌 crash course
 
 * [get](#get) | [run](#run)
 * style → [cmt](#annotations) | [sep](#separator) | [tab](#indentation) | [ids](#identifiers) | [space](#space) | [bad](#bad-form)
-* parlance → [xyz](#implicit-arguments) | [rank](#rank) | [proj](#projection) | [+:](#explicit-monadics) | [scope](#scope) | [nouns](#on-verbs-and-nouns)
+* parlance → [xyz](#implicit-arguments) | [rank](#rank) | [proj](#projections) | [+:](#explicit-monadics) | [scope](#scope) | [nouns](#on-verbs-and-nouns)
 
 **[numbers](#numbers)**
 
@@ -322,9 +322,9 @@ Two specific ranks are so important that they have their own names. A function o
 
 As you will see, the vast majority of native operators in 𝒌 have exactly two completely different meanings based on the context where they are used, which is in turn defined by the number of arguments offered to the operator.
 
-For example, when you used your first ever 𝒌 operator in the expression `2+2`, you have used the `+` operator in a dyadic context since it received exactly *two* operands to work on, left and right, so it was inferred to be `dyadic + plus`. The `monadic + flip` will be introduced later, and has an entirely different meaning.
+For example, when you used your first ever 𝒌 operator in the expression `2+2`, you have used the `+` operator in a dyadic context since it received exactly *two* operands to work on, left and right, so it was inferred to be `dyadic x+y plus`. The `monadic +x flip` will be introduced later, and has an entirely different meaning.
 
-#### projection
+#### projections
 
 Also known as *function views*, projections can be understood as "incomplete" function calls with at least one free, or **elided** argument. For example, if a function of rank 3, `f[x;y;z]`, only receives first and third arguments, it will return its monadic projection, which itself behaves as a function:
 
@@ -335,7 +335,7 @@ Also known as *function views*, projections can be understood as "incomplete" fu
 6
 ```
 
-Projections are commonplace and very useful. To give one example, projection provides a way for a lambda or a function to capture some of their *context*, i.e. bind values from the current scope to the local scope of of a lambda, wherever it travels next. In other words, if you prefer functional speak, projection creates a **closure**.
+Projections are commonplace and very useful. To give one example, projection provides a way for a lambda or a function to capture some of their *context*, i.e. bind values from the current scope to the local scope of a lambda, wherever it travels next. In other words, if you prefer functional speak, projection creates a **closure**.
 
 #### explicit monadics
 
@@ -387,7 +387,7 @@ And this is exactly what **𝒌 verbs** are:
 
 Since verbs _operate_ on nouns, they are very often called **operators**, and nouns passed to verbs are said to be their **operands** or **arguments**.
 
-For newcomers, the biggest caveat with verbs is whether or not to consider a **user-defined function**, i.e. any expression enclosed in curly brackets, to be a verb — and the correct answer is **no**. Functions are treated as nouns in 𝒌, and while in certain contexts verbs and functions can be used interchangeably, functions differ from operators in the following fundamental way:
+For newcomers, the biggest caveat with verbs is whether or not to consider a **user-defined function**, i.e. any expression enclosed in curly brackets, to be a verb — and the correct answer is **no**. This might feel counter-intuitive at first, but it helps to think about the content of curly brackets as of an independent expression, i.e. a sentence of arbitrary complexity, which can contain as many verbs as needed, or none at all. For that reason, functions are treated as nouns in 𝒌, and while in certain contexts verbs and functions can indeed be used interchangeably, functions differ from operators in the following fundamental way:
 
 * Operators can be applied using both infix and prefix notation
 * Functions can only be applied using prefix notation, also known as "functional form"
@@ -1018,7 +1018,7 @@ int sum(int in[]){
   return acc;}
 ```
 
-But why if we could state the problem to a computer like this:
+But what if we could state the problem to a computer like this:
 
 **"Put a `+` between all adjacent items and give me the grand total."**
 
