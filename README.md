@@ -349,16 +349,16 @@ Syntax for explicit argument declaration `{[a;b]}` is just a side remark. It is 
 
 #### rank
 
-Function rank is another way of saying *valence*, a fancy word that describes a simple idea that is extremely important to be understood well. Rank of an operator or a function is basically the maximum count of arguments they take. Two functions shown above have ranks of 3 and 1, respectively. 
+Function rank is another way of saying *valence*, a fancy word that describes a simple idea that is extremely important to be understood well. Rank of an operator or a function is basically the maximum count of arguments they take. Two functions shown above have ranks of 3 and 1 respectively. 
 
 Two specific ranks are so important that they have their own names. A function or an operator that takes...
 
-* one argument is **monadic**
-* two arguments is **dyadic**
+* one argument is called **monadic**
+* two arguments is called **dyadic**
 
-As you will see, the vast majority of native operators in 𝒌 have exactly two completely different meanings based on the context where they are used, which is in turn defined by the number of arguments offered to the operator.
+As you will see, the majority of native operators in 𝒌 have exactly two completely different meanings based on the context where they are used, which is in turn defined by the number of arguments offered to the operator.
 
-For example, when you used your first ever 𝒌 operator in the expression `2+2`, you have used the `+` operator in a dyadic context since it received exactly *two* operands to work on, left and right, so it was inferred to be `dyadic x+y plus`. The `monadic +x flip` will be introduced later, and has an entirely different meaning.
+For example, when you used your first ever 𝒌 operator in the expression `2+2`, you have used the `+` operator in a dyadic context since it received *two* operands to work on, left and right, so it was inferred to be `dyadic x+y plus`. The `monadic +x flip` will be introduced later, and has an entirely different meaning.
 
 #### projections
 
@@ -393,7 +393,7 @@ On a more general note, functions in 𝒌 can be of rank 1 to 9:
 
 #### scope
 
-Variable scoping in 𝒌 is an important aspect of its design. Newcomers often expect to find so called **lexical scoping** in 𝒌 — that is, every inner scope has access to all variables defined in all outer scopes, which is how the majority of modern programming languages treats this subject. However, 𝒌 has a different take on this.
+Variable scoping in 𝒌 is an important aspect of its design. Newcomers often expect to find so called **lexical scoping** in 𝒌 — that is, every inner scope has access to all non-masked variables defined in all outer scopes, unless they are shadowed. This is how the majority of modern programming languages treats this subject. However, 𝒌 has a different take on this:
 
 In 𝒌, variable visibility is limited to exactly two scopes: **local** and **global**.
 
