@@ -1,6 +1,6 @@
-# +/∞
+# k crash course
 
-plus over infinity / 𝒌 crash course
+a gentle introduction to k language is elsewhere.
 
 **[genesis](#genesis)**
 
@@ -36,74 +36,89 @@ plus over infinity / 𝒌 crash course
 
 Computer languages have been around for a long time, but in the beginning was the Word. We will be writing code in a language called 𝒌, but it helps to talk about it first.
 
-𝒌 is different. At first, you will be questioning its design, and it will respond by questioning things that you consider common sense, but soon enough it will become a constructive conversation, and here is how.
+𝒌 is different. At first, you will have questions about its design, and it will respond by questioning things that you consider common sense. Very soon, this conversation will become constructive, and here is why.
 
-The first thing newcomers frown upon is why the assignment operator is `:` instead of `=`. But before you close the tab, try a simple thought experiment:
+The first thing newcomers frown upon is why the assignment operator in 𝒌 is `:` instead of `=`. But before you close the tab, try a simple thought experiment:
 
 ```java
 x = x + 1
 ```
 
-Most programmers will agree that this expression makes perfect sense, but if you show it to a math guy, be ready to hear "no, it isn't". And once you see what makes him think that way, you will also see why we assign values with `:` 
-in k. The above expression looks nonsensical to a 𝒌 programmer for the same reason it does to a math guy, and k will most always evaluate it to false. Once you can produce a 𝒌 expression where `x=x+1` evaluates to true, please submit a pull request and say "hello".
+Most programmers agree that this expression makes perfect sense. But if you show it to a mathematician, be ready to hear:
 
-𝒌 offers some unusual perspectives compared to other programming languages, and they are not necessarily wrong. They are simply different - in the same way that C++ is different from Java, and Python is much unlike Javascript.
+```
+"no, it isn't."
+```
 
-This short introduction invites you to look at those things that other way, and we hope they'll come across as obvious and natural to you, just like `x≠x+1` did a few seconds ago.
+And once you see what makes him think that way, you will also see why we assign values with `:` in k. The above expression looks nonsensical to a 𝒌 programmer for the same reason it does to a math guy, and 𝒌 will most always evaluate it to `false`. Once you can produce a 𝒌 expression where `x=x+1` evaluates to `true`, don't be a stranger. A simple "hello" pull request can lead to a million thigs.
+
+𝒌 offers some other unusual perspectives compared to other programming languages, and they are not necessarily wrong. They are simply different - in the same way  C++ is different from Java, and Python is unlike JavaScript.
+
+This short introduction invites you to look at those things that other way, and we hope they'll strike you as obvious and natural as `x≠x+1` did a few seconds ago.
 
 ---------------------
 
-This crash course is not looking to make you an expert 𝒌 programmer, because that takes a lot of time and effort. Instead, it aims to give enough confidence and motivation for you to continue on your own. We value your time, so we promise it will be fast and violent:
+This crash course is not looking to make you an expert 𝒌 programmer, because that takes a lot of time and effort in any language, constructed or natural. Instead, we aim to give enough confidence and motivation for you to continue on your own. 
+
+We value your time, so it will be fast and violent:
 
 * The text cuts a lot of corners on general programming and CS at some expense of readability.
 * The course is driven entirely by densely annotated code, comments contain essential material.
 * New syntax is often introduced inline, some is self-explanatory, some relies on your intuition.
-* The narrative is linear, all chapters build on previous.
-* Skipping exercises will halt your progress.
+* The narrative is linear, all chapters build on previous. Skipping exercises will halt your progress.
 
 This might feel a bit intense, but we hope the course is still lightweight enough to be completed in one session.
 
-This document is **not a 𝒌 reference**. The majority of subjects are discussed at depth sufficient to give a good general overview, but by no means exhaustive.
+This document is **not a 𝒌 reference**. The majority of subjects are discussed to give a good general overview.
 
 ### who
 
-The man behind 𝒌 is a computer scientist by the name Arthur Whitney. He is the principal designer of the language, and he is an iconic figure in a community of some of the most sophisticated programmers and scientists employed by some of the most influential institutions on the planet. Since early 90s, he delivers ever more powerful revisions of a concept he has been refining throughout his career, a system to build very efficient software that transforms large amounts of data into large amounts of money.
+The man behind 𝒌 is a computer scientist by the name Arthur Whitney. He is the principal designer of the language, and he is a central figure in a community of some of the most sophisticated programmers and data scientists employed by some of the most influential institutions on the planet.
 
-That is, 𝒌 enjoys much success in the world of finance, where this kind of problems existed long before the term **big data** was coined. Many people embraced the 𝒌 way and made successful careers by building solutions using 𝒌, and they appreciate their tool as much as they appreciate the man behind it, and we believe they have their reasons.
+Since early 90s, he is working on a concept he has been refining throughout his career, a practical system to build very efficient software that transforms large amounts of data into large amounts of money.
+
+That is, 𝒌 enjoys much success in the world of finance, where this kind of problems existed long before the term **"big data"** was even coined. Many people embraced the 𝒌 way, and made successful careers by building solutions using it. They appreciate their tool as much as the man behind it, and we believe they have their reasons for that.
 
 ### why
 
-There is a good chance that you have heard or read about 𝒌 language — a lot of people know the story — but what is much less likely is that you have ever met a professional 𝒌 programmer. This happens not just because 𝒌 programmers are rare, but also because 𝒌 is not fishing for cheap publicity. This is how we've all heard about a language called 𝒌, but what we mostly get to hear about is how much it sucks to be a Java programmer.
+There is a good chance that you've heard or read about 𝒌 language — a lot of people know the story. What is much less likely is that you've met a professional 𝒌 programmer. Communities like Hacker News are very much aware of 𝒌, and appreciate the fact that 𝒌 programmers are very busy and highly motivated people. This is how we've all heard about a language called 𝒌, but what we mostly get to hear about is how much it sucks to be a JavaScript developer.
 
-But jokes aside, implementations of similar systems in languages like C++ or Java usually involve thousands of lines of code written by large teams, built on top of complex library stacks and even more complex infrastructure. Such projects are often expensive and inflexible, go over budget and miss deadlines.
+But jokes aside. Implementations of performant, reliable and flexible solutions in certain highly competitve niches is very difficult in languages like C++ or Java. They involve tens of thousands of SLoC written by large teams and are built on top of complex dependency trees and even more complex infrastructure. Such projects often go over budget and miss deadlines.
 
 In comparison, 𝒌 solutions are typically a few factors of magnitude less code, implemented by small and agile teams, rarely require external dependencies, and ship on time. 
 
-At first it could be hard to understand how this can even be true, but imagine the effort of keeping 100 lines of code in sync with rapidly changing requirements and free of bugs, compared to 10,000 lines of code that do the same thing. Against all intuition, it is not 100 times easier, but 10,000 times easier, due to a devastating effect of cyclomatic complexity.
+To see why this is, it helps to compare the effort of keeping 100 lines of code in sync with rapidly changing environment and free of bugs with to 10,000 lines that do the same thing. 
+
+Against all intuition, it is not 100 times easier, it is 10,000 times easier. We will soon see why.
 
 ### wha _*_
 
 𝒌 is a simple, expressive and powerful computer language.
 
-Its power stems from the fact that 𝒌 is designed as a *tool of thought*. The vocabulary, syntax and the choice of abstractions offered by the language drive you to think about problems in a focused and clear way that quickly takes you to efficient and elegant solutions. And the reason why thinking in terms of 𝒌 is so effective is nothing supernatural: brevity is the soul of wit.
+The power stems from the fact that 𝒌 is designed as a *tool of thought*. The vocabulary, syntax and the choice of abstractions offered by the language drive you to think about problems in a focused and clear way that quickly takes you to efficient and elegant solutions. And the reason why thinking in terms of 𝒌 is so effective is nothing supernatural: brevity is the soul of wit.
 
-𝒌 programs are concise, the syntax of the language is terse, and there is no boilerplate code to write. In 𝒌, most of the time is spent on thinking about the problem rather than writing and refactoring code or browsing source.
+𝒌 programs are concise, the syntax of the language is very terse, and there is no boilerplate code to write. In 𝒌, most of the time is spent on thinking about the problem rather than writing and refactoring code, or browsing source.
 
 > \* no, this is not a typo
 
 ### how
 
-𝒌 runtime environment is an incredibly compact and efficient piece of software.
+Runtime environment of 𝒌 language is a very compact and efficient piece of software.
 
 The entire system is:
 
 * a single binary executable
 * without any external dependencies
-* that fits in the cache of your CPU
+* that fits in the cache of your CPU.
 
-And that gives a selection of fundamental algorithms, data structures, techniques and primitives that withstood the test of decades of production use in some of the world's most demanding data processing environments. Inner components of the system fit together and complement each other to deliver *performance*. It is not uncommon for 𝒌 newcomers to experience shock when they first see how much can be done with a few precise keystrokes, and how fast.
+The runtime implements a selection of fundamental algorithms, data structures, abstractions and practices that withstood the test of decades of production use in some of the world's most demanding data processing environments. Inner components of the system fit together and deliver *performance*. It is not uncommon for 𝒌 newcomers to experience shock when they first discovers how much can be done with a few keystrokes, and how fast.
 
-All of 𝒌 programming takes place in the **REPL**, an idea that is actually much older than many seem to think. It has been around for at least half a century, and is known as *dialogue approach*, a live conversation between a human and machine as a flow of questions and answers. And in 𝒌, this conversation is much more fluent than in any other modern REPL-driven system you may be familiar with, because the questions are short and the answers are fast. This is the essence of the way of 𝒌, an experience that all 𝒌 programmers consider immensely satisfying. People who write 𝒌 for living love their jobs.
+All of 𝒌 programming takes place in the **REPL**, an popular idea that is actually much older than many of us think. It has been around for at least half a century, and is also known as *dialogue approach*, where the process of writing or using a program is a live cnversation between a human and machine, a flow of questions and answers. And in 𝒌, this conversation is much more fluent than in any other modern REPL-driven system you may be familiar with, because the questions are short and the answers are fast.
+
+
+This is the essence of the way of 𝒌, an experience that all 𝒌 programmers consider   rewarding. People who write 𝒌 for living love their jobs.
+
+-------------------
 
 ## exodus
 
@@ -111,22 +126,35 @@ The only known way to learn how to program is to write programs, so you will nee
 
 ### get
 
-We will be using a trial version of 𝒌, which comes without any RAM or useable CPU core limitations. As any 𝒌 programmer will tell you, with great power comes great responsibility, so please don’t accidentally convert too much data into too much money too early.
+We will use a trial version of 𝒌, which comes without any RAM or useable CPU core limitations. As any 𝒌 programmer will tell you, with great power comes great responsibility, so please don’t accidentally convert too much data into too much money too early.
 
-The 𝒌 interpreter is currently available for `Linux` and `macOS` on `x86_64` architecture, but stay tuned — ARM, WASM, RISC-V are in the pipeline, and they will not make you wait.
+Mainline native builds of 𝒌 runtime are available for downloads for `Linux` and `macOS` on `x86_64`. `Apple M1`, `Graviton2` and `RISC-V` builds are available upon request.
 
-So, no further ado:
+In case your system is not yet supported, or you do not wish to install native software at this time, you are welcome to use a **WASM32** build of 𝒌 instead, which is highly performant and is available for all major browsers, both desktop and mobile:
+
+https://kparc.io/k
+
+Although the web-based runtime is sufficient for the purpose of this course, installing the native binary is very easy:
 
 ```sh
 $ npm i @kparc/k -g
 ```
 
-As all things 𝒌, the development of 𝒌 itself is happening very fast. New builds are published up to several times a week, so make sure you always use the latest version:
+New builds are published up to several times a week, so make sure you always use the latest version:
 
 ```sh
 $ alias kup="npm i @kparc/k -g"
 $ kup
 ```
+
+The material in this course is designed to work against both the native build and the web version. It is up to you which one to use.
+
+
+# *** WIP WIP WIP ***
+
+Text below this line relates to an earlier generation of 𝒌 language, and is a work in progress.
+
+
 
 ### run
 
