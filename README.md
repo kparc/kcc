@@ -9,7 +9,7 @@ a gentle introduction to k language is elsewhere.
 **[exodus](#exodus)**
 
 * [get](#get) | [run](#run)
-* style → [cmt](#annotations) | [sep](#separator) | [tab](#indentation) | [ids](#identifiers) | [space](#space) | [bad](#bad-form)
+* style → [cmt](#annotations) | [sep](#separators) | [tab](#indentation) | [ids](#identifiers) | [space](#space) | [bad](#bad-form)
 * parlance → [xyz](#implicit-arguments) | [rank](#rank) | [proj](#projections) | [+:](#explicit-monadics) | [scope](#scope) | [nouns](#on-verbs-and-nouns)
 
 **[numbers](#numbers)**
@@ -50,7 +50,7 @@ Most programmers agree that this expression makes perfect sense. But if you show
 "no, it isn't."
 ```
 
-And once you see what makes him think that way, you will also see why we assign values with `:` in k. The above expression looks nonsensical to a 𝒌 programmer for the same reason it does to a math guy, and 𝒌 will most always evaluate it to `false`. Once you can produce a 𝒌 expression where `x=x+1` evaluates to `true`, don't be a stranger. A simple "hello" pull request can lead to a million thigs.
+And once you see what makes him think that way, you will also see why we assign values with `:` in k. The above expression looks nonsensical to a 𝒌 programmer for the same reason it does to a math guy, and 𝒌 will most always evaluate it to `false`. Once you can produce a 𝒌 expression where `x=x+1` evaluates to `true`, don't be a stranger. A simple "hello" pull request can lead to a million things.
 
 𝒌 offers some other unusual perspectives compared to other programming languages, and they are not necessarily wrong. They are simply different - in the same way  C++ is different from Java, and Python is unlike JavaScript.
 
@@ -95,9 +95,11 @@ Against all intuition, it is not 100 times easier, it is 10,000 times easier. We
 
 𝒌 is a simple, expressive and powerful computer language.
 
-The power stems from the fact that 𝒌 is designed as a *tool of thought*. The vocabulary, syntax and the choice of abstractions offered by the language drive you to think about problems in a focused and clear way that quickly takes you to efficient and elegant solutions. And the reason why thinking in terms of 𝒌 is so effective is nothing supernatural: brevity is the soul of wit.
+The power stems from the fact that 𝒌 is designed as a *tool of thought*. The vocabulary, syntax and the choice of abstractions drive you to think about problems in a focused and clear way that quickly takes you to efficient and elegant solutions. And the reason why thinking in terms of 𝒌 is so effective is very simple: brevity is the soul of wit.
 
-𝒌 programs are concise, the syntax of the language is very terse, and there is no boilerplate code to write. In 𝒌, most of the time is spent on thinking about the problem rather than writing and refactoring code, or browsing source.
+The primary influences of 𝒌 design are `Lisp` and `APL`. The latter draws inspiration from the most powerful instrument of human reasoning, *the mathematical notation*. Owning to its heritage, so does 𝒌.
+
+𝒌 programs are concise, the syntax of the language is very terse, there is no boilerplate code to write. In 𝒌, most of the time is spent on thinking about the problem rather than writing or refactoring code, or browsing source files.
 
 > \* no, this is not a typo
 
@@ -116,7 +118,7 @@ The runtime implements a selection of fundamental algorithms, data structures, a
 All of 𝒌 programming takes place in the **REPL**, an popular idea that is actually much older than many of us think. It has been around for at least half a century, and is also known as *dialogue approach*, where the process of writing or using a program is a live cnversation between a human and machine, a flow of questions and answers. And in 𝒌, this conversation is much more fluent than in any other modern REPL-driven system you may be familiar with, because the questions are short and the answers are fast.
 
 
-This is the essence of the way of 𝒌, an experience that all 𝒌 programmers consider   rewarding. People who write 𝒌 for living love their jobs.
+This is the essence of the way of 𝒌, an experience that all 𝒌 programmers consider rewarding. People who write 𝒌 for living love their jobs.
 
 -------------------
 
@@ -130,7 +132,7 @@ We will use a trial version of 𝒌, which comes without any RAM or useable CPU 
 
 Mainline native builds of 𝒌 runtime are available for downloads for `Linux` and `macOS` on `x86_64`. `Apple M1`, `Graviton2` and `RISC-V` builds are available upon request.
 
-In case your system is not yet supported, or you do not wish to install native software at this time, you are welcome to use a **WASM32** build of 𝒌 instead, which is highly performant and is available for all major browsers, both desktop and mobile:
+In case your system is not yet supported, or you do not wish to install any software at this time, you are welcome to use a **WASM32** build of 𝒌 instead, which is highly performant and is available for all major browsers, both desktop and mobile:
 
 https://kparc.io/k
 
@@ -161,7 +163,7 @@ It reads as follows:
 
 | it says             | it means                       |
 | :-------------------|:-------------------------------|
-| lmv                 | `l` linux `m` macos `w` wasm * |
+| lmw                 | `l` linux `m` macos `w` wasm * |
 | iav                 | `i` intel `a` arm64 `v` riscv  |
 | 2021.03.29          |  build stamp of your 𝒌 binary  |
 | 7                   |  max workspace size in gbytes  |
@@ -169,7 +171,7 @@ It reads as follows:
 | shakti              |  shakti is the vendor company  |
 | 2.0[t]              |  major 𝒌 version, `t` is test  |
 
-* capitalized OS identifier means you're running an enterprise build.
+* Capitalized OS identifier means you are an enerprise customer running a production build. Enjoy responsibly.
 
 At any time during a 𝒌 session, you can:
 
@@ -179,11 +181,6 @@ At any time during a 𝒌 session, you can:
 
 At this point we strongly advise against issuing these commands, especially the latter.
 
----------------------
-
-# *** WIP WIP WIP ***
-
-Text below this line relates to an earlier generation of 𝒌 language, and is a work in progress.
 
 
 **Practice:**
@@ -198,16 +195,12 @@ Type in your first 𝒌 expressions, and enjoy your first answers:
 
  x:42     /: is assign so x is now the answer
  x=x+1    /= is equal, and of course it isn't
-0
-
- kcc:+/∞  /we knew you'd want to try this one
- kcc      /and what it happens to be is just:
  █
 ```
 
 > Wherever you see ∎ in this document, you are invited to try something on your own.
 
-Indeed, the title of this document seems to make sense to the 𝒌 interpreter and evaluates to exactly that, and very soon you will easily infer what it actually means. It is quite profound.
+Indeed, `x=x+1` seems to make little sense to the 𝒌 interpreter and evaluates to exactly that, and very soon you will see why this actually happens. It has to do with one of the fundamental principles of the 𝒌 language, which is quite profound.
 
 ---------------------
 
@@ -217,7 +210,7 @@ As any other language, 𝒌 expects a programmer to observe certain conventions 
 
 #### annotations
 
-Commenting your 𝒌 code is the best way not to end up coding Java for food, unless you are Arthur Whitney. We dare to assume you are not, so comments start with `/`. When used inline, prepend at least one space. Here is an annotated declaration of two variables:
+Commenting your 𝒌 code is the best way not to end up coding JavaScript for food, unless you are Arthur Whitney. We dare to assume you are not, so comments start with `/`. When used inline, prepend at least one space. Here is an annotated declaration of two variables:
 
 ```q
 /annotations are your friends
@@ -226,7 +219,7 @@ x:42
 y:42 /now, always and forever
 ```
 
-#### separator
+#### separators
 
 Character `;` in 𝒌 is used for one thing and one thing only, to separate 𝒌 expressions. As you have seen above, 𝒌 doesn't force you to terminate the line explicitly with `;` because **newline is also an expression separator**. Separator is used the same way and means the same thing everywhere in any context (except comments), e.g. to separate expressions inside a function body, vector declaration, function arguments, etc. Later we will see that separator is also a part of certain language constructs, but it has the same meaning there as well. But by far the most frequent explicit use of the separator you will encounter in the wild is to separate expressions within one line:
 
@@ -237,33 +230,46 @@ x:1;y:2;z:3     /denser version of the above
 
 #### indentation
 
-This is a tricky subject in 𝒌. Basically, what you generally want is **no indentation**. This means if your 𝒌 expression is getting so large that you are tempted to split it into separate lines, you likely need to refactor or return to the blackboard. Sometimes, however, indentation is fine and even necessary, and it is always *one space*. Not two, not four, one. Tabs will be frowned upon because they eat up a lot of *space*, see below.
+This is a tricky subject in 𝒌. What you generally want is **no indentation**. This means that if your 𝒌 expression is getting so wide that you are tempted to split it into several lines, you likely need to refactor or sometimes rethink your approach completely. At other times, indentation can be beneficial, and it is always *one space*. Not two, not four, one. Tabs will be frowned upon because they eat up a lot of *space*, see below.
+
+While using multiline expressions, keep in mind that **newline is an expression separator**, same as `;`. In languages of C family the newline semantics are different.
 
 #### identifiers
 
-Variable names in 𝒌 follow a somewhat unusual convention. Capitals are used by 𝒌 programmers very sparingly, which applies both to code and comments. While identifiers in `camelCase` can sometimes be tolerated, `c_style` identifiers are not permitted at all, since `_` is an operator. Identifiers of functions and variables are very often boiled down to an absolute minimum, names 1-3 characters long are commonplace, which does not impact readability given that their definitions are annotated. Short identifiers might sound like a bad idea to Java programmers who are used to see identifiers longer than 2⁸ bytes, but, unlike Java, 𝒌 source requires very little or no scrolling. When the entire program fits in your visual buffer, "cryptic" identifiers are no longer a problem because their annotated declarations are always right in front of you:
+Variable names in 𝒌 follow a somewhat unusual convention. Capitals are used by 𝒌 programmers very sparingly, which applies both to code and comments. While identifiers in `camelCase` can sometimes be tolerated, `c_style` identifiers are not permitted at all, since `_` is an operator. Identifiers of functions and variables are very often boiled down to an absolute minimum, names 1-3 characters long are commonplace, which does not impact readability given that their definitions are annotated.
+
+Short identifiers might sound like a bad idea to Java programmers who are used to see identifiers longer than 2⁸ bytes, but, unlike Java, 𝒌 source requires very little or no scrolling. When the entire program fits in your visual buffer, "cryptic" identifiers are no longer a problem because their annotated declarations are always right in front of you:
 
 ```q
-kei:42   /kenneth eugene iverson
+kei:84   /kenneth eugene iverson, 1920-2004
 ```
+
+If you have to ask, the maximal length of an identifier in 𝒌 is actually **160 bytes**. Everything in excess of that is simply ignored, but if you ever  encounter this limit, this will probably mean that something went very wrong at the design stage.
+
+Leading digits and Unicode identifiers are not permitted. Dots are reserved for future use.
+
 
 #### space
 
-The subject of code organization will forever remain a major point of controversy in software development. Computer languages have different philosophies on coding style, especially when it comes to three specific keystrokes: **`\n`**, **`\t`** and, less surprisingly, **`0x20`**. If we define two extremes as "tall, lean, sparse and readable" and "robust, wide, dense and cryptic", then C is a classic example of `tlsr`, and 𝒌 is all the way down `rwdc` road.
+The subject of code organization is an eternal controversy in software development. Computer languages have different philosophies on coding style, especially when it comes to three specific keystrokes: **`\n`**, **`\t`** and, less surprisingly, **`0x20`**. If we define two extremes as "tall, lean, sparse and readable" and "robust, wide, dense and cryptic", then C is a classic example of `tlsr`, and 𝒌 is all the way down `rwdc` road.
 
-* The primary influence of 𝒌 syntax is the most powerful instrument of human reasoning, *a mathematical notation*. As such, the language actively encourages the programmer to produce very dense and succinct code, which leads to a common pitfall among beginners who are tempted to sacrifice too much readability. As any good program, a good 𝒌 program must remain readable and adequately annotated.
+* The language actively encourages the programmer to produce very dense and succinct code. On the other hand, it does not prevent a fairly verbose style, and can be written tall. 
   
-* Comments are integral part of the code and also consume space, so boil them down to some reasonable size as well, but don't get too cryptic.
-
-* In 𝒌, it is possible to minimize code scrolling or even avoid it completely. When the entire program or component fits in your view, you lose no time on navigating it and switching contexts. For example, every code block in this document fits on a laptop screen and remains very readable on mobiles (try that with Java).
+* In 𝒌, it is possible to minimize code scrolling or even avoid it completely. When the entire program or component physically fits in your view, you lose no time on navigating source and switching contexts.
 
 * Syntax highlighting is essential, and poor highlighting is often worse than none — so choose carefully from 𝒌 syntax packages available for your editor. The best is often the one you wrote yourself, and 𝒌 syntax is extremely regular and simple.
 
-* Medium is the message, so we refer you to 𝒌 code presented in this document. Please send pull requests to help us improve it, and if you like the style, it is yours to have. 
+* Comments are integral part of the code and also consume space, so boil them down to some reasonable size as well, but don't get too cryptic.
+
+* The quest for brevity often leads to a common pitfall among beginners who are tempted to sacrifice too much readability too soon. As any good program, a good 𝒌 program must remain readable and adequately annotated. **Computer software does not document itself**.
+
+* While all code blocks in this document are annotated, without exceptions, all of them fit on an average laptop screen, and remain very readable on mobile platforms.
+
+* Medium is the message, so we refer you to 𝒌 style presented in this document. Please send pull requests to help us improve it, and if you like the style, it is yours to have. 
 
 #### bad form
 
-Bad form in 𝒌 is code bloat. Avoid writing extra code if you can — there is too much of it written already into the world. Remove inessential code, yours or not. But if you absolutely have to write more, make it useful, secure, compact, maintainable, portable and scalable.
+Bad form in 𝒌 is code bloat. Avoid writing extra code if you can — there is too much of it written into the world. Remove inessential code, yours or not. But if you absolutely have to write more, make it useful, secure, compact, maintainable, portable and scalable.
 
 --------------------
 
@@ -308,7 +314,7 @@ Compare their strengths.
 
 ### remarks on parlance
 
-The most important terminology in 𝒌 revolves around functions. Functions in 𝒌 are first-class citizens. 𝒌 has anonymous functions, eval, apply, recursion, and then some. It takes a leap of faith to believe it, but 𝒌 is probably more lispy than certain Lisps, only you don't need to get past any parens. However, since there are no linked lists under the hood, 𝒌 is _not_ Lisp, because it was designed to be fast.
+The most important terminology in 𝒌 revolves around **functions**. Functions in 𝒌 are first-class citizens. As you would expect, 𝒌 has anonymous functions, eval, apply and recursion. In that respect, 𝒌 is probably slightly more lispy than certain Lisps, only you don't need to get past any parens. However, since there are no linked lists under the hood, 𝒌 is _not_ Lisp, because it was designed to be fast.
 
 #### implicit arguments
 
@@ -360,7 +366,7 @@ Also known as *function views*, projections can be understood as "incomplete" fu
 6
 ```
 
-Projections are commonplace and very useful. To give one example, projection provides a way for a lambda or a function to capture some of their *context*, i.e. bind values from the current scope to the local scope of a lambda, wherever it travels next. In other words, if you prefer functional speak, projection creates a **closure**.
+Projections are commonplace and are very useful. To give one example, projection provides a way for a lambda or a function to capture some of their *context*, i.e. bind values from the current scope to the local scope of a lambda, wherever it travels next. In other words, if you prefer functional speak, projection creates a **closure**.
 
 #### explicit monadics
 
@@ -395,6 +401,10 @@ Take your time to absorb this fact and appreciate its implications. While not ea
 * Pure functions are best friends with immutability and distributed architectures.
 
 The fundamental benefit of this way of thinking about functions is **simplicity** and **composability**. Code blocks that are easy to debug, test, refactor and reuse result in clean, secure and scalable systems.
+
+# *** WIP WIP WIP ***
+
+Text below this line relates to an earlier generation of 𝒌 language, and is a work in progress.
 
 #### on verbs and nouns
 
