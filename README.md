@@ -1,6 +1,6 @@
 # k crash course
 
-a gentle introduction to k language is elsewhere.
+a gentle introduction to k language is not here.
 
 **[genesis](#genesis)**
 
