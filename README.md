@@ -149,45 +149,43 @@ $ kup
 
 The material in this course is designed to work against both the native build and the web version. It is up to you which one to use.
 
+### run
+
+Start your very first 𝒌 session like so:
+
+![k prompt](https://user-images.githubusercontent.com/1530846/112925223-ce818b80-9111-11eb-99ae-4fddad50b65d.png)
+
+The startup banner reads as follows:
+
+
+| it says             | it means                       |
+| :-------------------|:-------------------------------|
+| lmv                 | `l` linux `m` macos `w` wasm * |
+| iav                 | `i` intel `a` arm64 `v` riscv  |
+| 2021.03.29          |  build stamp of your 𝒌 binary  |
+| 7                   |  max workspace size in gbytes  |
+| 4                   |  usable cpu core / hart count  |
+| shakti              |  shakti is the vendor company  |
+| 2.0[t]              |  major 𝒌 version, `t` is test  |
+
+* Capitalized OS identifier means you're running an enterprise build.
+
+> In case of difficulties, please always include your banner in your bug reports.
+
+At any time during a 𝒌 session, you can:
+
+`\` view k reference card
+
+`\\` quit k session
+
+At this point we strongly advise against issuing these commands, especially the latter.
+
+---------------------
 
 # *** WIP WIP WIP ***
 
 Text below this line relates to an earlier generation of 𝒌 language, and is a work in progress.
 
-
-
-### run
-
-Start your very first 𝒌 session like so:
-
-![alt text](https://github.com/kparc/kcc/blob/master/img/k.png?raw=true "k prompt")
-
-The startup banner packs a lot of useful information:
-
-
-| it says             | it means                      |
-| :-------------------|:------------------------------|
-| 2019-08-23 12:18:26 | timestamp of your 𝒌 build     |
-| 40core              | cpu cores you can use in 𝒌    |
-| 270gb               | max workspace alloc size      |
-| avx512              | the best your cpu can pull off|
-| shakti              | the company behind 𝒌          |
-| l                   | `m` for macos, `l` for linux  |
-| prod                | your build is `test` for now  |
-
-> If it ever comes to that, please always include your banner in your bug reports.
-
-At any time during a 𝒌 session, you can:
-
-`\h` view k reference card
-
-`\l` view k change log
-
-`\\` quit k session
-
-At this point we highly recommend to avoid issuing any of the above commands, especially the latter.
-
----------------------
 
 **Practice:**
 
