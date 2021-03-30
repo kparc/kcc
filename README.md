@@ -688,7 +688,7 @@ This is not very revealing, so lets see them in action. The operator to query th
 `f
 
  @0 1 2      /int vector
-`i
+`I
 
  v:0 1 .5 2
  @v          /0.5 promotes vector to float
