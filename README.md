@@ -88,7 +88,7 @@ In comparison, 𝒌 solutions are typically a few factors of magnitude less code
 
 To see why this is, it helps to compare the effort of keeping 100 lines of code in sync with rapidly changing environment and free of bugs with to 10,000 lines that do the same thing. 
 
-Against all intuition, it is not 100 times easier, it is 10,000 times easier. We will soon see why.
+Against intuition, it is not 100 times easier, it is 10,000 times easier. We will soon see why.
 
 ### wha _*_
 
@@ -114,8 +114,7 @@ The entire system is:
 
 The runtime implements a selection of fundamental algorithms, data structures, abstractions and practices that withstood the test of decades of production use in some of the world's most demanding data processing environments. Inner components of the system fit together and deliver *performance*. It is not uncommon for 𝒌 newcomers to experience shock when they first discovers how much can be done with a few keystrokes, and how fast.
 
-All of 𝒌 programming takes place in the **REPL**, an popular idea that is actually much older than many of us think. It has been around for at least half a century, and is also known as *dialogue approach*, where the process of writing or using a program is a live cnversation between a human and machine, a flow of questions and answers. And in 𝒌, this conversation is much more fluent than in any other modern REPL-driven system you may be familiar with, because the questions are short and the answers are fast.
-
+All of 𝒌 programming takes place in the **REPL**, a popular idea that is actually much older than many of us think. It has been around for at least half a century, and is also known as *dialogue approach*, where the process of writing or using a program is a live conversation between a human and machine, a flow of questions and answers. And in 𝒌, this conversation is much more fluent than in many other modern REPL-driven systems you may be familiar with, because the questions are short and the answers are fast.
 
 This is the essence of the way of 𝒌, an experience that all 𝒌 programmers consider rewarding. People who write 𝒌 for living love their jobs.
 
