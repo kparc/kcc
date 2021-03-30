@@ -123,19 +123,19 @@ This is the essence of the way of 𝒌, an experience that all 𝒌 programmers 
 
 ## exodus
 
-The only known way to learn how to program is to write programs, so you will need a live environment. As all things 𝒌, it takes very little effort.
+The only known way to learn programming is to write programs, so you will need a live environment. As all things 𝒌, it takes very little effort.
 
 ### get
 
 We will use a trial version of 𝒌, which comes without any RAM or useable CPU core limitations. As any 𝒌 programmer will tell you, with great power comes great responsibility, so please don’t accidentally convert too much data into too much money too early.
 
-Mainline native builds of 𝒌 runtime are available for downloads for `Linux` and `macOS` on `x86_64`. `Apple M1`, `Graviton2` and `RISC-V` builds are available upon request.
+Mainline native builds of 𝒌 runtime are available for downloads for `Linux` and `macOS` on `x86_64`. `Apple M1`, `AWS Graviton` and `RISC-V` builds are available upon request. Please reach out.
 
-In case your system is not yet supported, or you do not wish to install any software at this time, you are welcome to use a **WASM32** build of 𝒌 instead, which is highly performant and is available for all major browsers, both desktop and mobile:
+In case your system is not yet supported, or you do not wish to install any software at this time, you are welcome to use a **WASM build** instead, which is  performant, feature-complete and is available for all major browsers, both desktop and mobiles:
 
-https://kparc.io/k
+[kparc.io/k](https://kparc.io/k)
 
-Although the web-based runtime is sufficient for the purpose of this course, installing the native binary is very easy:
+Although the web-based runtime is sufficient for the purpose of this course and is just one click away, installing the native binary isn't much harder:
 
 ```sh
 $ npm i @kparc/k -g
@@ -148,11 +148,11 @@ $ alias kup="npm i @kparc/k -g"
 $ kup
 ```
 
-The material in this course is designed to work against both the native build and the web version. It is up to you which one to use.
+This course can be completed using both native builds and the web version. It is up to you which one to use.
 
 ### run
 
-Start your very first 𝒌 session like so.
+Start your very first 𝒌 session like so:
 
 
 ![k banner](https://user-images.githubusercontent.com/1530846/112928137-5f5a6600-9116-11eb-898d-bf0996555343.png)
@@ -161,7 +161,7 @@ Start your very first 𝒌 session like so.
 
 What you see is so-called **startup banner**, which is very handy and easy to read:
 
-| it says             | it means                       |
+| it says:             | it means:                       |
 | :-------------------|:-------------------------------|
 | lmw                 | `l` linux `m` macos `w` wasm (*) |
 | iav                 | `i` intel `a` aarch `v` riscv  |
@@ -175,7 +175,7 @@ What you see is so-called **startup banner**, which is very handy and easy to re
 
 \* capitalized platform identifier means you are running an **enterprise** build, enjoy responsibly. lowercase is a **community** build.
 
-\*\* in the unlikely case of you not being an enterprise customer running a test build which is older than 30 days, 𝒌 will gently suggest an upgrade by throwing an error at startup.
+\*\* in the unlikely case you are running a test build which is older than `30` days, 𝒌 will gently suggest an upgrade by exiting with code `12`.
 
 \*\*\* banners are useful for diagnostics, please include them in case of difficulties, or if you think you've encountered a bug. always make sure you're running the latest build.
 
@@ -269,9 +269,9 @@ The subject of code organization is an eternal controversy in software developme
 
 * Comments are integral part of the code and also consume space, so boil them down to some reasonable size as well, but don't get too cryptic.
 
-* The quest for brevity often leads to a common pitfall among beginners who are tempted to sacrifice too much readability too soon. As any good program, a good 𝒌 program must remain readable and adequately annotated. **Computer software does not document itself**.
+* The quest for brevity often leads to a common pitfall among beginners who are tempted to sacrifice too much readability too soon. As any good program, a good 𝒌 program must remain readable and adequately annotated. Computer software does not document itself.
 
-* While all code blocks in this document are annotated, without exceptions, all of them fit on an average laptop screen, and remain very readable on mobile platforms.
+* While all code blocks in this document are annotated, without exceptions, all of them fit on an average laptop screen, and remain very readable on mobiles.
 
 * Medium is the message, so we refer you to 𝒌 style presented in this document. Please send pull requests to help us improve it, and if you like the style, it is yours to have. 
 
