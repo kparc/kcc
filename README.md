@@ -30,7 +30,7 @@ a gentle introduction to k language is not here.
 
 ## genesis
 
-> "you mustn't be afraid to dream a little bigger, darling" — *Inception*
+> "you mustn't be afraid to dream a little bigger, darling." — *Inception*
 
 
 Computer languages have been around for a long time, but in the beginning was the Word. We will be writing code in a language called 𝒌, but it helps to talk about it first. If you don't feel like it, feel free to [get](#get) and [run](#run).
@@ -46,10 +46,10 @@ x = x + 1
 Most programmers agree that this expression makes perfect sense. But if you show it to a mathematician, be ready to hear:
 
 ```
-"no, it isn't."
+"No, it isn't."
 ```
 
-And once you see what makes him think that way, you will also see why we assign values with `:` in k. The above expression looks nonsensical to a 𝒌 programmer for the same reason it does to a math guy, and 𝒌 will most always evaluate it to `false`. Once you can produce a 𝒌 expression where `x=x+1` evaluates to `true`, don't be a stranger. A simple "hello" pull request can lead to a million things.
+And once you see what makes him think that way, you will also see why we assign values with `:` in k. The above expression looks nonsensical to a 𝒌 programmer for the same reason it does to a math guy, and 𝒌 will most always evaluate it to `false`. Once you can produce a 𝒌 expression where `x=x+1` evaluates to `true`, don't be a stranger, a single "hello" can lead to a million things.
 
 𝒌 offers some other unusual perspectives compared to other programming languages, and they are not necessarily wrong. They are simply different - in the same way  C++ is different from Java, and Python is unlike JavaScript.
 
