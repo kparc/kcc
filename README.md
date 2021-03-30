@@ -153,13 +153,19 @@ This course can be completed using both native builds and the web version. It is
 
 Start your very first 𝒌 session like so:
 
-![k banner](https://user-images.githubusercontent.com/1530846/112928137-5f5a6600-9116-11eb-898d-bf0996555343.png)
+![helo moto](https://i.imgur.com/jfcxnxl.gif)
+
 
 ---------------------
 
-What you see is so-called **startup banner**, which is very handy and easy to read:
+**Startup banner** encodes important information about your build and  environment. For example, the banner on a recent Apple laptop would look like this:
 
-| it says:             | it means:                       |
+```
+lm 2021.03.29 64 16 (c)shakti 2.0
+```
+
+
+| it says             | it means                       |
 | :-------------------|:-------------------------------|
 | lmw                 | `l` linux `m` macos `w` wasm (*) |
 | iav                 | `i` intel `a` aarch `v` riscv  |
@@ -173,9 +179,9 @@ What you see is so-called **startup banner**, which is very handy and easy to re
 
 \* capitalized platform identifier means you are running an **enterprise** build, enjoy responsibly. lowercase is a **community** build.
 
-\*\* in the unlikely case you are running a test build which is older than `30` days, 𝒌 will gently suggest an upgrade by exiting with code `12`.
+\*\* by convention, build date plays the role similar to `PATCH` in the semantic versioning. in the unlikely case you are running a test build which is older than `30` days, 𝒌 will gently suggest an upgrade by exiting with code `12`.
 
-\*\*\* banners are useful for diagnostics, please include them in case of difficulties, or if you think you've encountered a bug. always make sure you're running the latest build.
+\*\*\* banners are handy for diagnostics. please include them in case of difficulties, or if you think you've encountered a bug. Always make sure you're running the latest build. Test builds offer latest features at a price of some stability.
 
 ---------------------
 
