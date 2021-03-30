@@ -114,7 +114,7 @@ The entire system is:
 
 The runtime implements a selection of fundamental algorithms, data structures, abstractions and practices that withstood the test of decades of production use in some of the world's most demanding data processing environments. Inner components of the system fit together and deliver *performance*. It is not uncommon for 𝒌 newcomers to experience shock when they first discovers how much can be done with a few keystrokes, and how fast.
 
-All of 𝒌 programming takes place in the **REPL**, a popular idea that is actually much older than many of us think. It has been around for at least half a century, and is also known as *dialogue approach*, where the process of writing or using a program is a live conversation between a human and machine, a flow of questions and answers. And in 𝒌, this conversation is much more fluent than in many other modern REPL-driven systems you may be familiar with, because the questions are short and the answers are fast.
+All of 𝒌 programming takes place in **REPL**, a popular idea that is actually much older than many of us think. It has been around for at least half a century, and is also known as *dialogue approach*, where the process of writing or using a program is a live conversation between a human and machine, a flow of questions and answers. And in 𝒌, this conversation is much more fluent than in many other modern REPL-driven systems you may be familiar with, because the questions are short and the answers are fast.
 
 This is the essence of the way of 𝒌, an experience that all 𝒌 programmers consider rewarding. People who write 𝒌 for living love their jobs.
 
@@ -153,7 +153,7 @@ This course can be completed using both native builds and the web version. It is
 
 Start your very first 𝒌 session like so:
 
-![helo moto](https://kparc.io/cathode.gif)
+![helo moto](https://i.imgur.com/jfcxnxl.gif)
 
 
 ---------------------
@@ -240,7 +240,7 @@ x:1;y:2;z:3     /denser version of the above
 
 #### indentation
 
-This is a tricky subject in 𝒌. What you generally want is **no indentation**. This means that if your 𝒌 expression is getting so wide that you are tempted to split it into several lines, you likely need to refactor or sometimes rethink your approach completely. At other times, indentation can be beneficial, and it is always *one space*. Not two, not four, one. Tabs will be frowned upon because they eat up a lot of *space*, see below.
+What you generally want is **no indentation**. This means that if your 𝒌 expression is getting so wide that you are tempted to split it into several lines, you likely need to refactor or sometimes rethink your approach completely. At other times, indentation can be beneficial, and it is always *one space*. Not two, not four, one. Tabs will be frowned upon because they eat up a lot of *space*, see below.
 
 While using multiline expressions, keep in mind that **newline is an expression separator**, same as `;`. In languages of C family the newline semantics are different.
 
@@ -254,16 +254,16 @@ Short identifiers might sound like a bad idea to Java programmers who are used t
 kei:84   /kenneth eugene iverson, 1920-2004
 ```
 
-If you have to ask, the maximal length of an identifier in 𝒌 is actually **160 bytes**. Everything in excess of that is simply ignored, but if you ever  encounter this limit, this will probably mean that something went very wrong at the design stage.
+If you have to ask, the maximal length of an identifier in 𝒌 is **160 bytes**. Everything in excess of that is simply ignored, but if you ever encounter this limit in practice, this will probably mean that something went very wrong back at the design stage.
 
 Leading digits and Unicode identifiers are not permitted. Dots are reserved for future use.
 
 
 #### space
 
-The subject of code organization is an eternal controversy in software development. Computer languages have different philosophies on coding style, especially when it comes to three specific keystrokes: **`\n`**, **`\t`** and, less surprisingly, **`0x20`**. If we define two extremes as "tall, lean, sparse and readable" and "robust, wide, dense and cryptic", then C is a classic example of `tlsr`, and 𝒌 is all the way down `rwdc` road.
+The subject of code organization is an eternal controversy in software development. Computer languages have different philosophies on coding style, especially when it comes to three keystrokes: **`\n`**, **`\t`** and, surprise, **`0x20`**. If we define two extremes as "tall, lean, sparse and readable" and "robust, wide, dense and cryptic", then C is a classic example of `tlsr`, and 𝒌 is all the way down `rwdc` road.
 
-* The language actively encourages the programmer to produce very dense and succinct code. On the other hand, it does not prevent a fairly verbose style, and can be written tall. 
+* The 𝒌 language actively encourages the programmer to produce very dense and succinct code. On the other hand, it does not prevent verbose style, and can be written tall. 
   
 * In 𝒌, it is possible to minimize code scrolling or even avoid it completely. When the entire program or component physically fits in your view, you lose no time on navigating source and switching contexts.
 
@@ -275,7 +275,7 @@ The subject of code organization is an eternal controversy in software developme
 
 * While all code blocks in this document are annotated, without exceptions, all of them fit on an average laptop screen, and remain very readable on mobiles.
 
-* Medium is the message, so we refer you to 𝒌 style presented in this document. Please send pull requests to help us improve it, and if you like the style, it is yours to have. 
+* Medium is the message, so we refer to one of the many possible styles of 𝒌 style presented in this document. Please send pull requests to help us improve it, and if you like it, it is yours to have. 
 
 #### bad form
 
@@ -363,11 +363,11 @@ Two specific ranks are so important that they have their own names. A function o
 
 As you will see, the majority of native operators in 𝒌 have exactly two completely different meanings based on the context where they are used, which is in turn defined by the number of arguments offered to the operator.
 
-For example, when you used your first ever 𝒌 operator in the expression `2+2`, you have used the `+` operator in a dyadic context since it received *two* operands to work on, left and right, so it was inferred to be `dyadic x+y plus`. The `monadic +x flip` will be introduced later, and has an entirely different meaning.
+For example, in the expression `2+2`, we use the `+` operator in a dyadic context, i.e. it receives *two* operands to work on, left and right, and is inferred to be `dyadic x+y plus`. The `monadic +x flip` will be introduced later, and has an entirely different meaning.
 
 #### projections
 
-Also known as *function views*, projections can be understood as "incomplete" function calls with at least one free, or **elided** argument. For example, if a function of rank 3, `f[x;y;z]`, only receives first and third arguments, it will return its monadic projection, which itself behaves as a function:
+Also known as *function views*, projections can be understood as "partial" function calls with at least one free, or **elided** argument. For example, if a function of rank 3, `f[x;y;z]`, only receives first and third arguments, it will return its monadic projection, which itself behaves as a function:
 
 ```q
  f:{x+y+z}      /a function of rank three
@@ -378,7 +378,9 @@ Also known as *function views*, projections can be understood as "incomplete" fu
 
 Projections are commonplace and are very useful. To give one example, projection provides a way for a lambda or a function to capture some of their *context*, i.e. bind values from the current scope to the local scope of a lambda, wherever it travels next. In other words, if you prefer functional speak, projection creates a **closure**.
 
-#### explicit monadics
+#### ~~explicit monadics~
+
+### *** WIP THIS NEEDS TO GO, NO LONGER VALID ***
 
 As you already know, the action of a 𝒌 operator depends on the number of arguments passed to it. However, there are situations when an operator receives two operands (typically, left and right), but is intended to perform a monadic action using right argument only. To disambiguate the rank, the operator can be declared **explicitly monadic** by appending `:` to it:
 
@@ -392,6 +394,14 @@ Later on you will see how this works in practice.
 > You will not get far in this course without a strong grip on the idea that some things in 𝒌 land are **monadic** and even **explicitly monadic**, while others are **dyadic**. Make sure you have it.
 
 On a more general note, functions in 𝒌 can be of rank 1 to 9:
+
+### *** WIP niladic discussion needs work, because: ***
+
+```
+ f:{x+2}
+ f[]              / this is confusing
+2
+```
 
 * it is not really possible to define a function with no arguments. Rank zero, or *niladic* functions, do not exist in 𝒌.
 * a function cannot take more than nine explicit arguments, and some say this is an overly generous limit.
@@ -412,9 +422,6 @@ Take your time to absorb this fact and appreciate its implications. While not ea
 
 The fundamental benefit of this way of thinking about functions is **simplicity** and **composability**. Code blocks that are easy to debug, test, refactor and reuse result in clean, secure and scalable systems.
 
-# *** WIP WIP WIP ***
-
-Text below this line relates to an earlier generation of 𝒌 language, and is a work in progress.
 
 #### on verbs and nouns
 
@@ -474,7 +481,7 @@ So far you know how to:
 * declare and call basic functions
 * be friends with `x`, `y` and `z`
 * tell monadic and dyadic apart
-* explicitly declare monadic ops
+* ~~explicitly declare monadic ops~~
 * deal with verbs and nouns
 * annotate your code
 
@@ -501,7 +508,7 @@ In 𝒌 parlance, terms `array`, `list` and `vector` are often used interchangea
  v:,42            /a vector of length 1, one integer item
 ```
 
-k is strictly "**pass by value**", i.e. there are no references or pointers being passed around, although it is an illusion created by the underlying implementation. In reality, k avoids making copies of stuff unless it becomes absolutely necessary:
+Optically, k is strictly "**pass by value**", i.e. it is impossible to pass a reference to an object, only its copy. However, it is only an illusion created by the underlying implementation. In reality, k avoids making copies of stuff unless it becomes absolutely necessary, a technique known as "copy-on-write":
 
 ```q
  x:0 1 2 3 4     /everything is passed by value
@@ -512,10 +519,12 @@ k is strictly "**pass by value**", i.e. there are no references or pointers bein
  y:x:0 1 2 3 4   /same effect in one expression
                  /y and x are actually the same
                  /until one of them is modified
+ 
+ y[1]:2          /true memory copy happens here
 ```
 
 <a name="v-plus-v"></a>
-The first thing you need to know about vectors is that most operations you expect to work for atoms work equally well for vectors, too:
+The first thing you need to know about vectors is that all basic arithmetic operations you expect to work for atoms work equally well for vectors as well:
 
 ```q
 x:y:0 1 2 3 4    /x and y are twin copies
@@ -526,16 +535,11 @@ x:y:0 1 2 3 4    /x and y are twin copies
  x*y             /product is pairwise too
 0 1 4 9 16
 
- x%y             /division is %, get used 
-ø 1 1 1 1
-
- 0%0             /ø is nan, void and null
-ø
-
  x=y             /compare x to y pairwise
-1 1 1 1 1        /1 is truthy, 0 is false
+11111            /1 is truthy, 0 is false
 ```
 
+> Division is a bit more tricky, we will discuss it when we get to nulls and infinities.
 
 <a name="v-plus-a"></a>
 Mixing atomic and vector operands makes total sense and is very useful:
@@ -547,17 +551,11 @@ Mixing atomic and vector operands makes total sense and is very useful:
 1 2 3 4 5 
 
  x=1             /compare each of x to 1
-0 1 0 0 0
-
- x%0             /divide each by 0, ouch
-ø ∞ ∞ ∞ ∞        /∀x∈ℚ (x%0) ∈ {-∞,∞,ø}, beware (0%0) = ø, enjoy responsibly
-
- 3%x             /divide 3 by each of x
-∞ 3 1.5 1 0.75
+01000
 ```
 
 <a name="v-indexing"></a>
-**Indexing** is zero-based as you would expect, and if you pass a vector of indices, you get back a vector of items:
+**Vector indexing** is zero-based as you would expect, and if you pass a vector of indices, you get back a vector of items:
 
 ```q
  x:2 4 8 16 32
@@ -586,10 +584,9 @@ Pairwise operations on vectors of incompatible **shape** make much less sense to
  x:0 1 2 3 4
  y:0 1 2
  x+y
- 
 x+y
- ^
-length error
+^
+!length
 ```
 
 Note the difference between shape and length. This reminds us that a vector can be composed not just from atoms but from other vectors as well, and there is no practical limit on the depth of nesting. In other words, vectors can have **arbitrary shape**:
@@ -743,9 +740,9 @@ We could say that in case of names 𝒌 actually passes *references* instead of 
 **Temporal types** in k are `date` and `time`:
 
 ```q
- d:1981-02-01        /yyyy-mm-dd, ok to expect iso 8601 compliance
+ d:2001.01.01        /yyyy-mm-dd, ok to expect iso 8601 compliance
  @d                  /NOTE: date atom is `D same as date vector `D
-`D
+`d
 
  t:12:34:56.789      /hh:mm:ss.sss, max resolution is milliseconds
  @t
@@ -776,8 +773,8 @@ b|4 5 6
 `a`b 
 
  . d                       /dict vals (note the space!)
-1 2 3
-4 5 6 
+`a`b
+(1 2 3;4 5 6)
 ```
 
 <a name="typ-tab"></a>
@@ -816,7 +813,7 @@ goo|3.75
 
 ```q
  @{x+y}                 /type of lambda gives away its rank
-`2
+`.
 
  nil:{0}                /don't expect nil to have rank zero
  @nil                   /niladic functions don't exist in k
@@ -828,47 +825,73 @@ goo|3.75
 ```
 
 <a name="typ-nul"></a>
-**Null values** in 𝒌 are typed, integer null is `Ø` and float null is `ø`. **Infinity** is a scalar float `∞`. Working with nulls and infinities can be very tricky, and it is very important to pay attention to their types:
+**Nulls and Infinities** deserve a separate discussion, in which we are finally ready to introduce dyadic operation `x%y divide`, because this is where nulls, infinities and some other nasty deamons usually emerge from.
+
+> Yes, this is not a typo. Unlike in many other languages where `%` denotes taking a remainder, in k it means division. There reason for this oddity is fairly simple: in 𝒌, `/` character is reserved for another language construct which is **much more** ubiqutous in k than division. We will introduce it later.
+
+**Nulls** in 𝒌 are typed. Integer null is `0N` and float null is `0n`. 
+
+**Infinity** is a special signed scalar floating point value denoted by `0w`, negative infinity is `-0w`.
+
+Working with nulls and infinities can be very tricky, and it is very important to pay attention to how they quack:
 
 ```q
- n:ø          /float null is type float
+ 4%2             /division is %, get used to it
+2.
+
+ 42%0            /division by zero is undefined
+0w               /0w is an infinity symbol in k
+
+ 0%0             /an expression without meaning
+0n               /0n is null, nan, nil and void
+
+
+ (-1 0 1 2)%0   /divide each by 0, or formally:
+-0w 0n 0w 0w    /∀x∈ℚ (x%0) ∈ {-∞,∞,∅}, beware (0%0) = ∅
+```
+
+The key observation to be made is how **null arithmetic** works, which is the traditional source of untold damages and grief in software engineering.
+
+Arithmetic on float nulls is **undefined**, and always results in a float null. Float null isn't equal to, greater or less than anything, including itself:
+
+```q
+ x:-0w 0w 0n 0N -1 0 1
+ (0n-x),(0n+x),(0n*x),(0n%x),(x%0n)
+0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n...
+
+ 0n=x
+0000000
+
+ 0n>x
+0000000
+```
+
+Integer nulls behave differently. Unlike float null, `0N` is not a distinguished value, but is simply a placeholder for a very large number. It is very easy to infer its literal value, because simplest arithmetic results in an immediate overflow of underlying `int64` a.k.a. `long long`:
+
+```q
+ 0N+1
+-9223372036854775807
+ 0N-1
+9223372036854775807
+```
+
+```
+wip wip wip
+
+ n:0n          /float null is type float
  @n
 `f
 
- N:Ø          /int null is type integer
+ N:0N          /int null is type integer
  @N
 `i
 
- n=N          /equal, but not the same!
-1
 
- @∞           /infinity is a float atom
-`f
+
+ _0%0        /int null is rounded to zero
+Ø
 ```
 
-It is evident that nulls and infinities are *Unicode glyphs*. Although it is very easy to set up keyboard shortcuts for them, there are idiomatic ways to enter them using plain ASCII (but avoid if you can):
-
-```q
- 0%0         /float null is zero div by zero
-ø 
-
- 42e         /missing exponent is float null
-ø 
-
- `i$0%0      /int null is rounded float null
-Ø
-
- _0e         /int null via `monadic _x floor'
-Ø
-
- 1%0         /inf is just reciprocal of zero
-∞
- %0          /inf via `%x 'inverse` operator
-∞ 
-
- PI:3.14159265358979323846264338327950288
- π=PI        /synonym of π in ascii, but why
-1
 ```
 
 <a name="typ-mix"></a>
@@ -877,7 +900,7 @@ It is evident that nulls and infinities are *Unicode glyphs*. Although it is ver
 ```q
  c:0,1,"a",2,3          /a char impostor among ints, c is mix
  @c                     /type of a mixed list is backtick-dot
-`.
+`*
 
  x:(1 2 3;4 5 6;7 8 9)  /a vector of vectors is composite too
  x
@@ -885,7 +908,7 @@ It is evident that nulls and infinities are *Unicode glyphs*. Although it is ver
 4 5 6
 7 8 9
  @x
-`. 
+`LI 
 ```
 
 <a name="typ-cast"></a>
@@ -895,43 +918,30 @@ It is evident that nulls and infinities are *Unicode glyphs*. Although it is ver
  1+.5                  /int plus float is float, no surprises here
 1.5
 
- 1f*2                  /any float operand promotes result to float
-2f 
+ 1.*2                  /any float operand promotes result to float
+2. 
 
- `i$42.99              /explicit cast from `f to `i drops mantissa
+ _42.99              /explicit cast from `f to `i drops mantissa
 42
 
- `i$42.0 42.99         /`f to `i will round down the entire vector
+ _42.0 42.99         /`f to `i will round down the entire vector
 42 42
 
  0+"abc"               /integer operand demotes `c vector to ascii
 97 98 99
 
- `c$1+"HAL9000"        /add 1 to ascii, cast back to `c, surprise:
- "IBM:111"
-
  "012"+"345"           /sum ascii codes of chars, result stays `c
-"ceg"
+99 101 103
 
  a:1 2 3               /lets start with a nice uniform int vector
- a[0]:1f               /now, replace its 1st element with a float
- @a                    /whoops, our int vector got demoted to mix
-`.
- a:`f$a;@a             /explicit cast to float solves the problem
-`f
-
- `i$1981-02-01         /dates represented as ints look like this:
--15674
-
- 15674+1981-02-01      /and they are simply offsets in days from: 
-2024-01-01
-
- `i$2024-01-01         /so the epoch date itself must be exactly: 
-0
+ a[0]:1.               /now, replace its 1st element with a float
+1.
+@a                     /our int vector cast to float
+`F
 
  1+`kei                /no math for names, this type is immutable 
   ^
-type error
+!type
 
  @@42                  /what is type name of a type name of int?
  █
@@ -952,14 +962,12 @@ As you must have noticed, the syntax for indexing vectors and calling functions 
 
  l[t]         /apply function l to each t
 4 8 16 32
-
  t[r]         /items of t at indexes in r
 2 16
 
  l[t[r]]      /compose: apply l to t at r
 4 32 
 ```
-
 What we also know that 𝒌 actively encourages us to omit brackets whenever possible, so lets do exactly that:
 
 ```q
@@ -1093,9 +1101,9 @@ You could be tempted to see of what other use `over` could be. Let's introduce a
  x                  /tada, we have all ints up to 8
 0 1 2 3 4 5 6 7 8
 
- fact:{*/1j+!x}     /fact x 'mul over 1 plus til x'
+ fact:{*/1+!x}     /fact x 'mul over 1 plus til x'
  fact 20
-2432902008176640000j
+2432902008176640000
 ```
 
 Now that we have parted ways with loops, and discussed `over` in detail, it is time to meet the rest of **six 𝒌 adverbs**. Please welcome the magnificent six, and note that only most trivial use cases are shown:
@@ -1130,9 +1138,10 @@ where `f` is a `monadic` verb and `x` is an input vector
  fn'd            /apply fn to each of d
 `i`c`n           /the type of each item
 
- f:{1%x},{x*x}   /reciprocal and square 
+ f:({1%x};{x*x}) /reciprocal and square 
  {x 25}'f        /call each of f for 25 
-0.04 625
+0.04
+625
 ```
 
 <a name="nsl-eachlr"></a>
@@ -1169,7 +1178,7 @@ an input vector
  2+':4 8 16    /seeded eachprior gives (2+4),(4+8),(8+16)
 6 12 24        /sum 1st item and seed, then sum each item and its prior
 
- (+':)4 8 16   /seedless eachprior gives (4),(4+8),(8+16)
+ +':4 8 16     /seedless eachprior gives (4),(4+8),(8+16)
 4 12 24        /first item stays as is, then sum each item and its prior
 ```
 ----------------
