@@ -153,7 +153,7 @@ This course can be completed using both native builds and the web version. It is
 
 Start your very first 𝒌 session like so:
 
-![helo moto](https://i.imgur.com/jfcxnxl.gif)
+![helo moto](https://kparc.io/cathode.gif)
 
 
 ---------------------
