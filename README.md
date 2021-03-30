@@ -153,7 +153,7 @@ The material in this course is designed to work against both the native build an
 
 Start your very first 𝒌 session like so:
 
-![k prompt](https://user-images.githubusercontent.com/1530846/112925223-ce818b80-9111-11eb-99ae-4fddad50b65d.png)
+![k banner](https://user-images.githubusercontent.com/1530846/112927612-93815700-9115-11eb-8271-da07d6f96b0f.png)
 
 The startup banner reads as follows:
 
