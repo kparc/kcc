@@ -127,11 +127,11 @@ The only known way to learn programming is to write programs, so you will need a
 
 ### get
 
-We will use a trial version of 𝒌, which comes without any RAM or useable CPU core limitations. As any 𝒌 programmer will tell you, with great power comes great responsibility, so please don’t accidentally convert too much data into too much money too early.
+We will use a **community** version of 𝒌, which comes without any limitations for non-commercial use. With great power comes great responsibility, so please don’t accidentally convert too much data into too much money too early.
 
-Mainline native builds of 𝒌 runtime are available for downloads for `Linux` and `macOS` on `x86_64`. `Apple M1`, `AWS Graviton` and `RISC-V` builds are available upon request. Please reach out.
+Native builds of 𝒌 are available for `Linux` and `macOS` on `x86_64`. `Apple M1`, `AWS Graviton` and `RISC-V` builds are available upon request, please reach out.
 
-In case your system is not yet supported, or you do not wish to install any software at this time, you are welcome to use a **WASM build** instead, which is  performant, feature-complete and is available for all major browsers, both desktop and mobiles:
+In case your system is not yet supported, or you do not wish to install any software at this time, you are welcome to use a **WASM build** instead, which is performant, feature-complete and available for all major browsers, both desktop and mobiles:
 
 [kparc.io/k](https://kparc.io/k)
 
@@ -153,7 +153,6 @@ This course can be completed using both native builds and the web version. It is
 ### run
 
 Start your very first 𝒌 session like so:
-
 
 ![k banner](https://user-images.githubusercontent.com/1530846/112928137-5f5a6600-9116-11eb-898d-bf0996555343.png)
 
@@ -188,8 +187,6 @@ At any time during a 𝒌 session, you can:
 `\\` quit k session
 
 At this point we strongly advise against issuing these commands, especially the latter.
-
-
 
 **Practice:**
 
