@@ -4,7 +4,7 @@ a gentle introduction to k language is elsewhere.
 
 **[genesis](#genesis)**
 
-* 𝒌 → [ø](#ø) | [who](#who) | [why](#why) | [wha](#wha-) | [how](#how)
+* 𝒌 → [who](#who) | [why](#why) | [wha](#wha-) | [how](#how)
 
 **[exodus](#exodus)**
 
@@ -26,17 +26,16 @@ a gentle introduction to k language is elsewhere.
 * metrics → [apples and oranges](#apples-and-oranges)
 * learning plan → [gladly beyond](#gladly-beyond)
 
-> quod tu summum putas gradus est — seneca
-
 ---------------------
 
 ## genesis
 
-### ø
+> "you mustn't be afraid to dream a little bigger, darling" — *Inception*
 
-Computer languages have been around for a long time, but in the beginning was the Word. We will be writing code in a language called 𝒌, but it helps to talk about it first.
 
-𝒌 is different. At first, you will have questions about its design, and it will respond by questioning things that you consider common sense. Very soon, this conversation will become constructive, and here is why.
+Computer languages have been around for a long time, but in the beginning was the Word. We will be writing code in a language called 𝒌, but it helps to talk about it first. If you don't feel like it, feel free to [get](#get) and [run](#run).
+
+𝒌 is a different computer language. At first, you will have questions about its design, and it will respond by questioning things that you consider common sense. Very soon, this conversation will become constructive, and here is why.
 
 The first thing newcomers frown upon is why the assignment operator in 𝒌 is `:` instead of `=`. But before you close the tab, try a simple thought experiment:
 
@@ -153,25 +152,34 @@ The material in this course is designed to work against both the native build an
 
 ### run
 
-Start your very first 𝒌 session like so:
+Start your very first 𝒌 session like so.
+
 
 ![k banner](https://user-images.githubusercontent.com/1530846/112928137-5f5a6600-9116-11eb-898d-bf0996555343.png)
 
-The startup banner is very useful for diagnostics, please include it in case you think you've encountered an imperfection.
+---------------------
 
-It reads as follows:
+What you see is so-called **startup banner**, which is very handy and easy to read:
 
 | it says             | it means                       |
 | :-------------------|:-------------------------------|
-| lmw                 | `l` linux `m` macos `w` wasm * |
-| iav                 | `i` intel `a` arm64 `v` riscv  |
-| 2021.03.29          |  build stamp of your 𝒌 binary  |
-| 7                   |  max workspace size in gbytes  |
+| lmw                 | `l` linux `m` macos `w` wasm (*) |
+| iav                 | `i` intel `a` aarch `v` riscv  |
+| 2021.03.29          |  build date of your 𝒌 binary (**)  |
+| 7                   |  usable workspace size, in gb  |
 | 4                   |  usable cpu core / hart count  |
-| shakti              |  shakti is the vendor company  |
-| 2.0[t]              |  major 𝒌 version, `t` is test  |
+| shakti              |  shakti is the system vendor   |
+| 2.0[t]              |  major 𝒌 release, `t` is test (***)  |
 
-* Capitalized OS identifier means you are an enerprise customer running a production build. Enjoy responsibly.
+
+
+\* capitalized platform identifier means you are running an **enterprise** build, enjoy responsibly. lowercase is a **community** build.
+
+\*\* in the unlikely case of you not being an enterprise customer running a test build which is older than 30 days, 𝒌 will gently suggest an upgrade by throwing an error at startup.
+
+\*\*\* banners are useful for diagnostics, please include them in case of difficulties, or if you think you've encountered a bug. always make sure you're running the latest build.
+
+---------------------
 
 At any time during a 𝒌 session, you can:
 
