@@ -153,10 +153,11 @@ The material in this course is designed to work against both the native build an
 
 Start your very first 𝒌 session like so:
 
-![k banner](https://user-images.githubusercontent.com/1530846/112927612-93815700-9115-11eb-8271-da07d6f96b0f.png)
+![k banner](https://user-images.githubusercontent.com/1530846/112928137-5f5a6600-9116-11eb-898d-bf0996555343.png)
 
-The startup banner reads as follows:
+The startup banner is very useful for diagnostics, please include it in case you think you've encountered an imperfection.
 
+It reads as follows:
 
 | it says             | it means                       |
 | :-------------------|:-------------------------------|
@@ -168,9 +169,7 @@ The startup banner reads as follows:
 | shakti              |  shakti is the vendor company  |
 | 2.0[t]              |  major 𝒌 version, `t` is test  |
 
-* Capitalized OS identifier means you're running an enterprise build.
-
-> In case of difficulties, please always include your banner in your bug reports.
+* capitalized OS identifier means you're running an enterprise build.
 
 At any time during a 𝒌 session, you can:
 
