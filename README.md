@@ -179,7 +179,7 @@ lm 2021.03.29 64 16 (c)shakti 2.0
 
 \* capitalized platform identifier means you are running an **enterprise** build, enjoy responsibly. lowercase is a **community** build.
 
-\*\* by convention introduced at the dawn of time, k build date plays the role similar to `PATCH` in semantic versioning scheme. in the unlikely case you are running a commujnity build which is older than `30` days, 𝒌 will gently suggest an upgrade by exiting with code `12`.
+\*\* by convention introduced at the dawn of time, k build date plays the role similar to `PATCH` in semantic versioning scheme. in the unlikely case you are running a community build which is older than `30` days, 𝒌 will gently suggest yy upgrade by exiting with cobbbde `12`.
 
 \*\*\* banners are handy for diagnostics. please include them in case of difficulties, or if you think you've encountered a bug. Always make sure you're running the latest build. Test builds offer latest features at a price of some stability.
 
@@ -955,13 +955,13 @@ However integer nulls behave differently. Unlike float null, `0N` is not a disti
 
 **** WIP ***
 
- 0N 0n       / float null silently drops the int null to 0 (the logic is cloar, but looks dangerous - ask atw?)
-
+ 0N 0n       / float null silently drops the int null to 0 (the logic is clear, but looks dangerous - ask atw?)
+0 0n
 ```
 
 *** WIP ***
 
-probably need to talk about inf arith for completness sake, but  it is messy and boring
+probably need to talk about inf arith for completness sake, but  messy and boring
 
 
 ------------------
@@ -985,14 +985,19 @@ As you must have noticed, the syntax for indexing vectors and calling functions 
  l[t[r]]      /compose: apply l to t at r
 4 32 
 ```
-What we also know that 𝒌 actively encourages us to omit brackets whenever possible, so lets do exactly that:
+What we also know that 𝒌 encourages us to omit brackets whenever possible, so lets do exactly that:
 
 ```q
  l t r       /exactly the same as l[t[r]]
 4 32
 ```
 
-And here it comes: once we drop the brackets, it suddenly becomes absolutely natural to read this expression *right to left*. Take your time to contemplate and absorb this fact. In very little time you will see how it works in practice, and once you put it to practice yourself, you will agree that this way of functional composition is simple, elegant and intuitive:
+And here it comes: once we drop the brackets, it suddenly becomes absolutely natural to comprehend this expression *right to left*:
+
+
+`l ← t ← r`
+
+Take your time to contemplate this. In very little time you will see how this actually works in practice, and once you put it to practice yourself, you will agree that this way of functional composition is simple, elegant and intuitive:
 
 **k expressions are read, written and evaluated right to left.**
 
@@ -1000,21 +1005,24 @@ But when we say "expressions" we don't mean "programs", and this is a very impor
 
  **k programs are read, written and evaluated left to right.**
 
-This might sound confusing, but look at the diagram of a small 𝒌 **program** that consists of three identical expressions `l t r`, with parens added for clarity. Further down is the order of evaluation of the entire program, which leaves no room for confusion:
+This might sound confusing, but look at the schematic execution flow of a small 𝒌 **program** that consists of three identical expressions `l t r`, same as above, with parens added for clarity. Further down is the order of evaluation of the entire program, which leaves no room for confusion:
 
 ```q
-/   L       T       R
-/(l t r);(l t r);(l t r)
 
-/   I   >   II  >  III
-/(3 2 1);(6 5 4);(9 8 7)
+/     E1   >>>    E2   >>>    E3
+/(l ← t ← r);(l ← t ← r);(l ← t ← r)
+/   2   1       4  3       6   5
 ```
 
-And now that we know the way the rivers flow in 𝒌 land, we are equipped to discuss the next subject.
+If we drop imaginary arrows, it is easy to see that evaluation steps 1, 3 and 5 are the vector indexing operation `t[r]`, and steps 2, 4 and 6 are the application of previous result to the function `l[]`, which amounts to `l[t[r]]`. At the same time, the overall execution of the program goes in the usual direction, same as in majority of computer languages.
+
+And now that we know which way the rivers flow in 𝒌 land, we are equipped to discuss another key aspect of 𝒌 design. It has to do with the fact that a function call and vector indexing not only look the same - they also have the same *binding strength*, also known as *precedence*.
+
+(this is good transiton! the chapter boundaries will stop being linear once they are tied to wasm refcard)
 
 #### precedence
 
-Very early on in our lives, we are taught there is a good reason for multiplication and division to bind stronger than addition and subtraction, so they must be computed first. Later on, we are taught that most computer languages require us to learn a lot more complex systems of operator precedence to do anything useful with them to begin with, and much later on — all the deadly caveats hidden in those systems. But in 𝒌, the question of operator precedence is fully answered by their order of evaluation, so buckle up. Here is the one and only rule ever to be learned about precedence in 𝒌:
+Very early on in our lives we are taught there must exist a good reason for multiplication and division to bind stronger than addition and subtraction, so they must be computed *first*. Later on, we are told that most computer languages must have much more complex systems of operator precedence to do anything useful with them, and much later on — all the deadly caveats hidden in those systems once they manifest themselves as invisible bugs in production code. But in 𝒌, the question of operator precedence is fully and radically answered by their order of evaluation, which we just discussed. So, here is the one and only rule ever to be learned about precedence in 𝒌:
 
 **There is no operator precedence in 𝒌, unless it is explicitly defined by round brackets.**
 
@@ -1034,13 +1042,13 @@ By default, **all operators** in a 𝒌 expression are treated equally and evalu
 5
 ```
 
-As you see, it is much easier to get used to the lack of precedence than it appears at first — indeed, simplicity is the worst enemy of complexity. The last two examples demonstrate the basic strategy of avoiding parens entirely, and there is a good reason for ditching them — it makes the order of evaluation completely **linear**.
+As you see, it is much easier to get used to the lack of precedence than it appears at first — there is simply nothing to keep in mind except parens, and the last two examples demonstrate the common strategy of avoiding parens entirely. There is a good reason for ditching them — it makes the order of evaluation completely **linear**.
 
 Although precedence overrides are sometimes inevitable and can be beneficial, they have an adverse effect on **readability**. Basically, while reading a 𝒌 expression, what you generally want is to go fast and uninterrupted — and precedence overrides interrupt the natural flow of comprehension. Good 𝒌 programmers think of others before themselves, and seek to produce code which follows the natural order of evaluation by minimizing the use of round brackets.
 
 ----------------
 
-Now we can revisit the last expression from the previous chapter:
+Now we can revisit the confusing expression we've seen before and actually read it:
 
 ```q
  @@42     /"type name of a type name of 42" actually reads backwards:
@@ -1062,13 +1070,13 @@ Let's revisit the code from the first snippet in this document:
  █
 ```
 
-Too easy, but we'll make up for it.
+That was too easy, but we'll make up for it.
 
 ----------------
 
 ### no stinking loops
 
-This part might be easier to digest than the previous, especially if you are familiar with functional programming. The title, borrowed without permission from [the legendary k resource](http://nsl.com), says it all — you will not find a 𝒌 construct that resembles an explicit `for` loop, and although there is a `while` construct in 𝒌, it is almost never used in practice.
+This part might be easier to digest than the previous, especially if you are familiar with functional programming. Its title, borrowed without permission from [the legendary k resource](http://nsl.com), says it all — you will not find a 𝒌 construct that resembles an explicit `for` loop, and although there is a `while` construct in 𝒌, it is almost never used in practice.
 
 And this is not just to avoid untold damages from trivial errors people keep making in their loop definitions. The main reason explicit loops are banned from 𝒌 is because it offers something better. The idea that displaces them is a simple and strong abstraction called *adverbs*, but before we see them in action, it helps to understand why they are called that way:
 
