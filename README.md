@@ -1050,7 +1050,6 @@ If we drop imaginary arrows, it is easy to see that evaluation steps 1, 3 and 5 
 
 And now that we know which way the rivers flow in 𝒌 land, we are equipped to discuss another key aspect of 𝒌 design. It has to do with the fact that a function call and vector indexing not only look the same - they also have the same *binding strength*, also known as *precedence*.
 
-(this is good transiton! the chapter boundaries will stop being linear once they are tied to wasm refcard)
 
 #### precedence
 
@@ -1643,7 +1642,7 @@ We have seen some new stuff:
 * dyadic `x|y max`
 * dyadic `x_y drop`
 * monadic `|x reverse`
-* monadic `0:x load llines`
+* monadic `0:x load ll`
 
 ----------------------
 
