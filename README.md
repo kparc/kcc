@@ -1285,12 +1285,51 @@ Make sure you can follow the logic of these examples before advancing to the nex
 
 Extra bonus:
 
+here's a new operator. dyadic `x mod y` is **modulo**.
+
 ```q
- q:7;GF:!q;q mod GF*\:GF         /what does GF stand for?     WIP modulo doesn't seem to penetrate yet :(
+ q:7;GF:!q;q mod'GF*\:GF              /what does GF stand for?
  █
 
- /97+2/:+2\:32 458 1172 1443 275      WIP how do we cast int to char>
+ /answer:
+ /97+2/+2\32 458 1172 1443 275       WIP how do we cast int to char?
 ```
+
+Ultimate bonus:
+
+here's a new operator. dyadic `x^y` is `cut`.
+
+You are given two float matrices:
+
+```
+ A:3^x:0.+10+!12;B:4^x
+ A
+10 11 12 13.
+14 15 16 17.
+18 19 20 21.
+ B
+10 11 12.
+13 14 15.
+16 17 18.
+19 20 21.
+```
+
+Fill in the blanks...
+
+```
+ mm:{   x*\:y}
+```
+
+...to achieve matrix multiplication:
+
+```
+ mm[A;B]
+682 728 774.
+914 976 1038.
+1146 1224 1302.
+```
+
+Good luck.
 
 ## proverbs
 
@@ -1419,7 +1458,7 @@ And of course this is not the quickest `quicksort` ever written, but this is jus
 
  sort:^'                                 /monadic  'sort each'
 
- (qs'mess)~(sort mess)                   /x~y 'match' operands             *** WIP bug in native sort (^0w -0w)
+ (qs'mess)~(sort mess)                   /x~y 'match' operands     *** WIP bug in native sort (^0w -0w)
 1 
 
  \t:10000  qs'mess                       /apply qs 10000 times
