@@ -88,7 +88,7 @@ In comparison, 𝒌 solutions are typically a few factors of magnitude less code
 
 To see why this is, it helps to compare the effort of keeping 100 lines of code in sync with rapidly changing environment and free of bugs with to 10,000 lines that do the same thing. 
 
-Against intuition, it is not 100 times easier, it is 10,000 times easier. We will soon see why.
+Against all intuition, it is not 100 times easier, it is 10,000 times easier. We will soon see why.
 
 ### wha _*_
 
@@ -179,7 +179,7 @@ lm 2021.03.29 64 16 (c)shakti 2.0
 
 \* capitalized platform identifier means you are running an **enterprise** build, enjoy responsibly. lowercase is a **community** build.
 
-\*\* by convention, build date plays the role similar to `PATCH` in the semantic versioning. in the unlikely case you are running a test build which is older than `30` days, 𝒌 will gently suggest an upgrade by exiting with code `12`.
+\*\* by convention introduced at the dawn of time, k build date plays the role similar to `PATCH` in semantic versioning scheme. in the unlikely case you are running a commujnity build which is older than `30` days, 𝒌 will gently suggest an upgrade by exiting with code `12`.
 
 \*\*\* banners are handy for diagnostics. please include them in case of difficulties, or if you think you've encountered a bug. Always make sure you're running the latest build. Test builds offer latest features at a price of some stability.
 
@@ -489,9 +489,9 @@ This is a good start, but tells you absolutely nothing about what 𝒌 really is
 
 ## numbers
 
-### vectors vs atoms
+### vectors and atoms
 
-The word `atom` is a synonym for `scalar value`, or simply `scalar`. Every language has them, and in 𝒌 they are as useful as elsewhere. But 𝒌 belongs to a family of *vector languages*, which means its fundamental type is an ordered set of atoms or other ordered sets.
+The term `atom` is a synonym for `scalar value`, or simply `scalar`. Every computer language has them, and in 𝒌 they are as useful as elsewhere. But 𝒌 belongs to a family of *vector languages*, which means its fundamental type is an ordered set of atoms or other ordered sets.
 
 In 𝒌 parlance, terms `array`, `list` and `vector` are often used interchangeably and refer to the same thing, but we will stick with `vector` to avoid confusing you, because vectors are much more general than classic *arrays* and have nothing to do with *linked lists*. 
 
@@ -508,7 +508,7 @@ In 𝒌 parlance, terms `array`, `list` and `vector` are often used interchangea
  v:,42            /a vector of length 1, one integer item
 ```
 
-Optically, k is strictly "**pass by value**", i.e. it is impossible to pass a reference to an object, only its copy. However, it is only an illusion created by the underlying implementation. In reality, k avoids making copies of stuff unless it becomes absolutely necessary, a technique known as "copy-on-write":
+Optically, 𝒌 is strictly "**pass by value**", i.e. it is impossible to pass a reference to an object, only its copy. However, it is only an illusion created by the underlying implementation. In reality, k avoids making copies of stuff unless it becomes absolutely necessary, a technique known as "copy-on-write":
 
 ```q
  x:0 1 2 3 4     /everything is passed by value
@@ -615,7 +615,7 @@ Vector arithmetic is **penetrating**, which means that vector operators *apply a
 2 5 8
 3 6 9
 
- mat=tam
+ mat=tam                    /die einheitsmatrix
 1 0 0
 0 1 0
 0 0 1
@@ -625,7 +625,7 @@ Vector arithmetic is **penetrating**, which means that vector operators *apply a
 1 0 0
 1 1 0
 
- mat+42
+ mat+42                     /addition penetrates
 43 44 45
 46 47 48
 49 50 51
@@ -739,6 +739,8 @@ We could say that in case of names 𝒌 actually passes *references* instead of 
 <a name="typ-time"></a>
 **Temporal types** in k are `date` and `time`:
 
+### *** WIP *** revise
+
 ```q
  d:2001.01.01        /yyyy-mm-dd, ok to expect iso 8601 compliance
  @d                  /NOTE: date atom is `D same as date vector `D
@@ -753,7 +755,7 @@ We could say that in case of names 𝒌 actually passes *references* instead of 
 ```
 
 <a name="typ-dict"></a>
-**Dictionaries** are maps of keys to values, also known as *hashmaps* or, more generally, *associative arrays*. They are as useful in 𝒌 as elsewhere, but unlike many languages where this data structure is built in, 𝒌 allows _both_ keys and values to be of *any* type, both vector and scalar. This might sound a bit confusing at first — since nothing prevents you from, say, constructing a dictionary where keys are themselves dictionaries — but in able hands this oddity becomes a very powerful tool.
+**Dictionaries** are maps of keys to values, also known as *hashmaps* or, more generally, *associative arrays*. They are as useful in 𝒌 as elsewhere, but unlike many languages where this data structure is built in, 𝒌 allows _both_ keys and values to be of *any* type, both vector and scalar. This might sound a bit confusing at first — since nothing prevents you from, say, constructing a dictionary where keys are themselves dictionaries — but in able hands this oddity becomes a powerful tool.
 
 Dictionaries have the type **\`a**, and the notation for defining them uses a dyadic operator `! key`:
 
@@ -780,25 +782,25 @@ b|4 5 6
 <a name="typ-tab"></a>
 **Tables** are *flipped dictionaries*, and they require a separate large discussion. Here, we will only describe their syntax for the sake of completeness. Table type is **\`A**, and notation is the same as dict, only with `+x flip` operator prepended. As common sense implies, a dictionary won't flip unless all values are of the same length.
 
-No comments on any of this for now — but if you can follow the logic of what is going on here, you'll agree that in some rare circumstances a technology is indeed indistinguishable from magic. See for yourself:
+No comments on any of this for now — but if you can follow the logic of what is going on here, you'll agree that in some rare circumstances the technology is indeed indistinguishable from magic. See for yourself:
 
 ```q
  x:`goo`apl`amz
  y:1 2 3 4 5 6
  
- t:+`s`d`p!(x,x;`D$y;1.5*y)  /table is a transposed dict
+ t:+`s`d`p!(x,x;`d y;1.5*y)  /table is a transposed dict
  @t
 `A 
  
  t                           /trades: stock, date, price
 s   d          p
 --- ---------- ---
-goo 2024-01-02 1.5
-apl 2024-01-03 3
-amz 2024-01-04 4.5
-goo 2024-01-05 6
-apl 2024-01-06 7.5
-amz 2024-01-07 9
+goo 2001.01.02 1.5
+apl 2001.01.03 3
+amz 2001.01.04 4.5
+goo 2001.01.05 6
+apl 2001.01.06 7.5
+amz 2001.01.07 9
 
  select avg p by s from t   /pretend you didn't see this
 s  |p
@@ -809,31 +811,102 @@ goo|3.75
 ```
 
 <a name="typ-lambda"></a>
-**Lambdas** are assignable values and have their own type, and more than one:
+**Lambdas** are assignable values and must therefore have their own type:
+
 
 ```q
- @{x+y}                 /type of lambda gives away its rank
+ @{x+y}                    /lambdas and functions are type dot
 `.
 
- nil:{0}                /don't expect nil to have rank zero
- @nil                   /niladic functions don't exist in k
-`1
+ nil:{42}                  /don't expect nil to have rank zero
+ nil[]                     /in reality nil is actually monadic
+42
+ nil 57                    /niladic functions don't exist in k
+42
 
- a:{x},{x+x},{x*x}      /a vector of lambdas, sure, why not
- a[2]16                 /calls 3rd lambda, same as a[2][16]
+ a:({x};{x+x};{x*x})       /a vector of lambdas, sure, why not
+ a[2]16                    /calls 3rd lambda, same as a[2][16]
 256
 ```
 
-<a name="typ-nul"></a>
-**Nulls and Infinities** deserve a separate discussion, in which we are finally ready to introduce dyadic operation `x%y divide`, because this is where nulls, infinities and some other nasty deamons usually emerge from.
 
-> Yes, this is not a typo. Unlike in many other languages where `%` denotes taking a remainder, in k it means division. There reason for this oddity is fairly simple: in 𝒌, `/` character is reserved for another language construct which is **much more** ubiqutous in k than division. We will introduce it later.
+<a name="typ-mix"></a>
+**Composite vector** type, or you could also say **mix vector**, is of special mention. Such vectors are either a mixture of atoms of disparate types, or contain something more complex than atoms, e.g. other vectors:
+
+```q
+ c:0,1,"a",2,3          /a char impostor among ints, c is mix
+ @c                     /list of disparate items is type star
+`*
+
+ x:(1 2 3;4 5 6;7 8 9)  /all items are the same type at depth
+ x
+1 2 3
+4 5 6
+7 8 9
+ @x                     / rectangular list of integer vectors
+`LI 
+
+ y:(,1;1 1;1 2 1)       / odd-shaped lists are lists of lists
+ @y
+`LL
+
+```
+
+<a name="typ-cast"></a>
+**Type casts**, both explicit and implicit, are demonstrated by the following examples which also give a general feel of how type coercion behaves. The `cast` operator in k is a dyadic `t$x`, where `t` is a type name and `x` is a subject of cast:
+
+```q
+ 1+.5                  /int plus float is float, no surprises here
+1.5
+
+ 1.*2                  /any float operand promotes result to float
+2. 
+
+ 0.+2                  /a more idiomatic way to cast ints to float
+2.
+
+ _42.99                /explicit cast from `f to `i drops mantissa
+42
+
+ _42.0 42.99           /`f to `i will round down the entire vector
+42 42
+
+ 0+"abc"               /integer operand demotes `c vector to ascii
+97 98 99
+
+ "012"+"345"           /sum ascii codes of chars, type drops to `I
+99 101 103
+
+ a:1 2 3               / lets start with a nice uniform int vector
+ a[1]:4.               / now, replace its 2nd element with a float
+4.
+ @a                    / one float item promotes the entire vector
+`F
+
+ 1+`kei                /no math for names, this type is immutable 
+1+`kei
+^
+!type
+
+ @@42                  / what is type name of a type name of int?
+ █
+```
+
+There are a few more things left to be said about the type system, but the last expression `@@42` (which evaluates to some kind of wordplay, *type name of a type name is `name`*) urges us to the next section which is all about how to make sense of this expression.
+
+------------------
+
+### Nulls and Infinities
+
 
 **Nulls** in 𝒌 are typed. Integer null is `0N` and float null is `0n`. 
 
-**Infinity** is a special signed scalar floating point value denoted by `0w`, negative infinity is `-0w`.
+**Infinity** is a special signed scalar floating point value denoted by `0w`. Negative infinity is `-0w`.
 
-Working with nulls and infinities can be very tricky, and it is very important to pay attention to how they quack:
+Working with nulls and infinities can be very tricky, it is very important to pay attention to how they quack. We are finally ready to introduce dyadic operation `x%y divide`, because this is where nulls, infinities and some other nasty deamons often emerge from.
+
+This is not a typo. Indeed, unlike many other languages where `%` denotes the remainder operation, in k it means division. There reason for this oddity is simple: in 𝒌, the character `/` is reserved for another language construct which is much more common than division. We will introduce it later.
+
 
 ```q
  4%2             /division is %, get used to it
@@ -850,9 +923,9 @@ Working with nulls and infinities can be very tricky, and it is very important t
 -0w 0n 0w 0w    /∀x∈ℚ (x%0) ∈ {-∞,∞,∅}, beware (0%0) = ∅
 ```
 
-The key observation to be made is how **null arithmetic** works, which is the traditional source of untold damages and grief in software engineering.
+The key takeway is how **null arithmetic** works, which is the traditional source of untold damages and sorrow in the world of software engineering.
 
-Arithmetic on float nulls is **undefined**, and always results in a float null. Float null isn't equal to, greater or less than anything, including itself:
+Arithmetic on float nulls is **undefined**, and will always produce another float null. A float null isn't equal to, greater or less than anything, including itself:
 
 ```q
  x:-0w 0w 0n 0N -1 0 1
@@ -866,7 +939,7 @@ Arithmetic on float nulls is **undefined**, and always results in a float null. 
 0000000
 ```
 
-Integer nulls behave differently. Unlike float null, `0N` is not a distinguished value, but is simply a placeholder for a very large number. It is very easy to infer its literal value, because simplest arithmetic results in an immediate overflow of underlying `int64` a.k.a. `long long`:
+However integer nulls behave differently. Unlike float null, `0N` is not a distinguished value, but is simply a placeholder for a very large number. It is very easy to infer its literal value, because simplest arithmetic on them results in immediate overflow of underlying `int64` a.k.a. `long long`:
 
 ```q
  0N+1
@@ -875,83 +948,27 @@ Integer nulls behave differently. Unlike float null, `0N` is not a distinguished
 9223372036854775807
 ```
 
+##  *** wip wip wip null rounding  needs discussion ***
+
 ```
-wip wip wip
-
- n:0n          /float null is type float
- @n
-`f
-
- N:0N          /int null is type integer
- @N
-`i
-
-
-
  _0%0        /int null is rounded to zero
-Ø
-```
+
+**** WIP ***
+
+ 0N 0n       / float null silently drops the int null to 0 (the logic is cloar, but looks dangerous - ask atw?)
 
 ```
 
-<a name="typ-mix"></a>
-**Composite vector** type, or you could also say **mix vector**, is of special mention. Such vectors are either a mixture of atoms of disparate types, or contain something more complex than atoms, e.g. other vectors:
+*** WIP ***
 
-```q
- c:0,1,"a",2,3          /a char impostor among ints, c is mix
- @c                     /type of a mixed list is backtick-dot
-`*
+probably need to talk about inf arith for completness sake, but  it is messy and boring
 
- x:(1 2 3;4 5 6;7 8 9)  /a vector of vectors is composite too
- x
-1 2 3
-4 5 6
-7 8 9
- @x
-`LI 
-```
-
-<a name="typ-cast"></a>
-**Type casting**, both explicit and implicit, is demonstrated by the following examples which also give a general feel of how type coercion behaves. The `cast` operator in k is a dyadic `t$x`, where `t` is a type name and `x` is a subject of cast:
-
-```q
- 1+.5                  /int plus float is float, no surprises here
-1.5
-
- 1.*2                  /any float operand promotes result to float
-2. 
-
- _42.99              /explicit cast from `f to `i drops mantissa
-42
-
- _42.0 42.99         /`f to `i will round down the entire vector
-42 42
-
- 0+"abc"               /integer operand demotes `c vector to ascii
-97 98 99
-
- "012"+"345"           /sum ascii codes of chars, result stays `c
-99 101 103
-
- a:1 2 3               /lets start with a nice uniform int vector
- a[0]:1.               /now, replace its 1st element with a float
-1.
-@a                     /our int vector cast to float
-`F
-
- 1+`kei                /no math for names, this type is immutable 
-  ^
-!type
-
- @@42                  /what is type name of a type name of int?
- █
-```
-
-There are things left to be said about the type system, but the expression `@@42` above (which evaluates to some kind of wordplay, *type name of a type name is `name`*) urges us to the next section which is all about how to make sense of this expression.
 
 ------------------
 
 ### right to left
+
+(ask nsl whether the leibniz fanciness right-of-blah is a good idea. for newbies - nah, easy does it)
 
 As you must have noticed, the syntax for indexing vectors and calling functions is identical:
 
@@ -1284,8 +1301,8 @@ $[2>#?x;x;...]      /"if x has <2 unique items, return x, otherwise ..."
 Coffee break, here is what we know so far:
 
 1. the function is recursive
-1. its overall control flow
-2. the condition that stops recursion
+2. its overall control flow
+3. the condition that stops recursion
 
 This gives us confidence to wrestle down the last part, the recursion step:
 
