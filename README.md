@@ -308,15 +308,10 @@ main(int argc, char **argv)
 **rwdc:**
 
 ```c
-#include<stdio.h>//k.h
 typedef int I;
-#define O putchar
-#define N(n,x) {for(I i=0;i<n;++i)x;}
-```
-
-```c
-#include"k.h"
-I main(){I x='a';N(26,O(x++))}//nsl
+#include<stdio.h>
+#define N(n,x){for(I i=0;i<n;++i)x;}
+I main(){I x='a';N(26,putchar(x++))}//:~
 ```
 
 Compare their strengths.
