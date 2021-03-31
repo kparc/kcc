@@ -944,7 +944,6 @@ goo|3.75
  y:(,1;1 1;1 2 1)       / odd-shaped lists are lists of lists
  @y
 `LL
-
 ```
 
 <a name="typ-cast"></a>
@@ -990,7 +989,6 @@ goo|3.75
 There are a few more things left to be said about the type system, but the last expression `@@42` (which evaluates to some kind of wordplay, *type name of a type name is `name`*) urges us to the next section which is all about how to make sense of this expression.
 
 
-
 ------------------
 
 ### right to left
@@ -1021,7 +1019,6 @@ What we also know that 𝒌 encourages us to omit brackets whenever possible, so
 
 And here it comes: once we drop the brackets, it suddenly becomes absolutely natural to comprehend this expression *right to left*:
 
-
 `l ← t ← r`
 
 Take your time to contemplate this. In very little time you will see how this actually works in practice, and once you put it to practice yourself, you will agree that this way of functional composition is simple, elegant and intuitive:
@@ -1035,7 +1032,6 @@ But when we say "expressions" we don't mean "programs", and this is a very impor
 This might sound confusing, but look at the schematic execution flow of a small 𝒌 **program** that consists of three identical expressions `l t r`, same as above, with parens added for clarity. Further down is the order of evaluation of the entire program, which leaves no room for confusion:
 
 ```q
-
 /     E1   >>>    E2   >>>    E3
 /(l ← t ← r);(l ← t ← r);(l ← t ← r)
 /   2   1       4  3       6   5
@@ -1291,9 +1287,7 @@ here's a new operator. dyadic `x mod y` is **modulo**.
 
 Ultimate bonus:
 
-here's a new operator. dyadic `x^y` is `cut`.
-
-You are given two float matrices:
+We introduce a dyadic operator `x^y cut` to define two float matrices:
 
 ```
  A:3^x:0.+10+!12;B:4^x
@@ -1308,13 +1302,13 @@ You are given two float matrices:
 19 20 21.
 ```
 
-Fill in the blanks...
+Fill in the blanks in the definition of a function...
 
 ```
  mm:{   x*\:y}
 ```
 
-...to implement **matrix multiplication**:
+...which implements **matrix multiplication**. Good luck!
 
 ```
  mm[A;B]
@@ -1323,7 +1317,8 @@ Fill in the blanks...
 1146 1224 1302.
 ```
 
-Good luck.
+Don't worry if these challenges were less effortless than the previous. Thinking in adverbs, even if a bit confusing at the start, quilckly becomes a habit - and definitely not more convoluted and error-prone than thinking in imperative loops.
+
 
 ## proverbs
 
@@ -1433,7 +1428,7 @@ Now that we know what every specific part does, we can zoom out and see the big 
 And of course, `f` is nothing else but:
 
 ```q
- qs:{$[2>#?x;x;,/qs'x@&'~\:x<*1?x]}      /qsort on rand pivot
+ qs:{$[2>#?x;x;,/qs'x@&'~\:x<*1?x]}       /qsort on rand pivot
 
  i:9 2 5 5 1 8 1 3 6 1                   /a hairy int shuffle
  f:2.6 -0w 8.6 3.14159 1.7 0w 3.5 5.6    /a π in a float soup
@@ -1452,7 +1447,7 @@ And of course this is not the quickest `quicksort` ever written, but this is jus
 
  sort:^'                                 /monadic  'sort each'
 
- (qs'mess)~(sort mess)                   /x~y 'match' operands     *** WIP bug in native sort (^0w -0w)
+ (qs'mess)~(sort mess)                   /x~y 'match' operands     *** WIP *** edge case bug in native sort (fixed and submitted to atw, pending confirmation)
 1 
 
  \t:10000  qs'mess                       /apply qs 10000 times
