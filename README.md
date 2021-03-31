@@ -1046,7 +1046,7 @@ This might sound confusing, but look at the schematic execution flow of a small 
 /   2   1       4  3       6   5
 ```
 
-If we drop imaginary arrows, it is easy to see that evaluation steps 1, 3 and 5 are the vector indexing operation `t[r]`, and steps 2, 4 and 6 are the application of previous result to the function `l[]`, which amounts to `l[t[r]]`. At the same time, the overall execution of the program goes in the usual direction, same as in majority of computer languages.
+If we drop imaginary arrows, it is easy to see that evaluation steps 1, 3 and 5 are the vector indexing operation `t[r]`, and steps 2, 4 and 6 are the application of function `l[]` to previous result, which amounts to `l[t[r]]`. At the same time, the overall execution of the program goes in the usual direction, same as in majority of computer languages.
 
 And now that we know which way the rivers flow in 𝒌 land, we are equipped to discuss another key aspect of 𝒌 design. It has to do with the fact that a function call and vector indexing not only look the same - they also have the same *binding strength*, also known as *precedence*.
 
@@ -1320,7 +1320,7 @@ Fill in the blanks...
  mm:{   x*\:y}
 ```
 
-...to achieve matrix multiplication:
+...to implement **matrix multiplication**:
 
 ```
  mm[A;B]
@@ -1615,7 +1615,7 @@ Looks like the `mxpath` is doing pretty well. Let's fetch the input file for the
  lines 2            /just to make sure we have something real
 "52 40 09"
 
- t:`k?'lines        /parse each line of input as k expression
+ t:. lines          /. x is 'parse', parse each line of input
  t 2
 52 40 9
 
@@ -1629,7 +1629,7 @@ Looks like the `mxpath` is doing pretty well. Let's fetch the input file for the
 We didn't tell you do this, but the complete program can also be written as a single 𝒌 expression:
 
 ```q
- *{y+1_|':x}/|`k?'0:"p67.txt"   /load, parse and fold
+ *{y+1_|':x}/|. 0:"0:"p67.txt"   /load, parse and fold
  █
 ```
 
@@ -1643,7 +1643,7 @@ We have seen some new stuff:
 * dyadic `x|y max`
 * dyadic `x_y drop`
 * monadic `|x reverse`
-* monadic `0:x load text`
+* monadic `0:x load llines`
 
 ----------------------
 
