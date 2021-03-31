@@ -297,7 +297,7 @@ main(int argc, char **argv)
 {
   int x = 'a';
 
-  for(int i=0; i<26; ++i){
+  for(int i=0; i<26; i++){
     putchar(x++);
   }
 
@@ -308,15 +308,15 @@ main(int argc, char **argv)
 **rwdc:**
 
 ```c
-#include<stdio.h> //k.h
+#include<stdio.h>//k.h
 typedef int I;
 #define O putchar
-#define DO(n,x) {I i=0,_i=(n);for(;i<_i;++i){x;}}
+#define N(n,x) {for(I i=0;i<n;++i)x;}
 ```
 
 ```c
 #include"k.h"
-I main(){I x='a';DO(26,O(x++))}//nsl
+I main(){I x='a';N(26,O(x++))}//nsl
 ```
 
 Compare their strengths.
@@ -324,7 +324,7 @@ Compare their strengths.
 
 ### remarks on parlance
 
-The most important terminology in 𝒌 revolves around **functions**. Functions in 𝒌 are first-class citizens. As you would expect, 𝒌 has anonymous functions, eval, apply and recursion. In that respect, 𝒌 is probably slightly more lispy than certain Lisps, only you don't need to get past any parens. However, since there are no linked lists under the hood, 𝒌 is _not_ Lisp, because it was designed to be fast.
+The most important terminology in 𝒌 revolves around **functions**. Functions in 𝒌 are first-class citizens. As you would expect, 𝒌 has anonymous functions, eval, apply and recursion. In that respect, 𝒌 is probably slightly more lispy than certain Lisps, only you don't need to get past any parens. However, since there are no linked lists under the hood, 𝒌 is _not_ Lisp, because it built around the concept of efficient processing of large **vectors** of data. 𝒌 is designed to be fast, and Lisps aren't exactly that. 
 
 #### implicit arguments
 
@@ -344,6 +344,9 @@ This is an uncommon feature, most languages require you to explicitly declare fu
  f:{x*x}      /f[] has only one argument
  f 42         /and you can omit brackets
 1764
+
+ f:{}         /empty functions are fine,
+ f 42         /but give no return value
 ```
 
 Note that when calling a function with three arguments `f[1;2;3]` we had to use square brackets and use an expression separator, because each argument passed to a function is an expression in its own right. However, second function only takes one argument, and we were allowed to omit brackets — although we could also say `f[42]`.
@@ -414,13 +417,13 @@ In 𝒌, variable visibility is limited to exactly two scopes: **local** and **g
 
 Take your time to absorb this fact and appreciate its implications. While not easily digested by imperative crowd, the benefits of scope isolation are immediately obvious to functional folks:
 
-* While 𝒌 is not _purely_ functional, for as long as 𝒌 function does not access or modify global state, it remains _pure_, i.e. free from side effects. Pure functions may behave in a mathematically sound fashion, and can be reasoned about in terms of *domain* and *range*, much like their math cousins.
+* While 𝒌 is not _purely_ functional, 𝒌 function remains _pure_ for as long as it does not access or modify global state, i.e. free from side effects. Pure functions may behave in a mathematically sound fashion, and can be reasoned about in terms of their *domain* and *range*, much like their math cousins.
 
-* Scope isolation relieves the program from an entire class of bugs related to shadowing and naming clashes.
+* Tight scope isolation relieves the program from an entire class of bugs related to shadowing and naming clashes.
 
-* Pure functions are best friends with immutability and distributed architectures.
+* Pure functions can be safely passed around, and are best friends with immutability and distributed architectures.
 
-The fundamental benefit of this way of thinking about functions is **simplicity** and **composability**. Code blocks that are easy to debug, test, refactor and reuse result in clean, secure and scalable systems.
+The main benefit of this way of thinking about functions is **discipline**, **simplicity** and **composability**. Code blocks that are easy to debug, test, refactor and reuse result in clean, secure and scalable systems.
 
 
 #### on verbs and nouns
@@ -464,7 +467,7 @@ This only sounds confusing until you see what this means in practice:
  a sub b      /putting 'sub' between its operands is not going to work
 a sub b
 ^
-class error 
+***WIP    this actually throws ES, wtf
 
 ```
 
@@ -480,8 +483,7 @@ So far you know how to:
 * assign values to variables
 * declare and call basic functions
 * be friends with `x`, `y` and `z`
-* tell monadic and dyadic apart
-* ~~explicitly declare monadic ops~~
+* tell apart monadic and dyadic operators and funcitons
 * deal with verbs and nouns
 * annotate your code
 
@@ -595,7 +597,7 @@ Note the difference between shape and length. This reminds us that a vector can 
  y:(,1;1 1;1 2 1;1 3 3 1)    /pascal's triangle
  y
 ,1
-1 1
+11
 1 2 1
 1 3 3 1 
 ```
@@ -615,7 +617,7 @@ Vector arithmetic is **penetrating**, which means that vector operators *apply a
 2 5 8
 3 6 9
 
- mat=tam                    /die einheitsmatrix
+ mat=tam                     /die einheitsmatrix
 1 0 0
 0 1 0
 0 0 1
@@ -655,6 +657,76 @@ First, lets make sure `+x flip` operator transposes rectangular matrices just as
 -----------------------
 
 No rocket science, all pretty basic, but carry on.
+
+------------------
+
+### nulls and infinities
+
+
+**Nulls** in 𝒌 are typed. Integer null is `0N` and float null is `0n`. 
+
+**Infinity** is a special signed scalar floating point value denoted by `0w`. Negative infinity is `-0w`.
+
+Working with nulls and infinities can be very tricky, it is very important to pay attention to how they quack. We are finally ready to introduce dyadic operation `x%y divide`, because this is where nulls, infinities and some other nasty deamons often emerge from.
+
+This is not a typo. Indeed, unlike many other languages where `%` denotes the remainder operation, in k it means division. There reason for this oddity is simple: in 𝒌, the character `/` is reserved for another language construct which is much more common than division. We will introduce it later.
+
+
+```q
+ 4%2             /division is %, get used to it
+2.
+
+ 42%0            /division by zero is undefined
+0w               /0w is an infinity symbol in k
+
+ 0%0             /an expression without meaning
+0n               /0n is null, nan, nil and void
+
+
+ (-1 0 1 2)%0   /divide each by 0, or formally:
+-0w 0n 0w 0w    /∀x∈ℚ (x%0) ∈ {-∞,∞,∅}, beware (0%0) = ∅
+```
+
+The key takeway is how **null arithmetic** works, which is the traditional source of untold damages and sorrow in the world of software engineering.
+
+Arithmetic on float nulls is **undefined**, and will always produce another float null. A float null isn't equal to, greater or less than anything, including itself:
+
+```q
+ x:-0w 0w 0n 0N -1 0 1
+ (0n-x),(0n+x),(0n*x),(0n%x),(x%0n)
+0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n...
+
+ 0n=x
+0000000
+
+ 0n>x
+0000000
+```
+
+However integer nulls behave differently. Unlike float null, `0N` is not a distinguished value, but is simply a placeholder for a very large number. It is very easy to infer its literal value, because simplest arithmetic on them results in immediate overflow of underlying `int64` a.k.a. `long long`:
+
+```q
+ 0N+1
+-9223372036854775807
+ 0N-1
+9223372036854775807
+```
+
+##  *** wip null rounding  needs discussion ***
+
+```
+ _0%0        /int null is rounded to zero
+
+**** WIP ***
+
+ 0N 0n       / float null silently drops the int null to 0 (the logic is clear, but looks dangerous - ask atw?)
+0 0n
+```
+
+*** WIP ***
+
+probably need to talk about inf arith for completness sake, but  messy and boring
+
 
 ### types of types
 
@@ -718,7 +790,9 @@ Like in C, there is no dedicated type for strings in 𝒌. Strings are just **ch
 <a name="typ-name"></a>
 A type called **name** is the same idea as **internalized string** found in some other languages. This means that a single instance of an arbitrarily long string can be placed into a global hash table that persists for a lifetime of a 𝒌 process and can later be referenced by its hash key as many times as necessary without creating additional copies of the string.
 
-We could say that in case of names 𝒌 actually passes *references* instead of *values*, but they are not true pointers and there is no arithmetic defined for them. Names come handy in many situations, for now lets just see how they quack:
+We could say that in case of names 𝒌 actually passes *references* instead of *values*, but they are not true pointers and there is no arithmetic defined for them.
+
+Names save a lot of memory and come handy in many situations, but not as flexible as char vectors - their length is limited to 8 alphanumeric characters, spaces are not allowed. Lets just see how they quack:
 
 ```q
  a:`kei              /"kei" is now internalized
@@ -729,21 +803,47 @@ We could say that in case of names 𝒌 actually passes *references* instead of 
  @b                  /vector of string pointers
 `n
 
- @`"ken iverson"     /spaces in names, why not?
-`n
+`1234567890         /longer names are truncated
+12345678
 
- $a                  /$ converts names to chars
-"kei" 
+ `                 /empty names are very useful
+`
 ```
 
+
+
 <a name="typ-time"></a>
+
 **Temporal types** in k are `date` and `time`:
 
-### *** WIP *** revise
+### *** WIP *** revise / expand? attila is expert on k9 datetime:
+
+```
+
+
+arithmetic seems sketchy:
+
+ 2001.01.01+1
+2001.01.02
+ 2001.01.01-1           WIP i'm guessing that date is internally an uint
+ij
+2001.01.01-1            e.g. dates prior to epoch are not supported
+^
+!nyi
+ 1+2001.01.01
+1+2001.01.01
+^
+!type
+
+```
+
 
 ```q
- d:2001.01.01        /yyyy-mm-dd, ok to expect iso 8601 compliance
- @d                  /NOTE: date atom is `D same as date vector `D
+ 2001.01.01%1         /k9 epoch, chosen because it was a monday
+0.
+
+d:2001.01.01         /k dates use dots, expect no iso 8601 compliance
+ @d                  /NOTE: type of date atom is same as date vector
 `d
 
  t:12:34:56.789      /hh:mm:ss.sss, max resolution is milliseconds
@@ -894,74 +994,6 @@ goo|3.75
 
 There are a few more things left to be said about the type system, but the last expression `@@42` (which evaluates to some kind of wordplay, *type name of a type name is `name`*) urges us to the next section which is all about how to make sense of this expression.
 
-------------------
-
-### Nulls and Infinities
-
-
-**Nulls** in 𝒌 are typed. Integer null is `0N` and float null is `0n`. 
-
-**Infinity** is a special signed scalar floating point value denoted by `0w`. Negative infinity is `-0w`.
-
-Working with nulls and infinities can be very tricky, it is very important to pay attention to how they quack. We are finally ready to introduce dyadic operation `x%y divide`, because this is where nulls, infinities and some other nasty deamons often emerge from.
-
-This is not a typo. Indeed, unlike many other languages where `%` denotes the remainder operation, in k it means division. There reason for this oddity is simple: in 𝒌, the character `/` is reserved for another language construct which is much more common than division. We will introduce it later.
-
-
-```q
- 4%2             /division is %, get used to it
-2.
-
- 42%0            /division by zero is undefined
-0w               /0w is an infinity symbol in k
-
- 0%0             /an expression without meaning
-0n               /0n is null, nan, nil and void
-
-
- (-1 0 1 2)%0   /divide each by 0, or formally:
--0w 0n 0w 0w    /∀x∈ℚ (x%0) ∈ {-∞,∞,∅}, beware (0%0) = ∅
-```
-
-The key takeway is how **null arithmetic** works, which is the traditional source of untold damages and sorrow in the world of software engineering.
-
-Arithmetic on float nulls is **undefined**, and will always produce another float null. A float null isn't equal to, greater or less than anything, including itself:
-
-```q
- x:-0w 0w 0n 0N -1 0 1
- (0n-x),(0n+x),(0n*x),(0n%x),(x%0n)
-0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n...
-
- 0n=x
-0000000
-
- 0n>x
-0000000
-```
-
-However integer nulls behave differently. Unlike float null, `0N` is not a distinguished value, but is simply a placeholder for a very large number. It is very easy to infer its literal value, because simplest arithmetic on them results in immediate overflow of underlying `int64` a.k.a. `long long`:
-
-```q
- 0N+1
--9223372036854775807
- 0N-1
-9223372036854775807
-```
-
-##  *** wip wip wip null rounding  needs discussion ***
-
-```
- _0%0        /int null is rounded to zero
-
-**** WIP ***
-
- 0N 0n       / float null silently drops the int null to 0 (the logic is clear, but looks dangerous - ask atw?)
-0 0n
-```
-
-*** WIP ***
-
-probably need to talk about inf arith for completness sake, but  messy and boring
 
 
 ------------------
@@ -1239,8 +1271,8 @@ Consider a slightly less trivial example of `eachleft` working together with `x*
 Bonus questions:
 
 ```q
- kcc:+/∞            /how come k sums up to infinity this fast?
- kcc
+ k:+/0w             /how come k sums up to infinity this fast?
+ k
  █
 
  +\(1+!42)%0        /how about a running sum of 42 infinities?
@@ -1254,10 +1286,10 @@ Make sure you can follow the logic of these examples before advancing to the nex
 Extra bonus:
 
 ```q
- q:7;GF:!q;q\GF*\:GF         /what does GF stand for?
+ q:7;GF:!q;q mod GF*\:GF         /what does GF stand for?     WIP modulo doesn't seem to penetrate yet :(
  █
 
- /`c$97+2/:+2\:32 458 1172 1443 275
+ /97+2/:+2\:32 458 1172 1443 275      WIP how do we cast int to char>
 ```
 
 ## proverbs
@@ -1279,7 +1311,7 @@ This little monster is deliberately designed to make as little sense as possible
 
 ```q
 
-f:{$[2>#?x;x;,/f'x@&:'~:\x<*1?x]}
+f:{$[2>#?x;x;,/f'x@&'~\:x<*1?x]}
 
 f:{...}             /f is a function, that is a good start
 f:{.x.}             /f takes only one implicit argument, x
@@ -1290,7 +1322,7 @@ $[c;t;f]            /a ctf cond, aka if-then-else aka ternary
 
 2>#?x               /c:      boolean condition
 x                   /t:      do this if c is 1
-,/f'x@&:'~:\x<*1?x  /f:      do that if c is 0
+,/f'x@&'~\:x<*1?x   /f:      do that if c is 0
 
 2>#?x               /we don't know how to read this, but it is clear f[]
                     /halts recursion when it evaluates to 1, returning x
@@ -1316,7 +1348,7 @@ This gives us confidence to wrestle down the last part, the recursion step:
 
 ```q
 
-,/f'x@&:'~:\x<*1?x   /this must be the recursion step, read right to left:
+,/f'x@&'~\:x<*1?x    /this must be the recursion step, read right to left:
 
  x:4 0 1 2           /a small dataset to help us see what is going on here
 
@@ -1333,34 +1365,33 @@ This gives us confidence to wrestle down the last part, the recursion step:
 
                      /~x is 'not': boolean ¬x, non-0 turns 0, all 0 turn 1
 
- mask:~:\cmp         /explicit 'not' scan: returns cmp and negation of cmp
+ mask:~\cmp          /monadic 'not' scan:  returns cmp and negation of cmp
  mask
 0 1 1 0
 1 0 0 1
-
                      /&x is 'where': return indices of x where x are not 0
 
- idx:&:'mask         /explicit 'where' each: apply 'where' to each of mask
+idx:&'mask           /monadic 'where' each:  apply 'where' to each of mask
  idx 
 1 2                  /mask[0] has 1s at indices 1 and 2
 0 3                  /mask[1] has 1s at indices 0 and 3
 
  pts:x@idx           /dyadic @ is 'index': elements of x at indices in idx
  pts
-0 1                  /list of items in x less than pivot rnd
+0 1                  /list of items in x less than random pivot rnd
 4 2                  /list of items in x greater or equal to pivot rnd
 
 
- pts:x@&:'~:\x<*1?x  /"partition x by pivot: items < rnd and items >= rnd"
+ pts:x@&'~\:x<*1?x   /"partition x by pivot: items < rnd and items >= rnd"
 
- x:f'pts             /adverb each: apply f to each partition, recurse down 
+ x:f'pts             /adverb each: apply f to each partition (recurse down)
 
  ,/x                 /,/ is 'raze': unnest aka flatten a vector of vectors
  ,/(1 2 3;4 5 6)     /in other words, raze flattens first level of nesting
 1 2 3 4 5 6
 ```
 
-Note that it is the first time we have seen [rank override](#explicit-monadics) in action. In both cases, explicit monadics are passed to an adverb — and this is a very typical use case.
+~~Note that it is the first time we have seen [rank override](#explicit-monadics) in action. In both cases, explicit monadics are passed to an adverb — and this is a very typical use case.~~  *** WIP ** we need a good explanation how explicit monadics are no longer needed
 
 Now that we know what every specific part does, we can zoom out and see the big picture. Feel free to use the interpreter to play around and test your ideas.
 
@@ -1369,10 +1400,10 @@ Now that we know what every specific part does, we can zoom out and see the big 
 And of course, `f` is nothing else but:
 
 ```q
- qs:{$[2>#?x;x;,/qs'x@&:'~:\x<*1?x]}     /qsort on rand pivot
+ qs:{$[2>#?x;x;,/qs'x@&'~\:x<*1?x]}      /qsort on rand pivot
 
  i:9 2 5 5 1 8 1 3 6 1                   /a hairy int shuffle
- f:2.6 -∞ 8.6 π 1.7 ∞ 3.5 5.6            /a π in a float soup
+ f:2.6 -0w 8.6 3.14159 1.7 0w 3.5 5.6    /a π in a float soup
  c:"edrofgtnljgrpliifp"                  /a char entropy pool 
  mess:(i;f;c)
 
@@ -1386,9 +1417,9 @@ And of course this is not the quickest `quicksort` ever written, but this is jus
  ^3 2 1                                  /monadic ^x is 'sort'
 1 2 3
 
- sort:^:'                                /explicit 'sort each'
+ sort:^'                                 /monadic  'sort each'
 
- (qs'mess)~(sort mess)                   /x~y 'match' operands
+ (qs'mess)~(sort mess)                   /x~y 'match' operands             *** WIP bug in native sort (^0w -0w)
 1 
 
  \t:10000  qs'mess                       /apply qs 10000 times
@@ -1397,7 +1428,7 @@ And of course this is not the quickest `quicksort` ever written, but this is jus
  █ 
 ```
 
-As you see, native sort is incomparably faster. But what our DIY sort function is very good for is to demonstrate the principle of **doing more with less**, and that is what 𝒌 is all about.
+As you see, native sort is trendously faster, since it is using a very efficient sorting implementation. But what our DIY sorting function is very good for is to demonstrate the principle of **doing more with less**, and that is what 𝒌 is all about.
 
 Check out examples of `quicksort` in the wild in [C++](https://gist.github.com/christophewang/ad056af4b3ab0ceebacf), [Python](https://gist.github.com/anirudhjayaraman/897ca0d97a249180a48b50d62c87f239), [JavaScript](https://gist.github.com/claudiahdz/39a86084edaaabe7fc17c321c0bb6896) and [Java](https://github.com/Code2Bits/Algorithms-in-Java/blob/master/sort/src/main/java/com/code2bits/algorithm/sort/QuickSort.java).
 
@@ -1538,6 +1569,8 @@ Looks like the `mxpath` is doing pretty well. Let's fetch the input file for the
 ```q
  /backslash cmd executes an os command directly from k:
  \curl https://projecteuler.net/project/resources/p067_triangle.txt > p67.txt
+ 
+ /if you are using wasm build of k, the file is there for you
 
  lines:0:"p67.txt"  /0:x reads a text file as vector of lines
  lines 2            /just to make sure we have something real
@@ -1638,25 +1671,25 @@ We have covered a lot of ground, good time to put things into perspective. Below
    x+y         +x
 -------------------------   
 :  ● assign
-+  ● add        ● flip
--  ● subtract   ● negate
-*  ● multiply   ● first
-%  ● divideby   ● inverse
++  ● plus       ● flip
+-  ● minus      ● minus
+*  ● times      ● first
+%  ● divide
 &  ◦ min|and    ● where
 |  ● max|or     ● reverse
-<  ● less       ◦ up
->  ● more       ◦ down
+<  ● less       ◦ asc
+>  ● more       ◦ desc
 =  ● equal      ◦ group
 ~  ● match      ● not
-!  ● key        ● enum
-,  ● catenate   ● list
-^  ◦ except     ● sort
-#  ◦ take       ● count
-_  ● drop       ● floor
-?  ● find       ● distinct
-@  ● index      ● type
-.  ◦ apply      ● value
-$  ● pad|cast   ● string
+!  ● key        ● key
+,  ● catenate   ● enlist
+^  ◦ [f]cut     ● sort
+#  ◦ [f]take    ● count
+_  ● [f]drop    ● floor
+?  ● find       ● unique
+@  ● [f]at      ● type
+.  ◦ [f]dot     ● value
+$  ● parse      ● string
 ```
 
 It really feels like we have explored more than we didn't, and it is huge progress indeed. But many things remain to be discovered, because operators is only one aspect of 𝒌 — and this short introduction could not possibly cover everything.
@@ -1680,10 +1713,9 @@ We conclude with a list of subjects that you are now ready to explore on your ow
 
 Although ee cummings opened his famous poem with words *somewhere i have never travelled*, it seems that some 𝒌 programmers prefer to read poetry backwards. That explains a lot about the title of our final chapter.
 
-![speaking of poetry](https://github.com/kparc/kcc/blob/master/img/kei.png?raw=true "speaking of poetry")
 
 ----------------- 
 
 
 
-dream a little bigger [∎](mailto:me@kel.as)
+[∎](mailto:k@kparc.io)
