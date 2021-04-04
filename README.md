@@ -698,7 +698,7 @@ Arithmetic on float nulls is **undefined**, and will always produce another floa
 0000000
 ```
 
-However integer nulls behave differently. Unlike float null, `0N` is not a distinguished value, but is simply a placeholder for a very large number. It is very easy to infer its literal value, because simplest arithmetic on them results in immediate overflow of underlying `int64` a.k.a. `long long`:
+However, integer nulls behave differently. Unlike float null, `0N` is not a distinguished value, but is simply a placeholder for a very large number. It is very easy to infer its literal value, because simplest arithmetic on them results in immediate overflow of underlying `int64` a.k.a. `long long`:
 
 ```q
  0N+1
@@ -1732,9 +1732,9 @@ We conclude with a list of subjects that you are now ready to explore on your ow
 |entropy sources, math primitives |disk i/o, persistence and streaming |
 |advanced use of adverbs, threads |ipc and distributed workloads       |
 |native csv, tsv, json and utf    |fault tolerance and monitoring      |
-|integrated cryptography core     |scripting, deployment, os tuning    |
-|nanosecond time, datetime math   |interop with python, julia and c    |
-|𝒌-expressions, \`0               |tech support and user community     |
+|integrating cryptography         |scripting, deployment, os tuning    |
+|nanoseconds, datetime math       |interop with python, julia and c    |
+|𝒌-expressions                    |tech support and user community     |
 |design of internal components    |𝒌 resources, tools and packages     |
 
 -----------------
