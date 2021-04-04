@@ -155,6 +155,7 @@ Start your very first 𝒌 session like so:
 
 ![helo moto](https://kparc.io/cathode.gif)
 
+(https://kparc.io/cathode.gif)
 
 ---------------------
 
