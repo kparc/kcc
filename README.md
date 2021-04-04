@@ -378,7 +378,7 @@ Projections are commonplace and are very useful. To give one example, projection
 
 #### ~~explicit monadics~
 
-### *** WIP THIS NEEDS TO GO, NO LONGER VALID ***
+### *** WIP THIS NEEDS TO GO, NO LONGER VALID. instead, we need an easy explanation of k9 rank inference machinery ***
 
 As you already know, the action of a 𝒌 operator depends on the number of arguments passed to it. However, there are situations when an operator receives two operands (typically, left and right), but is intended to perform a monadic action using right argument only. To disambiguate the rank, the operator can be declared **explicitly monadic** by appending `:` to it:
 
