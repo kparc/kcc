@@ -1283,7 +1283,7 @@ here's a new operator. dyadic `x mod y` is **modulo**.
  █
 
  /answer:
- /`c 97+2/+2\32 458 1172 1443 275       WIP `c cast is broken as of 20210404
+ /`c@97+2/+2\32 458 1172 1443 275     /`c@x is cast to string
 ```
 
 Ultimate bonus:
