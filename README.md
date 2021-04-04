@@ -1283,12 +1283,12 @@ here's a new operator. dyadic `x mod y` is **modulo**.
  █
 
  /answer:
- /97+2/+2\32 458 1172 1443 275       WIP how do we cast int to char?
+ /`c 97+2/+2\32 458 1172 1443 275       WIP `c cast is broken as of 20210404
 ```
 
 Ultimate bonus:
 
-We introduce a dyadic operator `x^y cut` to define two float matrices:
+We introduce a dyadic operator `x^y cut` to generate two float matrices:
 
 ```
  A:3^x:0.+10+!12;B:4^x
@@ -1307,6 +1307,7 @@ Fill in the blanks in the definition of a function...
 
 ```
  mm:{   x*\:y}
+     ^^^
 ```
 
 ...which implements **matrix multiplication**. Good luck!
@@ -1367,11 +1368,10 @@ x                   /t:      do this if c is 1
 $[2>#?x;x;...]      /"if x has <2 unique items, return x, otherwise ..."
 ```
 
-Coffee break, here is what we know so far:
+Coffee break, here is what we know so far about the overall control flow of `f`:
 
-1. the function is recursive
-2. its overall control flow
-3. the condition that stops recursion
+1. we know the function is recursive.
+3. we know the condition that stops the recursion.
 
 This gives us confidence to wrestle down the last part, the recursion step:
 
@@ -1420,8 +1420,6 @@ idx:&'mask           /monadic 'where' each:  apply 'where' to each of mask
 1 2 3 4 5 6
 ```
 
-~~Note that it is the first time we have seen [rank override](#explicit-monadics) in action. In both cases, explicit monadics are passed to an adverb — and this is a very typical use case.~~  *** WIP ** we need a good explanation how explicit monadics are no longer needed
-
 Now that we know what every specific part does, we can zoom out and see the big picture. Feel free to use the interpreter to play around and test your ideas.
 
 -------------------
@@ -1429,7 +1427,7 @@ Now that we know what every specific part does, we can zoom out and see the big 
 And of course, `f` is nothing else but:
 
 ```q
- qs:{$[2>#?x;x;,/qs'x@&'~\:x<*1?x]}       /qsort on rand pivot
+ qs:{$[2>#?x;x;,/qs'x@&'~\:x<*1?x]}      /qsort on rand pivot
 
  i:9 2 5 5 1 8 1 3 6 1                   /a hairy int shuffle
  f:2.6 -0w 8.6 3.14159 1.7 0w 3.5 5.6    /a π in a float soup
@@ -1448,7 +1446,7 @@ And of course this is not the quickest `quicksort` ever written, but this is jus
 
  sort:^'                                 /monadic  'sort each'
 
- (qs'mess)~(sort mess)                   /x~y 'match' operands     *** WIP *** edge case bug in native sort (fixed and submitted to atw, pending confirmation)
+ (qs'mess)~(sort mess)                   /x~y 'match' operands
 1 
 
  \t:10000  qs'mess                       /apply qs 10000 times
@@ -1467,28 +1465,26 @@ Check out examples of `quicksort` in the wild in [C++](https://gist.github.com/c
 
 Previously we have seen:
 
+* dyadic `x:y assign`
+* dyadic `x=y equal`
 * monadic `!x til (first x integers)`
-* monadic `%x inverse (reciprocal)`
-* monadic `+x flip (transpose)`
+* monadic `+x flip / transpose`
 * monadic `$x string`
 * monadic `@x type`
 * monadic `^x sort`
-* dyadic `t@x cast`
-* dyadic `x:y assign`
-* dyadic `x=y equal`
 
 And `qs` code brought a few more:
 
 * ctf cond `$[c;t;f]`
-* monadic `?x distinct`
+* monadic `?x uniqe`
 * monadic `#x count`
 * monadic `*x first`
 * monadic `~x not`
 * monadic `&x where`
-* monadic `,/x raze`
-* dyadic `x@y index`
 * dyadic `x~y match`
 * dyadic `x?y find`
+* dyadic `x@y index a.k.a. "at"`
+* idiom `,/x flatten a.k.a. "raze"`
 
 Finally, you are now equipped with the most ubiquitous system routine:
 
@@ -1593,7 +1589,7 @@ Great, we have the reduction function, now let's apply it *over* the test triang
 23 
 ```
 
-Looks like the `mxpath` is doing pretty well. Let's fetch the input file for the problem 67, load it, parse it and solve it:
+Looks like `mxpath` is doing pretty well. Let's fetch the input file for the problem 67, load it, parse it and solve it:
 
 ```q
  /backslash cmd executes an os command directly from k:
@@ -1616,10 +1612,10 @@ Looks like the `mxpath` is doing pretty well. Let's fetch the input file for the
  █
 ```
 
-We didn't tell you do this, but the complete program can also be written as a single 𝒌 expression:
+We didn't tell you do this, but the complete program can also be written down as a single 𝒌 expression:
 
 ```q
- *{y+1_|':x}/|. 0:"0:"p67.txt"   /load, parse and fold
+ *{y+1_|':x}/|. 0:"p67.txt"             /load, parse and fold
  █
 ```
 
