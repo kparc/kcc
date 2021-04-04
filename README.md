@@ -1,6 +1,6 @@
 # k crash course
 
-a gentle introduction to k language is not here.
+a gentle introduction to k9 language is elsewhere.
 
 **[genesis](#genesis)**
 
@@ -45,9 +45,9 @@ x = x + 1
 
 Most programmers agree that this expression makes perfect sense. But if you show it to a mathematician, be ready to hear:
 
-```
-"No, it isn't."
-```
+
+> **— "No, it isn't."**
+
 
 And once you see what makes him say that, you will also see why we assign values with `:` in k. The above expression looks nonsensical to a 𝒌 programmer for the same reason it does to a math guy, and 𝒌 will most always evaluate it to `false`. Once you can produce a 𝒌 expression where `x=x+1` evaluates to `true`, don't be a stranger, a single "hello" can lead to a million things.
 
@@ -126,11 +126,11 @@ The only known way to learn programming is to write programs, so you will need a
 
 ### get
 
-We will use a **community** version of 𝒌, which comes without any limitations for non-commercial use. With great power comes great responsibility, so please don’t accidentally convert too much data into too much money too early.
+For the purpose of this course, we will use a **community** version of 𝒌, which comes with a few limitations for non-commercial use.
 
-Native builds of 𝒌 are available for `Linux` and `macOS` on `x86_64`. `Apple M1`, `AWS Graviton` and `RISC-V` builds are available upon request, please reach out.
+Native builds of 𝒌 are available for `Linux` and `macOS` on `x86_64`. `Apple M1`, `AWS Graviton2` and `RISC-V` builds are available upon request, please reach out.
 
-In case your system is not yet supported, or you do not wish to install any software at this time, you are welcome to use a **WASM build** instead, which is performant, feature-complete and available for all major browsers, both desktop and mobiles:
+In case your system is not yet supported, or you do not wish to install any software at this time, you are welcome to use **WASM build** of k instead, which is performant, feature-complete and available for all major browsers, both desktop and mobiles:
 
 [kparc.io/k](https://kparc.io/k)
 
@@ -159,7 +159,7 @@ Start your very first 𝒌 session like so:
 
 ---------------------
 
-**Startup banner** encodes important information about your build and  environment. For example, the banner on a recent Apple laptop would look like this:
+**Startup banner** encodes important information about your build and environment. For example, the banner on a recent Apple laptop would look like this:
 
 ```
 lm 2021.03.29 64 16 (c)shakti 2.0
@@ -180,7 +180,7 @@ lm 2021.03.29 64 16 (c)shakti 2.0
 
 \* capitalized platform identifier means you are running an **enterprise** build, enjoy responsibly. lowercase is a **community** build.
 
-\*\* by convention introduced at the dawn of time, k build date plays the role similar to `PATCH` in semantic versioning scheme. in the unlikely case you are running a community build which is older than `30` days, 𝒌 will gently suggest yy upgrade by exiting with cobbbde `12`.
+\*\* by convention introduced at the dawn of time, k build date plays the role similar to `PATCH` in semantic versioning scheme. in the unlikely case you are running a community build which is older than `30` days, 𝒌 will gently suggest it is time to upgrade by returning to shell with error code `12`.
 
 \*\*\* banners are handy for diagnostics. please include them in case of difficulties, or if you think you've encountered a bug. Always make sure you're running the latest build. Test builds offer latest features at a price of some stability.
 
@@ -320,7 +320,7 @@ Compare their strengths.
 
 ### remarks on parlance
 
-The most important terminology in 𝒌 revolves around **functions**. Functions in 𝒌 are first-class citizens. As you would expect, 𝒌 has anonymous functions, eval, apply and recursion. In that respect, 𝒌 is probably slightly more lispy than certain Lisps, only you don't need to get past any parens. However, since there are no linked lists under the hood, 𝒌 is _not_ Lisp, because it built around the concept of efficient processing of large **vectors** of data. 𝒌 is designed to be fast, and Lisps aren't exactly that. 
+The most important terminology in 𝒌 revolves around **functions**. Functions in 𝒌 are first-class citizens. As you would expect, 𝒌 has anonymous functions, eval, apply and recursion. In that respect, 𝒌 is probably slightly more lispy than certain Lisps, only you don't need to get past any parens. However, since there are no linked lists under the hood, 𝒌 is _not_ Lisp, because it built around efficient processing of large **vectors** of data. That is, 𝒌 is designed to be fast, and Lisps aren't exactly that. 
 
 #### implicit arguments
 
@@ -390,7 +390,7 @@ As you already know, the action of a 𝒌 operator depends on the number of argu
 
 Later on you will see how this works in practice.
 
-> You will not get far in this course without a strong grip on the idea that some things in 𝒌 land are **monadic** and even **explicitly monadic**, while others are **dyadic**. Make sure you have it.
+> You will not get far in this course without a strong grip on the idea that some things in 𝒌 land are **monadic**, while others are **dyadic**. Make sure you got it.
 
 On a more general note, functions in 𝒌 can be of rank 1 to 9:
 
