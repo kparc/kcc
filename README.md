@@ -1394,7 +1394,7 @@ This gives us confidence to wrestle down the last part, the recursion step:
 
                      /~x is 'not': boolean ¬x, non-0 turns 0, all 0 turn 1
 
- mask:~\:cmp         /monadic 'not' eachleft:  returns cmp and negation of cmp
+ mask:~\:cmp         /monadic 'seedless not eachleft': cmp and its inverse
  mask
 0 1 1 0
 1 0 0 1
@@ -1661,7 +1661,7 @@ public final class qs{public void s(int[] x){}}
 ```
 
 ```q
-qs:{$[2>#?x;x;,/qs'x@&:'~:\x<*1?x]}
+qs:{$[2>#?x;x;,/qs'x@&'~\:x<*1?x]}
 ```
 
 Now, compare the source code of these two:
