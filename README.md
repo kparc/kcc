@@ -479,7 +479,7 @@ So far you know how to:
 * assign values to variables
 * declare and call basic functions
 * be friends with `x`, `y` and `z`
-* tell apart monadic and dyadic operators and funcitons
+* tell apart monadic and dyadic operators and functions
 * deal with verbs and nouns
 * annotate your code
 
