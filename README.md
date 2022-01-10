@@ -1455,7 +1455,7 @@ And of course this is not the quickest `quicksort` ever written, but this is jus
  █ 
 ```
 
-As you see, native sort is tremenndously faster, since it is using a very efficient sorting implementation. But what our DIY sorting function is very good for is to demonstrate the principle of **doing more with less**, and that is what 𝒌 is all about.
+As you see, native sort is tremendously faster, since it is using a very efficient sorting implementation. But what our DIY sorting function is very good for is to demonstrate the principle of **doing more with less**, and that is what 𝒌 is all about.
 
 Check out examples of `quicksort` in the wild in [C++](https://gist.github.com/christophewang/ad056af4b3ab0ceebacf), [Python](https://gist.github.com/anirudhjayaraman/897ca0d97a249180a48b50d62c87f239), [JavaScript](https://gist.github.com/claudiahdz/39a86084edaaabe7fc17c321c0bb6896) and [Java](https://github.com/Code2Bits/Algorithms-in-Java/blob/master/sort/src/main/java/com/code2bits/algorithm/sort/QuickSort.java).
 
