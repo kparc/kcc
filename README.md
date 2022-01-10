@@ -693,10 +693,10 @@ Arithmetic on float nulls is **undefined**, and will always produce another floa
 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n 0n...
 
  0n=x
-0000000
+0 0 0 0 0 0 0
 
  0n>x
-0000000
+0 0 0 0 0 0 0
 ```
 
 However, integer nulls behave differently. Unlike float null, `0N` is not a distinguished value, but is simply a placeholder for a very large number. It is very easy to infer its literal value, because simplest arithmetic on them results in immediate overflow of underlying `int64` a.k.a. `long long`:
