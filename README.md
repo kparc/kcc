@@ -1283,7 +1283,7 @@ here's a new operator. dyadic `x mod y` is **modulo**.
  █
 
  /answer:
- /`c@97+2/+2\32 458 1172 1443 275     /`c@x is cast to string
+ /`c@97+2/'2\32 458 1172 1443 275     /`c@x is cast to string
 ```
 
 Ultimate bonus:
@@ -1455,7 +1455,7 @@ And of course this is not the quickest `quicksort` ever written, but this is jus
  █ 
 ```
 
-As you see, native sort is trendously faster, since it is using a very efficient sorting implementation. But what our DIY sorting function is very good for is to demonstrate the principle of **doing more with less**, and that is what 𝒌 is all about.
+As you see, native sort is tremenndously faster, since it is using a very efficient sorting implementation. But what our DIY sorting function is very good for is to demonstrate the principle of **doing more with less**, and that is what 𝒌 is all about.
 
 Check out examples of `quicksort` in the wild in [C++](https://gist.github.com/christophewang/ad056af4b3ab0ceebacf), [Python](https://gist.github.com/anirudhjayaraman/897ca0d97a249180a48b50d62c87f239), [JavaScript](https://gist.github.com/claudiahdz/39a86084edaaabe7fc17c321c0bb6896) and [Java](https://github.com/Code2Bits/Algorithms-in-Java/blob/master/sort/src/main/java/com/code2bits/algorithm/sort/QuickSort.java).
 
@@ -1708,7 +1708,7 @@ We have covered a lot of ground, good time to put things into perspective. Below
 ~  ● match      ● not
 !  ● key        ● key
 ,  ● catenate   ● enlist
-^  ◦ [f]cut     ● sort
+^  ● [f]cut     ● sort
 #  ◦ [f]take    ● count
 _  ● [f]drop    ● floor
 ?  ● find       ● unique
