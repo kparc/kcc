@@ -134,11 +134,7 @@ In case your system is not yet supported, or you do not wish to install any soft
 
 [kparc.io/k](https://kparc.io/k)
 
-Although the web-based runtime is sufficient for the purpose of this course and is just one click away, installing the native binary isn't much harder:
-
-```sh
-$ npm i @kparc/k -g
-```
+Although the web-based runtime is sufficient for the purpose of this course and is just one click away, installing native binaries from shakti.com isn't much harder.
 
 New builds are published up to several times a week, so make sure you always use the latest version:
 
