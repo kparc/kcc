@@ -1472,7 +1472,7 @@ Previously we have seen:
 And `qs` code brought a few more:
 
 * ctf cond `$[c;t;f]`
-* monadic `?x uniqe`
+* monadic `?x unique`
 * monadic `#x count`
 * monadic `*x first`
 * monadic `~x not`
