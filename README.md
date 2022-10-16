@@ -30,7 +30,7 @@ a gentle introduction to k9 language is elsewhere.
 
 ## genesis
 
-> "you mustn't be afraid to dream a little bigger." — *Inception*
+> *"You mustn't be afraid to dream a little bigger, darling."* — Inception
 
 
 Computer languages have been around for a long time, but in the beginning was the Word. We will be writing code in a language called 𝒌, but it helps to talk about it first. If you don't feel like it, feel free to [get](#get) and [run](#run).
