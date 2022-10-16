@@ -46,7 +46,7 @@ x = x + 1
 Most programmers agree that this expression makes perfect sense. But if you show it to a mathematician, be ready to hear:
 
 
-> **— "No, it isn't."**
+> *— No, it isn't.*
 
 
 And once you see what makes him say that, you will also see why we assign values with `:` in k. The above expression looks nonsensical to a 𝒌 programmer for the same reason it does to a math guy, and 𝒌 will most always evaluate it to `false`. Once you can produce a 𝒌 expression where `x=x+1` evaluates to `true`, don't be a stranger, a single "hello" can lead to a million things.
