@@ -122,7 +122,7 @@ This is the essence of the way of 𝒌, an experience that all 𝒌 programmers 
 
 ## exodus
 
-The only known way to learn programming is to write programs, so you will need a live environment. As all things 𝒌, it takes very little effort.
+The only known way to learn how to program is to write programs, and for that we will need a live environment. As all things 𝒌, it takes very little effort.
 
 ### get
 
