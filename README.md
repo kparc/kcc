@@ -1485,7 +1485,7 @@ Finally, you are now equipped with the most ubiquitous system routine:
 
 * `\t:n expr` benchpress an expression `n` times, result is in milliseconds
 
-Although this is still a small part of 𝒌 operator arsenal, if you can do `quicksort` with this much, you can do a lot more. And then add vector arithmetic, and then take everything to the power of six adverbs.
+Although this is still a small part of 𝒌 operator arsenal, if you can do `quicksort` with this much, you can do a lot more. And then add vector arithmetic, and then raise everything to the power of six adverbs.
 
 -------------------
 
