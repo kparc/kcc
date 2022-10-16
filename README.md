@@ -49,7 +49,7 @@ Most programmers agree that this expression makes perfect sense. But if you show
 > *— No, it isn't.*
 
 
-And once you see what makes him say that, you will also see why we assign values with `:` in k. The above expression looks nonsensical to a 𝒌 programmer for the same reason it does to a math guy, and 𝒌 will most always evaluate it to `false`. Once you can produce a 𝒌 expression where `x=x+1` evaluates to `true`, don't be a stranger, a single "hello" can lead to a million things.
+And once you see what makes him say that, you will also see why we assign values with `:` in 𝒌. The above expression looks nonsensical to a 𝒌 programmer for the same reason it does to a math guy, and 𝒌 will most always evaluate it to `false`. Once you can produce a 𝒌 expression where `x=x+1` evaluates to `true`, don't be a stranger, a single "hello" can lead to a million things.
 
 𝒌 offers some other unusual perspectives compared to other programming languages, and they are not necessarily wrong. They are simply different - the same way C is different from Java, and Python is unlike JavaScript.
 
