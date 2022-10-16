@@ -1314,7 +1314,7 @@ Fill in the blanks in the definition of a function...
 1146 1224 1302.
 ```
 
-Don't worry if these challenges were less effortless than the previous. Thinking in adverbs, even if a bit confusing at the start, quilckly becomes a habit - and definitely not more convoluted and error-prone than thinking in imperative loops.
+Don't worry if these challenges were less effortless than the previous. Thinking in adverbs, even if a bit confusing at the start, quickly becomes a habit - and definitely not more convoluted and error-prone than thinking in nested imperative loops.
 
 
 ## proverbs
