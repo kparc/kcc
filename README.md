@@ -35,7 +35,7 @@ a gentle introduction to k9 language is elsewhere.
 
 Computer languages have been around for a long time, but in the beginning was the Word. We will be writing code in a language called 𝒌, but it helps to talk about it first. If you don't feel like it, feel free to [get](#get) and [run](#run).
 
-𝒌 is a different computer language. At first, you will have questions about its design, and it will respond by questioning things that you consider common sense. Very soon, this conversation will become constructive, and here is why.
+𝒌 is a different computer language. At first, you will have questions about its design, and it will respond by questioning things that you consider common sense, but soon enough this conversation will become constructive, and here is why.
 
 The first thing newcomers frown upon is why the assignment operator in 𝒌 is `:` instead of `=`. But before you close the tab, try a simple thought experiment:
 
