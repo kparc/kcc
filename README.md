@@ -1036,7 +1036,7 @@ If we drop imaginary arrows, it is easy to see that evaluation steps 1, 3 and 5 
 
 And now that we know which way the rivers flow in 𝒌 land, we are equipped to discuss another key aspect of 𝒌 design. It has to do with the fact that a function call and vector indexing not only look the same - they also have the same *binding strength*, also known as *precedence*.
 
-> For a mathematically inclined reader, the title of this chapter might sound as overly naive and simplistic, which it is. Indeed, `l t r` is an application of two functions, `t` followed by `l` which are both located to the left of their arguments on their right, so the proper way to describe evaluation should've been **left of right**. However, this is not the case, and the chapter is called the way it is called, and simplifying things is not always a bad idea. We take refuge in the fact that another fundamental idea that *vectors and functions are essentially the same thing* is presented in its full glory.
+> For a mathematically inclined reader, the title of this chapter might sound as overly naive and simplistic, which it is. Indeed, `l t r` is an application of two functions, `t` followed by `l` which are both located to the left of their arguments on their right, so the proper way to describe evaluation order should've been **left of right**. However, this is not the case, and the chapter is called the way it is called, and simplifying things is not always a bad idea. We take refuge in the fact that another fundamental idea that *vectors and functions are essentially the same thing* is presented in its full glory.
 
 #### precedence
 
