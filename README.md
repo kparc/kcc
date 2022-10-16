@@ -1096,7 +1096,7 @@ That was too easy, but we'll make up for it.
 
 This part might be easier to digest than the previous, especially if you are familiar with functional programming. Its title, borrowed without permission from [the legendary k resource](http://nsl.com), says it all — you will not find a 𝒌 construct that resembles an explicit `for` loop, and although there is a `while` construct in 𝒌, it is almost never used in practice.
 
-And this is not just to avoid untold damages from trivial errors people keep making in their loop definitions. The main reason explicit loops are banned from 𝒌 is because it offers something better. The idea that displaces them is a simple and strong abstraction called *adverbs*, but before we see them in action, it helps to understand why they are called that way:
+And this is not just to avoid untold damages from trivial errors people keep on making in their loop definitions. The main reason explicit loops are banned from 𝒌 is because it offers something better. The idea that displaces them is a simple and strong abstraction called *adverbs*, but before we see them in action, it helps to understand why they are called that way:
 
 An **adverb** is a **modifier** that accepts a user-defined function or a native operator and returns a new monadic or dyadic **verb** which acts on one or two **input operands** in some desirable way to produce an **output**. Input and output can be scalar values or vectors, depending on the adverb and the action it modifies.
 
@@ -1144,7 +1144,7 @@ You could be tempted to see of what other use `over` could be. Let's introduce a
  x                  /tada, we have all ints up to 8
 0 1 2 3 4 5 6 7 8
 
- fact:{*/1+!x}     /fact x 'mul over 1 plus til x'
+ fact:{*/1+!x}     /fact x: 'mul over 1 plus til x'
  fact 20
 2432902008176640000
 ```
