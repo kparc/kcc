@@ -1029,14 +1029,14 @@ This might sound confusing, but look at the schematic execution flow of a small 
 ```q
 /     E1   >>>    E2   >>>    E3
 /(l ← t ← r);(l ← t ← r);(l ← t ← r)
-/   2   1       4  3       6   5
+/   2   1       4   3       6   5
 ```
 
 If we drop imaginary arrows, it is easy to see that evaluation steps 1, 3 and 5 are the vector indexing operation `t[r]`, and steps 2, 4 and 6 are the application of function `l[]` to the previous result, which amounts to `l[t[r]]`. At the same time, the overall execution of the program flows in the usual direction, same as in majority of computer languages - left to right, expression after expression.
 
 And now that we know which way the rivers flow in 𝒌 land, we are equipped to discuss another key aspect of 𝒌 design. It has to do with the fact that a function call and vector indexing not only look the same - they also have the same *binding strength*, also known as *precedence*.
 
-> For a mathematically inclined reader, the title of this chapter might sound as overly naive and simplistic, which it is. Indeed, `l t r` is an application of two functions, `t` followed by `l` which are both located to the left of their arguments on their right, so the proper way to describe evaluation order should've been **left of right**. However, this is not the case, and the chapter is called the way it is called, and simplifying things is not always a bad idea. We take refuge in the fact that another fundamental idea that *vectors and functions are essentially the same thing* is presented in its full glory.
+> For a mathematically inclined reader, the title of this chapter might sound as overly simplistic, which it is. Indeed, `l t r` is an application of two functions, `t` followed by `l` which are both located to the left of their arguments on their right, so the proper way to describe evaluation order should've been **left of right**. However, the chapter is called the way it is called, and simplifying things is not always a bad idea. We take refuge in the fact that another fundamental idea that vectors and functions are essentially *the same thing* is presented in its full glory.
 
 #### precedence
 
