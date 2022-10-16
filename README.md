@@ -316,7 +316,7 @@ Compare their strengths.
 
 ### remarks on parlance
 
-The most important terminology in 𝒌 revolves around **functions**. Functions in 𝒌 are first-class citizens. As you would expect, 𝒌 has anonymous functions, eval, apply and recursion. In that respect, 𝒌 is probably slightly more lispy than certain Lisps, only you don't need to get past any parens. However, since there are no linked lists under the hood, 𝒌 is _not_ Lisp, because it built around efficient processing of large **vectors** of data. That is, 𝒌 is designed to be fast, and Lisps aren't exactly that. 
+The most important terminology in 𝒌 revolves around **functions**. Functions in 𝒌 are first-class citizens. As you would expect, 𝒌 has anonymous functions, eval, apply and recursion. In that respect, 𝒌 is probably slightly more lispy than certain Lisps, only you don't need to get past any parens. However, since there are no linked lists under the hood, 𝒌 is _not_ Lisp, because it is built around efficient processing of large **vectors** of data. That is, 𝒌 is designed to be fast, and Lisps aren't exactly that. 
 
 #### implicit arguments
 
@@ -659,9 +659,9 @@ No rocket science, all pretty basic, but carry on.
 
 **Infinity** is a special signed scalar floating point value denoted by `0w`. Negative infinity is `-0w`.
 
-Working with nulls and infinities can be very tricky, it is very important to pay attention to how they quack. We are finally ready to introduce dyadic operation `x%y divide`, because this is where nulls, infinities and some other nasty deamons often emerge from.
+Working with nulls and infinities can be very tricky, and it is very important to get a grip on how they quack. We are now ready to introduce dyadic operation `x%y divide`, because this is where nulls, infinities and some other nasty deamons often emerge from.
 
-This is not a typo. Indeed, unlike many other languages where `%` denotes the remainder operation, in k it means division. There reason for this oddity is simple: in 𝒌, the character `/` is reserved for another language construct which is much more common than division. We will introduce it later.
+This is not a typo. Indeed, unlike in many other languages where `%` denotes the remainder operation, in k `%` means division. The reason for this oddity is simple: in 𝒌, the character `/` is reserved for another language construct which is much more common and important than division. We will introduce it later.
 
 
 ```q
@@ -679,7 +679,7 @@ This is not a typo. Indeed, unlike many other languages where `%` denotes the re
 -0w 0n 0w 0w    /∀x∈ℚ (x%0) ∈ {-∞,∞,∅}, beware (0%0) = ∅
 ```
 
-The key takeway is how **null arithmetic** works, which is the traditional source of untold damages and sorrow in the world of software engineering.
+The key takeway here is how **null arithmetic** works, which is the traditional source of untold damages and sorrow in the world of software engineering.
 
 Arithmetic on float nulls is **undefined**, and will always produce another float null. A float null isn't equal to, greater or less than anything, including itself:
 
@@ -695,7 +695,7 @@ Arithmetic on float nulls is **undefined**, and will always produce another floa
 0 0 0 0 0 0 0
 ```
 
-However, integer nulls behave differently. Unlike float null, `0N` is not a distinguished value, but is simply a placeholder for a very large number. It is very easy to infer its literal value, because simplest arithmetic on them results in immediate overflow of underlying `int64` a.k.a. `long long`:
+However, integer nulls behave differently. Unlike float null, `0N` is not a distinguished value, but is simply a placeholder for a very large number. It is very easy to infer its literal value, because the simplest arithmetic on them results in immediate overflow of underlying `int64` a.k.a. `long long` if you know some C:
 
 ```q
  0N+1
@@ -704,7 +704,7 @@ However, integer nulls behave differently. Unlike float null, `0N` is not a dist
 9223372036854775807
 ```
 
-##  *** wip null rounding  needs discussion ***
+##  *** wip null rounding needs discussion ***
 
 ```
  _0%0        /int null is rounded to zero
@@ -717,7 +717,7 @@ However, integer nulls behave differently. Unlike float null, `0N` is not a dist
 
 *** WIP ***
 
-probably need to talk about inf arith for completness sake, but  messy and boring
+probably need to talk about inf arith for completness sake, but messy and boring
 
 
 ### types of types
