@@ -758,10 +758,10 @@ This is not very revealing, so lets see them in action. The operator to query th
 `I
 
  v:0 1 .5 2
- @v          /0.5 promotes vector to float
-`f
+ @v          /0.5 promotes vector to floats
+`F
 
- v 1         /2nd item, f is short for 1.0
+ v 1         /2nd item, 1f is short for 1.0
 1f
 ```
 
@@ -773,7 +773,7 @@ Like in C, there is no dedicated type for strings in 𝒌. Strings are just **ch
 `c
 
  s:"kei";@s  /s is char vector
-`c
+`C
  
  s 0         /1st element of s
 "k"
