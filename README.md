@@ -1040,7 +1040,7 @@ And now that we know which way the rivers flow in 𝒌 land, we are equipped to 
 
 #### precedence
 
-Very early on in our lives we are taught there must exist a good reason for multiplication and division to bind stronger than addition and subtraction, so they must be computed *first*. Later on, we are told that most computer languages must have much more complex systems of operator precedence to do anything useful with them, and much later on — all the deadly caveats hidden in those systems once they manifest themselves as invisible bugs in production code. But in 𝒌, the question of operator precedence is fully and radically answered by their order of evaluation, which we just discussed. So, here is the one and only rule ever to be learned about precedence in 𝒌:
+Very early in our lives we are taught there must exist a good reason for multiplication and division to bind stronger than addition and subtraction, so they must be computed *first*. Later on, we are told that most computer languages must have much more complex systems of operator precedence to do anything useful with them, and much later on — all the deadly caveats hidden in those systems once they manifest themselves as invisible bugs in production code. But in 𝒌, the question of operator precedence is fully and radically answered by their order of evaluation, which we just discussed. So, here is the one and only rule ever to be learned about precedence in 𝒌:
 
 **There is no operator precedence in 𝒌, unless it is explicitly defined by round brackets.**
 
