@@ -15,9 +15,9 @@ a gentle introduction to 𝒌 language is elsewhere
 **[numbers](#numbers)**
 
 * vector math → [v≠a](#vectors-vs-atoms) | [v+v](#v-plus-v) | [v+a](#v-plus-a) | [v x](#v-indexing)  | [shp](#v-shp)
-* [type system](#types-of-types) → [num](#typ-num) | [char](#typ-char) | [name](#typ-name) | [date](#typ-time) | [dict](#typ-dict) | [tab](#typ-tab) | [λ](#typ-lambda) | [ø,∞](#typ-nul) | [mix](#typ-mix) | [cast](#typ-cast) 
+* [type system](#types-of-types) → [num](#typ-num) | [char](#typ-char) | [name](#typ-name) | [date](#typ-time) | [dict](#typ-dict) | [tab](#typ-tab) | [λ](#typ-lambda) | [ø,∞](#nulls-and-infinities) | [mix](#typ-mix) | [cast](#typ-cast) 
 * order of eval → [rtl](#right-to-left) | [(1)2](#precedence)
-* [no stinking loops](#no-stinking-loops) → [over](#nsl-overscan) | [scan](#nsl-overscan) | [e↣](#nsl-each) | [e↔](#nsl-eachlr) | [e↤](#nsl-eachprior)
+* [no stinking loops](#no-stinking-loops) → [over](#nsl-overscan) | [scan](#nsl-overscan) | [each](#nsl-each) | [eachleft](#nsl-eachlr) | [eachright](#nsl-eachlr) | [eachprior](#nsl-eachprior)
 
 **[proverbs](#proverbs)**
 
