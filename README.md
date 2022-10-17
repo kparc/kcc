@@ -1311,7 +1311,7 @@ Don't worry if these challenges were less effortless than the previous. Thinking
 
 ### how to solve it
 
-The title of this chapter is borrowed from a legendary book published in 1945, a small volume by mathematician George Pólya where he shows how to tackle problems and arrive to solutions. It is a very inspiring read.
+The title of this chapter is borrowed from a legendary book published in 1945, a small volume by George Pólya where he shows how to tackle problems and arrive to solutions. It is a very inspiring read.
 
 Let's tackle a little problem. We will look at a 𝒌 function that actually does something very useful and implements a familiar algorithm. The subject of the game is to figure out how it is implemented in 𝒌 and to identify the algorithm. It is very useful to dissect all of it on paper, so put your interpreter aside for now.
 
