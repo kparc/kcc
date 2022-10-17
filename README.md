@@ -1130,11 +1130,11 @@ It is a good moment to look back at the C version, one last time — and be surp
 You could be tempted to see of what other use `over` could be. Let's introduce a new k operator, `!x til`, and implement another obvious candidate for `over`:
 
 ```q
- x:!9               /! is til, get first n integers
- x                  /tada, we have all ints up to 8
+ x:!9               /! is til, list of first n integers
+ x                  /tada, we have all ints up to eight
 0 1 2 3 4 5 6 7 8
 
- fact:{*/1+!x}     /fact x: 'mul over 1 plus til x'
+ fact:{*/1+!x}      /factorial is mul over 1 plus til x
  fact 20
 2432902008176640000
 ```
