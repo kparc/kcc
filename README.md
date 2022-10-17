@@ -134,24 +134,14 @@ In case your system is not yet supported, or you do not wish to install any soft
 
 [kparc.io/k](https://kparc.io/k)
 
-Although the web-based runtime is sufficient for the purpose of this course and is just one click away, installing native binaries from shakti.com isn't much harder.
-
-New builds are published up to several times a week, so make sure you always use the latest version:
-
-```sh
-$ alias kup="npm i @kparc/k -g"
-$ kup
-```
-
-This course can be completed using both native builds and the web version. It is up to you which one to use.
+Although the web-based runtime is sufficient for the purpose of this course and is just one click away, installing native binaries from shakti.com isn't much harder. This course can be completed using both native builds and the web version. It is up to you which one to use.
 
 ### run
 
 Start your very first 𝒌 session like so:
 
-![helo moto](https://kparc.io/cathode.gif)
 
-(https://kparc.io/cathode.gif)
+![helo moto](cathode.gif)
 
 ---------------------
 
