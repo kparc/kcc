@@ -433,7 +433,7 @@ This only sounds confusing until you see what this means in practice:
 
 ```q
 
- a:44;b:2      /a and b are typical nouns: variables holding an number
+ a:44;b:2      /a and b are typical nouns: variables holding a number
 
  a-b           /a dyadic verb 'subtract', applied using infix notation
 42
@@ -770,7 +770,7 @@ Like in C, there is no dedicated type for strings in 𝒌. Strings are just **ch
 ```
 
 <a name="typ-name"></a>
-A type called **name** is the same idea as **internalized string** found in some other languages. This means that a single instance of an arbitrarily long string can be placed into a global hash table that persists for a lifetime of a 𝒌 process and can later be referenced by its hash key as many times as necessary without creating additional copies of the string.
+A type called **name** is the same idea as **interned string** found in some other languages. This means that a single instance of an arbitrarily long string can be placed into a global hash table that persists for a lifetime of a 𝒌 process and can later be referenced by its hash key as many times as necessary without creating additional copies of the string.
 
 We could say that in case of names 𝒌 actually passes *references* instead of *values*, but they are not true pointers and there is no arithmetic defined for them.
 
@@ -807,7 +807,7 @@ arithmetic seems sketchy:
 
  2001.01.01+1
 2001.01.02
- 2001.01.01-1           WIP i'm guessing that date is internally an uint
+ 2001.01.01-1           WIP i'm guessing that date is internally a uint
 ij
 2001.01.01-1            e.g. dates prior to epoch are not supported
 ^
